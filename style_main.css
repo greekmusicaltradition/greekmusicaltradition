@@ -73,7 +73,7 @@ body {
     text-align: center;
     position: relative;
     background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" fill="none"><rect width="1200" height="400" fill="%23ffffff" opacity="0.1"/><text x="600" y="200" text-anchor="middle" fill="%23ffffff" opacity="0.3" font-size="24" font-family="Arial">Background Image Placeholder</text><rect x="50" y="50" width="1100" height="300" stroke="%23ffffff" stroke-width="2" stroke-dasharray="10,5" fill="none" opacity="0.4"/></svg>'),
+        url('data:picture/banner_photo.png" viewBox="0 0 1200 400" fill="none"><rect width="1200" height="400" fill="%23ffffff" opacity="0.1"/><text x="600" y="200" text-anchor="middle" fill="%23ffffff" opacity="0.3" font-size="24" font-family="Arial">Background Image Placeholder</text><rect x="50" y="50" width="1100" height="300" stroke="%23ffffff" stroke-width="2" stroke-dasharray="10,5" fill="none" opacity="0.4"/></svg>'),
         linear-gradient(135deg, rgba(75,121,136,0.8), rgba(107,157,175,0.8), rgba(123,179,199,0.8));
     background-size: cover;
     background-position: center;
