@@ -101,6 +101,12 @@ body {
     align-items: start;
 }
 
+/* Special styling for the final call-to-action grid */
+.content-grid:last-of-type {
+    align-items: center;
+    min-height: 400px;
+}
+
 /* Decorative Panel */
 .decorative-panel {
     background: linear-gradient(135deg, #7bb3c7, #6b9daf);
@@ -109,6 +115,10 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 350px;
 }
 
 .ornate-design {
@@ -117,6 +127,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .ornate-circle {
@@ -188,6 +199,7 @@ body {
     text-align: center;
     margin-top: 2rem;
     color: white;
+    flex-shrink: 0;
 }
 
 .panel-title h3 {
@@ -203,6 +215,9 @@ body {
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .info-panel h2 {
@@ -361,8 +376,19 @@ body {
         gap: 2rem;
     }
     
+    /* Ensure proper alignment in mobile view */
+    .content-grid:last-of-type {
+        min-height: auto;
+    }
+    
+    /* Decorative panel adjustments for mobile */
+    .decorative-panel {
+        min-height: 300px;
+        order: -1; /* Move decorative panels to top on mobile for better visual flow */
+    }
+    
     .ornate-design {
-        height: 250px;
+        height: 200px;
     }
     
     .ornate-circle {
@@ -383,6 +409,14 @@ body {
     .inner-design::before {
         width: 30px;
         height: 30px;
+    }
+    
+    .panel-title {
+        margin-top: 1rem;
+    }
+    
+    .panel-title h3 {
+        font-size: 1.3rem;
     }
     
     .lesson-content {
@@ -416,7 +450,12 @@ body {
         padding: 2rem 0;
     }
     
-    .decorative-panel, .info-panel {
+    .decorative-panel {
+        padding: 1.5rem;
+        min-height: 250px;
+    }
+    
+    .info-panel {
         padding: 1.5rem;
     }
     
@@ -426,6 +465,34 @@ body {
     
     .lesson-content {
         padding: 1.5rem;
+    }
+    
+    .ornate-design {
+        height: 150px;
+    }
+    
+    .ornate-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .center-medallion {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .inner-design {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .inner-design::before {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .panel-title h3 {
+        font-size: 1.2rem;
     }
 }
 
@@ -506,7 +573,6 @@ body {
         padding: 2rem 0 1rem;
     }
 }
-
 
 /* Success Stories Styles */
 .success-stories {
