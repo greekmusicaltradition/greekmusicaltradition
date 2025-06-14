@@ -7,20 +7,8 @@
     <link rel="stylesheet" href="style_main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="pictures/banner_photo.png" alt="Logo">
-                <span>GreekMusicTradition...</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#lessons">Lessons ▾</a></li>
-                <li><a href="#about">About ▾</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
 
     <header class="hero">
         <div class="hero-content">
@@ -56,8 +44,8 @@
                     <p>This website is dedicated to the rich musical heritage of Greece, featuring Greek traditional and Byzantine music.</p>
                     <p>Here you'll find lessons that will introduce you to these beautiful melodies and guide you through Greece's musical heritage.</p>
                     <p>Lessons are available in both English and Greek.</p>
-                    <p><a href="#lessons" class="explore-link">Explore the available lessons here!</a></p>
-                    <p>Have questions? Feel free to reach out through the <a href="#contact" class="contact-link">contact form here!</a></p>
+                    <p><a href="lessons.html" class="explore-link">Explore the available lessons here!</a></p>
+                    <p>Have questions? Feel free to reach out through the <a href="contact.html" class="contact-link">contact form here!</a></p>
                     <p>Let's embark on this melodic journey together!</p>
                 </div>
             </div>
@@ -113,5 +101,12 @@
             </div>
         </div>
     </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Load the header and footer components -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>
