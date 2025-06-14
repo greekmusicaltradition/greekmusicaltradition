@@ -506,3 +506,71 @@ body {
         padding: 2rem 0 1rem;
     }
 }
+
+
+/* Success Stories Styles */
+.success-stories {
+    margin-top: 1.5rem;
+}
+
+.story {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #6b9daf;
+}
+
+.story h4 {
+    color: #4b7988;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.story p {
+    font-style: italic;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Enhanced lesson details for About page */
+.lesson-details h4 {
+    color: #4b7988;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lesson-details p {
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Hero subtitle styling */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Responsive adjustments for About page */
+@media (max-width: 768px) {
+    .story {
+        padding: 1rem;
+    }
+    
+    .story h4 {
+        font-size: 1rem;
+    }
+    
+    .lesson-details h4 {
+        font-size: 1.1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
