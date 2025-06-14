@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Greek Traditional & Byzantine Music</title>
+    <link rel="stylesheet" href="style_main.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-form-container {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form h2 {
+            color: #4b7988;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .contact-intro {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #4b7988;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6b9daf;
+            box-shadow: 0 0 0 3px rgba(107, 157, 175, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #6b9daf, #7bb3c7);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 157, 175, 0.3);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #7bb3c7, #6b9daf);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            color: #4b7988;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            color: #4b7988;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-form-container,
+            .faq-section {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 1.5rem;
+            }
+
+            .contact-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form-container,
+            .faq-section {
+                padding: 1.5rem;
+            }
+
+            .contact-form h2,
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-intro {
+                font-size: 1rem;
+            }
+        }
+
+        /* Form validation styles */
+        .form-group input:invalid,
+        .form-group textarea:invalid {
+            border-color: #e74c3c;
+        }
+
+        .form-group input:valid,
+        .form-group textarea:valid {
+            border-color: #27ae60;
+        }
+
+        /* Success message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch to start your musical journey</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Contact Information Cards -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email Us</h3>
+                    <p>Send us a message and we'll respond within 24 hours</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">🎵</span>
+                    <h3>Online Lessons</h3>
+                    <p>One-to-one and group lessons available worldwide</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">📚</span>
+                    <h3>Course Information</h3>
+                    <p>Learn about our Byzantine and traditional Greek music programs</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <h2>Send Us a Message</h2>
+                    <p class="contact-intro">
+                        Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
+                    </p>
+
+                    <div class="success-message" id="successMessage">
+                        Thank you for your message! We'll get back to you soon.
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">I'm interested in:</label>
+                        <select id="interest" name="interest">
+                            <option value="">Please select...</option>
+                            <option value="byzantine">Byzantine Music Lessons</option>
+                            <option value="traditional">Greek Traditional Singing Lessons</option>
+                            <option value="both">Both Types of Lessons</option>
+                            <option value="information">General Information</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">Your Experience Level:</label>
+                            <select id="experience" name="experience">
+                                <option value="">Please select...</option>
+                                <option value="beginner">Complete Beginner</option>
+                                <option value="some">Some Experience</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredLanguage">Preferred Language:</label>
+                            <select id="preferredLanguage" name="preferredLanguage">
+                                <option value="">Please select...</option>
+                                <option value="english">English</option>
+                                <option value="greek">Greek</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What types of lessons do you offer?</div>
+                    <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are lessons available online?</div>
+                    <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need prior musical experience?</div>
+                    <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">In what languages are lessons taught?</div>
+                    <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I get started?</div>
+                    <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Load the header and footer components -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form after a short delay
+            setTimeout(() => {
+                this.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }, 1000);
+        });
+
+        // Add some interactive feedback for form fields
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
