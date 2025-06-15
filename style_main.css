@@ -65,6 +65,15 @@ body {
     color: #b8dce8;
 }
 
+
+.decorative-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* optional, for rounded corners */
+}
+
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #4b7988, #6b9daf, #7bb3c7);
