@@ -68,9 +68,9 @@ body {
 
 .decorative-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px; /* optional, for rounded corners */
+    display: block;
 }
 
 
