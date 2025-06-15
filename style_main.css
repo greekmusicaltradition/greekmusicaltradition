@@ -154,19 +154,6 @@ body {
 }
 
 
-.decorative-panel {
-    background: linear-gradient(135deg, #7bb3c7, #6b9daf);
-    border-radius: 15px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 350px;
-}
-
 .ornate-design {
     position: relative;
     height: 300px;
