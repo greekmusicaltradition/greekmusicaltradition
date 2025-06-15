@@ -110,6 +110,24 @@ body {
 }
 
 /* Decorative Panel */
+
+.decorative-panel {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    min-height: 350px;
+}
+
+.decorative-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+
 .decorative-panel {
     background: linear-gradient(135deg, #7bb3c7, #6b9daf);
     border-radius: 15px;
