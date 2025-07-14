@@ -71,24 +71,23 @@ body {
 .hero {
     background: linear-gradient(135deg, #4b7988, #6b9daf, #7bb3c7);
     color: white;
-    padding: 6rem 0;
+    padding: 3rem 0; /* Reduced from 6rem to 3rem */
     text-align: center;
     position: relative;
-    background-image: 
-        url('data:picture/banner_photo.png" viewBox="0 0 1200 400" fill="none"><rect width="1200" height="400" fill="%23ffffff" opacity="0.1"/><text x="600" y="200" text-anchor="middle" fill="%23ffffff" opacity="0.3" font-size="24" font-family="Arial">Background Image Placeholder</text><rect x="50" y="50" width="1100" height="300" stroke="%23ffffff" stroke-width="2" stroke-dasharray="10,5" fill="none" opacity="0.4"/></svg>'),
-        linear-gradient(135deg, rgba(75,121,136,0.8), rgba(107,157,175,0.8), rgba(123,179,199,0.8));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 300;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
+
 
 /* Main Content */
 .main-content {
