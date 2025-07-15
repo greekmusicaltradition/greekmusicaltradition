@@ -150,3 +150,38 @@ function switchLanguage(targetLang) {
 
 // Load header when page loads
 document.addEventListener('DOMContentLoaded', loadHeader);
+
+
+// Language switching function with detailed debugging
+function switchLanguage(targetLang) {
+    const currentPage = getCurrentPageName();
+    
+    // Get all current location info
+    const currentURL = window.location.href;
+    const currentPath = window.location.pathname;
+    const currentHost = window.location.host;
+    const currentProtocol = window.location.protocol;
+    
+    // Log everything to console
+    console.log('=== DEBUG INFO ===');
+    console.log('Current URL:', currentURL);
+    console.log('Current path:', currentPath);
+    console.log('Current page:', currentPage);
+    console.log('Target language:', targetLang);
+    console.log('Host:', currentHost);
+    console.log('Protocol:', currentProtocol);
+    
+    // Don't redirect yet - just show what would happen
+    const testURL1 = `${currentProtocol}//${currentHost}/${targetLang}/${currentPage}.html`;
+    const testURL2 = `/${targetLang}/${currentPage}.html`;
+    const testURL3 = `${targetLang}/${currentPage}.html`;
+    
+    console.log('Test URL 1 (absolute):', testURL1);
+    console.log('Test URL 2 (root relative):', testURL2);
+    console.log('Test URL 3 (relative):', testURL3);
+    
+    // Try to redirect - uncomment ONE of these lines:
+    // window.location.href = testURL1;
+    // window.location.href = testURL2;
+    window.location.href = testURL3;
+}
