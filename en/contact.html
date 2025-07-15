@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Greek Traditional & Byzantine Music</title>
     <link rel="stylesheet" href="../css/style_main.css">
-   
 </head>
 <body>
-   <body>
     <!-- Header will be loaded here -->
     <div id="header"></div>
 
@@ -84,108 +82,3 @@
                             <label for="experience">Your Experience Level:</label>
                             <select id="experience" name="experience">
                                 <option value="">Please select...</option>
-                                <option value="beginner">Complete Beginner</option>
-                                <option value="some">Some Experience</option>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="advanced">Advanced</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="preferredLanguage">Preferred Language:</label>
-                            <select id="preferredLanguage" name="preferredLanguage">
-                                <option value="">Please select...</option>
-                                <option value="english">English</option>
-                                <option value="greek">Greek</option>
-                                <option value="both">Both</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">What types of lessons do you offer?</div>
-                    <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Are lessons available online?</div>
-                    <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Do I need prior musical experience?</div>
-                    <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">In what languages are lessons taught?</div>
-                    <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How do I get started?</div>
-                    <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer will be loaded here -->
-    <div id="footer"></div>
-
-    <!-- Load the header and footer components -->
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
-
-    <script>
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form after a short delay
-            setTimeout(() => {
-                this.reset();
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            }, 1000);
-        });
-
-        // Add some interactive feedback for form fields
-        const formInputs = document.querySelectorAll('input, select, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-                this.parentElement.style.transition = 'transform 0.2s ease';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
-    </script>
-       
-    <!-- Load the header and footer components -->
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
-</body>
-</html>
