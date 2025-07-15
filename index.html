@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Traditional & Byzantine Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #4b7988, #6b9daf);
+            color: white;
+        }
+        .language-selector {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .language-selector h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .language-selector p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .lang-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .flag-icon {
+            width: 32px;
+            height: 24px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        @media (max-width: 480px) {
+            .language-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .lang-button {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <h1>Greek Traditional & Byzantine Music</h1>
+        <p>Please select your language / Παρακαλώ επιλέξτε τη γλώσσα σας</p>
+        <div class="language-buttons">
+            <a href="en/index.html" class="lang-button">
+                <img src="pictures/flag-en.png" alt="English" class="flag-icon">
+                <span>English</span>
+            </a>
+            <a href="gr/index.html" class="lang-button">
+                <img src="pictures/flag-gr.png" alt="Greek" class="flag-icon">
+                <span>Ελληνικά</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-detect language based on browser settings
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            
+            // Check if user's language is Greek
+            if (userLang.startsWith('el')) {
+                // Delay redirect to allow user to see the page briefly
+                setTimeout(() => {
+                    window.location.href = 'gr/index.html';
+                }, 1000);
+            } else {
+                // Default to English after a brief delay
+                setTimeout(() => {
+                    window.location.href = 'en/index.html';
+                }, 1000);
+            }
+        }
+
+        // Check if user has visited before
+        const hasVisited = localStorage.getItem('language-selected');
+        if (!hasVisited) {
+            detectLanguage();
+        }
+
+        // Store language selection
+        document.querySelectorAll('.lang-button').forEach(button => {
+            button.addEventListener('click', () => {
+                localStorage.setItem('language-selected', 'true');
+            });
+        });
+    </script>
+</body>
+</html>
