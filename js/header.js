@@ -126,15 +126,27 @@ function getCurrentPageName() {
 function switchLanguage(targetLang) {
     const currentPage = getCurrentPageName();
     
-    // Get the base URL (without trailing slash)
-    const baseUrl = window.location.origin;
+    // Get the current location details
+    const protocol = window.location.protocol;
+    const host = window.location.host;
     
-    // Construct new path with target language
-    const newPath = `${baseUrl}/${targetLang}/${currentPage}.html`;
+    // Construct the new URL more reliably
+    let newPath;
+    
+    // If we're on localhost or a development server
+    if (host.includes('localhost') || host.includes('127.0.0.1')) {
+        newPath = `${protocol}//${host}/${targetLang}/${currentPage}.html`;
+    } else {
+        // For production servers
+        newPath = `${protocol}//${host}/${targetLang}/${currentPage}.html`;
+    }
+    
+    console.log('Redirecting to:', newPath); // Debug line - remove after testing
     
     // Redirect to new language version
     window.location.href = newPath;
 }
+
 
 // Load header when page loads
 document.addEventListener('DOMContentLoaded', loadHeader);
