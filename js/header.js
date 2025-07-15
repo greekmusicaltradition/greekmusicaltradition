@@ -46,14 +46,12 @@ function loadHeader() {
                         <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
                                 onclick="switchLanguage('en')" 
                                 title="English">
-                            <img src="../pictures/flag-en.png" alt="English" class="flag-icon">
-                            <span>EN</span>
+                            <span>English</span>
                         </button>
                         <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
                                 onclick="switchLanguage('gr')" 
                                 title="Ελληνικά">
-                            <img src="../pictures/flag-gr.png" alt="Greek" class="flag-icon">
-                            <span>GR</span>
+                            <span>Ελληνικά</span>
                         </button>
                     </div>
                     
@@ -75,12 +73,10 @@ function loadHeader() {
                         <div class="mobile-lang-buttons">
                             <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
                                     onclick="switchLanguage('en')">
-                                <img src="../pictures/flag-en.png" alt="English" class="flag-icon">
                                 <span>English</span>
                             </button>
                             <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
                                     onclick="switchLanguage('gr')">
-                                <img src="../pictures/flag-gr.png" alt="Greek" class="flag-icon">
                                 <span>Ελληνικά</span>
                             </button>
                         </div>
