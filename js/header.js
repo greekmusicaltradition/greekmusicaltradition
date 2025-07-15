@@ -128,11 +128,13 @@ function getCurrentPageName() {
 
 // Language switching function
 function switchLanguage(targetLang) {
-    const currentPath = window.location.pathname;
     const currentPage = getCurrentPageName();
     
+    // Get the base URL (without trailing slash)
+    const baseUrl = window.location.origin;
+    
     // Construct new path with target language
-    const newPath = `/${targetLang}/${currentPage}.html`;
+    const newPath = `${baseUrl}/${targetLang}/${currentPage}.html`;
     
     // Redirect to new language version
     window.location.href = newPath;
