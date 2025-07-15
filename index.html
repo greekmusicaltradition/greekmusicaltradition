@@ -67,30 +67,28 @@
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        .flag-icon {
-            width: 24px;
-            height: 18px;
-            border-radius: 3px;
-            object-fit: cover;
+        .lang-button:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
     <div class="loading-container">
-        <div class="loading-spinner"></div>
+        <div class="loading-spinner" aria-label="Loading"></div>
         <h1>Greek Traditional & Byzantine Music</h1>
         <p>Redirecting to your preferred language...</p>
-        <p>Ανακατεύθυνση στη γλώσσα προτίμησής σας...</p>
+        <p lang="el">Ανακατεύθυνση στη γλώσσα προτίμησής σας...</p>
         
-      <div class="manual-links" id="manualLinks">
-    <p>If you're not redirected automatically, please choose:</p>
-    <a href="en/index.html" class="lang-button">
-        <span>English</span>
-    </a>
-    <a href="gr/index.html" class="lang-button">
-        <span>Ελληνικά</span>
-    </a>
-</div>
+        <div class="manual-links" id="manualLinks">
+            <p>If you're not redirected automatically, please choose:</p>
+            <a href="en/index.html" class="lang-button" lang="en" aria-label="Switch to English">
+                <span>English</span>
+            </a>
+            <a href="gr/index.html" class="lang-button" lang="el" aria-label="Αλλαγή σε Ελληνικά">
+                <span>Ελληνικά</span>
+            </a>
+        </div>
     </div>
 
     <script>
