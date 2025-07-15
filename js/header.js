@@ -65,10 +65,10 @@ function loadHeader() {
                 </div>
                 
                 <ul class="nav-menu">
-                    <li><a href="${lang}/index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
-                    <li><a href="${lang}/lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
-                    <li><a href="${lang}/about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
-                    <li><a href="${lang}/contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
+                    <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
+                    <li><a href="lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
+                    <li><a href="about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
+                    <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
                     
                     <!-- Mobile language switcher -->
                     <li class="mobile-lang-switcher">
@@ -131,13 +131,8 @@ function switchLanguage(targetLang) {
     const currentPath = window.location.pathname;
     const currentPage = getCurrentPageName();
     
-    // Remove current language from path and add new one
-    let newPath;
-    if (currentPath.includes('/en/') || currentPath.includes('/gr/')) {
-        newPath = `/${targetLang}/${currentPage}.html`;
-    } else {
-        newPath = `/${targetLang}/index.html`;
-    }
+    // Construct new path with target language
+    const newPath = `/${targetLang}/${currentPage}.html`;
     
     // Redirect to new language version
     window.location.href = newPath;
