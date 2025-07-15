@@ -788,12 +788,6 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.flag-icon {
-    width: 20px;
-    height: 15px;
-    border-radius: 2px;
-    object-fit: cover;
-}
 
 /* Mobile language switcher */
 .mobile-lang-switcher {
@@ -816,10 +810,7 @@ body {
     gap: 8px;
 }
 
-.mobile-lang-buttons .flag-icon {
-    width: 24px;
-    height: 18px;
-}
+
 
 /* Active nav link styling */
 .nav-menu a.active {
