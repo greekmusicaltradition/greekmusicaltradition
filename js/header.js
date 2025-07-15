@@ -122,66 +122,31 @@ function getCurrentPageName() {
     return filename.replace('.html', '') || 'index';
 }
 
-// Language switching function
+// Language switching function - SINGLE VERSION FOR GITHUB PAGES
 function switchLanguage(targetLang) {
     const currentPage = getCurrentPageName();
+    const currentPath = window.location.pathname;
     
-    // Get the current location details
-    const protocol = window.location.protocol;
-    const host = window.location.host;
+    // Extract repository name from path (for GitHub Pages)
+    const pathSegments = currentPath.split('/').filter(segment => segment);
     
-    // Construct the new URL more reliably
     let newPath;
     
-    // If we're on localhost or a development server
-    if (host.includes('localhost') || host.includes('127.0.0.1')) {
-        newPath = `${protocol}//${host}/${targetLang}/${currentPage}.html`;
+    if (window.location.hostname.includes('github.io')) {
+        // GitHub Pages - format: username.github.io/repository-name
+        const repoName = pathSegments[0]; // First segment is repository name
+        newPath = `/${repoName}/${targetLang}/${currentPage}.html`;
+    } else if (window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')) {
+        // Local development
+        newPath = `/${targetLang}/${currentPage}.html`;
     } else {
-        // For production servers
-        newPath = `${protocol}//${host}/${targetLang}/${currentPage}.html`;
+        // Other hosting (custom domain, etc.)
+        newPath = `/${targetLang}/${currentPage}.html`;
     }
     
-    console.log('Redirecting to:', newPath); // Debug line - remove after testing
-    
-    // Redirect to new language version
+    console.log('Redirecting to:', newPath);
     window.location.href = newPath;
 }
 
-
 // Load header when page loads
 document.addEventListener('DOMContentLoaded', loadHeader);
-
-
-// Language switching function with detailed debugging
-function switchLanguage(targetLang) {
-    const currentPage = getCurrentPageName();
-    
-    // Get all current location info
-    const currentURL = window.location.href;
-    const currentPath = window.location.pathname;
-    const currentHost = window.location.host;
-    const currentProtocol = window.location.protocol;
-    
-    // Log everything to console
-    console.log('=== DEBUG INFO ===');
-    console.log('Current URL:', currentURL);
-    console.log('Current path:', currentPath);
-    console.log('Current page:', currentPage);
-    console.log('Target language:', targetLang);
-    console.log('Host:', currentHost);
-    console.log('Protocol:', currentProtocol);
-    
-    // Don't redirect yet - just show what would happen
-    const testURL1 = `${currentProtocol}//${currentHost}/${targetLang}/${currentPage}.html`;
-    const testURL2 = `/${targetLang}/${currentPage}.html`;
-    const testURL3 = `${targetLang}/${currentPage}.html`;
-    
-    console.log('Test URL 1 (absolute):', testURL1);
-    console.log('Test URL 2 (root relative):', testURL2);
-    console.log('Test URL 3 (relative):', testURL3);
-    
-    // Try to redirect - uncomment ONE of these lines:
-    // window.location.href = testURL1;
-    // window.location.href = testURL2;
-    window.location.href = testURL3;
-}
