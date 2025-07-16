@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Traditional & Byzantine Music</title>
+    <script>
+        // Execute redirect IMMEDIATELY - before any rendering
+        (function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const targetUrl = userLang.startsWith('el') ? 'gr/index.html' : 'en/index.html';
+            window.location.replace(targetUrl);
+        })();
+    </script>
     <style>
+        /* Make body completely invisible */
         body {
+            visibility: hidden;
             margin: 0;
-            background: linear-gradient(135deg, #4b7988, #6b9daf);
+            background: #4b7988;
             height: 100vh;
             overflow: hidden;
         }
         
-        /* Hide everything by default */
+        /* Only show fallback content if redirect fails */
         .fallback-content {
-            display: none;
+            visibility: visible;
             font-family: Arial, sans-serif;
             text-align: center;
             color: white;
@@ -47,8 +57,8 @@
     </style>
 </head>
 <body>
-    <!-- Only show if JavaScript fails and redirect doesn't work -->
-    <div class="fallback-content" id="fallbackContent">
+    <!-- Only show if JavaScript fails completely -->
+    <div class="fallback-content" id="fallbackContent" style="display: none;">
         <h1>Greek Traditional & Byzantine Music</h1>
         <p>Please choose your language:</p>
         <a href="en/index.html" class="lang-button">English</a>
@@ -56,26 +66,19 @@
     </div>
 
     <script>
-        function detectAndRedirect() {
-            const userLang = navigator.language || navigator.userLanguage;
-            const targetUrl = userLang.startsWith('el') ? 'gr/index.html' : 'en/index.html';
-            
-            // Use replace() to avoid back button issues
-            window.location.replace(targetUrl);
-        }
-        
-        // Immediate redirect
-        detectAndRedirect();
-        
-        // Only show fallback if redirect fails after 1 second
+        // Show fallback only if redirect somehow fails after 2 seconds
         setTimeout(() => {
             document.getElementById('fallbackContent').style.display = 'block';
-        }, 1000);
+        }, 2000);
     </script>
     
     <!-- Fallback for users with JavaScript disabled -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=en/index.html">
+        <style>
+            body { visibility: visible; }
+            .fallback-content { display: block !important; }
+        </style>
     </noscript>
 </body>
 </html>
