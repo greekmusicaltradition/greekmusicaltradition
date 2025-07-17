@@ -463,11 +463,6 @@ body {
     position: relative;
 }
 
-.traditional-icon {
-    font-size: 2rem;
-    color: var(--color-white);
-}
-
 .lesson-details {
     flex: 1;
 }
@@ -502,6 +497,13 @@ body {
     color: var(--color-secondary-blue);
     position: absolute;
     left: 0;
+}
+
+.traditional-icon,
+.byzantine-icon {
+    font-size: 48px;
+    text-align: center;
+    /* your icon styling here */
 }
 
 /* Success Stories */
