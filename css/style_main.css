@@ -28,6 +28,7 @@ body {
     line-height: 1.6;
     color: var(--color-text-dark);
     background-color: var(--color-background-light);
+    padding-top: 0; 
 }
 
 .container {
