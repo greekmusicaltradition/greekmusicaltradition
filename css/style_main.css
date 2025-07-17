@@ -135,7 +135,7 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 300;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     max-width: 800px;
