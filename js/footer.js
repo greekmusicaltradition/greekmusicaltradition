@@ -28,7 +28,6 @@ function loadFooter() {
             contactTitle: "Contact",
             contactText: "Ready to begin your musical journey?",
             cta: "Get Started Today",
-            legalTitle: "Legal",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
