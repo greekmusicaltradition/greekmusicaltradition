@@ -28,7 +28,6 @@ function loadFooter() {
             contactTitle: "Contact",
             contactText: "Ready to begin your musical journey?",
             cta: "Get Started Today",
-            legalTitle: "Legal",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
@@ -55,7 +54,6 @@ function loadFooter() {
             contactTitle: "Επικοινωνία",
             contactText: "Έτοιμοι να ξεκινήσετε το μουσικό σας ταξίδι;",
             cta: "Ξεκινήστε Σήμερα",
-            legalTitle: "Νομικά",
             legal: {
                 privacy: "Πολιτική Απορρήτου",
                 terms: "Όροι Υπηρεσίας",
@@ -101,14 +99,11 @@ function loadFooter() {
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <div class="footer-legal">
-                        <h4>${content[lang].legalTitle}</h4>
-                        <ul class="legal-links">
-                            <li><a href="${relativePath}privacy-policy.html">${content[lang].legal.privacy}</a></li>
-                            <li><a href="${relativePath}terms-of-service.html">${content[lang].legal.terms}</a></li>
-                            <li><a href="${relativePath}lesson-terms.html">${content[lang].legal.lessonTerms}</a></li>
-                        </ul>
-                    </div>
+                    <ul class="legal-links">
+                        <li><a href="${relativePath}privacy-policy.html">${content[lang].legal.privacy}</a></li>
+                        <li><a href="${relativePath}terms-of-service.html">${content[lang].legal.terms}</a></li>
+                        <li><a href="${relativePath}lesson-terms.html">${content[lang].legal.lessonTerms}</a></li>
+                    </ul>
                     <p>${content[lang].copyright}</p>
                 </div>
             </div>
