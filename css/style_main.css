@@ -622,6 +622,55 @@ body {
     color: var(--color-light-blue);
 }
 
+/* Legal links styling */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-legal {
+    margin-bottom: 1rem;
+}
+
+.footer-legal h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legal-links li {
+    margin: 0;
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .legal-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
 /* Contact Page Specific Styles */
 .contact-form-container {
     background: var(--color-white);
