@@ -180,7 +180,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+    margin-top: 80px; 
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 2.5rem);
