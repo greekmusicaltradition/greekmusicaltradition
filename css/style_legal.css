@@ -241,9 +241,22 @@
     margin-top: 3rem; /* Space between last policy section and footer info */
 }
 
-.info-boxes {
+/* New Flexbox Container for info boxes and buttons */
+.info-boxes-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between the two info-box-groups */
     margin-bottom: 2.5rem;
-    /* If info-boxes are a grid, you might want flexbox here too for consistency */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.info-box-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    flex: 1 1 45%; /* Allows for two items per row, with some flexibility */
+    max-width: 450px; /* Optional: limit individual box width */
+    gap: 1.5rem; /* Space between info-box and button within the group */
 }
 
 .info-box {
@@ -252,6 +265,12 @@
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Slightly reduced shadow */
     color: var(--color-white); /* Ensure text is readable on this background */
+    width: 100%; /* Ensure the info-box takes full width of its group */
+    display: flex; /* Use flex to align paragraph inside */
+    align-items: center; /* Center text vertically if needed */
+    justify-content: center; /* Center text horizontally */
+    text-align: center; /* Ensure text itself is centered */
+    min-height: 120px; /* Give a min-height for visual consistency */
 }
 
 .info-box p {
@@ -259,15 +278,14 @@
     font-weight: 300;
     line-height: 1.6;
     opacity: 0.9;
+    margin: 0; /* Reset margin for paragraphs inside info-box */
 }
 
+/* Remove this as buttons are now inside info-box-group */
 .cta-buttons-legal-page {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem; /* Space between info-box and buttons */
+    display: none;
 }
+
 
 /* Button Styles (already good, just small adjustments) */
 .btn-primary, .btn-secondary {
@@ -344,17 +362,23 @@
         padding-top: 1.5rem;
     }
 
+    .info-boxes-wrapper {
+        flex-direction: column; /* Stack info boxes and buttons vertically */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .info-box-group {
+        flex: 1 1 100%; /* Take full width */
+        max-width: 400px; /* Adjust max width for stacked elements */
+    }
+
     .info-box {
         padding: 1.5rem;
     }
 
     .info-box p {
         font-size: clamp(0.95rem, 3vw, 1.1rem);
-    }
-
-    .cta-buttons-legal-page {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 1rem;
     }
 
     .btn-primary, .btn-secondary {
