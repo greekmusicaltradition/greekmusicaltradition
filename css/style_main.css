@@ -315,6 +315,8 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 32px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Stack header, content, and description vertically */
 }
 
 .lesson-card:hover {
@@ -336,13 +338,14 @@ body {
 
 .lesson-content {
     padding: 2rem;
-    display: flex;
-    flex-direction: column; /* This is KEY: stacks children vertically */
-    align-items: center; /* Centers items horizontally within the column */
-    gap: 1.5rem; /* Gap between children: image, details, description box */
+    display: flex; /* Keep this as flex for image and details side-by-side */
+    flex-direction: row; /* Ensure image and details are in a row */
+    align-items: flex-start; /* Align items to the top (icon and bullet points) */
+    gap: 1.5rem; /* Gap between image and details */
+    flex-grow: 1; /* Allow this section to grow and push the description box to the bottom */
 }
 
-/* Styling for the icon and bullet points within lesson-content */
+/* Styling for the icon on the left */
 .lesson-image {
     flex-shrink: 0; /* Prevents shrinking */
     width: 80px;
@@ -355,8 +358,8 @@ body {
 }
 
 .lesson-details {
-    flex: 1; /* Allows it to grow if needed */
-    width: 100%; /* Ensures it takes full width in column layout */
+    flex: 1; /* Allows it to grow and take available space */
+    width: 100%; /* Ensures it takes full width in column layout within its own flex context */
     text-align: left; /* Align text within details */
 }
 
@@ -398,22 +401,23 @@ body {
 .byzantine-icon {
     font-size: 48px; /* Icon size */
     color: var(--color-primary-blue); /* Icon color */
-    /* Add other icon styling if needed, e.g., text-shadow */
 }
 
-/* --- Lesson Description Box (below bullet points) --- */
+/* --- Lesson Description Box (at the very bottom of the card) --- */
 .lesson-description-box {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue)); /* Matches lesson-header background */
     color: var(--color-white); /* White text */
-    padding: 1rem 1.5rem; /* Padding for readability */
+    padding: 1.5rem; /* More padding for better appearance */
     text-align: center; /* Center the text */
     font-size: 0.95rem; /* Adjust font size as needed */
     line-height: 1.5; /* Improve line spacing */
-    margin-top: 1.5rem; /* Space above it to separate from bullet points */
-    width: calc(100% + 4rem); /* Expand to full width of the card, accounting for lesson-content padding */
-    margin-left: -2rem; /* Pull it left to align with card edge */
-    margin-right: -2rem; /* Pull it right to align with card edge */
-    padding-bottom: 1.5rem; /* Give it more padding at the bottom */
+    /* Position at the very bottom, stretching full width and maintaining border-radius */
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    /* No margin top/bottom, it will naturally align due to flexbox */
+    margin-top: auto; /* Pushes this element to the bottom of the flex container (lesson-card) */
+    /* Ensure it has a consistent width across the card, considering padding */
+    width: 100%; /* Take full width of its parent (.lesson-card) */
 }
 
 .lesson-description-box p {
@@ -427,7 +431,6 @@ body {
 .footer-info {
     margin-top: 3rem; /* Provides space from content above */
     padding-bottom: 2rem; /* Ensures space before the actual footer starts */
-    /* .info-boxes will be an empty div here, but its parent .footer-info provides necessary spacing */
 }
 
 /* --- Footer Styles --- */
@@ -440,7 +443,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
