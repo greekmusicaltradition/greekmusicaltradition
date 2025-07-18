@@ -131,24 +131,6 @@
     vertical-align: middle;
 }
 
-/* Specific icon content (keep these as you had them) */
-.policy-section h3 .icon-calendar::before { content: "\f073"; }
-.policy-section h3 .icon-clock::before { content: "\f017"; }
-.policy-section h3 .icon-user-check::before { content: "\f4fc"; }
-.policy-section h3 .icon-cancel::before { content: "\f057"; }
-.policy-section h3 .icon-payment::before { content: "\f09d"; }
-.policy-section h3 .icon-trial::before { content: "\f02d"; }
-.policy-section h3 .icon-materials::before { content: "\f5da"; }
-.policy-section h3 .icon-practice::before { content: "\f270"; }
-.policy-section h3 .icon-chat::before { content: "\f075"; }
-.policy-section h3 .icon-conduct::before { content: "\f0a1"; }
-.policy-section h3 .icon-holiday::before { content: "\f783"; }
-.policy-section h3 .icon-terminate::before { content: "\f05c"; }
-.policy-section h3 .icon-privacy::before { content: "\f510"; }
-.policy-section h3 .icon-safety::before { content: "\f1e3"; }
-.policy-section h3 .icon-contact::before { content: "\f0e0"; }
-
-
 .policy-section p {
     font-size: 1rem; /* Ensuring consistent base paragraph font size */
     line-height: 1.6;
