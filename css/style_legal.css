@@ -43,7 +43,7 @@
     box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Reduced shadow intensity */
     margin-bottom: 3rem;
     text-align: center;
-    /* animation: fadeIn 0.8s ease-out forwards;  Keep if desired, but remove if simplifying */
+    /* animation: fadeIn 0.8s ease-out forwards;  Keep if desired, but remove if simplifying */
 }
 
 .policy-intro h2 {
@@ -115,7 +115,9 @@
     font-weight: 600;
     display: flex;
     align-items: center;
+    justify-content: center; /* This will center the text and icon horizontally */
     gap: 10px;
+    text-align: center; /* Ensures the text itself is centered within the flex item */
 }
 
 /* Icons for policy sections */
@@ -399,7 +401,7 @@
     .policy-section h3 {
         font-size: 1.25rem;
         flex-direction: column; /* Stack icon and text on very small screens */
-        align-items: flex-start;
+        align-items: center; /* Center items when stacked */
         gap: 0.2rem;
     }
     .policy-section h3::before {
