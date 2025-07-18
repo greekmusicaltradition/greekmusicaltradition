@@ -76,23 +76,32 @@
     margin-bottom: 0; /* Remove default margin from last ul */
 }
 
+/* Policy Section List Item Styling (for main list) */
 .policy-section li {
     margin-bottom: 0.8rem;
     color: var(--color-text-medium);
-    line-height: 1.7; /* Keep this line-height for good readability */
-    position: relative;
-    padding-left: 1.8rem; /* Space for custom bullet */
+    line-height: 1.7; /* Keep for readability */
     font-size: clamp(0.9rem, 2vw, 1rem);
+
+    /* Key changes for alignment using display: table */
+    display: table; /* Makes the li behave like a table */
+    width: 100%; /* Ensure it takes full width */
+    padding-left: 0; /* Remove padding from li itself */
 }
 
-/* Custom Bullet Point for List Items */
+/* Custom Bullet Point for List Items (for main list) */
 .policy-section li::before {
     content: '\2022'; /* Unicode for a solid bullet point */
     color: var(--color-accent-gold); /* Use accent color for bullets */
-    position: absolute;
-    left: 0;
+    
+    /* Key changes for alignment using display: table-cell */
+    display: table-cell; /* Makes the bullet a table cell */
+    vertical-align: top; /* Align the content of this cell to the top */
+    width: 1.8rem; /* Give it a fixed width to create space for the bullet */
+    padding-right: 0.5rem; /* Add a small gap between bullet and text */
+    text-align: left; /* Ensure the bullet itself is left-aligned within its cell */
+    
     font-size: 1.2rem; /* Larger bullet */
-    top: 0.2em; /* This value often works well to visually align the bullet. */
 }
 
 .policy-section li strong {
@@ -108,11 +117,30 @@
     padding-left: 1rem;
 }
 
+/* Nested Policy Section List Item Styling */
+.policy-section li ul li {
+    /* Apply the same table display properties to nested list items */
+    display: table;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 0.8rem; /* Keep consistent margin */
+    color: var(--color-text-medium); /* Ensure text color is inherited/set */
+    line-height: 1.7; /* Ensure line height is consistent */
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Ensure font size is consistent */
+}
+
+/* Nested Custom Bullet Point for List Items */
 .policy-section li ul li::before {
     content: '\2013'; /* Use a dash for nested bullets */
     color: var(--color-tertiary-blue);
-    font-size: 1rem;
-    top: 0.2em; /* Apply the same top adjustment */
+    font-size: 1rem; /* Slightly smaller for nested */
+    
+    /* Apply table-cell properties here too */
+    display: table-cell;
+    vertical-align: top;
+    width: 1.8rem;
+    padding-right: 0.5rem;
+    text-align: left;
 }
 
 
