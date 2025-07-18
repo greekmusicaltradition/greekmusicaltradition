@@ -1,30 +1,34 @@
-/* style_legal.css */
+/* style_legal.css - Simplified Version */
 
 /* General Policy Page Layout */
 .policy-page-container {
-    padding-top: 2rem; /* Add some space above the intro */
-    padding-bottom: 4rem; /* More space at the bottom */
+    max-width: 1000px; /* Slightly wider for better text flow on large screens */
+    margin: 2rem auto; /* Center the content with top/bottom margin */
+    padding: 0 1.5rem; /* Consistent horizontal padding */
 }
 
 /* Hero section specific to legal pages */
 .hero-legal {
+    /* Keeping your gradient, ensure --color-primary-blue and --color-secondary-blue are defined */
     background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-secondary-blue) 100%);
+    color: var(--color-white); /* Assuming white text for readability on dark background */
     padding: 3rem 0;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly softer shadow */
+    margin-top: 0; /* Ensures it's flush with the top */
 }
 
 .hero-legal h1 {
-    font-size: clamp(2.2rem, 6vw, 3.5rem); /* Larger, more impactful title */
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Slightly larger hero title */
     font-weight: 700;
     margin-bottom: 0.75rem;
     line-height: 1.2;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Softer text shadow */
 }
 
 .hero-legal p {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    opacity: 0.9;
+    opacity: 0.95; /* Slightly less transparent for better readability */
     font-weight: 300;
     max-width: 700px;
     margin: 0.5rem auto 0;
@@ -36,16 +40,16 @@
     background-color: var(--color-white);
     padding: 2.5rem;
     border-radius: var(--border-radius-large);
-    box-shadow: 0 8px 25px var(--shadow-light);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Reduced shadow intensity */
     margin-bottom: 3rem;
     text-align: center;
-    animation: fadeIn 0.8s ease-out forwards;
+    /* animation: fadeIn 0.8s ease-out forwards;  Keep if desired, but remove if simplifying */
 }
 
 .policy-intro h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 2.8rem); /* Slightly adjusted for balance */
     color: var(--color-primary-blue);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem; /* More space below heading */
     font-weight: 700;
     position: relative;
     padding-bottom: 15px;
@@ -57,8 +61,8 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
+    width: 60px; /* Slightly shorter line */
+    height: 3px; /* Thinner line */
     background-color: var(--color-accent-gold);
     border-radius: 2px;
 }
@@ -71,57 +75,64 @@
 }
 
 .policy-intro p {
-    font-size: clamp(1rem, 2.2vw, 1.1rem);
-    line-height: 1.8;
+    font-size: clamp(1rem, 2.2vw, 1.15rem); /* Slightly larger base font size */
+    line-height: 1.7; /* Optimized for readability */
     color: var(--color-text-dark);
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* Policy Sections Grid */
+/* Changed to a more flexible layout for sections to prevent "weird" gaps on odd numbers */
 .policy-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem; /* Increased gap for better spacing */
+    display: flex; /* Use flexbox for simpler layout control */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items when they wrap */
+    gap: 2rem; /* Consistent gap between items */
     margin-bottom: 4rem;
 }
 
 .policy-section {
     background: var(--color-white);
     padding: 2rem;
-    border-radius: var(--border-radius-medium); /* Softer corners */
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08); /* Lighter, more elegant shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--color-secondary-blue); /* Distinct top border */
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06); /* Much softer shadow */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Faster, subtler transition */
+    border-top: 4px solid var(--color-secondary-blue); /* Slightly thinner top border */
+    flex: 1 1 calc(33% - 2rem); /* Approx 3 items per row, with gap consideration */
+    min-width: 300px; /* Minimum width before wrapping */
 }
 
 .policy-section:hover {
-    transform: translateY(-8px); /* More pronounced lift on hover */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Less pronounced lift on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Softer shadow on hover */
 }
 
 .policy-section h3 {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-size: clamp(1.25rem, 3vw, 1.7rem); /* Slightly adjusted font size */
     color: var(--color-primary-blue);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem; /* Reduced space for tighter heading */
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 10px; /* Space for icons */
+    gap: 10px;
 }
 
-/* Icons for policy sections (example - replace with actual icons/font awesome) */
+/* Icons for policy sections */
+/* Ensure you have Font Awesome loaded in your HTML for these to display */
 .policy-section h3::before {
+    /* content: var(--fa-var-info-circle); /* Example if using CSS variables for content directly */
     font-family: 'Font Awesome 5 Free'; /* Assuming Font Awesome or similar */
     font-weight: 900;
     color: var(--color-accent-gold);
-    font-size: 1.4em;
-    margin-right: 0.5rem;
+    font-size: 1.3em; /* Slightly smaller icons */
+    margin-right: 0.25rem; /* Closer to text */
     display: inline-block;
     vertical-align: middle;
 }
 
-.policy-section h3 .icon-calendar::before { content: "\f073"; } /* Example icon */
+/* Specific icon content (keep these as you had them) */
+.policy-section h3 .icon-calendar::before { content: "\f073"; }
 .policy-section h3 .icon-clock::before { content: "\f017"; }
 .policy-section h3 .icon-user-check::before { content: "\f4fc"; }
 .policy-section h3 .icon-cancel::before { content: "\f057"; }
@@ -138,18 +149,26 @@
 .policy-section h3 .icon-contact::before { content: "\f0e0"; }
 
 
+.policy-section p {
+    font-size: 1rem; /* Ensuring consistent base paragraph font size */
+    line-height: 1.6;
+    color: var(--color-text-dark); /* Ensure this is well-defined and readable */
+    margin-bottom: 1rem; /* Consistent spacing */
+}
+
 .policy-section ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding-left: 0;
+    margin-top: 0.8rem; /* Add some space above lists */
 }
 
 .policy-section li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem; /* Slightly reduced space between list items */
     color: var(--color-text-medium);
-    line-height: 1.7;
+    line-height: 1.6; /* Consistent line height */
     position: relative;
-    padding-left: 1.5rem; /* Space for custom bullet */
-    font-size: 1rem;
+    padding-left: 1.4rem; /* Adjusted space for custom bullet */
+    font-size: 0.98rem; /* Slightly smaller for lists */
 }
 
 .policy-section li:last-child {
@@ -157,8 +176,8 @@
 }
 
 .policy-section li::before {
-    content: '✓'; /* Custom checkmark bullet */
-    color: var(--color-secondary-blue);
+    content: '›'; /* Changed to a simpler arrow-like character */
+    color: var(--color-accent-gold); /* Using gold for list markers for subtle pop */
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -167,35 +186,43 @@
 }
 
 .policy-section li strong {
-    color: var(--color-text-dark); /* Make bold text stand out more */
+    color: var(--color-primary-blue); /* Bold text within lists uses primary blue */
 }
 
 /* Nested list for Parental Presence */
 .policy-section ul ul {
     margin-top: 0.5rem;
-    margin-left: 1rem; /* Indent nested list */
-    border-left: 2px solid var(--color-light-blue); /* Visual cue for nested list */
-    padding-left: 1rem;
+    margin-left: 1.2rem; /* Indent nested list slightly more */
+    border-left: 1px solid var(--color-light-gray); /* Thinner, softer border */
+    padding-left: 0.8rem; /* Reduced padding */
 }
 
 .policy-section ul ul li::before {
-    content: '•'; /* Different bullet for nested list */
-    color: var(--color-accent-gold);
+    content: '-'; /* Simpler dash for nested list */
+    color: var(--color-text-medium); /* Subtler color for nested bullets */
 }
 
 
 /* Specific styling for the Contact Info policy section */
 .contact-policy-section {
     text-align: center;
-    background-color: var(--color-light-blue);
-    border-top-color: var(--color-accent-gold);
+    background-color: var(--color-light-blue); /* Keeping your light blue background */
+    border-top-color: var(--color-accent-gold); /* Keep top border color */
+    padding: 2.5rem; /* Consistent padding */
+    border-radius: var(--border-radius-medium); /* Ensure it matches other sections */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.contact-policy-section h3 {
+    justify-content: center; /* Center icon and text */
+    margin-bottom: 1.5rem; /* More space below heading */
 }
 
 .contact-policy-section p {
-    font-size: 1.1rem;
+    font-size: 1.15rem; /* Slightly larger text for emphasis */
     color: var(--color-primary-blue);
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
 }
 
 .contact-policy-section em {
@@ -206,46 +233,52 @@
 }
 
 
-/* Footer info and CTA buttons */
+/* Footer info and CTA buttons - Assuming these are general and can be simplified */
 .footer-info {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px dashed var(--border-light); /* Subtle separator */
+    padding-top: 2.5rem; /* More space above footer info */
+    border-top: 1px solid rgba(0,0,0,0.05); /* A cleaner, solid, very light line */
+    margin-top: 3rem; /* Space between last policy section and footer info */
 }
 
 .info-boxes {
     margin-bottom: 2.5rem;
+    /* If info-boxes are a grid, you might want flexbox here too for consistency */
 }
 
 .info-box {
     padding: 2rem;
     border-radius: var(--border-radius-large);
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Slightly reduced shadow */
+    color: var(--color-white); /* Ensure text is readable on this background */
 }
 
 .info-box p {
     font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 .cta-buttons-legal-page {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    flex-wrap: wrap;
+    margin-top: 2.5rem; /* Space between info-box and buttons */
 }
 
-/* Button Styles (assuming these are in style_main.css or similar) */
+/* Button Styles (already good, just small adjustments) */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 0.9rem 2.2rem;
-    border-radius: 50px; /* Pill shape for buttons */
+    padding: 0.8rem 2rem; /* Slightly smaller padding */
+    border-radius: 40px; /* Slightly less pill-shaped */
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 1.05rem; /* Slightly smaller font */
+    transition: all 0.2s ease-out; /* Faster, smoother transition */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Softer shadow */
 }
 
 .btn-primary {
@@ -255,9 +288,10 @@
 }
 
 .btn-primary:hover {
-    background-color: #c09f2d; /* Slightly darker gold */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    background-color: var(--color-primary-blue); /* Change to primary blue on hover for cohesion */
+    border-color: var(--color-primary-blue);
+    transform: translateY(-2px); /* Less pronounced lift */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Softer hover shadow */
 }
 
 .btn-secondary {
@@ -267,10 +301,10 @@
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-primary-blue);
+    background-color: var(--color-secondary-blue); /* Change to secondary blue on hover */
     color: var(--color-white);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* Responsive adjustments for legal page */
@@ -281,28 +315,29 @@
     }
 
     .policy-intro h2 {
-        font-size: clamp(1.5rem, 5vw, 2rem);
+        font-size: clamp(1.6rem, 5vw, 2.2rem); /* Adjusted for medium screens */
     }
 
     .policy-intro p {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        font-size: clamp(0.95rem, 2.5vw, 1.05rem);
     }
 
     .policy-sections {
-        grid-template-columns: 1fr; /* Stack sections on smaller screens */
+        flex-direction: column; /* Stack sections on smaller screens */
         gap: 1.5rem;
     }
 
     .policy-section {
         padding: 1.5rem;
+        flex: 1 1 100%; /* Take full width */
     }
 
     .policy-section h3 {
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
     }
 
     .policy-section li {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .footer-info {
@@ -323,9 +358,10 @@
     }
 
     .btn-primary, .btn-secondary {
-        width: 80%; /* Make buttons wider on small screens */
-        max-width: 300px;
+        width: 90%; /* Make buttons wider on small screens */
+        max-width: 350px; /* Limit max width */
         margin: 0 auto; /* Center buttons */
+        padding: 0.9rem 1.8rem;
     }
 }
 
@@ -342,6 +378,10 @@
         font-size: clamp(0.85rem, 3.5vw, 1rem);
     }
 
+    .policy-page-container {
+        padding: 0 1rem;
+    }
+
     .policy-intro {
         padding: 1rem;
     }
@@ -351,20 +391,27 @@
     }
 
     .policy-section h3 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        flex-direction: column; /* Stack icon and text on very small screens */
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    .policy-section h3::before {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 
     .policy-section li {
-        font-size: 0.9rem;
-        padding-left: 1.2rem;
+        font-size: 0.88rem;
+        padding-left: 1.1rem;
     }
 
     .policy-section li::before {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .btn-primary, .btn-secondary {
-        padding: 0.8rem 1.8rem;
-        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
     }
 }
