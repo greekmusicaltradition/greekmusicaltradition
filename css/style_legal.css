@@ -1,425 +1,721 @@
-/* style_legal.css - Simplified Version */
-
-/* General Policy Page Layout */
-.policy-page-container {
-    max-width: 1000px; /* Slightly wider for better text flow on large screens */
-    margin: 2rem auto; /* Center the content with top/bottom margin */
-    padding: 0 1.5rem; /* Consistent horizontal padding */
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Hero section specific to legal pages */
-.hero-legal {
-    /* Keeping your gradient, ensure --color-primary-blue and --color-secondary-blue are defined */
-    background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-secondary-blue) 100%);
-    color: var(--color-white); /* Assuming white text for readability on dark background */
-    padding: 3rem 0;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly softer shadow */
-    margin-top: 0; /* Ensures it's flush with the top */
+:root {
+    --color-primary-blue: #4b7988;
+    --color-secondary-blue: #6b9daf;
+    --color-tertiary-blue: #7bb3c7;
+    --color-accent-gold: #d4af37;
+    --color-light-blue: #b8dce8;
+    --color-text-dark: #333;
+    --color-text-medium: #555;
+    --color-background-light: #f5f5f5;
+    --color-white: #ffffff;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.15);
+    --border-light: #e0e0e0;
+    --border-radius-small: 8px;
+    --border-radius-medium: 15px;
+    --border-radius-large: 20px;
 }
 
-.hero-legal h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem); /* Slightly larger hero title */
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Softer text shadow */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    padding-top: 80px; /* Space for the fixed header */
 }
 
-.hero-legal p {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    opacity: 0.95; /* Slightly less transparent for better readability */
-    font-weight: 300;
-    max-width: 700px;
-    margin: 0.5rem auto 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-
-/* Policy Introduction Section */
-.policy-intro {
-    background-color: var(--color-white);
-    padding: 2.5rem;
-    border-radius: var(--border-radius-large);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Reduced shadow intensity */
-    margin-bottom: 3rem;
-    text-align: center;
-    /* animation: fadeIn 0.8s ease-out forwards;  Keep if desired, but remove if simplifying */
+/* --- Navigation --- */
+.navbar {
+    background: linear-gradient(135deg,
+        rgba(75, 121, 136, 0.95),
+        rgba(107, 157, 175, 0.95)
+    );
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-.policy-intro h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem); /* Slightly adjusted for balance */
-    color: var(--color-primary-blue);
-    margin-bottom: 1.2rem; /* More space below heading */
-    font-weight: 700;
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 20px var(--shadow-medium);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    padding-bottom: 15px;
 }
 
-.policy-intro h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px; /* Slightly shorter line */
-    height: 3px; /* Thinner line */
-    background-color: var(--color-accent-gold);
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+    z-index: 1001;
+}
+
+.nav-brand img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav-menu a:hover {
+    color: var(--color-light-blue);
+}
+
+.nav-menu a.active {
+    color: var(--color-light-blue);
+    font-weight: 600;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none; /* Hidden by default for desktop */
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: var(--color-white);
+    margin: 3px 0;
+    transition: 0.3s;
     border-radius: 2px;
 }
 
-.policy-intro .date-info {
-    font-style: italic;
-    color: var(--color-text-medium);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.policy-intro p {
-    font-size: clamp(1rem, 2.2vw, 1.15rem); /* Slightly larger base font size */
-    line-height: 1.7; /* Optimized for readability */
-    color: var(--color-text-dark);
-    max-width: 800px;
-    margin: 0 auto;
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
 }
 
-/* Policy Sections Grid */
-/* Changed to a more flexible layout for sections to prevent "weird" gaps on odd numbers */
-.policy-sections {
-    display: flex; /* Use flexbox for simpler layout control */
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: center; /* Center items when they wrap */
-    gap: 2rem; /* Consistent gap between items */
-    margin-bottom: 4rem;
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
-.policy-section {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06); /* Much softer shadow */
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Faster, subtler transition */
-    border-top: 4px solid var(--color-secondary-blue); /* Slightly thinner top border */
-    flex: 1 1 calc(33% - 2rem); /* Approx 3 items per row, with gap consideration */
-    min-width: 300px; /* Minimum width before wrapping */
-}
-
-.policy-section:hover {
-    transform: translateY(-5px); /* Less pronounced lift on hover */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Softer shadow on hover */
-}
-
-.policy-section h3 {
-    font-size: clamp(1.25rem, 3vw, 1.7rem); /* Slightly adjusted font size */
-    color: var(--color-primary-blue);
-    margin-bottom: 1rem; /* Reduced space for tighter heading */
-    font-weight: 600;
+/* Navigation updates (right side) */
+.nav-right {
     display: flex;
     align-items: center;
-    justify-content: center; /* This will center the text and icon horizontally */
-    gap: 10px;
-    text-align: center; /* Ensures the text itself is centered within the flex item */
+    gap: 1rem;
 }
 
-/* Icons for policy sections */
-/* Ensure you have Font Awesome loaded in your HTML for these to display */
-.policy-section h3::before {
-    /* content: var(--fa-var-info-circle); /* Example if using CSS variables for content directly */
-    font-family: 'Font Awesome 5 Free'; /* Assuming Font Awesome or similar */
-    font-weight: 900;
-    color: var(--color-accent-gold);
-    font-size: 1.3em; /* Slightly smaller icons */
-    margin-right: 0.25rem; /* Closer to text */
-    display: inline-block;
-    vertical-align: middle;
+/* Language Switcher (desktop) */
+.language-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-large);
+    padding: 4px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.policy-section p {
-    font-size: 1rem; /* Ensuring consistent base paragraph font size */
-    line-height: 1.6;
-    color: var(--color-text-dark); /* Ensure this is well-defined and readable */
-    margin-bottom: 1rem; /* Consistent spacing */
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border: none;
+    background: transparent;
+    color: var(--color-white);
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-.policy-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 0.8rem; /* Add some space above lists */
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.policy-section li {
-    margin-bottom: 0.6rem; /* Slightly reduced space between list items */
-    color: var(--color-text-medium);
-    line-height: 1.6; /* Consistent line height */
-    position: relative;
-    padding-left: 1.4rem; /* Adjusted space for custom bullet */
-    font-size: 0.98rem; /* Slightly smaller for lists */
+.lang-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-.policy-section li:last-child {
-    margin-bottom: 0;
+/* Mobile language switcher (hidden by default) */
+.mobile-lang-switcher {
+    display: none;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 1rem;
 }
 
-.policy-section li::before {
-    content: '›'; /* Changed to a simpler arrow-like character */
-    color: var(--color-accent-gold); /* Using gold for list markers for subtle pop */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.1em;
+.mobile-lang-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.policy-section li strong {
-    color: var(--color-primary-blue); /* Bold text within lists uses primary blue */
+.mobile-lang-buttons .lang-btn {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-large);
+    gap: 8px;
 }
 
-/* Nested list for Parental Presence */
-.policy-section ul ul {
-    margin-top: 0.5rem;
-    margin-left: 1.2rem; /* Indent nested list slightly more */
-    border-left: 1px solid var(--color-light-gray); /* Thinner, softer border */
-    padding-left: 0.8rem; /* Reduced padding */
-}
-
-.policy-section ul ul li::before {
-    content: '-'; /* Simpler dash for nested list */
-    color: var(--color-text-medium); /* Subtler color for nested bullets */
-}
-
-
-/* Specific styling for the Contact Info policy section */
-.contact-policy-section {
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem 0;
     text-align: center;
-    background-color: var(--color-light-blue); /* Keeping your light blue background */
-    border-top-color: var(--color-accent-gold); /* Keep top border color */
-    padding: 2.5rem; /* Consistent padding */
-    border-radius: var(--border-radius-medium); /* Ensure it matches other sections */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Soft shadow */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 0px; /* Aligns with the top of the content below the fixed header */
 }
 
-.contact-policy-section h3 {
-    justify-content: center; /* Center icon and text */
-    margin-bottom: 1.5rem; /* More space below heading */
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.contact-policy-section p {
-    font-size: 1.15rem; /* Slightly larger text for emphasis */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    padding: 4rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for smaller screens */
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.content-grid:last-of-type {
+    align-items: center;
+    min-height: 400px;
+}
+
+.combined-panel {
+    background: var(--color-white);
+    border: 4px solid var(--color-secondary-blue);
+    border-radius: var(--border-radius-large);
+    padding: 2rem;
+    box-shadow: 0 12px 40px var(--shadow-medium);
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns for desktop */
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Decorative Panel (image on the left) */
+.decorative-panel {
+    position: relative;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shadow-light);
+    min-height: 300px;
+}
+
+.decorative-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Info Panel (text on the right) */
+.info-panel {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.info-panel h2 {
     color: var(--color-primary-blue);
-    margin-bottom: 1.2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.info-panel p {
+    margin-bottom: 1rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* --- Lesson Cards Grid --- */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.lesson-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Stack header, content, and description vertically */
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+}
+
+.lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.lesson-header h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 600;
+}
+
+.lesson-content {
+    /* Main content area containing icon and details */
+    padding: 2rem;
+    display: flex; /* Makes icon and details side-by-side */
+    flex-direction: row; /* Arranges children in a row */
+    align-items: flex-start; /* Aligns items to the top (icon and bullet points) */
+    gap: 1.5rem; /* Space between the icon box and the bullet points */
+    flex-grow: 1; /* Allows this section to grow and push the description box to the bottom */
+}
+
+/* Styling for the icon on the left */
+.lesson-image {
+    flex-shrink: 0; /* Prevents it from shrinking */
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-details {
+    flex: 1; /* Allows it to take up the remaining space */
+    width: auto; /* Allow width to be determined by flex container */
+    text-align: left; /* Align text within details */
+}
+
+.lesson-details h4 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lesson-details p {
+    margin-bottom: 1rem;
+    color: var(--color-text-medium);
     line-height: 1.7;
 }
 
-.contact-policy-section em {
-    display: block;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
+.lesson-details ul {
+    list-style: none;
+    padding-left: 0; /* Remove default padding for list */
+}
+
+.lesson-details li {
+    margin-bottom: 0.5rem;
     color: var(--color-text-medium);
+    position: relative;
+    padding-left: 1rem; /* Space for the custom bullet */
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.lesson-details li::before {
+    content: '•';
+    color: var(--color-secondary-blue);
+    position: absolute;
+    left: 0;
+}
+
+.traditional-icon,
+.byzantine-icon {
+    font-size: 48px; /* Icon size */
+    color: var(--color-primary-blue); /* Icon color */
+}
+
+/* --- Lesson Description Box (at the very bottom of the card, full width) --- */
+.lesson-description-box {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue)); /* Matches lesson-header background */
+    color: var(--color-white); /* White text */
+    padding: 1.5rem 2rem; /* Consistent padding */
+    text-align: center; /* Center the text */
+    font-size: 0.95rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve line spacing */
+    
+    /* These properties ensure it stretches edge-to-edge and rounds correctly */
+    /* Remove margin-top: auto; from here as it's no longer a child pushing within lesson-content */
+    /* It's now a direct child of .lesson-card which is already a column flex container */
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+}
+
+.lesson-description-box p {
+    color: var(--color-white); /* Forces text color to white */
+    margin-bottom: 0; /* Remove default paragraph margin if it creates extra space */
+    font-size: inherit; /* Inherit font size from parent div */
 }
 
 
-/* Footer info and CTA buttons - Assuming these are general and can be simplified */
+/* --- Footer Info (for spacing before actual footer) --- */
 .footer-info {
-    text-align: center;
-    padding-top: 2.5rem; /* More space above footer info */
-    border-top: 1px solid rgba(0,0,0,0.05); /* A cleaner, solid, very light line */
-    margin-top: 3rem; /* Space between last policy section and footer info */
+    margin-top: 3rem; /* Provides space from content above */
+    padding-bottom: 2rem; /* Ensures space before the actual footer starts */
 }
 
-/* New Flexbox Container for info boxes and buttons */
-.info-boxes-wrapper {
+/* --- Footer Styles --- */
+.site-footer {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+    color: var(--color-white);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem; /* Space from the footer-info section above */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--color-light-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-light-blue);
+}
+
+.footer-cta {
+    background: var(--color-accent-gold);
+    color: var(--color-white) !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-cta:hover {
+    background-color: #c09f2d;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-bottom .legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* Space between the two info-box-groups */
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.info-box-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    flex: 1 1 45%; /* Allows for two items per row, with some flexibility */
-    max-width: 450px; /* Optional: limit individual box width */
-    gap: 1.5rem; /* Space between info-box and button within the group */
+.footer-bottom .legal-links li {
+    margin-bottom: 0;
 }
 
-.info-box {
-    padding: 2rem;
-    border-radius: var(--border-radius-large);
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Slightly reduced shadow */
-    color: var(--color-white); /* Ensure text is readable on this background */
-    width: 100%; /* Ensure the info-box takes full width of its group */
-    display: flex; /* Use flex to align paragraph inside */
-    align-items: center; /* Center text vertically if needed */
-    justify-content: center; /* Center text horizontally */
-    text-align: center; /* Ensure text itself is centered */
-    min-height: 120px; /* Give a min-height for visual consistency */
-}
-
-.info-box p {
-    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-    font-weight: 300;
-    line-height: 1.6;
-    opacity: 0.9;
-    margin: 0; /* Reset margin for paragraphs inside info-box */
-}
-
-/* Remove this as buttons are now inside info-box-group */
-.cta-buttons-legal-page {
-    display: none;
-}
-
-
-/* Button Styles (already good, just small adjustments) */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 0.8rem 2rem; /* Slightly smaller padding */
-    border-radius: 40px; /* Slightly less pill-shaped */
+.footer-bottom .legal-links a {
+    color: var(--color-white);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.05rem; /* Slightly smaller font */
-    transition: all 0.2s ease-out; /* Faster, smoother transition */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Softer shadow */
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
-.btn-primary {
+.footer-bottom .legal-links a:hover {
+    opacity: 1;
+    color: var(--color-light-blue);
+}
+
+/* Ensure copyright text is also styled */
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* --- Back to Top button --- */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: var(--color-accent-gold);
     color: var(--color-white);
-    border: 2px solid var(--color-accent-gold);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevents interaction when hidden */
+    z-index: 999;
 }
 
-.btn-primary:hover {
-    background-color: var(--color-primary-blue); /* Change to primary blue on hover for cohesion */
-    border-color: var(--color-primary-blue);
-    transform: translateY(-2px); /* Less pronounced lift */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Softer hover shadow */
+#back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-5px);
 }
 
-.btn-secondary {
-    background-color: var(--color-white);
-    color: var(--color-primary-blue);
-    border: 2px solid var(--color-primary-blue);
+#back-to-top:hover {
+    background-color: #c09f2d;
+    transform: translateY(-8px);
 }
 
-.btn-secondary:hover {
-    background-color: var(--color-secondary-blue); /* Change to secondary blue on hover */
-    color: var(--color-white);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive adjustments for legal page */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive adjustments (Media Queries) --- */
+@media (max-width: 992px) {
+    /* Navigation adjustments for smaller screens */
+    .nav-menu {
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(75, 121, 136, 0.98), rgba(107, 157, 175, 0.98));
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 20px;
+        box-shadow: 0 8px 16px var(--shadow-medium);
+        display: none; /* Hidden by default */
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, box-shadow 0.3s ease;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Shown when active */
+        max-height: 300px; /* Adjust as needed */
+        padding: 1rem 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex; /* Show hamburger icon */
+    }
+
+    .language-switcher {
+        display: none; /* Hide desktop language switcher on mobile */
+    }
+
+    .mobile-lang-switcher {
+        display: block; /* Show mobile language switcher */
+    }
+
+    /* Main content grid adjusts to single column */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .combined-panel {
+        grid-template-columns: 1fr; /* Stack elements vertically */
+    }
+
+    .decorative-panel {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
-    .policy-intro {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
+    body {
+        padding-top: 60px; /* Adjust for smaller header on mobile */
     }
 
-    .policy-intro h2 {
-        font-size: clamp(1.6rem, 5vw, 2.2rem); /* Adjusted for medium screens */
+    .navbar {
+        padding: 0.8rem 0;
     }
 
-    .policy-intro p {
-        font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    .hero {
+        padding: 1rem 0;
     }
 
-    .policy-sections {
-        flex-direction: column; /* Stack sections on smaller screens */
-        gap: 1.5rem;
+    .hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2.2rem);
     }
 
-    .policy-section {
-        padding: 1.5rem;
-        flex: 1 1 100%; /* Take full width */
+    .hero-content p {
+        font-size: 1rem;
     }
 
-    .policy-section h3 {
-        font-size: clamp(1.3rem, 4vw, 1.6rem);
+    .main-content {
+        padding: 2rem 0;
     }
 
-    .policy-section li {
-        font-size: 0.9rem;
+    .info-panel h2 {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
     }
 
-    .footer-info {
-        padding-top: 1.5rem;
+    .info-panel p {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     }
 
-    .info-boxes-wrapper {
-        flex-direction: column; /* Stack info boxes and buttons vertically */
-        align-items: center;
-        gap: 2rem;
+    .lessons-grid {
+        grid-template-columns: 1fr;
     }
 
-    .info-box-group {
-        flex: 1 1 100%; /* Take full width */
-        max-width: 400px; /* Adjust max width for stacked elements */
+    /* Adjust footer content for mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    .info-box {
-        padding: 1.5rem;
+    .footer-links {
+        padding: 0;
     }
 
-    .info-box p {
-        font-size: clamp(0.95rem, 3vw, 1.1rem);
-    }
-
-    .btn-primary, .btn-secondary {
-        width: 90%; /* Make buttons wider on small screens */
-        max-width: 350px; /* Limit max width */
-        margin: 0 auto; /* Center buttons */
-        padding: 0.9rem 1.8rem;
+    /* Mobile adjustments for the lesson description box */
+    .lesson-description-box {
+        padding: 1rem 1.5rem; /* Slightly reduced padding on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-    .hero-legal {
-        padding: 2rem 0;
+    .container {
+        padding: 0 15px;
     }
 
-    .hero-legal h1 {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    .nav-container {
+        padding: 0 15px;
     }
 
-    .hero-legal p {
-        font-size: clamp(0.85rem, 3.5vw, 1rem);
+    .hero h1 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
     }
 
-    .policy-page-container {
-        padding: 0 1rem;
-    }
-
-    .policy-intro {
-        padding: 1rem;
-    }
-
-    .policy-section {
-        padding: 1rem;
-    }
-
-    .policy-section h3 {
-        font-size: 1.25rem;
-        flex-direction: column; /* Stack icon and text on very small screens */
-        align-items: center; /* Center items when stacked */
-        gap: 0.2rem;
-    }
-    .policy-section h3::before {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .policy-section li {
-        font-size: 0.88rem;
-        padding-left: 1.1rem;
-    }
-
-    .policy-section li::before {
-        font-size: 0.9em;
-    }
-
-    .btn-primary, .btn-secondary {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
+    /* Smaller back-to-top button */
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
