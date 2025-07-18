@@ -28,7 +28,7 @@ body {
     line-height: 1.6;
     color: var(--color-text-dark);
     background-color: var(--color-background-light);
-    padding-top: 80px;
+    padding-top: 80px; /* Space for the fixed header */
 }
 
 .container {
@@ -37,7 +37,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* --- Navigation --- */
 .navbar {
     background: linear-gradient(135deg,
         rgba(75, 121, 136, 0.95),
@@ -111,7 +111,7 @@ body {
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* Hidden by default for desktop */
     flex-direction: column;
     background: none;
     border: none;
@@ -141,14 +141,14 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Navigation updates */
+/* Navigation updates (right side) */
 .nav-right {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* Language Switcher */
+/* Language Switcher (desktop) */
 .language-switcher {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
@@ -182,7 +182,7 @@ body {
     box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-/* Mobile language switcher */
+/* Mobile language switcher (hidden by default) */
 .mobile-lang-switcher {
     display: none;
     padding: 1rem 0;
@@ -203,7 +203,7 @@ body {
     gap: 8px;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue), var(--color-tertiary-blue));
     color: var(--color-white);
@@ -213,7 +213,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 0px;
+    margin-top: 0px; /* Aligns with the top of the content below the fixed header */
 }
 
 .hero h1 {
@@ -232,14 +232,14 @@ body {
     font-weight: 300;
 }
 
-/* Main Content */
+/* --- Main Content Layout --- */
 .main-content {
     padding: 4rem 0;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Default to single column for smaller screens */
     gap: 3rem;
     margin-bottom: 4rem;
     align-items: start;
@@ -257,13 +257,13 @@ body {
     padding: 2rem;
     box-shadow: 0 12px 40px var(--shadow-medium);
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr; /* Two columns for desktop */
     gap: 2rem;
     align-items: center;
     width: 100%;
 }
 
-/* Decorative Panel */
+/* Decorative Panel (image on the left) */
 .decorative-panel {
     position: relative;
     border-radius: var(--border-radius-medium);
@@ -279,7 +279,7 @@ body {
     display: block;
 }
 
-/* Info Panel */
+/* Info Panel (text on the right) */
 .info-panel {
     background: transparent;
     padding: 0;
@@ -301,20 +301,7 @@ body {
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Styling for the new introductory paragraphs within info-panel */
-.info-panel .byzantine-intro,
-.info-panel .traditional-intro {
-    margin-top: 1.2rem; /* Spacing for these paragraphs */
-    font-style: italic;
-    color: var(--color-secondary-blue); /* A nice touch with a brand color */
-    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
-}
-
-.info-panel .traditional-intro {
-    margin-top: 0.8rem; /* Slightly less margin for the second one to keep them closer */
-}
-
-/* Lessons Grid */
+/* --- Lesson Cards Grid --- */
 .lessons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -350,12 +337,14 @@ body {
 .lesson-content {
     padding: 2rem;
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    flex-direction: column; /* This is KEY: stacks children vertically */
+    align-items: center; /* Centers items horizontally within the column */
+    gap: 1.5rem; /* Gap between children: image, details, description box */
 }
 
+/* Styling for the icon and bullet points within lesson-content */
 .lesson-image {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents shrinking */
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
@@ -366,7 +355,9 @@ body {
 }
 
 .lesson-details {
-    flex: 1;
+    flex: 1; /* Allows it to grow if needed */
+    width: 100%; /* Ensures it takes full width in column layout */
+    text-align: left; /* Align text within details */
 }
 
 .lesson-details h4 {
@@ -384,13 +375,15 @@ body {
 
 .lesson-details ul {
     list-style: none;
+    width: 100%; /* Ensure bullet points take full width */
+    padding-left: 0; /* Remove default padding for list */
 }
 
 .lesson-details li {
     margin-bottom: 0.5rem;
     color: var(--color-text-medium);
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1rem; /* Space for the custom bullet */
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
@@ -403,42 +396,51 @@ body {
 
 .traditional-icon,
 .byzantine-icon {
-    font-size: 48px;
-    text-align: center;
+    font-size: 48px; /* Icon size */
+    color: var(--color-primary-blue); /* Icon color */
+    /* Add other icon styling if needed, e.g., text-shadow */
 }
 
-/* Footer Info - REVISED to ensure visibility and correct spacing */
+/* --- Lesson Description Box (below bullet points) --- */
+.lesson-description-box {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue)); /* Matches lesson-header background */
+    color: var(--color-white); /* White text */
+    padding: 1rem 1.5rem; /* Padding for readability */
+    text-align: center; /* Center the text */
+    font-size: 0.95rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve line spacing */
+    margin-top: 1.5rem; /* Space above it to separate from bullet points */
+    width: calc(100% + 4rem); /* Expand to full width of the card, accounting for lesson-content padding */
+    margin-left: -2rem; /* Pull it left to align with card edge */
+    margin-right: -2rem; /* Pull it right to align with card edge */
+    padding-bottom: 1.5rem; /* Give it more padding at the bottom */
+}
+
+.lesson-description-box p {
+    color: var(--color-white); /* Forces text color to white */
+    margin-bottom: 0; /* Remove default paragraph margin if it creates extra space */
+    font-size: inherit; /* Inherit font size from parent div */
+}
+
+
+/* --- Footer Info (for spacing before actual footer) --- */
 .footer-info {
-    margin-top: 3rem; /* Keep main spacing from content above */
-    padding-bottom: 2rem; /* Add some padding at the bottom if needed for spacing before the actual footer */
-    /* If you still have the empty .info-boxes div, you might want to keep some of its layout properties if you need it as a structural element */
+    margin-top: 3rem; /* Provides space from content above */
+    padding-bottom: 2rem; /* Ensures space before the actual footer starts */
+    /* .info-boxes will be an empty div here, but its parent .footer-info provides necessary spacing */
 }
 
-/* If the .info-boxes div is *still* present in your HTML but empty,
-   you might need to ensure it has display: grid to maintain structure if relied upon.
-   If it's gone from HTML, these next rules are unnecessary. */
-.info-boxes {
-    display: grid; /* Keep it as a grid container if it's in your HTML for structure */
-    grid-template-columns: 1fr; /* Or whatever layout you need if content is added later */
-    gap: 2rem;
-    /* Removed background/shadow as the descriptive boxes are gone */
-}
-
-/* The .info-box specific styling is removed as its content has been moved.
-   If you have other .info-box elements elsewhere, apply their styles specifically. */
-
-
-/* Footer Styles */
+/* --- Footer Styles --- */
 .site-footer {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
     color: var(--color-white);
     padding: 3rem 0 1rem;
-    margin-top: 4rem;
+    margin-top: 4rem; /* Space from the footer-info section above */
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -528,7 +530,7 @@ body {
     margin-top: 10px;
 }
 
-/* Back to Top button */
+/* --- Back to Top button --- */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -546,8 +548,8 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevents interaction when hidden */
     z-index: 999;
 }
 
@@ -562,7 +564,7 @@ body {
     transform: translateY(-8px);
 }
 
-/* Animations */
+/* --- Animations --- */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -589,8 +591,9 @@ body {
     transform: translateY(0);
 }
 
-/* Responsive adjustments */
+/* --- Responsive adjustments (Media Queries) --- */
 @media (max-width: 992px) {
+    /* Navigation adjustments for smaller screens */
     .nav-menu {
         flex-direction: column;
         background: linear-gradient(135deg, rgba(75, 121, 136, 0.98), rgba(107, 157, 175, 0.98));
@@ -614,7 +617,7 @@ body {
     }
 
     .mobile-menu-toggle {
-        display: flex;
+        display: flex; /* Show hamburger icon */
     }
 
     .language-switcher {
@@ -625,12 +628,13 @@ body {
         display: block; /* Show mobile language switcher */
     }
 
+    /* Main content grid adjusts to single column */
     .content-grid {
         grid-template-columns: 1fr;
     }
 
     .combined-panel {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack elements vertically */
     }
 
     .decorative-panel {
@@ -671,20 +675,11 @@ body {
         font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     }
 
-    /* Specific mobile adjustments for the new intro paragraphs */
-    .info-panel .byzantine-intro,
-    .info-panel .traditional-intro {
-        font-size: clamp(0.9rem, 2.5vw, 1rem); /* Make them slightly smaller on mobile */
-        margin-top: 1rem;
-    }
-    .info-panel .traditional-intro {
-        margin-top: 0.6rem;
-    }
-
     .lessons-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Adjust footer content for mobile */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -708,6 +703,7 @@ body {
         font-size: clamp(1.5rem, 7vw, 2rem);
     }
 
+    /* Smaller back-to-top button */
     #back-to-top {
         width: 40px;
         height: 40px;
