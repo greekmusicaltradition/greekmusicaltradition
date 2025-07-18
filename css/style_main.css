@@ -603,7 +603,7 @@ body {
 
 .footer-cta {
     background: var(--color-accent-gold);
-    color: var(--color-white) !important;
+    color: var(--color-white)  ;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
@@ -871,307 +871,307 @@ body {
 
 /* Force override body styles */
 body {
-    font-family: 'Arial', sans-serif !important;
-    line-height: 1.6 !important;
-    color: var(--color-text-dark) !important;
-    background-color: var(--color-white) !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    font-family: 'Arial', sans-serif  ;
+    line-height: 1.6  ;
+    color: var(--color-text-dark)  ;
+    background-color: var(--color-white)  ;
+    margin: 0  ;
+    padding: 0  ;
 }
 
 /* Override any main container styles */
 .container {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 40px !important;
+    max-width: none  ;
+    margin: 0  ;
+    padding: 0 40px  ;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue)) !important;
-    color: var(--color-white) !important;
-    padding: 2rem 0 !important;
-    text-align: center !important;
-    margin-bottom: 2rem !important;
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue))  ;
+    color: var(--color-white)  ;
+    padding: 2rem 0  ;
+    text-align: center  ;
+    margin-bottom: 2rem  ;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem) !important;
-    font-weight: 300 !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 0 1rem !important;
+    font-size: clamp(2rem, 5vw, 2.5rem)  ;
+    font-weight: 300  ;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3)  ;
+    max-width: 800px  ;
+    margin: 0 auto  ;
+    padding: 0 1rem  ;
 }
 
 /* Main Content */
 .main-content {
-    padding: 2rem 40px !important;
+    padding: 2rem 40px  ;
 }
 
 .policy-intro {
-    background: var(--color-background-light) !important;
-    padding: 2rem 40px !important;
-    margin-bottom: 3rem !important;
-    text-align: center !important;
-    border: none !important;
-    width: 100% !important;
-    border-radius: 0 !important;
+    background: var(--color-background-light)  ;
+    padding: 2rem 40px  ;
+    margin-bottom: 3rem  ;
+    text-align: center  ;
+    border: none  ;
+    width: 100%  ;
+    border-radius: 0  ;
 }
 
 .policy-intro h2 {
-    color: var(--color-primary-blue) !important;
-    font-size: 2rem !important;
-    margin-bottom: 1rem !important;
-    font-weight: 600 !important;
+    color: var(--color-primary-blue)  ;
+    font-size: 2rem  ;
+    margin-bottom: 1rem  ;
+    font-weight: 600  ;
 }
 
 .hero-subtitle {
-    display: none !important;
+    display: none  ;
 }
 
 .date-info {
-    text-align: left !important;
-    color: var(--color-text-medium) !important;
-    font-size: 0.9rem !important;
-    margin-bottom: 2rem !important;
-    font-weight: 400 !important;
+    text-align: left  ;
+    color: var(--color-text-medium)  ;
+    font-size: 0.9rem  ;
+    margin-bottom: 2rem  ;
+    font-weight: 400  ;
 }
 
 .policy-meta {
-    display: none !important;
+    display: none  ;
 }
 
 .policy-intro > p {
-    font-size: 1.1rem !important;
-    color: var(--color-text-medium) !important;
-    line-height: 1.6 !important;
-    margin-bottom: 1.5rem !important;
-    text-align: left !important;
+    font-size: 1.1rem  ;
+    color: var(--color-text-medium)  ;
+    line-height: 1.6  ;
+    margin-bottom: 1.5rem  ;
+    text-align: left  ;
 }
 
 .cta-buttons {
-    display: flex !important;
-    gap: 1rem !important;
-    justify-content: center !important;
-    margin-top: 2rem !important;
+    display: flex  ;
+    gap: 1rem  ;
+    justify-content: center  ;
+    margin-top: 2rem  ;
 }
 
 .btn-primary,
 .btn-secondary {
-    padding: 0.8rem 2rem !important;
-    border-radius: var(--border-radius-small) !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-    display: inline-block !important;
+    padding: 0.8rem 2rem  ;
+    border-radius: var(--border-radius-small)  ;
+    text-decoration: none  ;
+    font-weight: 600  ;
+    transition: all 0.3s ease  ;
+    display: inline-block  ;
 }
 
 .btn-primary {
-    background: var(--color-secondary-blue) !important;
-    color: var(--color-white) !important;
+    background: var(--color-secondary-blue)  ;
+    color: var(--color-white)  ;
 }
 
 .btn-secondary {
-    background: transparent !important;
-    color: var(--color-secondary-blue) !important;
-    border: 2px solid var(--color-secondary-blue) !important;
+    background: transparent  ;
+    color: var(--color-secondary-blue)  ;
+    border: 2px solid var(--color-secondary-blue)  ;
 }
 
 .btn-primary:hover {
-    background: var(--color-primary-blue) !important;
+    background: var(--color-primary-blue)  ;
 }
 
 .btn-secondary:hover {
-    background: var(--color-secondary-blue) !important;
-    color: var(--color-white) !important;
+    background: var(--color-secondary-blue)  ;
+    color: var(--color-white)  ;
 }
 
 /* Policy Sections */
 .policy-sections {
-    margin-bottom: 3rem !important;
-    max-width: none !important;
+    margin-bottom: 3rem  ;
+    max-width: none  ;
 }
 
 .policy-section {
-    margin-bottom: 2.5rem !important;
+    margin-bottom: 2.5rem  ;
     page-break-inside: avoid;
 }
 
 .policy-section h3 {
-    color: var(--color-primary-blue) !important;
-    font-size: 1.3rem !important;
-    font-weight: 600 !important;
-    margin-bottom: 1rem !important;
-    padding-bottom: 0.5rem !important;
-    border-bottom: 2px solid var(--color-light-blue) !important;
+    color: var(--color-primary-blue)  ;
+    font-size: 1.3rem  ;
+    font-weight: 600  ;
+    margin-bottom: 1rem  ;
+    padding-bottom: 0.5rem  ;
+    border-bottom: 2px solid var(--color-light-blue)  ;
 }
 
 .policy-section ul {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    list-style: none  ;
+    margin: 0  ;
+    padding: 0  ;
 }
 
 .policy-section li {
-    margin-bottom: 0.8rem !important;
-    color: var(--color-text-medium) !important;
-    line-height: 1.6 !important;
-    font-size: 1rem !important;
-    padding-left: 1.5rem !important;
-    position: relative !important;
+    margin-bottom: 0.8rem  ;
+    color: var(--color-text-medium)  ;
+    line-height: 1.6  ;
+    font-size: 1rem  ;
+    padding-left: 1.5rem  ;
+    position: relative  ;
 }
 
 .policy-section li::before {
-    content: "•" !important;
-    color: var(--color-secondary-blue) !important;
-    position: absolute !important;
-    left: 0 !important;
-    font-size: 1.2rem !important;
-    line-height: 1.3 !important;
+    content: "•"  ;
+    color: var(--color-secondary-blue)  ;
+    position: absolute  ;
+    left: 0  ;
+    font-size: 1.2rem  ;
+    line-height: 1.3  ;
 }
 
 .policy-section li:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0  ;
 }
 
 .policy-section strong {
-    color: var(--color-primary-blue) !important;
-    font-weight: 600 !important;
+    color: var(--color-primary-blue)  ;
+    font-weight: 600  ;
 }
 
 .policy-section p {
-    color: var(--color-text-medium) !important;
-    line-height: 1.6 !important;
-    margin-bottom: 1rem !important;
+    color: var(--color-text-medium)  ;
+    line-height: 1.6  ;
+    margin-bottom: 1rem  ;
 }
 
 .policy-section p:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0  ;
 }
 
 .policy-section em {
-    color: var(--color-text-medium) !important;
-    font-style: italic !important;
+    color: var(--color-text-medium)  ;
+    font-style: italic  ;
 }
 
 /* Nested lists for sub-policies */
 .policy-section ul ul {
-    margin-top: 0.5rem !important;
-    margin-left: 1rem !important;
+    margin-top: 0.5rem  ;
+    margin-left: 1rem  ;
 }
 
 .policy-section ul ul li {
-    margin-bottom: 0.6rem !important;
-    font-size: 0.95rem !important;
+    margin-bottom: 0.6rem  ;
+    font-size: 0.95rem  ;
 }
 
 .policy-section ul ul li::before {
-    content: "◦" !important;
-    color: var(--color-secondary-blue) !important;
-    font-size: 1rem !important;
+    content: "◦"  ;
+    color: var(--color-secondary-blue)  ;
+    font-size: 1rem  ;
 }
 
 /* Footer Info */
 .footer-info {
-    margin-top: 3rem !important;
-    padding: 2rem 40px !important;
-    border-top: 2px solid var(--color-light-blue) !important;
+    margin-top: 3rem  ;
+    padding: 2rem 40px  ;
+    border-top: 2px solid var(--color-light-blue)  ;
 }
 
 .info-boxes {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
-    gap: 1.5rem !important;
+    display: grid  ;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))  ;
+    gap: 1.5rem  ;
 }
 
 .info-box {
-    background: var(--color-background-light) !important;
-    padding: 1.5rem !important;
-    border-radius: var(--border-radius-small) !important;
-    text-align: center !important;
-    border: 1px solid var(--border-light) !important;
+    background: var(--color-background-light)  ;
+    padding: 1.5rem  ;
+    border-radius: var(--border-radius-small)  ;
+    text-align: center  ;
+    border: 1px solid var(--border-light)  ;
 }
 
 .info-box p {
-    margin: 0 !important;
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    color: var(--color-text-medium) !important;
+    margin: 0  ;
+    font-size: 1rem  ;
+    line-height: 1.6  ;
+    color: var(--color-text-medium)  ;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 0 20px !important;
+        padding: 0 20px  ;
     }
 
     .policy-intro {
-        padding: 1.5rem 20px !important;
+        padding: 1.5rem 20px  ;
     }
 
     .main-content {
-        padding: 1rem 20px !important;
+        padding: 1rem 20px  ;
     }
 
     .footer-info {
-        padding: 2rem 20px !important;
+        padding: 2rem 20px  ;
     }
 
     .policy-intro h2 {
-        font-size: 1.6rem !important;
+        font-size: 1.6rem  ;
     }
 
     .cta-buttons {
-        flex-direction: column !important;
-        align-items: center !important;
+        flex-direction: column  ;
+        align-items: center  ;
     }
 
     .btn-primary,
     .btn-secondary {
-        width: 200px !important;
-        text-align: center !important;
+        width: 200px  ;
+        text-align: center  ;
     }
 
     .policy-section h3 {
-        font-size: 1.2rem !important;
+        font-size: 1.2rem  ;
     }
 
     .info-boxes {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr  ;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px !important;
+        padding: 0 15px  ;
     }
 
     .policy-intro {
-        padding: 1rem 15px !important;
+        padding: 1rem 15px  ;
     }
 
     .main-content {
-        padding: 1rem 15px !important;
+        padding: 1rem 15px  ;
     }
 
     .footer-info {
-        padding: 2rem 15px !important;
+        padding: 2rem 15px  ;
     }
 
     .hero {
-        padding: 1.5rem 0 !important;
+        padding: 1.5rem 0  ;
     }
 
     .policy-intro h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.4rem  ;
     }
 
     .policy-section h3 {
-        font-size: 1.1rem !important;
+        font-size: 1.1rem  ;
     }
 
     .info-box {
-        padding: 1rem !important;
+        padding: 1rem  ;
     }
 }
