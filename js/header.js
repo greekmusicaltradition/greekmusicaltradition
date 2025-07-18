@@ -37,7 +37,7 @@ function loadHeader() {
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="../pictures/banner_photo.png" alt="Logo">
+                    <img src="../pictures/logo_woman.png" alt="Logo">
                     <span>${content[lang].brand}</span>
                 </div>
                 
