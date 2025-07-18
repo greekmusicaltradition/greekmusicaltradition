@@ -7,7 +7,7 @@ function loadHeader() {
     
     // Default to English if no language detected
     const lang = isGreek ? 'gr' : 'en';
-    
+     
     // Language-specific content
     const content = {
         en: {
