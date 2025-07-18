@@ -83,25 +83,16 @@
     position: relative;
     padding-left: 1.8rem; /* Space for custom bullet */
     font-size: clamp(0.9rem, 2vw, 1rem);
-    /* Add or modify this line for consistent top alignment */
-    display: flex; /* Make the list item a flex container */
-    align-items: baseline; /* Align items based on their text baseline */
 }
 
 /* Custom Bullet Point for List Items */
 .policy-section li::before {
     content: '\2022'; /* Unicode for a solid bullet point */
     color: var(--color-accent-gold); /* Use accent color for bullets */
-    position: absolute; /* Keep absolute position */
+    position: absolute;
     left: 0;
     font-size: 1.2rem; /* Larger bullet */
-    /* Remove 'line-height' from here, it's better controlled by parent's align-items */
-    /* top: 0; */ /* Remove or comment out this 'top: 0;' */
-
-    /* Add these properties for perfect vertical alignment within the flex container */
-    align-self: flex-start; /* Ensures the bullet aligns to the start of the cross axis (top) */
-    transform: translateY(-0.05em); /* Slight adjustment if needed, 'em' relative to bullet font size */
-    /* A value between -0.05em and -0.1em usually works best for common bullet glyphs. */
+    top: 0.2em; /* This value often works well to visually align the bullet. */
 }
 
 .policy-section li strong {
@@ -121,9 +112,7 @@
     content: '\2013'; /* Use a dash for nested bullets */
     color: var(--color-tertiary-blue);
     font-size: 1rem;
-    /* Apply the same alignment properties here */
-    align-self: flex-start;
-    transform: translateY(-0.05em); /* Adjust as needed for the dash glyph */
+    top: 0.2em; /* Apply the same top adjustment */
 }
 
 
