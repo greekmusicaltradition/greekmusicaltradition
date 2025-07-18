@@ -76,32 +76,26 @@
     margin-bottom: 0; /* Remove default margin from last ul */
 }
 
-/* Policy Section List Item Styling (for main list) */
+/* Policy Section List Item Styling (for main list) - CORRECTED VERSION */
 .policy-section li {
     margin-bottom: 0.8rem;
     color: var(--color-text-medium);
-    line-height: 1.7; /* Keep for readability */
+    line-height: 1.7;
     font-size: clamp(0.9rem, 2vw, 1rem);
-
-    /* Key changes for alignment using display: table */
-    display: table; /* Makes the li behave like a table */
-    width: 100%; /* Ensure it takes full width */
-    padding-left: 0; /* Remove padding from li itself */
+    display: flex;
+    align-items: flex-start; /* Align items to the start (top) */
+    padding-left: 0;
 }
 
-/* Custom Bullet Point for List Items (for main list) */
+/* Custom Bullet Point for List Items (for main list) - CORRECTED VERSION */
 .policy-section li::before {
     content: '\2022'; /* Unicode for a solid bullet point */
     color: var(--color-accent-gold); /* Use accent color for bullets */
-    
-    /* Key changes for alignment using display: table-cell */
-    display: table-cell; /* Makes the bullet a table cell */
-    vertical-align: top; /* Align the content of this cell to the top */
-    width: 1.8rem; /* Give it a fixed width to create space for the bullet */
-    padding-right: 0.5rem; /* Add a small gap between bullet and text */
-    text-align: left; /* Ensure the bullet itself is left-aligned within its cell */
-    
     font-size: 1.2rem; /* Larger bullet */
+    width: 1.5rem;
+    flex-shrink: 0; /* Prevent the bullet from shrinking */
+    text-align: left;
+    line-height: 1.7; /* Match the line height of the text */
 }
 
 .policy-section li strong {
@@ -117,32 +111,27 @@
     padding-left: 1rem;
 }
 
-/* Nested Policy Section List Item Styling */
+/* Nested Policy Section List Item Styling - CORRECTED VERSION */
 .policy-section li ul li {
-    /* Apply the same table display properties to nested list items */
-    display: table;
-    width: 100%;
+    display: flex;
+    align-items: flex-start;
     padding-left: 0;
-    margin-bottom: 0.8rem; /* Keep consistent margin */
-    color: var(--color-text-medium); /* Ensure text color is inherited/set */
-    line-height: 1.7; /* Ensure line height is consistent */
-    font-size: clamp(0.9rem, 2vw, 1rem); /* Ensure font size is consistent */
+    margin-bottom: 0.8rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Nested Custom Bullet Point for List Items */
+/* Nested Custom Bullet Point for List Items - CORRECTED VERSION */
 .policy-section li ul li::before {
     content: '\2013'; /* Use a dash for nested bullets */
     color: var(--color-tertiary-blue);
     font-size: 1rem; /* Slightly smaller for nested */
-    
-    /* Apply table-cell properties here too */
-    display: table-cell;
-    vertical-align: top;
-    width: 1.8rem;
-    padding-right: 0.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
     text-align: left;
+    line-height: 1.7;
 }
-
 
 /* Footer Info Section (Contact and Book buttons) */
 .footer-info {
@@ -222,7 +211,6 @@
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     background-color: #c09f2d; /* Slightly darker gold on hover */
 }
-
 
 /* Responsive adjustments for legal page */
 @media (max-width: 768px) {
