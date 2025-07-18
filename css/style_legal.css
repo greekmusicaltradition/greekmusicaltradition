@@ -1,0 +1,370 @@
+/* style_legal.css */
+
+/* General Policy Page Layout */
+.policy-page-container {
+    padding-top: 2rem; /* Add some space above the intro */
+    padding-bottom: 4rem; /* More space at the bottom */
+}
+
+/* Hero section specific to legal pages */
+.hero-legal {
+    background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-secondary-blue) 100%);
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero-legal h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem); /* Larger, more impactful title */
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero-legal p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.9;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0.5rem auto 0;
+}
+
+
+/* Policy Introduction Section */
+.policy-intro {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    margin-bottom: 3rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.policy-intro h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.policy-intro h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent-gold);
+    border-radius: 2px;
+}
+
+.policy-intro .date-info {
+    font-style: italic;
+    color: var(--color-text-medium);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.policy-intro p {
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Policy Sections Grid */
+.policy-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem; /* Increased gap for better spacing */
+    margin-bottom: 4rem;
+}
+
+.policy-section {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--border-radius-medium); /* Softer corners */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08); /* Lighter, more elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--color-secondary-blue); /* Distinct top border */
+}
+
+.policy-section:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+}
+
+.policy-section h3 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--color-primary-blue);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space for icons */
+}
+
+/* Icons for policy sections (example - replace with actual icons/font awesome) */
+.policy-section h3::before {
+    font-family: 'Font Awesome 5 Free'; /* Assuming Font Awesome or similar */
+    font-weight: 900;
+    color: var(--color-accent-gold);
+    font-size: 1.4em;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.policy-section h3 .icon-calendar::before { content: "\f073"; } /* Example icon */
+.policy-section h3 .icon-clock::before { content: "\f017"; }
+.policy-section h3 .icon-user-check::before { content: "\f4fc"; }
+.policy-section h3 .icon-cancel::before { content: "\f057"; }
+.policy-section h3 .icon-payment::before { content: "\f09d"; }
+.policy-section h3 .icon-trial::before { content: "\f02d"; }
+.policy-section h3 .icon-materials::before { content: "\f5da"; }
+.policy-section h3 .icon-practice::before { content: "\f270"; }
+.policy-section h3 .icon-chat::before { content: "\f075"; }
+.policy-section h3 .icon-conduct::before { content: "\f0a1"; }
+.policy-section h3 .icon-holiday::before { content: "\f783"; }
+.policy-section h3 .icon-terminate::before { content: "\f05c"; }
+.policy-section h3 .icon-privacy::before { content: "\f510"; }
+.policy-section h3 .icon-safety::before { content: "\f1e3"; }
+.policy-section h3 .icon-contact::before { content: "\f0e0"; }
+
+
+.policy-section ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0;
+}
+
+.policy-section li {
+    margin-bottom: 0.8rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    position: relative;
+    padding-left: 1.5rem; /* Space for custom bullet */
+    font-size: 1rem;
+}
+
+.policy-section li:last-child {
+    margin-bottom: 0;
+}
+
+.policy-section li::before {
+    content: '✓'; /* Custom checkmark bullet */
+    color: var(--color-secondary-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.1em;
+}
+
+.policy-section li strong {
+    color: var(--color-text-dark); /* Make bold text stand out more */
+}
+
+/* Nested list for Parental Presence */
+.policy-section ul ul {
+    margin-top: 0.5rem;
+    margin-left: 1rem; /* Indent nested list */
+    border-left: 2px solid var(--color-light-blue); /* Visual cue for nested list */
+    padding-left: 1rem;
+}
+
+.policy-section ul ul li::before {
+    content: '•'; /* Different bullet for nested list */
+    color: var(--color-accent-gold);
+}
+
+
+/* Specific styling for the Contact Info policy section */
+.contact-policy-section {
+    text-align: center;
+    background-color: var(--color-light-blue);
+    border-top-color: var(--color-accent-gold);
+}
+
+.contact-policy-section p {
+    font-size: 1.1rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-policy-section em {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+}
+
+
+/* Footer info and CTA buttons */
+.footer-info {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border-light); /* Subtle separator */
+}
+
+.info-boxes {
+    margin-bottom: 2.5rem;
+}
+
+.info-box {
+    padding: 2rem;
+    border-radius: var(--border-radius-large);
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.info-box p {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+}
+
+.cta-buttons-legal-page {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Button Styles (assuming these are in style_main.css or similar) */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px; /* Pill shape for buttons */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--color-accent-gold);
+    color: var(--color-white);
+    border: 2px solid var(--color-accent-gold);
+}
+
+.btn-primary:hover {
+    background-color: #c09f2d; /* Slightly darker gold */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary-blue);
+    border: 2px solid var(--color-primary-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments for legal page */
+@media (max-width: 768px) {
+    .policy-intro {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .policy-intro h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .policy-intro p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .policy-sections {
+        grid-template-columns: 1fr; /* Stack sections on smaller screens */
+        gap: 1.5rem;
+    }
+
+    .policy-section {
+        padding: 1.5rem;
+    }
+
+    .policy-section h3 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .policy-section li {
+        font-size: 0.95rem;
+    }
+
+    .footer-info {
+        padding-top: 1.5rem;
+    }
+
+    .info-box {
+        padding: 1.5rem;
+    }
+
+    .info-box p {
+        font-size: clamp(0.95rem, 3vw, 1.1rem);
+    }
+
+    .cta-buttons-legal-page {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%; /* Make buttons wider on small screens */
+        max-width: 300px;
+        margin: 0 auto; /* Center buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-legal {
+        padding: 2rem 0;
+    }
+
+    .hero-legal h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .hero-legal p {
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+    }
+
+    .policy-intro {
+        padding: 1rem;
+    }
+
+    .policy-section {
+        padding: 1rem;
+    }
+
+    .policy-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .policy-section li {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+    }
+
+    .policy-section li::before {
+        font-size: 1em;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+}
