@@ -405,18 +405,27 @@ body {
 .byzantine-icon {
     font-size: 48px;
     text-align: center;
-    /* your icon styling here */
 }
 
-/* Footer Info (now empty of the descriptive boxes) */
+/* Footer Info - REVISED to ensure visibility and correct spacing */
 .footer-info {
-    margin-top: 3rem;
+    margin-top: 3rem; /* Keep main spacing from content above */
+    padding-bottom: 2rem; /* Add some padding at the bottom if needed for spacing before the actual footer */
+    /* If you still have the empty .info-boxes div, you might want to keep some of its layout properties if you need it as a structural element */
 }
 
-/* Removed .info-boxes and .info-box specific styling as their content has been moved */
-/* If you still need .info-boxes as a layout container for *other* future content, you might
-   keep its display: grid property, but remove background/shadow etc. if it's purely structural.
-   For now, I'm assuming it might just be removed from the HTML entirely. */
+/* If the .info-boxes div is *still* present in your HTML but empty,
+   you might need to ensure it has display: grid to maintain structure if relied upon.
+   If it's gone from HTML, these next rules are unnecessary. */
+.info-boxes {
+    display: grid; /* Keep it as a grid container if it's in your HTML for structure */
+    grid-template-columns: 1fr; /* Or whatever layout you need if content is added later */
+    gap: 2rem;
+    /* Removed background/shadow as the descriptive boxes are gone */
+}
+
+/* The .info-box specific styling is removed as its content has been moved.
+   If you have other .info-box elements elsewhere, apply their styles specifically. */
 
 
 /* Footer Styles */
@@ -627,8 +636,6 @@ body {
     .decorative-panel {
         height: 250px; /* Adjust height for smaller screens */
     }
-
-    /* .ornate-design is now implicitly handled by decorative-image, removing specific styles if unused */
 }
 
 @media (max-width: 768px) {
@@ -674,7 +681,6 @@ body {
         margin-top: 0.6rem;
     }
 
-
     .lessons-grid {
         grid-template-columns: 1fr;
     }
@@ -701,8 +707,6 @@ body {
     .hero h1 {
         font-size: clamp(1.5rem, 7vw, 2rem);
     }
-
-    /* .info-box p is no longer relevant as .info-box is empty */
 
     #back-to-top {
         width: 40px;
