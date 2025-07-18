@@ -608,6 +608,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    /* This was the cut-off part! */
     transition: background-color 0.3s ease;
 }
 
@@ -809,3 +810,6 @@ body {
         right: 15px;
     }
 }
+
+
+
