@@ -624,6 +624,40 @@ body {
     opacity: 0.8;
 }
 
+.footer-bottom .legal-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0;      /* Remove default padding */
+    margin: 0 0 10px; /* Add some space below if needed */
+    display: flex;   /* Make them display in a row */
+    justify-content: center; /* Center them horizontally */
+    gap: 15px;       /* Space between the links */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-bottom .legal-links li {
+    margin-bottom: 0; /* Remove margin from list items if using flex gap */
+}
+
+.footer-bottom .legal-links a {
+    color: var(--color-white); /* Set text color to white */
+    text-decoration: none;     /* Remove underline */
+    font-size: 0.9rem;         /* Match surrounding text size */
+    opacity: 0.8;              /* Match surrounding text opacity */
+    transition: opacity 0.3s ease; /* Smooth transition for hover */
+}
+
+.footer-bottom .legal-links a:hover {
+    opacity: 1; /* Make them fully opaque on hover */
+    color: var(--color-light-blue); /* Optional: Change color on hover if desired */
+}
+
+/* Ensure copyright text is also styled */
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px; /* Add some space above copyright if needed */
+}
+
 /* Back to Top button */
 #back-to-top {
     position: fixed;
