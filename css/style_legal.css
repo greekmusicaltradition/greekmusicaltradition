@@ -28,6 +28,15 @@
     opacity: 0.8;
 }
 
+/* Added style for h3 within policy-intro, for "INTRODUCTION" heading */
+.policy-intro h3 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem); /* Slightly smaller than main h2, but larger than body */
+    color: var(--color-text-dark); /* Darker text */
+    margin-top: 2rem; /* Space above this heading */
+    margin-bottom: 1rem; /* Space below this heading */
+    font-weight: 600;
+}
+
 .policy-intro p {
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: var(--color-text-dark);
@@ -71,6 +80,27 @@
     margin-right: auto;
 }
 
+/* NEW: Styling for h4 headings within policy sections */
+.policy-section h4 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem); /* Smaller than h3, larger than p */
+    color: var(--color-primary-blue); /* Consistent blue color */
+    margin: 1.5rem auto 1rem auto; /* Top margin, auto horizontal, bottom margin for centering */
+    max-width: 800px; /* Constrain width */
+    text-align: left; /* Align text within its constrained width */
+    font-weight: 600; /* Make them bold */
+}
+
+/* NEW: Styling for h5 headings within policy sections */
+.policy-section h5 {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem); /* Smaller than h4, slightly larger than p */
+    color: var(--color-text-dark); /* Darker text for readability */
+    margin: 1rem auto 0.5rem auto; /* Adjusted margins */
+    max-width: 800px; /* Constrain width */
+    text-align: left; /* Align text within its constrained width */
+    font-weight: 600; /* Make them bold */
+}
+
+
 .policy-section p {
     font-size: clamp(0.95rem, 2vw, 1.05rem);
     color: var(--color-text-dark);
@@ -96,8 +126,6 @@
     font-size: clamp(0.95rem, 2vw, 1.05rem); /* Consistent with body text */
     position: relative; /* Establish positioning context for ::before */
     padding-left: 1.8rem; /* Space for the bullet and some padding */
-    /* Removed display: flex; */
-    /* Removed align-items: flex-start; */
 }
 
 /* Custom Bullet Point for List Items (for main list) */
@@ -108,8 +136,6 @@
     position: absolute; /* Position the bullet relative to the li */
     left: 0; /* Place it at the beginning of the padding-left space */
     top: 0; /* Align with the top of the line of text */
-    /* Removed margin-right; */
-    /* Removed flex-shrink; */
     line-height: inherit; /* Inherit line-height to ensure vertical alignment with text */
 }
 
@@ -136,8 +162,6 @@
     color: var(--color-text-medium);
     line-height: 1.7;
     font-size: clamp(0.9rem, 1.8vw, 1rem); /* Slightly smaller for nested */
-    /* Removed display: flex; */
-    /* Removed align-items: flex-start; */
 }
 
 /* Nested Custom Bullet Point for List Items */
@@ -148,8 +172,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    /* Removed margin-right; */
-    /* Removed flex-shrink; */
     line-height: inherit;
 }
 
@@ -252,6 +274,17 @@
         margin-bottom: 0.8rem;
     }
 
+    /* Responsive adjustments for new h4/h5 headings */
+    .policy-section h4 {
+        font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+        margin: 1.2rem auto 0.8rem auto;
+    }
+
+    .policy-section h5 {
+        font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+        margin: 0.8rem auto 0.4rem auto;
+    }
+
     .policy-section li {
         font-size: clamp(0.9rem, 2.5vw, 1rem);
         margin-bottom: 0.7rem;
@@ -297,6 +330,17 @@
 
     .policy-section h3 {
         font-size: clamp(1.2rem, 5.5vw, 1.5rem);
+    }
+
+    /* Responsive adjustments for new h4/h5 headings on extra small screens */
+    .policy-section h4 {
+        font-size: clamp(1.0rem, 4vw, 1.2rem);
+        margin: 1rem auto 0.7rem auto;
+    }
+
+    .policy-section h5 {
+        font-size: clamp(0.9rem, 3.2vw, 1.0rem);
+        margin: 0.7rem auto 0.3rem auto;
     }
 
     .policy-section li {
