@@ -24,6 +24,18 @@ document.querySelectorAll('.faq-question').forEach(function(question) {
     });
 });
 </script>
+<script>
+// FAQ Accordion Functionality
+document.querySelectorAll('.faq-question').forEach(function(question) {
+    question.addEventListener('click', function() {
+        // Toggle 'active' class on the question
+        question.classList.toggle('active');
+        // Toggle 'active' class on the next sibling (the answer)
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('active');
+    });
+});
+</script>
 </head>
 <body> 
     <div id="header"></div>
