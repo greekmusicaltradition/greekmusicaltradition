@@ -243,3 +243,15 @@
         width: 100%;
     }
 }
+/* Initial state for elements that will fade in */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: slight slide-up effect */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+}
+
+/* State when the element becomes visible */
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
