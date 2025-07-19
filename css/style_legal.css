@@ -94,9 +94,10 @@
     color: var(--color-text-medium);
     line-height: 1.7;
     font-size: clamp(0.95rem, 2vw, 1.05rem); /* Consistent with body text */
-    display: flex; /* Use flexbox for bullet alignment */
-    align-items: flex-start; /* Align text with the top of the bullet */
-    padding-left: 0; /* Reset default padding */
+    position: relative; /* Establish positioning context for ::before */
+    padding-left: 1.8rem; /* Space for the bullet and some padding */
+    /* Removed display: flex; */
+    /* Removed align-items: flex-start; */
 }
 
 /* Custom Bullet Point for List Items (for main list) */
@@ -104,9 +105,12 @@
     content: '\2022'; /* Unicode for a solid bullet point */
     color: var(--color-accent-gold); /* Use accent color for bullets */
     font-size: 1.2rem; /* Larger bullet */
-    margin-right: 0.8rem; /* Space between bullet and text */
-    flex-shrink: 0; /* Prevent bullet from shrinking */
-    line-height: 1.7; /* Match line height for vertical alignment */
+    position: absolute; /* Position the bullet relative to the li */
+    left: 0; /* Place it at the beginning of the padding-left space */
+    top: 0; /* Align with the top of the line of text */
+    /* Removed margin-right; */
+    /* Removed flex-shrink; */
+    line-height: inherit; /* Inherit line-height to ensure vertical alignment with text */
 }
 
 .policy-section li strong {
@@ -125,13 +129,15 @@
 
 /* Nested Policy Section List Item Styling */
 .policy-section li ul li {
-    display: flex; /* Apply flexbox for nested bullets too */
-    align-items: flex-start;
-    padding-left: 0;
+    /* Apply the same hanging indent properties to nested list items */
+    position: relative;
+    padding-left: 1.5rem; /* Slightly less padding for nested */
     margin-bottom: 0.6rem; /* Slightly less margin for nested items */
     color: var(--color-text-medium);
     line-height: 1.7;
     font-size: clamp(0.9rem, 1.8vw, 1rem); /* Slightly smaller for nested */
+    /* Removed display: flex; */
+    /* Removed align-items: flex-start; */
 }
 
 /* Nested Custom Bullet Point for List Items */
@@ -139,12 +145,15 @@
     content: '\2013'; /* Use a dash for nested bullets */
     color: var(--color-tertiary-blue);
     font-size: 1rem; /* Slightly smaller for nested */
-    margin-right: 0.6rem; /* Space for nested bullet */
-    flex-shrink: 0;
-    line-height: 1.7; /* Match line height */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Removed margin-right; */
+    /* Removed flex-shrink; */
+    line-height: inherit;
 }
 
-/* Footer Info Section (Contact and Book buttons) */
+/* Footer Info Section (Contact and Book buttons) - Kept as boxes as they are not "terms" */
 .footer-info {
     margin-top: 4rem; /* More space from policies above */
     padding: 2rem 0;
@@ -246,6 +255,16 @@
     .policy-section li {
         font-size: clamp(0.9rem, 2.5vw, 1rem);
         margin-bottom: 0.7rem;
+        padding-left: 1.6rem; /* Adjust padding for smaller screens */
+    }
+    .policy-section li::before {
+        left: 0;
+    }
+    .policy-section li ul li {
+        padding-left: 1.3rem; /* Adjust padding for smaller screens */
+    }
+    .policy-section li ul li::before {
+        left: 0;
     }
 
     .info-boxes-wrapper {
