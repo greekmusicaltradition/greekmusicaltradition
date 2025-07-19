@@ -38,7 +38,7 @@
             </div>
 
             <div class="contact-form-container">
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzglaz" method="POST">
                     <h2>Send Us a Message</h2>
                     <p class="contact-intro">
                         Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
@@ -65,7 +65,7 @@
 
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="_replyto" required>
                     </div>
 
                     <div class="form-group">
@@ -188,14 +188,22 @@
                     console.error('Form submission failed:', response.status, response.statusText);
                     errorMessage.style.display = 'block';
                     errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Attempt to get more specific error from Formspree's response
                     response.json().then(data => {
-                        console.error('Formspree error:', data.errors);
+                        if (data.errors) {
+                            console.error('Formspree validation errors:', data.errors);
+                            errorMessage.textContent = 'Please correct the errors in the form and try again.';
+                        } else {
+                            errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                        }
+                    }).catch(() => {
+                        errorMessage.textContent = 'There was an error sending your message. Please try again later.';
                     });
                 }
             })
             .catch(error => {
                 console.error('Network error or problem sending request:', error);
-                errorMessage.textContent = 'A network error occurred. Please check your connection and try again.';
+                errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
                 errorMessage.style.display = 'block';
                 errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
