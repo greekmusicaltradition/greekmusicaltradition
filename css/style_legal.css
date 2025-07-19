@@ -6,7 +6,7 @@
 
 /* Introduction Section Styling */
 .policy-intro {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
     padding: 1.5rem;
     background-color: var(--color-white); /* Keep the intro as a distinct block */
