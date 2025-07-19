@@ -76,3 +76,165 @@
                             <option value="byzantine">Byzantine Music Lessons</option>
                             <option value="traditional">Greek Traditional Singing Lessons</option>
                             <option value="both">Both Types of Lessons</option>
+                            <option value="information">General Information</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">Your Experience Level:</label>
+                            <select id="experience" name="experience">
+                                <option value="">Please select...</option>
+                                <option value="beginner">Complete Beginner</option>
+                                <option value="some">Some Experience</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredLanguage">Preferred Language:</label>
+                            <select id="preferredLanguage" name="preferredLanguage">
+                                <option value="">Please select...</option>
+                                <option value="english">English</option>
+                                <option value="greek">Greek</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What types of lessons do you offer?</div>
+                    <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are lessons available online?</div>
+                    <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need prior musical experience?</div>
+                    <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">In what languages are lessons taught?</div>
+                    <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I get started?</div>
+                    <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const form = e.target;
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Create FormData object from the form
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json' // Important for Formspree to return JSON
+                }
+            })
+            .then(response => {
+                if (response.ok) { // Check if the submission was successful
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset form after a short delay
+                    setTimeout(() => {
+                        form.reset();
+                        // Hide success message after it's been seen
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 3000); 
+                    }, 1000);
+                } else {
+                    // Handle errors
+                    console.error('Form submission failed:', response.status, response.statusText);
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Attempt to get more specific error from Formspree's response
+                    response.json().then(data => {
+                        if (data.errors) {
+                            console.error('Formspree validation errors:', data.errors);
+                            errorMessage.textContent = 'Please correct the errors in the form and try again.';
+                        } else {
+                            errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                        }
+                    }).catch(() => {
+                        errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Network error or problem sending request:', error);
+                errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+
+        // Add some interactive feedback for form fields
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+    <!-- FAQ Accordion: This is the critical addition -->
+    <script>
+    // Enable accordion for FAQ section
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html>
