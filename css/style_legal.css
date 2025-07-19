@@ -9,7 +9,7 @@
     text-align: center;
     margin-bottom: 3rem;
     padding: 1.5rem;
-    background-color: var(--color-white);
+    background-color: var(--color-white); /* Keep the intro as a distinct block */
     border-radius: var(--border-radius-medium);
     box-shadow: 0 4px 15px var(--shadow-light);
 }
@@ -37,71 +37,76 @@
     margin-right: auto;
 }
 
-/* Policy Sections Grid */
+/* Policy Sections - Removed Grid for stacked, clean look */
 .policy-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Consistent with lessons-grid gap */
+    display: block; /* Change from grid to block */
 }
 
-/* Individual Policy Card Styling */
-.policy-section.card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 8px 32px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 2rem; /* Internal padding for content */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute space for content */
+/* Individual Policy Section Styling (removed card styles) */
+.policy-section { /* Removed .card class from selector */
+    background: transparent; /* No background */
+    border-radius: 0; /* No border-radius */
+    box-shadow: none; /* No shadow */
+    transition: none; /* No transition */
+    padding: 0; /* Remove internal padding, will be added by content */
+    display: block; /* Ensure it stacks */
+    margin-bottom: 2.5rem; /* Space between sections */
 }
 
-.policy-section.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px var(--shadow-medium);
+.policy-section:hover {
+    transform: none; /* No hover effect */
+    box-shadow: none; /* No hover effect */
 }
 
 .policy-section h3 {
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
-    color: var(--color-secondary-blue); /* Using secondary blue for headings */
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem); /* Slightly larger, clearer heading */
+    color: var(--color-primary-blue); /* Primary blue for main headings */
+    margin-bottom: 1rem; /* Space below heading */
+    padding-bottom: 0.3rem; /* Small space for potential subtle border */
     border-bottom: 2px solid var(--color-light-blue); /* Subtle underline */
-    font-weight: 700;
+    font-weight: 600; /* Standard bold for headings */
+    text-align: left; /* Align headings to the left */
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.policy-section p {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: var(--color-text-dark);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 1rem auto; /* Center text and add vertical margin */
 }
 
 .policy-section ul {
-    list-style: none; /* Remove default bullet points */
+    list-style: none; /* Still remove default bullet points */
     padding-left: 0;
-    margin-bottom: 0; /* Remove default margin from last ul */
+    margin-bottom: 0;
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto; /* Center list */
+    margin-right: auto;
 }
 
 /* Policy Section List Item Styling (for main list) */
 .policy-section li {
     margin-bottom: 0.8rem;
     color: var(--color-text-medium);
-    line-height: 1.7; /* Keep for readability */
-    font-size: clamp(0.9rem, 2vw, 1rem);
-
-    /* Key changes for alignment using display: table */
-    display: table; /* Makes the li behave like a table */
-    width: 100%; /* Ensure it takes full width */
-    padding-left: 0; /* Remove padding from li itself */
+    line-height: 1.7;
+    font-size: clamp(0.95rem, 2vw, 1.05rem); /* Consistent with body text */
+    display: flex; /* Use flexbox for bullet alignment */
+    align-items: flex-start; /* Align text with the top of the bullet */
+    padding-left: 0; /* Reset default padding */
 }
 
 /* Custom Bullet Point for List Items (for main list) */
 .policy-section li::before {
     content: '\2022'; /* Unicode for a solid bullet point */
     color: var(--color-accent-gold); /* Use accent color for bullets */
-    
-    /* Key changes for alignment using display: table-cell */
-    display: table-cell; /* Makes the bullet a table cell */
-    vertical-align: top; /* Align the content of this cell to the top */
-    width: 1.8rem; /* Give it a fixed width to create space for the bullet */
-    padding-right: 0.5rem; /* Add a small gap between bullet and text */
-    text-align: left; /* Ensure the bullet itself is left-aligned within its cell */
-    
     font-size: 1.2rem; /* Larger bullet */
+    margin-right: 0.8rem; /* Space between bullet and text */
+    flex-shrink: 0; /* Prevent bullet from shrinking */
+    line-height: 1.7; /* Match line height for vertical alignment */
 }
 
 .policy-section li strong {
@@ -112,21 +117,21 @@
 /* Nested lists (for Parental Presence) */
 .policy-section li ul {
     margin-top: 0.5rem;
-    margin-left: 1rem; /* Indent nested list */
+    margin-left: 2rem; /* Indent nested list further */
     border-left: 2px solid var(--color-light-blue); /* Visual cue for nesting */
     padding-left: 1rem;
+    margin-bottom: 0; /* Ensure no extra margin after nested list */
 }
 
 /* Nested Policy Section List Item Styling */
 .policy-section li ul li {
-    /* Apply the same table display properties to nested list items */
-    display: table;
-    width: 100%;
+    display: flex; /* Apply flexbox for nested bullets too */
+    align-items: flex-start;
     padding-left: 0;
-    margin-bottom: 0.8rem; /* Keep consistent margin */
-    color: var(--color-text-medium); /* Ensure text color is inherited/set */
-    line-height: 1.7; /* Ensure line height is consistent */
-    font-size: clamp(0.9rem, 2vw, 1rem); /* Ensure font size is consistent */
+    margin-bottom: 0.6rem; /* Slightly less margin for nested items */
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    font-size: clamp(0.9rem, 1.8vw, 1rem); /* Slightly smaller for nested */
 }
 
 /* Nested Custom Bullet Point for List Items */
@@ -134,15 +139,10 @@
     content: '\2013'; /* Use a dash for nested bullets */
     color: var(--color-tertiary-blue);
     font-size: 1rem; /* Slightly smaller for nested */
-    
-    /* Apply table-cell properties here too */
-    display: table-cell;
-    vertical-align: top;
-    width: 1.8rem;
-    padding-right: 0.5rem;
-    text-align: left;
+    margin-right: 0.6rem; /* Space for nested bullet */
+    flex-shrink: 0;
+    line-height: 1.7; /* Match line height */
 }
-
 
 /* Footer Info Section (Contact and Book buttons) */
 .footer-info {
@@ -223,7 +223,6 @@
     background-color: #c09f2d; /* Slightly darker gold on hover */
 }
 
-
 /* Responsive adjustments for legal page */
 @media (max-width: 768px) {
     .policy-intro {
@@ -239,18 +238,14 @@
         font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 
-    .policy-section.card {
-        padding: 1.5rem;
-    }
-
     .policy-section h3 {
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
-        margin-bottom: 1rem;
+        font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+        margin-bottom: 0.8rem;
     }
 
     .policy-section li {
-        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-        margin-bottom: 0.6rem;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        margin-bottom: 0.7rem;
     }
 
     .info-boxes-wrapper {
@@ -281,16 +276,12 @@
         font-size: clamp(0.8rem, 3vw, 0.9rem);
     }
 
-    .policy-section.card {
-        padding: 1rem;
-    }
-
     .policy-section h3 {
-        font-size: clamp(1.1rem, 5vw, 1.3rem);
+        font-size: clamp(1.2rem, 5.5vw, 1.5rem);
     }
 
     .policy-section li {
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
     }
 
     .btn-primary, .btn-secondary {
