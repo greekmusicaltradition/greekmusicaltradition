@@ -423,7 +423,7 @@ body {
 .lesson-description-box p {
     color: var(--color-white); /* Forces text color to white */
     margin-bottom: 0; /* Remove default paragraph margin if it creates extra space */
-    font-size: inherit; /* Inherit font size from parent div */
+    font-size: 1rem; /* Inherit font size from parent div */
 }
 
 
