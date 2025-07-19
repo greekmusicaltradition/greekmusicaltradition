@@ -9,7 +9,6 @@
     <script src="../js/cookie-consent.js"></script>
 </head>
 <body> 
-    <!-- Header will be loaded here -->
     <div id="header"></div>
 
     <header class="hero">
@@ -20,7 +19,6 @@
 
     <main class="main-content">
         <div class="container">
-            <!-- Contact Information Cards -->
             <div class="contact-info">
                 <div class="contact-card">
                     <span class="contact-icon">📧</span>
@@ -39,16 +37,19 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <div class="contact-form-container">
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST">
                     <h2>Send Us a Message</h2>
                     <p class="contact-intro">
                         Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
                     </p>
 
-                    <div class="success-message" id="successMessage">
+                    <div class="success-message" id="successMessage" style="display: none;">
                         Thank you for your message! We'll get back to you soon.
+                    </div>
+                    
+                    <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
+                        There was an error sending your message. Please try again later.
                     </div>
 
                     <div class="form-row">
@@ -110,7 +111,6 @@
                 </form>
             </div>
 
-            <!-- FAQ Section -->
             <div class="faq-section">
                 <h2>Frequently Asked Questions</h2>
                 
@@ -142,32 +142,63 @@
         </div>
     </main>
 
-    <!-- Footer will be loaded here -->
     <div id="footer"></div>
 
-    <!-- Load the header and footer components -->
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
 
     <script>
         // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
+            e.preventDefault(); // Prevent default form submission
+
+            const form = e.target;
             const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form after a short delay
-            setTimeout(() => {
-                this.reset();
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            }, 1000);
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Create FormData object from the form
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json' // Important for Formspree to return JSON
+                }
+            })
+            .then(response => {
+                if (response.ok) { // Check if the submission was successful
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset form after a short delay
+                    setTimeout(() => {
+                        form.reset();
+                        // Hide success message after it's been seen
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 3000); 
+                    }, 1000);
+                } else {
+                    // Handle errors
+                    console.error('Form submission failed:', response.status, response.statusText);
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    response.json().then(data => {
+                        console.error('Formspree error:', data.errors);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Network error or problem sending request:', error);
+                errorMessage.textContent = 'A network error occurred. Please check your connection and try again.';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
         });
 
         // Add some interactive feedback for form fields
