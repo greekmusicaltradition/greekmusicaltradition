@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="../css/style_main.css">
     <link rel="stylesheet" href="../css/style_contact.css"> 
     <script src="../js/cookie-consent.js"></script>
+    <script>
+document.querySelectorAll('.faq-question').forEach(function(question) {
+    question.addEventListener('click', function() {
+        // If you want only one open at a time, first close all
+        // document.querySelectorAll('.faq-question').forEach(q => {
+        //     if(q !== question) q.classList.remove('active');
+        //     if(q !== question) q.nextElementSibling.classList.remove('active');
+        // });
+
+        // Toggle the current one
+        this.classList.toggle('active');
+        // Toggle the corresponding answer
+        this.nextElementSibling.classList.toggle('active');
+    });
+});
+</script>
 </head>
 <body> 
     <div id="header"></div>
