@@ -1,0 +1,354 @@
+/* css/style_contact.css */
+
+/*
+  This stylesheet provides specific styles for the contact page.
+  It is designed to be linked AFTER style_main.css to allow for
+  overriding and adding contact-specific formatting.
+
+  Assumed CSS Variables (can be defined in style_main.css or a variables.css):
+  --color-primary-blue: A main blue color for headings, etc.
+  --color-secondary-blue: A darker blue for gradients.
+  --color-accent-gold: An accent color for interactive elements.
+  --color-text-dark: Dark text color.
+  --color-text-medium: Medium grey text color.
+  --color-white: White background color.
+  --color-light-grey: Light grey background for inputs.
+  --color-border: General border color.
+  --color-success-light: Light green for success messages.
+  --color-success-dark: Dark green for success message text.
+  --color-success-border: Green border for success messages.
+  --shadow-light: Light shadow for cards/containers.
+  --shadow-medium: Medium shadow for hover effects.
+  --shadow-dark: Darker shadow for button hover.
+  --border-radius-small: Small border radius.
+  --border-radius-medium: Medium border radius.
+  --border-radius-large: Larger border radius for main sections.
+*/
+
+/* General container adjustments for the contact page content */
+.main-content .container {
+    max-width: 1000px; /* Adjust based on your overall site content width */
+    margin: 2rem auto; /* Center the container with vertical margin */
+    padding: 0 1rem; /* Horizontal padding for responsiveness */
+}
+
+/* --- Contact Information Cards Section --- */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: center; /* Center cards horizontally */
+    gap: 2rem; /* Space between cards */
+    margin-bottom: 4rem; /* Space below the contact info section */
+}
+
+.contact-card {
+    background-color: var(--color-white, #ffffff); /* Default white background */
+    border-radius: var(--border-radius-large, 12px); /* Rounded corners */
+    box-shadow: 0 8px 25px var(--shadow-light, rgba(0, 0, 0, 0.08)); /* Soft shadow */
+    padding: 2.5rem 2rem; /* Inner padding */
+    text-align: center;
+    flex: 1; /* Allows cards to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping to ensure readability */
+    max-width: 350px; /* Maximum width for a card to prevent overstretching */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally within card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    border: 1px solid var(--color-border, #e0e0e0); /* Subtle border */
+}
+
+.contact-card:hover {
+    transform: translateY(-8px); /* Lift card on hover */
+    box-shadow: 0 12px 30px var(--shadow-medium, rgba(0, 0, 0, 0.15)); /* Enhanced shadow on hover */
+}
+
+.contact-icon {
+    font-size: 3rem; /* Large icon size */
+    margin-bottom: 1rem;
+    line-height: 1; /* Remove extra space around emoji */
+}
+
+.contact-card h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* Responsive font size */
+    color: var(--color-primary-blue, #2a6f97); /* Primary blue color for headings */
+    margin-bottom: 0.8rem;
+    font-weight: 600; /* Semi-bold */
+}
+
+.contact-card p {
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font size */
+    color: var(--color-text-medium, #555555); /* Medium grey text color */
+    line-height: 1.6;
+}
+
+/* --- Contact Form Section --- */
+.contact-form-container {
+    background-color: var(--color-white, #ffffff);
+    border-radius: var(--border-radius-large, 12px);
+    box-shadow: 0 8px 25px var(--shadow-light, rgba(0, 0, 0, 0.08));
+    padding: 3rem;
+    margin: 0 auto 4rem auto; /* Center the form and add bottom margin */
+    max-width: 800px; /* Max width for the form container */
+    border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+    color: var(--color-primary-blue, #2a6f97);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-form .contact-intro {
+    text-align: center;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: var(--color-text-dark, #333333);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0.5rem auto 2.5rem auto; /* Center and add vertical margin */
+}
+
+.success-message {
+    display: none; /* Hidden by default, JavaScript will show this */
+    background-color: var(--color-success-light, #e6ffe6); /* Light green background */
+    color: var(--color-success-dark, #1a8a1a); /* Dark green text */
+    padding: 1.2rem;
+    border-radius: var(--border-radius-small, 8px);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--color-success-border, #b3ffb3); /* Green border */
+    animation: fadeIn 0.5s ease-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-row {
+    display: flex; /* Arrange form groups in a row */
+    gap: 1.5rem; /* Space between form groups */
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1; /* Allows form groups to take equal space */
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: var(--color-text-dark, #333333);
+    margin-bottom: 0.5rem;
+    font-weight: 500; /* Medium weight for labels */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-border, #cccccc);
+    border-radius: var(--border-radius-small, 6px);
+    font-size: 1rem;
+    color: var(--color-text-dark, #333333);
+    background-color: var(--color-light-grey, #f9f9f9); /* Light grey background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for focus */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary-blue, #2a6f97); /* Highlight border on focus */
+    box-shadow: 0 0 0 3px var(--color-light-blue, rgba(42, 111, 151, 0.2)); /* Soft glow on focus */
+    outline: none; /* Remove default outline */
+    background-color: var(--color-white, #ffffff); /* White background on focus */
+}
+
+.form-group textarea {
+    min-height: 120px; /* Minimum height for textarea */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.submit-btn {
+    display: block; /* Make button a block element */
+    width: auto; /* Width determined by content initially */
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary-blue, #2a6f97), var(--color-secondary-blue, #0a4f6e)); /* Gradient background */
+    color: var(--color-white, #ffffff);
+    border: none;
+    border-radius: var(--border-radius-small, 8px);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transitions */
+    box-shadow: 0 4px 12px var(--shadow-medium, rgba(0, 0, 0, 0.15));
+    margin: 2rem auto 0 auto; /* Center the button and add top margin */
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px); /* Lift button on hover */
+    box-shadow: 0 6px 16px var(--shadow-dark, rgba(0, 0, 0, 0.25)); /* Darker shadow on hover */
+    opacity: 0.95; /* Slight transparency on hover */
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    background-color: var(--color-white, #ffffff);
+    border-radius: var(--border-radius-large, 12px);
+    box-shadow: 0 8px 25px var(--shadow-light, rgba(0, 0, 0, 0.08));
+    padding: 3rem;
+    margin: 0 auto 4rem auto; /* Center and add bottom margin */
+    max-width: 800px; /* Match form container width */
+    border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-primary-blue, #2a6f97);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border, #eee); /* Separator line */
+    padding-bottom: 1rem;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* No border for the last item */
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    font-weight: 600;
+    color: var(--color-text-dark, #333333);
+    cursor: pointer; /* Indicate interactivity */
+    padding: 0.5rem 0;
+    position: relative; /* For the '+' icon positioning */
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--color-accent-gold, #d4af37); /* Accent color on hover */
+}
+
+/* Plus/Minus indicator for FAQ questions (requires JS to toggle 'active' class) */
+.faq-question::after {
+    content: '+'; /* Plus sign for closed state */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-primary-blue, #2a6f97);
+    transition: transform 0.3s ease;
+}
+
+/* When the question is active (open) */
+.faq-question.active::after {
+    content: '−'; /* Minus sign for open state */
+    transform: translateY(-50%) rotate(0deg); /* No rotation needed for minus */
+}
+
+.faq-answer {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: var(--color-text-medium, #555555);
+    line-height: 1.7;
+    padding-top: 0.5rem;
+    /* Styles for JavaScript-controlled expand/collapse */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out; /* Smooth transition */
+}
+
+.faq-answer.active {
+    max-height: 200px; /* Sufficient height to show content when active (adjust if answers are longer) */
+    padding-top: 1rem; /* Add padding when open */
+}
+
+
+/* --- Responsive Design Adjustments --- */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center stacked cards */
+    }
+
+    .contact-card {
+        width: 90%; /* Make cards wider on small screens */
+        max-width: 400px; /* Limit max width for readability */
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-form-container,
+    .faq-section {
+        padding: 2rem; /* Reduce padding */
+        margin: 0 1rem 3rem 1rem; /* Adjust horizontal margin */
+    }
+
+    .contact-form h2,
+    .faq-section h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem); /* Smaller responsive headings */
+    }
+
+    .contact-form .contact-intro {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        margin-bottom: 2rem;
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack form fields vertically */
+        gap: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        width: 80%; /* Make button fill more width */
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+
+    .faq-question {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .faq-answer {
+        font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-form-container,
+    .faq-section {
+        padding: 1.5rem;
+        margin: 0 0.5rem 2.5rem 0.5rem;
+    }
+
+    .submit-btn {
+        width: 95%; /* Even wider button on very small screens */
+        padding: 0.8rem 1.5rem;
+    }
+}
