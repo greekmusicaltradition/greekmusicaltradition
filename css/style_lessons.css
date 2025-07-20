@@ -1,0 +1,145 @@
+/* style_lessons.css */
+
+/* --- Getting Started & Requirements Formatting --- */
+/* You already have .lesson-card, .lesson-header, .lesson-content, .lesson-details which are great.
+   I've added specific classes to the lists for potential further styling, but the existing
+   .lesson-details ul/li styling from style_main.css should apply nicely. */
+
+.getting-started-list {
+    list-style: decimal; /* Ensures numbered list */
+    padding-left: 1.5rem; /* Add some padding for the numbers */
+}
+
+.getting-started-list li {
+    margin-bottom: 0.75rem; /* More space between list items */
+    color: var(--color-text-dark); /* Ensure good contrast */
+}
+
+.getting-started-list li strong {
+    color: var(--color-primary-blue); /* Highlight the action words */
+}
+
+.requirements-list,
+.materials-list {
+    list-style: disc; /* Ensures bullet points */
+    padding-left: 1.5rem; /* Add some padding for the bullets */
+}
+
+.requirements-list li,
+.materials-list li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-medium);
+}
+
+
+/* --- Call to Action Buttons --- */
+.info-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center boxes */
+    gap: 2rem; /* Space between the info boxes */
+    margin-top: 3rem;
+}
+
+.info-box {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 32px var(--shadow-light);
+    padding: 2.5rem;
+    text-align: center;
+    flex: 1; /* Allows boxes to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 45%; /* Max width to keep two columns on larger screens */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Push button to the bottom */
+}
+
+.info-box h3 {
+    color: var(--color-primary-blue);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 1rem;
+}
+
+.info-box p {
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    margin-bottom: 2rem; /* Space before the button */
+    flex-grow: 1; /* Allow paragraph to take up available space */
+}
+
+.button-container {
+    margin-top: auto; /* Pushes the button container to the bottom */
+    width: 100%; /* Ensure container takes full width */
+}
+
+.btn {
+    display: inline-block; /* Allows padding and margin */
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-large); /* Rounded corners for buttons */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    width: 100%; /* Make buttons full width of their container */
+    max-width: 280px; /* Limit max width for aesthetic reasons */
+}
+
+.primary-btn {
+    background-color: var(--color-accent-gold);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); /* Gold shadow */
+}
+
+.primary-btn:hover {
+    background-color: #c09f2d; /* Slightly darker gold on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.secondary-btn {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(75, 121, 136, 0.4); /* Blue shadow */
+}
+
+.secondary-btn:hover {
+    background-color: var(--color-secondary-blue); /* Slightly lighter blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 20px rgba(75, 121, 136, 0.5);
+}
+
+/* Responsive adjustments for info boxes and buttons */
+@media (max-width: 768px) {
+    .info-boxes {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center stacked boxes */
+    }
+
+    .info-box {
+        max-width: 90%; /* Allow boxes to take more width on small screens */
+        padding: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-box {
+        padding: 1.5rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-box p {
+        font-size: 0.9rem;
+    }
+}
