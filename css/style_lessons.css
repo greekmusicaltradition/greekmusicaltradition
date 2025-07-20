@@ -1,38 +1,119 @@
 /* style_lessons.css */
 
 /* --- Getting Started & Requirements Formatting --- */
-/* You already have .lesson-card, .lesson-header, .lesson-content, .lesson-details which are great.
-   I've added specific classes to the lists for potential further styling, but the existing
-   .lesson-details ul/li styling from style_main.css should apply nicely. */
 
+/* Ensure the overall lesson card structure remains good */
+.lessons-grid .lesson-card {
+    /* Existing lesson-card styles are in style_main.css,
+       but if you wanted specific overrides for this section, you'd put them here.
+       For now, we'll focus on the content within. */
+}
+
+/* Styling for the section title (if you want it different from other H2s) */
+h2.section-divider {
+    color: var(--color-primary-blue);
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2.section-divider::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent-gold);
+    border-radius: 2px;
+}
+
+
+/* Styling for the headers within Getting Started cards */
+.lesson-card .lesson-details h4 {
+    color: var(--color-primary-blue); /* Keep consistent with existing h4 */
+    margin-bottom: 1rem;
+    font-size: 1.25rem; /* Slightly larger for emphasis */
+    font-weight: 700; /* Bolder */
+    border-bottom: 2px solid var(--color-light-blue); /* Subtle separator */
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Makes border-bottom only as wide as text */
+}
+
+/* Specific styling for the ordered list (How to Get Started) */
 .getting-started-list {
-    list-style: decimal; /* Ensures numbered list */
-    padding-left: 1.5rem; /* Add some padding for the numbers */
+    list-style: none; /* Remove default numbers */
+    padding-left: 0; /* Remove default padding */
 }
 
 .getting-started-list li {
-    margin-bottom: 0.75rem; /* More space between list items */
-    color: var(--color-text-dark); /* Ensure good contrast */
+    background-color: var(--color-background-light); /* Light background for each step */
+    margin-bottom: 1rem; /* Space between steps */
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow */
+    display: flex; /* Use flex for icon/number and text alignment */
+    align-items: flex-start; /* Align text to the top if multiple lines */
+    font-size: 1rem;
+    color: var(--color-text-dark);
 }
 
-.getting-started-list li strong {
-    color: var(--color-primary-blue); /* Highlight the action words */
+.getting-started-list li::before {
+    content: counter(step-counter); /* Use CSS counter for numbering */
+    counter-increment: step-counter;
+    background-color: var(--color-secondary-blue); /* Blue background for numbers */
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50%; /* Make it round */
+    width: 30px;
+    height: 30px;
+    min-width: 30px; /* Prevent shrinking */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem; /* Space between number and text */
+    flex-shrink: 0; /* Prevent the number from shrinking */
 }
 
+/* Initialize counter for the ordered list */
+.lesson-card .lesson-details:has(.getting-started-list) {
+    counter-reset: step-counter;
+}
+
+/* Specific styling for the unordered lists (Requirements & Materials) */
 .requirements-list,
 .materials-list {
-    list-style: disc; /* Ensures bullet points */
-    padding-left: 1.5rem; /* Add some padding for the bullets */
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 1.5rem; /* Space between lists if both are present */
 }
 
 .requirements-list li,
 .materials-list li {
-    margin-bottom: 0.5rem;
+    padding-left: 1.8rem; /* Space for custom bullet */
+    position: relative;
+    margin-bottom: 0.7rem; /* Space between list items */
     color: var(--color-text-medium);
+    font-size: 0.98rem;
+}
+
+.requirements-list li::before,
+.materials-list li::before {
+    content: '✓'; /* Custom checkmark bullet */
+    color: var(--color-accent-gold); /* Gold color for bullets */
+    position: absolute;
+    left: 0;
+    font-size: 1.2em; /* Slightly larger bullet */
+    top: 0; /* Align with the top of the text */
 }
 
 
-/* --- Call to Action Buttons --- */
+/* --- Call to Action Buttons (Keeping previous improvements) --- */
 .info-boxes {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -127,6 +208,25 @@
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+    }
+
+    /* Getting Started & Requirements adjustments for mobile */
+    .getting-started-list li {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .getting-started-list li::before {
+        width: 25px;
+        height: 25px;
+        min-width: 25px;
+        font-size: 0.9rem;
+        margin-right: 0.8rem;
+    }
+
+    .requirements-list li,
+    .materials-list li {
+        font-size: 0.9rem;
     }
 }
 
