@@ -80,6 +80,21 @@ h2.section-divider::after {
     flex-shrink: 0; /* Prevent the number from shrinking */
 }
 
+/* New CSS to fix the alignment of text within each list item */
+.getting-started-list li strong {
+    display: block; /* Make the bold title a block element */
+    margin-bottom: 0.2rem; /* Small space below the title */
+    color: var(--color-primary-blue); /* Emphasize the title */
+    font-size: 1.05rem; /* Slightly larger than the paragraph text */
+}
+
+.getting-started-list li span {
+    display: block; /* Make the description text a block element */
+    color: var(--color-text-medium); /* Standard text color */
+    line-height: 1.5; /* Improve readability */
+}
+
+
 /* Initialize counter for the ordered list */
 .lesson-card .lesson-details:has(.getting-started-list) {
     counter-reset: step-counter;
