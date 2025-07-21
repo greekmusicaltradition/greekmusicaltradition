@@ -1,27 +1,29 @@
-/* Initialize counter for the ordered list - Fixed version */
+/* --- Getting Started & Requirements Section --- */
+
+/* Initialize counter for the ordered list */
 .getting-started-list {
     list-style: none; /* Remove default numbers */
-    padding-left: 0; /* Remove default padding */
-    counter-reset: step-counter; /* Move counter-reset here for better compatibility */
+    padding: 0; /* Remove default padding */
+    margin: 0;
+    counter-reset: step-counter; /* Initialize counter here for better compatibility */
 }
 
 .getting-started-list li {
     background-color: var(--color-white); /* Light background for each step */
     margin-bottom: 1rem; /* Space between steps */
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     border-radius: var(--border-radius-small);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow */
     display: flex; /* Flex container for number and text content */
     align-items: flex-start; /* Align items to the top */
+    gap: 1rem; /* Space between number and content */
     font-size: 1rem;
     color: var(--color-text-dark);
+    transition: background-color 0.2s ease;
 }
 
-/* Create a wrapper for the text content */
-.getting-started-list li > strong {
-    flex: 1; /* Take up remaining space */
-    display: flex;
-    flex-direction: column; /* Stack title and description vertically */
+.getting-started-list li:hover {
+    background-color: var(--color-background-light);
 }
 
 .getting-started-list li::before {
@@ -32,25 +34,146 @@
     font-weight: bold;
     font-size: 1.1rem;
     border-radius: 50%; /* Make it round */
-    width: 30px;
-    height: 30px;
-    min-width: 30px; /* Prevent shrinking */
+    width: 32px;
+    height: 32px;
+    min-width: 32px; /* Prevent shrinking */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem; /* Space between number and text */
     flex-shrink: 0; /* Prevent the number from shrinking */
 }
 
-.getting-started-list li strong {
-    color: var(--color-primary-blue); /* Emphasize the title */
-    font-size: 1.05rem; /* Slightly larger than the paragraph text */
-    line-height: 1.2; /* Better line spacing for the title */
-    margin-bottom: 0.2rem; /* Small space below the title */
-    font-weight: bold; /* Ensure it stays bold */
+/* Content wrapper for proper stacking */
+.getting-started-content {
+    flex: 1; /* Take up remaining space */
 }
 
-.getting-started-list li span {
+.getting-started-list strong {
+    display: block;
+    color: var(--color-primary-blue); /* Emphasize the title */
+    font-size: 1.1rem; /* Slightly larger than the paragraph text */
+    font-weight: 600;
+    line-height: 1.2; /* Better line spacing for the title */
+    margin-bottom: 0.3rem; /* Small space below the title */
+}
+
+.getting-started-list .description {
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
+    font-size: 0.95rem;
+}
+
+/* Requirements and Materials Lists */
+.requirements-list,
+.materials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.requirements-list li,
+.materials-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+}
+
+.requirements-list li::before,
+.materials-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary-blue);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Footer Info Section */
+.footer-info {
+    margin-top: 3rem;
+}
+
+.info-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-box {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-3px);
+}
+
+.info-box h3 {
+    color: var(--color-primary-blue);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.info-box p {
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--color-secondary-blue);
+    color: var(--color-white);
+}
+
+.primary-btn:hover {
+    background-color: var(--color-primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--color-primary-blue);
+    border-color: var(--color-primary-blue);
+}
+
+.secondary-btn:hover {
+    background: var(--color-primary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .getting-started-list li {
+        padding: 1rem;
+    }
+    
+    .info-boxes {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
