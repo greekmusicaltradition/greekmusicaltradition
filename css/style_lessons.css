@@ -162,7 +162,7 @@
 }
 
 .getting-started-list li strong {
-    display: block; /* Make the bold title a block element */
+    display: flex; /* Make the bold title a block element */
     margin-bottom: 0.2rem; /* Small space below the title */
     color: var(--color-primary-blue); /* Emphasize the title */
     font-size: 1.05rem; /* Slightly larger than the paragraph text */
@@ -171,7 +171,7 @@
 }
 
 .getting-started-list li span {
-    display: block; /* Make the description text a block element */
+    display: flex; /* Make the description text a block element */
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
 }
