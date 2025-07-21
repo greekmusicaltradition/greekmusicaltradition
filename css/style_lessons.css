@@ -3,7 +3,7 @@
     list-style: none; /* Remove default numbers */
     padding-left: 0; /* Remove default padding */
     counter-reset: step-counter; /* Move counter-reset here for better compatibility */
-} 
+}
 
 .getting-started-list li {
     background-color: var(--color-white); /* Light background for each step */
@@ -15,6 +15,13 @@
     align-items: flex-start; /* Align items to the top */
     font-size: 1rem;
     color: var(--color-text-dark);
+}
+
+/* Create a wrapper for the text content */
+.getting-started-list li > strong {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
 }
 
 .getting-started-list li::before {
@@ -36,15 +43,14 @@
 }
 
 .getting-started-list li strong {
-    display: block; /* Make the bold title a block element */
-    margin-bottom: 0.2rem; /* Small space below the title */
     color: var(--color-primary-blue); /* Emphasize the title */
     font-size: 1.05rem; /* Slightly larger than the paragraph text */
     line-height: 1.2; /* Better line spacing for the title */
+    margin-bottom: 0.2rem; /* Small space below the title */
+    font-weight: bold; /* Ensure it stays bold */
 }
 
 .getting-started-list li span {
-    display: block; /* Make the description text a block element */
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
 }
