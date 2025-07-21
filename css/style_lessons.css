@@ -167,6 +167,7 @@
     color: var(--color-primary-blue); /* Emphasize the title */
     font-size: 1.05rem; /* Slightly larger than the paragraph text */
     line-height: 1.2; /* Better line spacing for the title */
+    margin-left: 1.5rem;
 }
 
 .getting-started-list li span {
