@@ -3,7 +3,7 @@
     list-style: none; /* Remove default numbers */
     padding-left: 0; /* Remove default padding */
     counter-reset: step-counter; /* Move counter-reset here for better compatibility */
-}
+} 
 
 .getting-started-list li {
     background-color: var(--color-white); /* Light background for each step */
