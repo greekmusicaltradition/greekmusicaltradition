@@ -1,3 +1,129 @@
+/* --- Lesson Cards Grid --- */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.lesson-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Stack header, content, and description vertically */
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+}
+
+.lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.lesson-header h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 600;
+}
+
+.lesson-content {
+    padding: 2rem;
+    display: flex; /* Keep this as flex for image and details side-by-side */
+    flex-direction: row; /* Ensure image and details are in a row */
+    align-items: flex-start; /* Align items to the top (icon and bullet points) */
+    gap: 1.5rem; /* Gap between image and details */
+    flex-grow: 1; /* Allow this section to grow and push the description box to the bottom */
+}
+
+/* Styling for the icon on the left */
+.lesson-image {
+    flex-shrink: 0; /* Prevents shrinking */
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-details {
+    flex: 1; /* Allows it to grow and take available space */
+    width: 100%; /* Ensures it takes full width in column layout within its own flex context */
+    text-align: left; /* Align text within details */
+}
+
+.lesson-details h4 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lesson-details p {
+    margin-bottom: 1rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+}
+
+.lesson-details ul {
+    list-style: none;
+    width: 100%; /* Ensure bullet points take full width */
+    padding-left: 0; /* Remove default padding for list */
+}
+
+.lesson-details li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-medium);
+    position: relative;
+    padding-left: 1rem; /* Space for the custom bullet */
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.lesson-details li::before {
+    content: '•';
+    color: var(--color-secondary-blue);
+    position: absolute;
+    left: 0;
+}
+
+.traditional-icon,
+.byzantine-icon {
+    font-size: 48px; /* Icon size */
+    color: var(--color-primary-blue); /* Icon color */
+}
+
+/* --- Lesson Description Box (at the very bottom of the card) --- */
+.lesson-description-box {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue)); /* Matches lesson-header background */
+    color: var(--color-white); /* White text */
+    padding: 1.5rem; /* More padding for better appearance */
+    text-align: center; /* Center the text */
+    font-size: 0.95rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve line spacing */
+    /* Position at the very bottom, stretching full width and maintaining border-radius */
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    /* No margin top/bottom, it will naturally align due to flexbox */
+    margin-top: auto; /* Pushes this element to the bottom of the flex container (lesson-card) */
+    /* Ensure it has a consistent width across the card, considering padding */
+    width: 100%; /* Take full width of its parent (.lesson-card) */
+}
+
+.lesson-description-box p {
+    color: var(--color-white); /* Forces text color to white */
+    margin-bottom: 0; /* Remove default paragraph margin if it creates extra space */
+    font-size: 1rem; /* Inherit font size from parent div */
+}
+
+
 /* Initialize counter for the ordered list - Fixed version */
 .getting-started-list {
     list-style: none; /* Remove default numbers */
