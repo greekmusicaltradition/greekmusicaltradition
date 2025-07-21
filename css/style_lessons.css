@@ -1,23 +1,18 @@
-/* style_lessons.css */
-
-/* --- Getting Started & Requirements Formatting --- */
-
-/* ... (previous section headers and h4 styling remain unchanged) ... */
-
-/* Specific styling for the ordered list (How to Get Started) */
+/* Initialize counter for the ordered list - Fixed version */
 .getting-started-list {
     list-style: none; /* Remove default numbers */
     padding-left: 0; /* Remove default padding */
+    counter-reset: step-counter; /* Move counter-reset here for better compatibility */
 }
 
 .getting-started-list li {
-    background-color: var(--color-white); /* Light background for each step (changed from background-light to white for better contrast based on screenshot) */
+    background-color: var(--color-white); /* Light background for each step */
     margin-bottom: 1rem; /* Space between steps */
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius-small);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow */
     display: flex; /* Flex container for number and text content */
-    align-items: flex-start; /* Align items to the top (number and text block) */
+    align-items: flex-start; /* Align items to the top */
     font-size: 1rem;
     color: var(--color-text-dark);
 }
@@ -40,7 +35,6 @@
     flex-shrink: 0; /* Prevent the number from shrinking */
 }
 
-/* This is the crucial part: Make the content next to the number stack vertically */
 .getting-started-list li strong {
     display: block; /* Make the bold title a block element */
     margin-bottom: 0.2rem; /* Small space below the title */
@@ -54,12 +48,3 @@
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
 }
-
-
-/* Initialize counter for the ordered list */
-.lesson-card .lesson-details:has(.getting-started-list) {
-    counter-reset: step-counter;
-}
-
-/* ... (the rest of your CSS for .requirements-list, .materials-list,
-       and the call to action buttons remains unchanged as previously provided) ... */
