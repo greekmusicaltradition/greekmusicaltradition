@@ -69,6 +69,7 @@
 
 .lesson-details p {
     margin-bottom: 1rem;
+    margin-left: 1rem;    
     color: var(--color-text-medium);
     line-height: 1.7;
 }
@@ -133,7 +134,8 @@
 
 .getting-started-content {
     padding: 0.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
+    margin-left: 2rem;
 }
 
 .getting-started-list li {
@@ -163,6 +165,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 1rem; /* Space between number and text */
+    margin-top:2rem;
     flex-shrink: 0; /* Prevent the number from shrinking */
 }
 
@@ -172,7 +175,7 @@
     color: var(--color-primary-blue); /* Emphasize the title */
     font-size: 1.05rem; /* Slightly larger than the paragraph text */
     line-height: 1.2; /* Better line spacing for the title */
-    margin-left: 1.5rem;
+    
 }
 
 .getting-started-list li span {
