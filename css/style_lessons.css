@@ -127,7 +127,7 @@
 /* Initialize counter for the ordered list - Fixed version */
 .getting-started-list {
     list-style: none; /* Remove default numbers */
-    padding-left: 0; /* Remove default padding */
+    padding-left: 1rem; /* Remove default padding */
     counter-reset: step-counter; /* Move counter-reset here for better compatibility */
 }
 
