@@ -460,10 +460,10 @@ body {
 }
 
 .lesson-description-box p {
-    margin: 0;
-    color: var(--color-text-medium);
-    font-style: italic;
-    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.7;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* --- Footer Info (for spacing before actual footer) --- */
