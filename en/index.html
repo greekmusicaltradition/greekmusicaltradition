@@ -11,10 +11,10 @@
 <body>
     <div id="header"></div>
 
-    
     <header class="hero">
         <div class="hero-content">
             <h1>Greek Traditional & Byzantine Music</h1>
+            <p>Discover the timeless melodies of Greece</p>
         </div>
     </header>
     
@@ -31,7 +31,7 @@
                         <p class="hero-subtitle">Welcome to a world of beautiful melodies and timeless tradition!</p>
                         
                         <div class="welcome-content">
-                            <p>Immerse yourself in the **rich musical heritage of Greece** through authentic lessons in traditional Greek and Byzantine music. Our comprehensive lessons will guide you through centuries of musical artistry, from ancient Byzantine chants to vibrant folk melodies.</p>
+                            <p>Immerse yourself in the <strong>rich musical heritage of Greece</strong> through authentic lessons in traditional Greek and Byzantine music. Our comprehensive lessons will guide you through centuries of musical artistry, from ancient Byzantine chants to vibrant folk melodies.</p>
                             
                             <p class="language-note">Lessons available in both English and Greek.</p>
                             
@@ -43,7 +43,6 @@
                             <p class="journey-text">Let's embark on this melodic journey together!</p>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -54,7 +53,7 @@
                     </div>
                     <div class="lesson-content">
                         <div class="lesson-image">
-                               <div class="byzantine-icon">📜</div>
+                            <div class="byzantine-icon">📜</div>
                         </div>
                         <div class="lesson-details">
                             <ul>
@@ -64,7 +63,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="lesson-description-box"> <p>Byzantine music is a rich and ancient musical tradition that connects us to centuries of spiritual heritage.</p>
+                    <div class="lesson-description-box">
+                        <p>Byzantine music is a rich and ancient musical tradition that connects us to centuries of spiritual heritage.</p>
                     </div>
                 </div>
 
@@ -85,21 +85,60 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="lesson-description-box"> <p>Greek traditional music is a vibrant and deeply rooted art form that tells the story of our culture.</p>
+                    <div class="lesson-description-box">
+                        <p>Greek traditional music is a vibrant and deeply rooted art form that tells the story of our culture.</p>
                     </div>
                 </div>
             </div>
 
             <div class="footer-info">
                 <div class="info-boxes">
-                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <div id="footer"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fade in animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
