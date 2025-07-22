@@ -298,10 +298,10 @@ body {
 }
 
 .info-panel p {
-    margin-bottom: 1rem;
+     margin: 0;
     color: var(--color-text-medium);
-    line-height: 1.7;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-style: italic;
+    line-height: 1.6;
 }
 
 .hero-subtitle {
