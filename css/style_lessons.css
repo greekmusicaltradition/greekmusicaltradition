@@ -132,10 +132,7 @@
 }
 
 .getting-started-content {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
     padding: 2rem;
-    box-shadow: 0 8px 32px var(--shadow-light);
     margin-bottom: 2rem;
 }
 
