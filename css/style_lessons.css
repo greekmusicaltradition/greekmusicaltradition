@@ -175,3 +175,14 @@
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
 }
+
+
+/* Single column version of combined-panel for lessons page */
+.combined-panel.single-column {
+    grid-template-columns: 1fr; /* Single column instead of 1fr 2fr */
+    text-align: center; /* Center the content */
+}
+
+.combined-panel.single-column .info-panel {
+    max-width: none; /* Allow full width usage */
+}
