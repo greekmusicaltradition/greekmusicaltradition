@@ -131,6 +131,14 @@
     counter-reset: step-counter; /* Move counter-reset here for better compatibility */
 }
 
+.getting-started-content {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    padding: 2rem;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    margin-bottom: 2rem;
+}
+
 .getting-started-list li {
     background-color: var(--color-white); /* Light background for each step */
     margin-bottom: 1rem; /* Space between steps */
