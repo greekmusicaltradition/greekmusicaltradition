@@ -11,6 +11,7 @@
     --color-tertiary-blue: #7bb3c7;
     --color-accent-gold: #d4af37;
     --color-light-blue: #b8dce8;
+    --color-lighter-blue: #d0e8f0;
     --color-text-dark: #333;
     --color-text-medium: #555;
     --color-background-light: #f5f5f5;
@@ -441,13 +442,12 @@ body {
 
 .lesson-details li {
     padding: 0.3rem 0;
-    border-bottom: 1px solid var(--border-light);
     color: var(--color-text-medium);
     font-size: 0.95rem;
 }
 
 .lesson-details li:last-child {
-    border-bottom: none;
+    /* No special styling needed anymore */
 }
 
 .lesson-details li:before {
@@ -459,8 +459,9 @@ body {
 
 .lesson-description-box {
     padding: 1.5rem;
-    background: var(--color-light-blue);
-    border-top: 1px solid var(--border-light);
+    background: var(--color-lighter-blue);
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
     margin-top: auto; /* Push to bottom of card */
 }
 
