@@ -526,11 +526,43 @@ body {
 }
 
 .lesson-description-box p {
-    margin: 0;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-=bottom: 2rem;
     color: var(--color-text-medium);
     font-style: italic;
     line-height: 1.6;
 }
+
+
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cta-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards have equal height */
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    border-color: var(--color-light-blue);
+}
+
+
+
 
 /* ========================================
    FOOTER
