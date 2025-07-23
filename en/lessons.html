@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="../css/style_main.css">
     <link rel="stylesheet" href="../css/style_lessons.css"> 
     <script src="../js/cookie-consent.js"></script>
+    
+    <!-- Move icon styles to head -->
+    <style>
+        .byzantine-icon, .traditional-icon {
+            font-size: 2.5rem;
+            display: inline-block;
+            line-height: 1;
+            color: #4b7988;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body> 
     <div id="header"></div>
@@ -20,15 +31,15 @@
 
     <main class="main-content">
         <div class="container">
+            <!-- Introduction Section -->
             <div class="content-grid">
-                <div class="combined-panel single-column">
+                <div class="combined-panel single-column fade-in-on-scroll">
                     <div class="info-panel">
                         <h2>Learn Authentic Greek Music</h2>
                         <div class="welcome-content">
-                            
                             <p>If you're drawn to the beauty and depth of Greek traditional and Byzantine music, you're in the right place!</p>
                             
-                            <p> I offer lessons that deepen your connection to this rich and living tradition while strengthening and training 
+                            <p>I offer lessons that deepen your connection to this rich and living tradition while strengthening and training 
                                 your voice. You'll be supported in developing your vocal skills while gaining a deeper understanding of the 
                                 unique character of each musical style.</p>
                              
@@ -38,29 +49,20 @@
                                                                                 
                             <p>Both formats stay true to the style and spirit of the music, while offering a rich exploration of its 
                                 cultural and historical background, making the experience engaging and meaningful on many levels.</p>
-
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Main Lesson Types -->
             <div class="lessons-grid">
-                <div class="lesson-card">
+                <div class="lesson-card fade-in-on-scroll">
                     <div class="lesson-header">
                         <h3>Byzantine Music Lessons</h3>
                     </div>
-                   <div class="lesson-content">
+                    <div class="lesson-content">
                         <div class="lesson-image">
-                            <style>
-                                .byzantine-icon {
-                                font-size: 2.5rem; /* Adjust this value to your preference */
-                                    display: inline-block;
-                                        line-height: 1;
-                                    color: #4b7988; /* Matches your brand color */
-                                    vertical-align: middle;
-                                        }
-                                        </style>
-                                    <div class="byzantine-icon">📜</div>
+                            <div class="byzantine-icon">📜</div>
                         </div>
                         <div class="lesson-details">
                             <h4>What You'll Learn:</h4>
@@ -82,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="lesson-card">
+                <div class="lesson-card fade-in-on-scroll">
                     <div class="lesson-header">
                         <h3>Greek Traditional Singing Lessons</h3>
                     </div>
@@ -111,116 +113,137 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="info-panel">
-                    <h2>Getting Started & Requirements</h2>
-                </div>
+            <!-- Getting Started Section -->
+            <div class="info-panel">
+                <h2>Getting Started & Requirements</h2>
+            </div>
         
+            <div class="lessons-grid">
+                <div class="lesson-card fade-in-on-scroll">
+                    <div class="lesson-header">
+                        <h3>How to Get Started</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <ol class="getting-started-list">
+                                <li>
+                                    <div class="getting-started-content">
+                                        <strong>Contact Us:</strong>
+                                        <div class="description">Reach out through our contact form to discuss your interests and goals.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="getting-started-content">
+                                        <strong>Schedule Consultation:</strong>
+                                        <div class="description">We'll arrange a brief consultation to understand your needs</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="getting-started-content">
+                                        <strong>Choose Your Format:</strong>
+                                        <div class="description">Select between individual or group lessons</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="getting-started-content">
+                                        <strong>Book Your First Lesson:</strong>
+                                        <div class="description">Schedule your first session at a convenient time</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="getting-started-content">
+                                        <strong>Begin Learning:</strong>
+                                        <div class="description">Start your musical journey with expert guidance</div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card fade-in-on-scroll">
+                    <div class="lesson-header">
+                        <h3>What You Need</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <h4>Technical Requirements:</h4>
+                            <ul class="requirements-list">
+                                <li>Stable internet connection</li>
+                                <li>Computer, tablet, or smartphone with camera</li>
+                                <li>Good quality microphone (built-in is fine)</li>
+                                <li>Quiet learning environment</li>
+                            </ul>
+                    
+                            <h4>Materials Provided:</h4>
+                            <ul class="materials-list">
+                                <li>Digital sheet music and notation</li>
+                                <li>Audio recordings for practice</li>
+                                <li>Cultural and historical context materials</li>
+                                <li>Practice exercises and assignments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="footer-info">
                 <div class="lessons-grid">
-                    <div class="lesson-card">
+                    <div class="lesson-card cta-card fade-in-on-scroll">
                         <div class="lesson-header">
-                            <h3>How to Get Started</h3>
+                            <h3>Ready to Start Learning?</h3>
                         </div>
-                        <div class="lesson-content">
-                            <div class="lesson-details">
-                                <ol class="getting-started-list">
-                                    <li>
-                                        <div class="getting-started-content">
-                                            <strong>Contact Us:</strong>
-                                            <div class="description">Reach out through our contact form to discuss your interests and goals.</div>
-                                        </div>
-                                    </li>
-                                      <li>
-                                        <div class="getting-started-content">
-                                            <strong>Schedule Consultation:</strong>
-                                            <div class="description">We'll arrange a brief consultation to understand your needs</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="getting-started-content">
-                                            <strong>Choose Your Format:</strong>
-                                            <div class="description">Select between individual or group lessons</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="getting-started-content">
-                                            <strong>Book Your First Lesson:</strong>
-                                            <div class="description">Schedule your first session at a convenient time</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="getting-started-content">
-                                            <strong>Begin Learning:</strong>
-                                            <div class="description">Start your musical journey with expert guidance</div>
-                                        </div>
-                                    </li>
-                                </ol>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>Contact us today to schedule your first lesson and begin your journey into the beautiful world of Greek musical tradition!</p>
+                                <div class="cta-buttons-lessons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-primary">Get in Touch</a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lesson-card">
+                    <div class="lesson-card cta-card fade-in-on-scroll">
                         <div class="lesson-header">
-                            <h3>What You Need</h3>
+                            <h3>Have Questions?</h3>
                         </div>
-                        <div class="lesson-content">
-                            <div class="lesson-details">
-                                <h4>Technical Requirements:</h4>
-                                <ul class="requirements-list">
-                                    <li>Stable internet connection</li>
-                                    <li>Computer, tablet, or smartphone with camera</li>
-                                    <li>Good quality microphone (built-in is fine)</li>
-                                    <li>Quiet learning environment</li>
-                                </ul>
-                        
-                                <h4>Materials Provided:</h4>
-                                <ul class="materials-list">
-                                    <li>Digital sheet music and notation</li>
-                                    <li>Audio recordings for practice</li>
-                                    <li>Cultural and historical context materials</li>
-                                    <li>Practice exercises and assignments</li>
-                                </ul>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
+                                <div class="cta-buttons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-secondary">Contact Form</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              <!-- CTA Section -->
-<div class="footer-info">
-    <div class="lessons-grid">
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Ready to Start Learning?</h3>
-            </div>
-            <div class="lesson-content" style="flex-direction: column; text-align: center;">
-                <div class="lesson-details" style="width: 100%;">
-                    <p>Contact us today to schedule your first lesson and begin your journey into the beautiful world of Greek musical tradition!</p>
-                    <div class="cta-buttons-lessons" style="justify-content: center;">
-                        <a href="contact.html" class="btn-primary">Get in Touch</a>
-                    </div>
-                </div>
             </div>
         </div>
-
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Have Questions?</h3>
-            </div>
-            <div class="lesson-content" style="flex-direction: column; text-align: center;">
-                <div class="lesson-details" style="width: 100%;">
-                    <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
-                    <div class="cta-buttons" style="justify-content: center;">
-                        <a href="contact.html" class="btn-secondary">Contact Form</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
     </main>
 
     <div id="footer"></div>
     
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script>
+        // Fade in animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
