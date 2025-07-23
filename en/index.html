@@ -7,6 +7,35 @@
     <link rel="icon" href="../pictures/favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/style_main.css">
     <script src="../js/cookie-consent.js"></script>
+    
+    <!-- Add missing icon styles -->
+    <style>
+        .byzantine-icon, .traditional-icon {
+            font-size: 2rem;
+            display: inline-block;
+            line-height: 1;
+            color: #4b7988;
+            vertical-align: middle;
+        }
+        
+        /* Remove card styling from CTA cards */
+        .lesson-card.cta-card {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+        }
+        
+        .lesson-card.cta-card .lesson-header {
+            background: transparent !important;
+            color: var(--color-primary-blue) !important;
+        }
+        
+        .lesson-card.cta-card:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
@@ -20,7 +49,7 @@
     <main class="main-content">
         <div class="container">
             <div class="content-grid">
-                <div class="combined-panel">
+                <div class="combined-panel fade-in-on-scroll">
                     <div class="decorative-panel">
                         <img src="../pictures/ornament_main.jpg" alt="Greek Traditional & Byzantine Music" class="decorative-image">
                     </div>
@@ -47,7 +76,7 @@
             </div>
 
             <div class="lessons-grid">
-                <div class="lesson-card">
+                <div class="lesson-card fade-in-on-scroll">
                     <div class="lesson-header">
                         <h3>Byzantine Music Lessons</h3>
                     </div>
@@ -66,10 +95,9 @@
                     <div class="lesson-description-box">
                         <p>Byzantine music is a rich and ancient musical tradition that connects us to centuries of spiritual heritage.</p>
                     </div>
-                    
                 </div>
 
-                <div class="lesson-card">
+                <div class="lesson-card fade-in-on-scroll">
                     <div class="lesson-header">
                         <h3>Greek Traditional Singing Lessons</h3>
                     </div>
@@ -88,52 +116,41 @@
                     </div>
                     <div class="lesson-description-box">
                         <p>Greek traditional music is a vibrant and deeply rooted art form that tells the story of our culture.</p>
-                    </div>     
-                    
-                </div>
-            </div>
-
-
-
-
-
-<div class="footer-info">
-    <div class="lessons-grid">
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Ready to Start Learning?</h3>
-            </div>
-            <div class="lesson-content" style="flex-direction: column; text-align: center;">
-                <div class="lesson-details" style="width: 100%;">
-                    <p>Contact us today to schedule your first lesson and begin your journey into the beautiful world of Greek musical tradition!</p>
-                    <div class="cta-buttons" style="justify-content: center;">
-                        <a href="#contact" class="btn-primary">Get in Touch</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Have Questions?</h3>
-            </div>
-            <div class="lesson-content" style="flex-direction: column; text-align: center;">
-                <div class="lesson-details" style="width: 100%;">
-                    <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
-                    <div class="cta-buttons" style="justify-content: center;">
-                        <a href="#contact" class="btn-secondary">Contact Form</a>
+            <!-- CTA Section -->
+            <div class="footer-info">
+                <div class="lessons-grid">
+                    <div class="lesson-card cta-card fade-in-on-scroll">
+                        <div class="lesson-header">
+                            <h3>Ready to Start Learning?</h3>
+                        </div>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>Contact us today to schedule your first lesson and begin your journey into the beautiful world of Greek musical tradition!</p>
+                                <div class="cta-buttons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-primary">Get in Touch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card cta-card fade-in-on-scroll">
+                        <div class="lesson-header">
+                            <h3>Have Questions?</h3>
+                        </div>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
+                                <div class="cta-buttons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-secondary">Contact Form</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-            
-
-            
-              
             </div>
         </div>
     </main>
