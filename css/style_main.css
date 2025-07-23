@@ -562,7 +562,25 @@ body {
 }
 
 
+/* Remove card styling from CTA cards while keeping layout */
+.lesson-card.cta-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
 
+/* Style the headers to blend with the page */
+.lesson-card.cta-card .lesson-header {
+    background: transparent !important;
+    color: var(--color-primary-blue);
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem; /* Adjust padding as needed */
+}
+
+/* Keep the content area clean */
+.lesson-card.cta-card .lesson-content {
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem; /* Adjust padding as needed */
+}
 
 /* ========================================
    FOOTER
