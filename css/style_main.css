@@ -355,6 +355,10 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.welcome-content h3 {
+    margin-bottom: 1.2rem;
+}
+
 .welcome-content p {
     margin-bottom: 1.2rem;
 }
