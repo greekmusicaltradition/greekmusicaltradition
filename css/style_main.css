@@ -535,6 +535,10 @@ body {
     line-height: 1.6;
 }
 
+/* ========================================
+   CTA GRID & CARDS
+   ======================================== */
+
 /* CTA Grid Layout */
 .cta-grid {
     display: grid;
@@ -543,7 +547,7 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Default CTA Card Styling (for when you want normal cards) */
+/* Default CTA Card Styling (for standalone CTA cards) */
 .cta-card {
     background: var(--color-white);
     border-radius: var(--border-radius-medium);
@@ -561,8 +565,12 @@ body {
     border-color: var(--color-light-blue);
 }
 
-/* Icon Styling */
-.byzantine-icon, .traditional-icon {
+/* ========================================
+   ICON STYLING
+   ======================================== */
+
+.byzantine-icon, 
+.traditional-icon {
     font-size: 2rem;
     display: inline-block;
     line-height: 1;
@@ -570,31 +578,67 @@ body {
     vertical-align: middle;
 }
 
-/* Transparent CTA Cards (for lesson-card.cta-card combination) */
+/* ========================================
+   TRANSPARENT CTA CARDS (Chrome Compatible)
+   ======================================== */
+
+/* Main card styling - Enhanced specificity for Chrome */
+.footer-info .lessons-grid .lesson-card.cta-card,
+.main-content .lessons-grid .lesson-card.cta-card,
 .lessons-grid .lesson-card.cta-card {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
 }
 
+/* Header styling - Direct color for Chrome compatibility */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-header,
+.main-content .lessons-grid .lesson-card.cta-card .lesson-header,
 .lessons-grid .lesson-card.cta-card .lesson-header {
     background: transparent !important;
-    color: var(--color-primary-blue) !important;
+    color: #4b7988 !important;
     padding: 1rem 0 0.5rem 0 !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
+/* Content area styling */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content,
+.main-content .lessons-grid .lesson-card.cta-card .lesson-content,
 .lessons-grid .lesson-card.cta-card .lesson-content {
     padding: 0.5rem 0 1rem 0 !important;
     background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: none !important;
 }
 
+/* Remove all hover effects */
+.footer-info .lessons-grid .lesson-card.cta-card:hover,
+.main-content .lessons-grid .lesson-card.cta-card:hover,
 .lessons-grid .lesson-card.cta-card:hover {
     transform: none !important;
     box-shadow: none !important;
     background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Chrome-specific fallbacks */
+.lesson-card.cta-card * {
+    box-shadow: none !important;
+}
+
+/* Ensure lesson description boxes don't interfere */
+.lessons-grid .lesson-card.cta-card .lesson-description-box {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* ========================================
