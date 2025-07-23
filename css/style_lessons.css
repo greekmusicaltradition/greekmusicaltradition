@@ -205,3 +205,46 @@
     margin-top: auto;
     flex-wrap: wrap;
 }
+
+
+/* ========================================
+   LESSONS PAGE CTA CARDS (Transparent)
+   ======================================== */
+
+/* Override lesson-card styling for CTA cards on lessons page */
+.lessons-grid .lesson-card.cta-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+/* CTA card headers - transparent styling */
+.lessons-grid .lesson-card.cta-card .lesson-header {
+    background: transparent !important;
+    color: #4b7988 !important;
+    padding: 1rem 0 0.5rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* CTA card content styling */
+.lessons-grid .lesson-card.cta-card .lesson-content {
+    padding: 0.5rem 0 1rem 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Remove hover effects from CTA cards */
+.lessons-grid .lesson-card.cta-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Hide lesson description box for CTA cards */
+.lessons-grid .lesson-card.cta-card .lesson-description-box {
+    display: none !important;
+}
