@@ -316,7 +316,6 @@ body {
     position: relative;
     border-radius: var(--border-radius-medium);
     overflow: hidden;
-    box-shadow: 0 4px 16px var(--shadow-light);
     min-height: 300px;
 }
 
