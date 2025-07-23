@@ -31,7 +31,6 @@
     --border-radius-large: 20px;
 }
 
-
 /* ========================================
    BASE STYLES
    ======================================== */
@@ -49,7 +48,6 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 
 /* ========================================
    NAVIGATION
@@ -132,7 +130,6 @@ body {
     gap: 1rem;
 }
 
-
 /* ========================================
    MOBILE MENU
    ======================================== */
@@ -167,7 +164,6 @@ body {
 .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
-
 
 /* ========================================
    LANGUAGE SWITCHER
@@ -228,7 +224,6 @@ body {
     gap: 8px;
 }
 
-
 /* ========================================
    HERO SECTION
    ======================================== */
@@ -268,7 +263,6 @@ body {
     font-weight: 300;
 }
 
-
 /* ========================================
    MAIN CONTENT LAYOUT
    ======================================== */
@@ -306,7 +300,6 @@ body {
 .single-column {
     grid-template-columns: 1fr;
 }
-
 
 /* ========================================
    DECORATIVE & INFO PANELS
@@ -374,7 +367,6 @@ body {
     margin-top: 1.5rem;
 }
 
-
 /* ========================================
    BUTTONS
    ======================================== */
@@ -421,17 +413,24 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--shadow-medium);
 }
+
+/* ========================================
+   CARD BUTTONS - CENTERED & FIXED LAYOUT
+   ======================================== */
+
 .card-cta-buttons {
     display: flex;
     justify-content: center;  /* Center buttons horizontally */
     gap: 1rem;
-    margin: 1rem 0 0 0;
-    flex-wrap: wrap;
+    padding: 1.5rem;
+    margin-top: auto; /* Push buttons to bottom of card */
+    background: transparent;
 }
 
 .card-cta-buttons .btn-primary,
 .card-cta-buttons .btn-secondary {
-    min-width: 140px;  /* Optional: define a fixed width to unify button sizes */
+    min-width: 140px;  /* Consistent button width */
+    text-align: center;
 }
 
 /* ========================================
@@ -521,11 +520,9 @@ body {
 }
 
 .lesson-description-box {
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
     background: var(--color-lighter-blue);
-    border-bottom-left-radius: var(--border-radius-medium);
-    border-bottom-right-radius: var(--border-radius-medium);
-    margin-top: auto; /* Push to bottom of card */
+    margin-top: auto; /* Push to bottom area of card */
 }
 
 .lesson-description-box p {
@@ -534,7 +531,6 @@ body {
     font-style: italic;
     line-height: 1.6;
 }
-
 
 /* ========================================
    FOOTER
@@ -646,7 +642,6 @@ body {
     margin-top: 10px;
 }
 
-
 /* ========================================
    BACK TO TOP BUTTON
    ======================================== */
@@ -683,7 +678,6 @@ body {
     background-color: #c09f2d;
     transform: translateY(-8px);
 }
-
 
 /* ========================================
    ANIMATIONS
@@ -732,7 +726,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /* ========================================
    RESPONSIVE DESIGN - TABLET
@@ -802,7 +795,6 @@ body {
     }
 }
 
-
 /* ========================================
    RESPONSIVE DESIGN - MOBILE
    ======================================== */
@@ -854,6 +846,16 @@ body {
         margin-bottom: 1rem;
     }
 
+    .card-cta-buttons {
+        padding: 1rem;
+    }
+    
+    .card-cta-buttons .btn-primary,
+    .card-cta-buttons .btn-secondary {
+        min-width: 120px;
+        font-size: 0.9rem;
+    }
+
     /* Adjust footer content for mobile */
     .footer-content {
         grid-template-columns: 1fr;
@@ -864,7 +866,6 @@ body {
         padding: 0;
     }
 }
-
 
 /* ========================================
    RESPONSIVE DESIGN - SMALL MOBILE
@@ -889,6 +890,17 @@ body {
 
     .lesson-card {
         margin-bottom: 1rem;
+    }
+
+    .card-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card-cta-buttons .btn-primary,
+    .card-cta-buttons .btn-secondary {
+        width: 100%;
+        max-width: 200px;
     }
 
     /* Smaller back-to-top button */
