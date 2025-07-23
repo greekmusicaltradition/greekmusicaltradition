@@ -382,7 +382,7 @@ body {
 .cta-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: auto;
+    margin: 1rem 0rem;
     flex-wrap: wrap;
 }
 
