@@ -55,9 +55,9 @@
 }
 
 .lesson-details {
-    flex: 1; /* Allows it to grow and take available space */
-    width: 100%; /* Ensures it takes full width in column layout within its own flex context */
-    text-align: left; /* Align text within details */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .lesson-details h4 {
