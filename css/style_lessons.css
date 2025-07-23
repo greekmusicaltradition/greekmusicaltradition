@@ -194,3 +194,14 @@
 .combined-panel.single-column .info-panel {
     max-width: none; /* Allow full width usage */
 }
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.cta-buttons-lesson {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
