@@ -249,3 +249,15 @@
     display: none !important;
 }
 
+
+/* style_lessons.css */
+
+.icon-spacing {
+    margin-right: 8px; /* Adjust as needed for desired spacing */
+    color: #4CAF50; /* Example color, choose one that fits your brand */
+}
+
+/* Optional: style for the bolded text */
+.welcome-content p strong {
+    color: #333; /* Darker color for emphasis */
+}
