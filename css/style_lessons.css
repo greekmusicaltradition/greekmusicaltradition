@@ -248,3 +248,32 @@
 .lessons-grid .lesson-card.cta-card .lesson-description-box {
     display: none !important;
 }
+
+
+/* ========================================
+   LESSON SECTION ICONS (for intro text)
+   ======================================== */
+
+.lesson-section {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.lesson-section .icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    color: var(--color-secondary-blue); /* Match your theme color */
+    stroke-width: 2;
+}
+
+.lesson-section .lesson-content {
+    flex: 1;
+}
+
+.lesson-section .lesson-content p {
+    margin: 0;
+}
