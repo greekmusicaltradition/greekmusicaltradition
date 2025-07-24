@@ -1,30 +1,22 @@
-/* Page-specific styles for the About page */
+/* ========================================
+   STYLES FOR THE ABOUT PAGE
+   ======================================== */
 
-.about-page-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; /* Space between each about section */
-    padding: 2rem 0;
-}
-
+/* Main Section Layout */
 .about-section {
     background-color: var(--color-white);
     border-radius: var(--border-radius-large);
     box-shadow: 0 8px 32px var(--shadow-light);
     padding: 2.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligns items to the top */
     gap: 2.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 3rem;
 }
 
-.about-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px var(--shadow-medium);
-}
-
+/* Round, Gradient Icon Style */
 .section-icon {
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    flex-shrink: 0;
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
@@ -34,11 +26,11 @@
     justify-content: center;
     font-size: 3rem;
     color: var(--color-white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .section-content {
-    flex-grow: 1; /* Allows content to take remaining space */
+    flex-grow: 1;
 }
 
 .section-content h2 {
@@ -55,57 +47,45 @@
     font-size: clamp(0.95rem, 2vw, 1.05rem);
 }
 
-.read-more-btn {
-    display: inline-block;
-    background-color: var(--color-accent-gold);
-    color: var(--color-white);
-    padding: 0.8rem 1.8rem;
-    border-radius: var(--border-radius-small);
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Make sure the text inside the fixed lesson cards is styled correctly */
+.about-section .lesson-card .lesson-content {
+    padding: 1.5rem; /* Restore padding */
 }
 
-.read-more-btn:hover {
-    background-color: #c09f2d; /* Slightly darker gold */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+.about-section .lesson-card .lesson-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
+
 
 /* Call to Action Section Styling */
 .call-to-action {
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
-    color: var(--color-white);
-    padding: 3.5rem 2.5rem;
-    text-align: center;
+    background: linear-gradient(135deg, var(--color-light-blue), var(--color-lighter-blue));
+    padding: 3rem 2rem;
     border-radius: var(--border-radius-large);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-top: 2rem; /* Add some space above */
+    text-align: center;
+    border: 2px solid var(--color-tertiary-blue);
+    margin-top: 2rem;
     margin-bottom: 4rem; /* Space before footer */
 }
 
 .call-to-action h2 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--color-primary-blue);
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 1.5rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .call-to-action p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    color: var(--color-text-medium);
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 2rem auto;
 }
 
 .action-buttons {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .explore-link,
@@ -115,143 +95,67 @@
     border-radius: var(--border-radius-small);
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     font-size: 1.05rem;
+    border: 2px solid transparent;
 }
 
 .explore-link {
     background-color: var(--color-accent-gold);
     color: var(--color-white);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .explore-link:hover {
     background-color: #c09f2d;
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .contact-link {
-    background-color: var(--color-white);
+    background-color: transparent;
     color: var(--color-primary-blue);
-    border: 2px solid var(--color-white);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-color: var(--color-primary-blue);
 }
 
 .contact-link:hover {
-    background-color: var(--color-light-blue);
-    color: var(--color-primary-blue);
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .welcome-message {
     margin-top: 2.5rem;
     font-size: 1.1rem;
     font-weight: 500;
+    color: var(--color-primary-blue);
 }
 
-/* Responsive Adjustments for styles_about.css */
-@media (max-width: 992px) {
-    .about-section {
-        flex-direction: column; /* Stack icon and content vertically */
-        text-align: center;
-        padding: 2rem;
-    }
-
-    .section-icon {
-        margin-bottom: 1.5rem; /* Space between icon and text */
-    }
-
-    .action-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center;
-    }
-
-    .explore-link,
-    .contact-link {
-        width: 80%; /* Make buttons take more width */
-        max-width: 300px;
-    }
-}
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
 
 @media (max-width: 768px) {
-    .about-page-sections {
-        gap: 2.5rem;
-        padding: 1.5rem 0;
-    }
-
     .about-section {
-        padding: 1.8rem;
-    }
-
-    .section-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2.5rem;
-    }
-
-    .section-content h2 {
-        font-size: clamp(1.5rem, 5vw, 1.9rem);
-    }
-
-    .section-content p {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-    }
-
-    .read-more-btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
+        flex-direction: column; /* Stack icon and content vertically */
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
     }
 
     .call-to-action {
         padding: 2.5rem 1.5rem;
     }
-
-    .call-to-action h2 {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-    }
-
-    .call-to-action p {
-        font-size: clamp(0.95rem, 3vw, 1.1rem);
-    }
-}
-
-@media (max-width: 480px) {
-    .about-page-sections {
-        gap: 2rem;
-        padding: 1rem 0;
-    }
-
-    .about-section {
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-
-    .section-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-    }
-
-    .read-more-btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem 1rem;
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .explore-link,
     .contact-link {
         width: 100%;
+        max-width: 300px;
     }
-}
-/* Initial state for elements that will fade in */
-.fade-in-on-scroll {
-    opacity: 0;
-    transform: translateY(20px); /* Optional: slight slide-up effect */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
-}
-
-/* State when the element becomes visible */
-.fade-in-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
