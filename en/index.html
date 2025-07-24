@@ -5,10 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Traditional & Byzantine Music</title>
     <link rel="icon" href="../pictures/favicon.png" type="image/png">
+    
+    <style>
+        /* CSS Variables used by header/navbar */
+        :root {
+            --color-primary-blue: #4b7988;
+            --color-secondary-blue: #6b9daf;
+            --color-tertiary-blue: #7bb3c7;
+            --color-white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --color-light-blue: #b8dce8;
+            --border-radius-large: 20px;
+        }
+
+        /* Essential Body Padding */
+        body {
+            padding-top: 80px; /* Adjust if your navbar height changes */
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px; /* Adjust for smaller header on mobile */
+            }
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background: linear-gradient(135deg,
+                rgba(75, 121, 136, 0.95),
+                rgba(107, 157, 175, 0.95)
+            );
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 20px var(--shadow-medium);
+        }
+
+        /* Hero/Header Section Styles */
+        .hero {
+            background: linear-gradient(135deg, 
+                var(--color-primary-blue), 
+                var(--color-secondary-blue), 
+                var(--color-tertiary-blue)
+            );
+            color: var(--color-white);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 0px; 
+        }
+
+        /* Mobile Menu Toggle (to ensure it's visible if needed before main CSS loads) */
+        .mobile-menu-toggle {
+            display: none; /* Will be overridden by media query in external CSS if needed */
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: var(--color-white);
+            margin: 3px 0;
+            border-radius: 2px;
+        }
+    </style>
     <link rel="stylesheet" href="../css/style_main.css">
     <script src="../js/cookie-consent.js"></script>
-    
-    </head>
+</head>
 <body>
     <div id="header"></div>
 
@@ -28,19 +108,19 @@
 
                     <div class="info-panel">
                         <h2>Discover the Music Tradition of Greece</h2>
-                                            
+                                                
                         <div class="welcome-content">
                             <h3><strong>Welcome - Καλώς ήλθατε (Kalos Ilthate)!</strong></h3> 
                             
                             <p>I'm truly happy that you're here, as together we can explore a world of beautiful melodies and timeless traditions, where the music of Greece comes alive.</p>
                             
-                            <p>I invite you to explore the <strong>rich musical heritage of Greece</strong> through authentic singing lessons in Greek traditional and Byzantine music. 
+                            <p>I invite you to explore the **rich musical heritage of Greece** through authentic singing lessons in Greek traditional and Byzantine music. 
                             We'll journey through centuries of musical artistry, from ancient Byzantine chant to vibrant folk melodies, guided by a deep respect for this 
                             living tradition.</p>
                             
-                            <p>Lessons are available in both <strong>English</strong> and <strong>Greek</strong> and conducted <strong>online</strong>, offering you the 
-                            flexibility to learn from anywhere in the world, but also <strong>locally</strong>, if you live nearby or are visiting.</p>
-                                                     
+                            <p>Lessons are available in both **English** and **Greek** and conducted **online**, offering you the 
+                            flexibility to learn from anywhere in the world, but also **locally**, if you live nearby or are visiting.</p>
+                                                    
                             <p class="journey-text">Let's begin this melodic journey together.</p>
                         </div>
                     </div>
@@ -92,7 +172,6 @@
                 </div>
             </div>
 
-            <!-- CTA Section -->
             <div class="footer-info">
                 <div class="lessons-grid">
                     <div class="lesson-card cta-card fade-in-on-scroll">
