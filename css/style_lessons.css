@@ -34,7 +34,7 @@
 }
 
 .lesson-content {
-    padding: 2rem;
+    padding: 0.5rem;
     display: flex; /* Keep this as flex for image and details side-by-side */
     flex-direction: row; /* Ensure image and details are in a row */
     align-items: flex-start; /* Align items to the top (icon and bullet points) */
