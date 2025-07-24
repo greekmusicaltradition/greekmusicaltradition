@@ -249,33 +249,3 @@
     display: none !important;
 }
 
-
-
-* ========================================
-   LESSON SECTION ICONS (for intro text)
-   ======================================== */
-
-.lesson-section {
-    display: flex;
-    align-items: flex-start;
-    margin: 20px 0;
-    gap: 15px;
-    line-height: 1.6; /* Match your site's line height */
-}
-
-.lesson-section .icon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin-top: 0.3em; /* Use em units to scale with text size */
-    color: var(--color-secondary-blue); /* Match your theme color */
-    stroke-width: 2;
-}
-
-.lesson-section .lesson-content {
-    flex: 1;
-}
-
-.lesson-section .lesson-content p {
-    margin: 0;
-}
