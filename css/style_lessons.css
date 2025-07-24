@@ -69,6 +69,7 @@
 .lesson-details h4 {
     color: var(--color-primary-blue);
     margin-bottom: 1rem;
+    margin-top: 1rem;                
     font-size: 1.2rem;
     font-weight: 600;
 }
