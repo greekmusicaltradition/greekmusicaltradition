@@ -147,22 +147,13 @@ body {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.3s ease;
-    gap: 12px; 
-}
-The change is simply:
-
-Add the line gap: 12px; to your existing .nav-brand .brand-link CSS rule
-
-That's it! Just one line added. The gap: 12px; will create a 12-pixel space between your logo image and the text. You can adjust the 12px value to 8px, 10px, 15px, or whatever spacing looks best for your design.
-
-All the other CSS rules (for :hover, :visited, span, etc.) remain exactly the same - no changes needed there.
+    transition: color 0.3s ease;
+    gap: 12px;
 }
 
 .nav-brand .brand-link:hover {
-    opacity: 0.8;
+    color: ##b8dce8; 
 }
-
 .nav-brand .brand-link:visited {
     color: inherit;
 }
@@ -179,12 +170,6 @@ All the other CSS rules (for :hover, :visited, span, etc.) remain exactly the sa
 .nav-brand .brand-link:active {
     color: inherit;
     text-decoration: none;
-}
-
-.nav-brand .brand-link:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-    transition: all 0.2s ease;
 }
 
 
