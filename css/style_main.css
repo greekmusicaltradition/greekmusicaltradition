@@ -699,6 +699,49 @@ body {
 }
 
 /* ========================================
+   CTA LINKS STYLING
+   ======================================== */
+
+.cta-link {
+    display: inline-block;
+    color: var(--color-secondary-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cta-link:hover {
+    color: var(--color-primary-blue);
+    border-bottom-color: var(--color-accent-gold);
+    transform: translateY(-1px);
+}
+
+.cta-link:active {
+    color: var(--color-primary-blue);
+    transform: translateY(0);
+}
+
+/* Alternative style with background highlight on hover */
+.cta-link.highlight-style {
+    background: var(--color-lighter-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    border-bottom: none;
+}
+
+.cta-link.highlight-style:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    border-bottom: none;
+}
+
+
+/* ========================================
    FOOTER
    ======================================== */
 
@@ -1100,6 +1143,15 @@ body {
         font-size: 0.9rem;
     }
 
+      .cta-link {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        margin: 1rem auto 0;
+        max-width: 200px;
+    }
+
+
     /* Adjust footer content for mobile */
     .footer-content {
         grid-template-columns: 1fr;
@@ -1198,6 +1250,11 @@ body {
     .cta-buttons {
         gap: 0.5rem;
         justify-content: center !important; /* CENTER BUTTONS */
+    }
+
+      .cta-link {
+        font-size: 0.95rem;
+        padding: 0.6rem 0;
     }
 
     /* CTA Card Alignment - Small Mobile */
