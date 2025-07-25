@@ -994,6 +994,36 @@ body {
         width: 100%;
         max-width: 250px;
     }
+
+    /* CTA Card Alignment - Tablet */
+    .footer-info .lessons-grid {
+        align-items: stretch;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 280px;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 1 !important;
+        justify-content: space-between !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+        flex-grow: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-buttons {
+        margin-top: auto !important;
+        justify-content: center !important;
+    }
 }
 
 /* ========================================
@@ -1066,6 +1096,18 @@ body {
     .footer-links {
         padding: 0;
     }
+
+    /* CTA Card Alignment - Mobile */
+    .footer-info .lessons-grid .lesson-card.cta-card {
+        min-height: auto !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-buttons {
+        position: static !important;
+        transform: none !important;
+        margin-top: 1rem !important;
+    }
 }
 
 /* ========================================
@@ -1115,5 +1157,22 @@ body {
 
     .cta-buttons {
         gap: 0.5rem;
+    }
+
+    /* CTA Card Alignment - Small Mobile */
+    .footer-info .lessons-grid .lesson-card.cta-card {
+        min-height: auto !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .btn-primary,
+    .footer-info .lessons-grid .lesson-card.cta-card .btn-secondary {
+        width: 100% !important;
+        max-width: 180px !important;
     }
 }
