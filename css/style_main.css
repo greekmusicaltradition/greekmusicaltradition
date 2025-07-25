@@ -706,6 +706,42 @@ body {
     padding-bottom: 2rem; /* Ensures space before the actual footer starts */
 }
 
+.footer-info .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch; /* This forces equal height */
+}
+
+/* Ensure CTA cards use flexbox with space distribution */
+.footer-info .lessons-grid .lesson-card.cta-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 300px; /* Set a minimum height for consistency */
+}
+
+/* Push buttons to the bottom */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+}
+
+/* Ensure text area takes available space */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+/* Button container stays at bottom */
+.footer-info .lessons-grid .lesson-card.cta-card .cta-buttons {
+    margin-top: auto !important;
+    justify-content: center !important;
+}
+
 .site-footer {
     background: linear-gradient(135deg, 
         var(--color-primary-blue), 
