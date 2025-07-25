@@ -16,7 +16,7 @@
             <h1>Greek Traditional & Byzantine Music</h1>
         </div>
     </header>
-    
+
     <main class="main-content">
         <div class="container">
             <div class="content-grid">
@@ -27,16 +27,16 @@
 
                     <div class="info-panel">
                         <h2>Discover the Music Tradition of Greece</h2>
-                        
+
                         <div class="welcome-content">
                             <h3><strong>Καλώς ήρθατε - Welcome to the world of Greek musical tradition!</strong></h3>
-                            
+
                             <p>I'm truly happy that you're here! Together we can explore a world of beautiful melodies and timeless traditions, where the music of Greece comes alive.</p>
-                            
+
                             <p>I invite you to explore the <strong>rich musical heritage of Greece</strong> through authentic singing lessons in Greek traditional and Byzantine music. We'll journey through centuries of musical artistry, from ancient Byzantine chant to vibrant folk melodies, guided by a deep respect for this living tradition.</p>
-                            
+
                             <p>Lessons are available in both <strong>English</strong> and <strong>Greek</strong> and conducted <strong>online</strong>, offering you the flexibility to learn from anywhere in the world, but also <strong>locally</strong>, if you live nearby or are visiting.</p>
-                            
+
                             <p class="journey-text">Let's begin this melodic journey together.</p>
                         </div>
                     </div>
@@ -90,28 +90,33 @@
 
             <!-- CTA Section -->
             <div class="footer-info">
-                <div class="cta-container">
-                    <div class="cta-box fade-in-on-scroll">
-                        <div class="cta-header">
+                <div class="lessons-grid">
+                    <div class="lesson-card cta-card fade-in-on-scroll">
+                        <div class="lesson-header">
                             <h3>Ready to Start Learning?</h3>
                         </div>
-                        <div class="cta-text">
-                            <p>Discover the sacred beauty of Byzantine music and authentic Greek vocal traditions. Learn ancient chanting techniques, traditional songs, and connect with Greece's musical heritage.</p>
-                        </div>
-                        <div class="cta-button-wrapper">
-                            <a href="lessons.html" class="btn-primary">Explore Our Lessons</a>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>Discover the sacred beauty of Byzantine music and authentic Greek vocal traditions. Learn ancient chanting techniques, traditional songs, and connect with Greece's musical heritage.</p>
+                                <div class="cta-buttons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-primary">Explore Our Lessons</a>
+                                    <a href="lessons.html" class="btn-primary">Explore Our Lessons</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="cta-box fade-in-on-scroll">
-                        <div class="cta-header">
+                    <div class="lesson-card cta-card fade-in-on-scroll">
+                        <div class="lesson-header">
                             <h3>Have Questions?</h3>
                         </div>
-                        <div class="cta-text">
-                            <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
-                        </div>
-                        <div class="cta-button-wrapper">
-                            <a href="contact.html" class="btn-secondary">Contact Form</a>
+                        <div class="lesson-content" style="flex-direction: column; text-align: center;">
+                            <div class="lesson-details" style="width: 100%;">
+                                <p>We're here to help! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals.</p>
+                                <div class="cta-buttons" style="justify-content: center;">
+                                    <a href="contact.html" class="btn-secondary">Contact Form</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +132,7 @@
     <script>
         // Back to top button functionality
         const backToTopButton = document.getElementById('back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopButton.classList.add('show');
@@ -135,7 +140,7 @@
                 backToTopButton.classList.remove('show');
             }
         });
-        
+
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
