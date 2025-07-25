@@ -11,7 +11,7 @@ function loadHeader() {
     // Language-specific content
     const content = {
         en: {
-            brand: "greekmusictradition.com",
+            brand: "greekmusicaltradition.com",
             nav: {
                 home: "Home",
                 lessons: "Lessons",
