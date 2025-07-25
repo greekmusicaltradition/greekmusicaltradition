@@ -1132,6 +1132,22 @@ body {
         display: flex !important;
         width: 100% !important;
     }
+
+   .lesson-details {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers the whole text block */
+    }
+    
+    .lesson-details ul {
+        text-align: left !important; /* But keeps bullets left-aligned within that block */
+        width: auto !important;
+        display: inline-block !important;
+    }
+    
+    .lesson-details li {
+        text-align: left !important;
+    }
 }
 
 /* ========================================
