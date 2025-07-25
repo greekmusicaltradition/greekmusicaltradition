@@ -17,8 +17,8 @@
 /* Rectangular Picture Container */
 .section-icon {
     flex-shrink: 0;
-    width: 120px; /* Increased from 80px for more space */
-    height: 80px; /* Keeping the same height as requested */
+    width: 160px; /* Increased from 80px for more space */
+    height: 220px; /* Keeping the same height as requested */
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
     border-radius: var(--border-radius-large); /* Rounded rectangle instead of circle */
     display: flex;
