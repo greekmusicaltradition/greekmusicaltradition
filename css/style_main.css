@@ -731,14 +731,13 @@ body {
 /* Ensure text area takes available space */
 .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
     flex-grow: 1 !important;
-    display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
 }
 
 /* Button container stays at bottom */
 .footer-info .lessons-grid .lesson-card.cta-card .cta-buttons {
-    margin-top: auto !important;
+    margin-top: 2rem !important;
     justify-content: center !important;
 }
 
