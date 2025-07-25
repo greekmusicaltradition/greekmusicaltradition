@@ -120,11 +120,12 @@ body {
 }
 
 .nav-menu a {
-    color: var(--color-white);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: block;
-    padding: 0.5rem 0;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 1.15rem;   
 }
 
 .nav-menu a:hover {
