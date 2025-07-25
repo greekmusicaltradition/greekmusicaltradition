@@ -1015,7 +1015,7 @@ body {
 
     .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
         flex-grow: 1 !important;
-        display: flex !important;
+        /*display: flex !important;*/
         flex-direction: column !important;
         justify-content: space-between !important;
         text-align: center !important; /* CENTER TEXT */
