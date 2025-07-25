@@ -845,17 +845,32 @@ body {
    ANIMATIONS (HOVER ONLY)
    ======================================== */
 
-/* Keep only hover animations, remove scroll animations */
-.fade-in-on-scroll {
-    opacity: 1;  /* Changed from 0 to 1 */
-    transform: translateY(0);  /* Changed from translateY(20px) to 0 */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* Card hover effects */
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    border-color: var(--color-light-blue);
 }
 
-.fade-in-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Button hover effects */
+.btn-primary:hover {
+    background: #c09f2d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
+
+.btn-secondary:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Navigation hover effects */
+.nav-menu a:hover {
+    color: var(--color-light-blue);
+}
+
 
 /* ========================================
    RESPONSIVE DESIGN - TABLET
