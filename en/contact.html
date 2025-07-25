@@ -18,108 +18,107 @@
         </div>
     </header>
 
-   
-            <div class="contact-form-container">
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzglaz" method="POST">
-                    <h2>Send Us a Message</h2>
-                    <p class="contact-intro">
-                        Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
-                    </p>
+    <main class="main-content">
+        <div class="contact-form-container">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzglaz" method="POST">
+                <h2>Send Us a Message</h2>
+                <p class="contact-intro">
+                    Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
+                </p>
 
-                    <div class="success-message" id="successMessage" style="display: none;">
-                        Thank you for your message! We'll get back to you soon.
-                    </div>
-                    
-                    <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
-                        There was an error sending your message. Please try again later.
-                    </div>
+                <div class="success-message" id="successMessage" style="display: none;">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+                
+                <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
+                    There was an error sending your message. Please try again later.
+                </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="_replyto" required>
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="interest">I'm interested in:</label>
-                        <select id="interest" name="interest">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">I'm interested in:</label>
+                    <select id="interest" name="interest">
+                        <option value="">Please select...</option>
+                        <option value="byzantine">Byzantine Music Lessons</option>
+                        <option value="traditional">Greek Traditional Singing Lessons</option>
+                        <option value="both">Both Types of Lessons</option>
+                        <option value="information">General Information</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="experience">Your Experience Level:</label>
+                        <select id="experience" name="experience">
                             <option value="">Please select...</option>
-                            <option value="byzantine">Byzantine Music Lessons</option>
-                            <option value="traditional">Greek Traditional Singing Lessons</option>
-                            <option value="both">Both Types of Lessons</option>
-                            <option value="information">General Information</option>
-                            <option value="other">Other</option>
+                            <option value="beginner">Complete Beginner</option>
+                            <option value="some">Some Experience</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
                         </select>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="experience">Your Experience Level:</label>
-                            <select id="experience" name="experience">
-                                <option value="">Please select...</option>
-                                <option value="beginner">Complete Beginner</option>
-                                <option value="some">Some Experience</option>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="advanced">Advanced</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="preferredLanguage">Preferred Language:</label>
-                            <select id="preferredLanguage" name="preferredLanguage">
-                                <option value="">Please select...</option>
-                                <option value="english">English</option>
-                                <option value="greek">Greek</option>
-                                <option value="both">Both</option>
-                            </select>
-                        </div>
-                    </div>
-
                     <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+                        <label for="preferredLanguage">Preferred Language:</label>
+                        <select id="preferredLanguage" name="preferredLanguage">
+                            <option value="">Please select...</option>
+                            <option value="english">English</option>
+                            <option value="greek">Greek</option>
+                            <option value="both">Both</option>
+                        </select>
                     </div>
+                </div>
 
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What types of lessons do you offer?</div>
+                <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
             </div>
 
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">What types of lessons do you offer?</div>
-                    <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">Are lessons available online?</div>
+                <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Are lessons available online?</div>
-                    <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need prior musical experience?</div>
+                <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Do I need prior musical experience?</div>
-                    <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">In what languages are lessons taught?</div>
+                <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">In what languages are lessons taught?</div>
-                    <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How do I get started?</div>
-                    <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I get started?</div>
+                <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
             </div>
         </div>
     </main>
@@ -204,6 +203,7 @@
             });
         });
     </script>
+    
     <!-- FAQ Accordion: This is the critical addition -->
     <script>
     // Enable accordion for FAQ section
