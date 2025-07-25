@@ -887,6 +887,138 @@ body {
     margin-top: 10px;
 }
 
+
+
+/* Main CTA card container - better spacing */
+.footer-info .lessons-grid .lesson-card.cta-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+}
+
+/* Header styling with better spacing */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-header {
+    background: transparent !important;
+    color: #4b7988 !important;
+    padding: 1rem 0 0.5rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-align: center !important;
+}
+
+/* Content area with improved flow */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    padding: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: none !important;
+    align-items: center !important;
+}
+
+/* Text styling for better readability */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+/* Paragraph styling with better spacing */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details p {
+    color: var(--color-text-medium) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+}
+
+/* Enhanced CTA link styling - better visual connection */
+.footer-info .lessons-grid .lesson-card.cta-card .cta-link {
+    display: inline-block !important;
+    color: var(--color-secondary-blue) !important;
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    padding: 1rem 2rem !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    border: 2px solid var(--color-secondary-blue) !important;
+    border-radius: var(--border-radius-medium) !important;
+    background: linear-gradient(135deg, 
+        rgba(184, 220, 232, 0.1), 
+        rgba(255, 255, 255, 0.8)
+    ) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.1) !important;
+}
+
+/* Enhanced hover effects */
+.footer-info .lessons-grid .lesson-card.cta-card .cta-link:hover {
+    color: var(--color-white) !important;
+    background: linear-gradient(135deg, 
+        var(--color-secondary-blue), 
+        var(--color-primary-blue)
+    ) !important;
+    border-color: var(--color-primary-blue) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(75, 121, 136, 0.3) !important;
+}
+
+/* Active state */
+.footer-info .lessons-grid .lesson-card.cta-card .cta-link:active {
+    transform: translateY(-1px) !important;
+}
+
+/* Remove hover effects from cards */
+.footer-info .lessons-grid .lesson-card.cta-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS FOR CTA CARDS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-link {
+        font-size: 1.1rem !important;
+        padding: 0.9rem 1.8rem !important;
+        margin: 0.5rem 0 1rem 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+        padding: 0 0.5rem !important;
+    }
+
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-link {
+        font-size: 1rem !important;
+        padding: 0.8rem 1.5rem !important;
+        width: 90% !important;
+        max-width: 250px !important;
+    }
+}
+
 /* ========================================
    BACK TO TOP BUTTON
    ======================================== */
