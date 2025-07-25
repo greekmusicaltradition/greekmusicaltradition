@@ -1028,6 +1028,15 @@ body {
         display: flex !important;
         width: 100% !important; /* ENSURE FULL WIDTH FOR CENTERING */
     }
+
+   .lesson-details ul {
+        text-align: left !important;
+        display: inline-block; /* This centers the whole list while keeping bullets left-aligned */
+    }
+    
+    .lesson-details li {
+        text-align: left !important;
+    }
 }
 
 /* ========================================
