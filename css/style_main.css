@@ -157,6 +157,158 @@ body {
 }
 
 /* ========================================
+   LINK STYLING
+   ======================================== */
+
+/* Base link styles */
+a {
+    color: var(--color-secondary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Default link hover */
+a:hover {
+    color: var(--color-primary-blue);
+}
+
+/* Active and visited states */
+a:visited {
+    color: var(--color-secondary-blue);
+}
+
+a:active {
+    color: var(--color-primary-blue);
+}
+
+/* Inline text links (like in paragraphs) */
+.lesson-details a,
+.info-panel a,
+p a,
+.description a {
+    color: var(--color-secondary-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.lesson-details a:hover,
+.info-panel a:hover,
+p a:hover,
+.description a:hover {
+    color: var(--color-primary-blue);
+    border-bottom: 1px solid var(--color-primary-blue);
+    text-shadow: 0 1px 2px rgba(75, 121, 136, 0.1);
+}
+
+/* Underline animation effect for content links */
+.lesson-details a::after,
+.info-panel a::after,
+p a::after,
+.description a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-secondary-blue), var(--color-accent-gold));
+    transition: width 0.3s ease;
+}
+
+.lesson-details a:hover::after,
+.info-panel a:hover::after,
+p a:hover::after,
+.description a:hover::after {
+    width: 100%;
+}
+
+/* Special styling for emphasized links */
+.link-emphasis {
+    color: var(--color-accent-gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.link-emphasis:hover {
+    color: var(--color-primary-blue);
+    border-bottom: 2px solid var(--color-accent-gold);
+    transform: translateY(-1px);
+}
+
+/* Links in headers */
+h1 a, h2 a, h3 a, h4 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+h1 a::after, h2 a::after, h3 a::after, h4 a::after {
+    display: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+    color: var(--color-secondary-blue);
+    text-shadow: 0 2px 4px rgba(107, 157, 175, 0.2);
+}
+
+/* External link indicator */
+a[href^="http"]:not([href*="yourdomain.com"])::after,
+a[target="_blank"]::after {
+    content: "↗";
+    font-size: 0.8em;
+    margin-left: 0.3em;
+    color: var(--color-secondary-blue);
+    transition: transform 0.3s ease;
+}
+
+a[href^="http"]:not([href*="yourdomain.com"]):hover::after,
+a[target="_blank"]:hover::after {
+    transform: translate(2px, -2px);
+    color: var(--color-accent-gold);
+}
+
+/* Link focus states for accessibility */
+a:focus {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Links in navigation - exclude from general styling */
+.nav-menu a,
+.footer-links a,
+.nav-brand a {
+    border-bottom: none !important;
+}
+
+.nav-menu a::after,
+.footer-links a::after,
+.nav-brand a::after {
+    display: none !important;
+}
+
+/* Links that should look like buttons - exclude from general styling */
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.footer-cta {
+    border-bottom: none !important;
+}
+
+.btn-primary::after,
+.btn-secondary::after,
+.cta-button::after,
+.footer-cta::after {
+    display: none !important;
+}
+
+
+/* ========================================
    MOBILE MENU
    ======================================== */
 
