@@ -342,3 +342,17 @@
     color: #333;
 }
 
+
+footer-info .lessons-grid {
+    align-items: stretch; /* Make cards same height */
+}
+
+.footer-info .lesson-card.cta-card .lesson-details {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.footer-info .lesson-card.cta-card .cta-button-container {
+    margin-top: auto !important; /* Push button to bottom */
+}
