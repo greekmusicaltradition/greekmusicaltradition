@@ -225,6 +225,28 @@
   margin: 0 auto;
 } 
 
+.lesson-format-box {
+    background: var(--color-lighter-blue);
+    border-left: 6px solid var(--color-secondary-blue);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 4px 12px var(--shadow-light);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0 0 0;
+}
+
+.lesson-format-box h4 {
+    margin-top: 0;
+    color: var(--color-primary-blue);
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.lesson-format-box p {
+    margin: 0 0 0.4rem 0;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
 
 /* ========================================
    BUTTONS
