@@ -175,7 +175,7 @@ a:hover {
 
 /* Active and visited states */
 a:visited {
-    color: var(--color-secondary-blue);
+    color: var(--color-white);
 }
 
 a:active {
