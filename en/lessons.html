@@ -24,7 +24,7 @@
         <div class="container">
             <!-- Introduction Section -->
             <div class="content-grid">
-                <div class="combined-panel single-column fade-in-on-scroll">
+                <div class="combined-panel single-column">
                     <div class="info-panel">
                         <h2>Learn Authentic Greek Music</h2>
                         <div class="welcome-content">
@@ -53,7 +53,7 @@
 
             <!-- Main Lesson Types -->
             <div class="lessons-grid">
-                <div class="lesson-card fade-in-on-scroll">
+                <div class="lesson-card">
                     <div class="lesson-header">
                         <h3>Byzantine Music Lessons</h3>
                     </div>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="lesson-card fade-in-on-scroll">
+                <div class="lesson-card">
                     <div class="lesson-header">
                         <h3>Greek Traditional Singing Lessons</h3>
                     </div>
@@ -116,7 +116,7 @@
             </div>
         
             <div class="lessons-grid">
-                <div class="lesson-card fade-in-on-scroll">
+                <div class="lesson-card">
                     <div class="lesson-header">
                         <h3>How to Get Started</h3>
                     </div>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="lesson-card fade-in-on-scroll">
+                <div class="lesson-card">
                     <div class="lesson-header">
                         <h3>What You Need</h3>
                     </div>
@@ -187,7 +187,7 @@
             <!-- CTA Section -->
             <div class="footer-info">
                 <div class="lessons-grid">
-                    <div class="lesson-card cta-card fade-in-on-scroll">
+                    <div class="lesson-card cta-card">
                         <div class="lesson-header">
                             <h3>Ready to Start Learning?</h3>
                         </div>
@@ -201,7 +201,7 @@
                         </div>
                     </div>
 
-                    <div class="lesson-card cta-card fade-in-on-scroll">
+                    <div class="lesson-card cta-card">
                         <div class="lesson-header">
                             <h3>Have Questions?</h3>
                         </div>
@@ -224,23 +224,8 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script>
-        // Fade in animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        // Note: Removed the fade-in animation observer code
+        // All content now loads visible from the start
     </script>
 </body>
 </html>
