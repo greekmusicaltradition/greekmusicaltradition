@@ -189,6 +189,10 @@
     display: flex; /* Make the description text a block element */
     color: var(--color-text-medium); /* Standard text color */
     line-height: 1.5; /* Improve readability */
+    }
+
+.getting-started-list span {
+    font-style: italic;
 }
 
 
