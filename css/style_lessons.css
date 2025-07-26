@@ -343,16 +343,31 @@
 }
 
 
-footer-info .lessons-grid {
-    align-items: stretch; /* Make cards same height */
+
+
+
+.footer-info .lessons-grid {
+    align-items: stretch;
 }
 
-.footer-info .lesson-card.cta-card .lesson-details {
+.footer-info .lessons-grid .lesson-card.cta-card {
+    flex: 1 1 auto;
     display: flex !important;
     flex-direction: column !important;
-    height: 100% !important;
 }
 
-.footer-info .lesson-card.cta-card .cta-button-container {
-    margin-top: auto !important; /* Push button to bottom */
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
+    margin-top: auto !important;
 }
