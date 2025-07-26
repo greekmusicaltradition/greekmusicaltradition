@@ -12,8 +12,8 @@
     overflow: hidden;
     box-shadow: 0 8px 32px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Make the card a flex container */
-    flex-direction: column; /* Stack header, content, and description vertically */
+    display: flex;
+    flex-direction: column;
 }
 
 .lesson-card:hover {
@@ -35,16 +35,16 @@
 
 .lesson-content {
     padding: 0.5rem;
-    display: flex; /* Keep this as flex for image and details side-by-side */
-    flex-direction: row; /* Ensure image and details are in a row */
-    align-items: flex-start; /* Align items to the top (icon and bullet points) */
-    gap: 1.5rem; /* Gap between image and details */
-    flex-grow: 1; /* Allow this section to grow and push the description box to the bottom */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-grow: 1;
 }
 
-/* Styling for the icon on the left */
+/* Icon on the left of each lesson */
 .lesson-image {
-    flex-shrink: 0; /* Prevents shrinking */
+    flex-shrink: 0;
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
@@ -60,10 +60,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-left:1.5rem;
-    padding-right:1.5rem;
-    padding-top:1.5rem;
-    padding-bottom:1.5rem;
+    padding: 1.5rem;
 }
 
 .lesson-details h4 {
@@ -81,17 +78,18 @@
     line-height: 1.7;
 }
 
+/* --- Custom Bullets for Lesson Details --- */
 .lesson-details ul {
     list-style: none;
-    width: 100%; /* Ensure bullet points take full width */
-    padding-left: 0; /* Remove default padding for list */
+    width: 100%;
+    padding-left: 0;
 }
 
 .lesson-details li {
     margin-bottom: 0.5rem;
     color: var(--color-text-medium);
     position: relative;
-    padding-left: 1rem; /* Space for the custom bullet */
+    padding-left: 1rem;
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
@@ -104,127 +102,167 @@
 
 .traditional-icon,
 .byzantine-icon {
-    font-size: 48px; /* Icon size */
-    color: var(--color-primary-blue); /* Icon color */
+    font-size: 48px;
+    color: var(--color-primary-blue);
 }
 
-/* --- Lesson Description Box (at the very bottom of the card) --- */
+/* Lesson Description Box (bottom of card) */
 .lesson-description-box {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue)); /* Matches lesson-header background */
-    color: var(--color-white); /* White text */
-    padding: 1.5rem; /* More padding for better appearance */
-    text-align: center; /* Center the text */
-    font-size: 0.95rem; /* Adjust font size as needed */
-    line-height: 1.5; /* Improve line spacing */
-    /* Position at the very bottom, stretching full width and maintaining border-radius */
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
     border-bottom-left-radius: var(--border-radius-medium);
     border-bottom-right-radius: var(--border-radius-medium);
-    /* No margin top/bottom, it will naturally align due to flexbox */
-    margin-top: auto; /* Pushes this element to the bottom of the flex container (lesson-card) */
-    /* Ensure it has a consistent width across the card, considering padding */
-    width: 100%; /* Take full width of its parent (.lesson-card) */
+    margin-top: auto;
+    width: 100%;
 }
 
 .lesson-description-box p {
-    color: var(--color-white); /* Forces text color to white */
-    margin-bottom: 0; /* Remove default paragraph margin if it creates extra space */
-    font-size: 1rem; /* Inherit font size from parent div */
+    color: var(--color-white);
+    margin-bottom: 0;
+    font-size: 1rem;
 }
 
-
-/* Initialize counter for the ordered list - Fixed version */
+/* Getting Started List Styles */
 .getting-started-list {
-    list-style: none; /* Remove default numbers */
-    counter-reset: step-counter; /* Move counter-reset here for better compatibility */
+    list-style: none;
+    counter-reset: step-counter;
 }
 
 .getting-started-content {
     padding: 0.8rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0;
     margin-left: 2rem;
 }
 
 .getting-started-list li {
-    background-color: var(--color-white); /* Light background for each step */
-    margin-bottom: 1rem; /* Space between steps */
+    background-color: var(--color-white);
+    margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius-small);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow */
-    display: flex; /* Flex container for number and text content */
-    align-items: flex-start; /* Align items to the top */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
     font-size: 1rem;
     color: var(--color-text-dark);
 }
 
 .getting-started-list li::before {
-    content: counter(step-counter); /* Use CSS counter for numbering */
+    content: counter(step-counter);
     counter-increment: step-counter;
-    background-color: var(--color-secondary-blue); /* Blue background for numbers */
+    background-color: var(--color-secondary-blue);
     color: var(--color-white);
     font-weight: bold;
     font-size: 1.1rem;
-    border-radius: 50%; /* Make it round */
+    border-radius: 50%;
     width: 30px;
     height: 30px;
-    min-width: 30px; /* Prevent shrinking */
+    min-width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem; /* Space between number and text */
-    margin-left: 1rem; /* Space before number*/
+    margin-right: 1rem;
+    margin-left: 1rem;
     margin-top: 2rem;
-    flex-shrink: 0; /* Prevent the number from shrinking */
+    flex-shrink: 0;
 }
 
 .getting-started-list li strong {
-    display: flex; /* Make the bold title a block element */
-    margin-bottom: 0.2rem; /* Small space below the title */
-    color: var(--color-primary-blue); /* Emphasize the title */
-    font-size: 1.05rem; /* Slightly larger than the paragraph text */
-    line-height: 1.2; /* Better line spacing for the title */
-    
+    display: flex;
+    margin-bottom: 0.2rem;
+    color: var(--color-primary-blue);
+    font-size: 1.05rem;
+    line-height: 1.2;
 }
 
 .getting-started-list li span {
-    display: flex; /* Make the description text a block element */
-    color: var(--color-text-medium); /* Standard text color */
-    line-height: 1.5; /* Improve readability */
-    }
+    display: flex;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+}
 
 .getting-started-list span {
     font-style: italic;
 }
 
-
-/* Single column version of combined-panel for lessons page */
+/* Single column for welcome panel */
 .combined-panel.single-column {
-    grid-template-columns: 1fr; /* Single column instead of 1fr 2fr */
-    text-align: center; /* Center the content */
+    grid-template-columns: 1fr;
+    text-align: center;
 }
 
 .combined-panel.single-column .info-panel {
-    max-width: none; /* Allow full width usage */
+    max-width: none;
 }
 
-
+/* Getting Started as own full width section */
 .getting-started-full-width {
   width: 100%;
   margin-bottom: 2rem;
   display: block;
 }
-
-.requirements-box {
-  width: 100%;
-  margin-top: 2rem;
-  display: block;
-}
-
-.getting-started-full-width .lesson-card,
-.requirements-box .lesson-card {
+.getting-started-full-width .lesson-card {
   max-width: 900px;
   margin: 0 auto;
-} 
+}
 
+/* === Info Boxes for Requirements and Materials Side-by-side === */
+.info-box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.info-box-container > section {
+  flex: 1 1 48%;
+  max-width: 48%;
+}
+
+.info-box-container > section .lesson-card {
+  max-width: 100%;
+  margin: 0;
+}
+
+.technical-requirements-box .lesson-header {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+}
+.materials-provided-box .lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+}
+
+.requirements-list li, .materials-list li {
+    padding: 0.5rem 0;
+    color: var(--color-text-medium);
+    font-size: 1rem;
+    list-style: none;
+    position: relative;
+    padding-left: 1.4em;
+}
+.requirements-list li:before, .materials-list li:before {
+    content: '✓';
+    color: var(--color-secondary-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive: Stack boxes on smaller screens */
+@media (max-width: 900px) {
+    .info-box-container {
+        flex-direction: column;
+    }
+    .info-box-container > section, 
+    .info-box-container > section .lesson-card {
+        max-width: 100%;
+    }
+}
+
+/* ==== Lesson Format Subbox (used for lesson format in cards) ==== */
 .lesson-format-box {
     background: var(--color-lighter-blue);
     border-left: 6px solid var(--color-secondary-blue);
@@ -233,7 +271,6 @@
     padding: 1.2rem 1.5rem;
     margin: 1.5rem 0 0 0;
 }
-
 .lesson-format-box h4 {
     margin-top: 0;
     color: var(--color-primary-blue);
@@ -241,7 +278,6 @@
     font-weight: 700;
     margin-bottom: 0.7rem;
 }
-
 .lesson-format-box p {
     margin: 0 0 0.4rem 0;
     color: var(--color-text-dark);
@@ -259,12 +295,7 @@
     flex-wrap: wrap;
 }
 
-
-/* ========================================
-   LESSONS PAGE CTA CARDS (Transparent)
-   ======================================== */
-
-/* Override lesson-card styling for CTA cards on lessons page */
+/* CTA cards (bottom call to action) */
 .lessons-grid .lesson-card.cta-card {
     background: transparent !important;
     box-shadow: none !important;
@@ -273,8 +304,6 @@
     padding: 0 !important;
     overflow: visible !important;
 }
-
-/* CTA card headers - transparent styling */
 .lessons-grid .lesson-card.cta-card .lesson-header {
     background: transparent !important;
     color: #4b7988 !important;
@@ -282,35 +311,27 @@
     border-radius: 0 !important;
     box-shadow: none !important;
 }
-
-/* CTA card content styling */
 .lessons-grid .lesson-card.cta-card .lesson-content {
     padding: 0.5rem 0 1rem 0 !important;
     background: transparent !important;
     border: none !important;
 }
-
-/* Remove hover effects from CTA cards */
 .lessons-grid .lesson-card.cta-card:hover {
     transform: none !important;
     box-shadow: none !important;
     background: transparent !important;
 }
-
-/* Hide lesson description box for CTA cards */
 .lessons-grid .lesson-card.cta-card .lesson-description-box {
     display: none !important;
 }
 
-
-/* style_lessons.css */
-
+/* Icon spacing for lesson intro */
 .icon-spacing {
-    margin-right: 8px; /* Adjust as needed for desired spacing */
-    color: #4CAF50; /* Example color, choose one that fits your brand */
+    margin-right: 8px;
+    color: #4CAF50;
 }
 
 /* Optional: style for the bolded text */
 .welcome-content p strong {
-    color: #333; /* Darker color for emphasis */
+    color: #333;
 }
