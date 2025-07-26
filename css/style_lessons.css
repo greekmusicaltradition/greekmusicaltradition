@@ -301,6 +301,7 @@
 }
 
 /* CTA cards (bottom call to action) */
+/*
 .lessons-grid .lesson-card.cta-card {
     background: transparent !important;
     box-shadow: none !important;
@@ -328,7 +329,7 @@
 }
 .lessons-grid .lesson-card.cta-card .lesson-description-box {
     display: none !important;
-}
+} */
 
 /* Icon spacing for lesson intro */
 .icon-spacing {
