@@ -133,16 +133,15 @@
 }
 
 .getting-started-content {
-    padding: 1.2rem; /* Increased from 0.8rem */
+    padding: 0.8rem;
     margin-bottom: 0;
     margin-left: 2rem;
-    line-height: 1.8; /* Added for better line spacing */
 }
 
 .getting-started-list li {
     background-color: var(--color-white);
-    margin-bottom: 1.5rem; /* Increased from 1rem */
-    padding: 1.2rem 1.8rem; /* Increased padding */
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: var(--border-radius-small);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
@@ -150,28 +149,6 @@
     font-size: 1rem;
     color: var(--color-text-dark);
 }
-
-.getting-started-list li strong {
-    display: flex;
-    margin-bottom: 0.5rem; /* Increased from 0.2rem */
-    color: var(--color-primary-blue);
-    font-size: 1.05rem;
-    line-height: 1.4; /* Improved line spacing */
-
-
-
-.getting-started-list li span {
-    display: flex;
-    color: var(--color-text-medium);
-    line-height: 1.6; /* Improved line spacing */
-    margin-bottom: 0.4rem; /* Added spacing after span */
-}
-
-.getting-started-list .description {
-    line-height: 1.7; /* Added spacing for description text */
-    margin-top: 0.3rem; /* Added top margin */
-}
-
 
 .getting-started-list li::before {
     content: counter(step-counter);
@@ -193,6 +170,23 @@
     flex-shrink: 0;
 }
 
+.getting-started-list li strong {
+    display: flex;
+    margin-bottom: 0.2rem;
+    color: var(--color-primary-blue);
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.getting-started-list li span {
+    display: flex;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+}
+
+.getting-started-list span {
+    font-style: italic;
+}
 
 /* Single column for welcome panel */
 .combined-panel.single-column {
@@ -291,15 +285,8 @@
 }
 
 /* ========================================
-   BUTTONS - Enhanced
+   BUTTONS
    ======================================== */
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-}
 
 .cta-buttons-lessons {
     display: flex;
@@ -308,74 +295,43 @@
     flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-secondary {
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius-small);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: inline-block;
-    text-align: center;
-    position: relative;
+/* CTA cards (bottom call to action) */
+.lessons-grid .lesson-card.cta-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
 }
-
-/* Primary button - Fixed color */
-.btn-primary {
-    background: var(--color-accent-gold);
-    color: var(--color-white) !important; /* Force white text */
-    border-color: var(--color-accent-gold);
+.lessons-grid .lesson-card.cta-card .lesson-header {
+    background: transparent !important;
+    color: #4b7988 !important;
+    padding: 1rem 0 0.5rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
-
-.btn-primary:hover {
-    background: #c09f2d;
-    color: var(--color-white) !important; /* Force white text on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
-    border-color: #c09f2d;
+.lessons-grid .lesson-card.cta-card .lesson-content {
+    padding: 0.5rem 0 1rem 0 !important;
+    background: transparent !important;
+    border: none !important;
 }
-
-/* Secondary button - Fixed with proper border */
-.btn-secondary {
-    background: transparent;
-    color: var(--color-secondary-blue) !important;
-    border: 2px solid var(--color-secondary-blue);
+.lessons-grid .lesson-card.cta-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
-
-.btn-secondary:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
-}
-
-/* Ensure buttons don't get link styling */
-.btn-primary,
-.btn-secondary {
-    border-bottom: none !important;
-}
-
-.btn-primary::after,
-.btn-secondary::after {
+.lessons-grid .lesson-card.cta-card .lesson-description-box {
     display: none !important;
 }
 
-/* Override any link styles that might interfere */
-a.btn-primary,
-a.btn-secondary {
-    color: inherit !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
+/* Icon spacing for lesson intro */
+.icon-spacing {
+    margin-right: 8px;
+    color: #4CAF50;
 }
 
-a.btn-primary::after,
-a.btn-secondary::after {
-    display: none !important;
-}
-
-a.btn-primary:hover,
-a.btn-secondary:hover {
-    text-decoration: none !important;
-    border-bottom: none !important;
+/* Optional: style for the bolded text */
+.welcome-content p strong {
+    color: #333;
 }
