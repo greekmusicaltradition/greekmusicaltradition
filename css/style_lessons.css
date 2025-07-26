@@ -341,23 +341,3 @@
     color: #333;
 }
 
-
-/* Adjust Get in Touch button font color to a darker blue for better contrast */
-a.btn-primary {
-    color: #0b3d91; /* a strong dark blue */
-    /* Keep other styles inherited */
-}
-
-/* Fix bottom border for btn-secondary button - add a subtle bottom border */
-a.btn-secondary {
-    border-bottom: 2px solid #0b3d91; /* matching dark blue border */
-    padding-bottom: 4px; /* add some padding so text doesn't crowd border */
-    color: #0b3d91; /* also set the font color to match */
-    text-decoration: none; /* no underline except border */
-}
-
-/* On hover for btn-secondary, make the border and color darker */
-a.btn-secondary:hover {
-    border-bottom-color: #07275a;
-    color: #07275a;
-}
