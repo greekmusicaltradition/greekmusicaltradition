@@ -209,16 +209,24 @@
   margin: 0 auto;
 }
 
-/* === Info Boxes for Requirements and Materials === */
-.info-box {
-    width: 100%;
-    margin: 2rem 0;
-    display: block;
+/* === Info Boxes for Requirements and Materials Side-by-side === */
+.info-box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
 }
-.info-box .lesson-card {
-    max-width: 900px;
-    margin: 0 auto;
+
+.info-box-container > section {
+  flex: 1 1 48%;
+  max-width: 48%;
 }
+
+.info-box-container > section .lesson-card {
+  max-width: 100%;
+  margin: 0;
+}
+
 .technical-requirements-box .lesson-header {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
 }
@@ -241,6 +249,17 @@
     position: absolute;
     left: 0;
     font-size: 1.1rem;
+}
+
+/* Responsive: Stack boxes on smaller screens */
+@media (max-width: 900px) {
+    .info-box-container {
+        flex-direction: column;
+    }
+    .info-box-container > section, 
+    .info-box-container > section .lesson-card {
+        max-width: 100%;
+    }
 }
 
 /* ==== Lesson Format Subbox (used for lesson format in cards) ==== */
