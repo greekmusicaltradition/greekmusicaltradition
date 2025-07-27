@@ -92,29 +92,6 @@
     box-shadow: 0 15px 40px var(--shadow-medium);
 }
 
-.pricing-card.featured {
-    border-color: var(--color-accent-gold);
-    transform: scale(1.02);
-}
-
-.pricing-card.featured:hover {
-    transform: scale(1.02) translateY(-8px);
-}
-
-.pricing-card.featured::before {
-    content: "Most Popular";
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-accent-gold);
-    color: var(--color-white);
-    padding: 0.5rem 1.5rem;
-    border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
-    font-size: 0.85rem;
-    font-weight: 600;
-    z-index: 1;
-}
 
 /* ========================================
    PRICING CARD STRUCTURE
