@@ -177,16 +177,18 @@
 
 .getting-started-list li strong {
     display: flex;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
     color: var(--color-primary-blue);
     font-size: 1.05rem;
     line-height: 1.2;
+    
 }
 
 .getting-started-list li span {
     display: flex;
     color: var(--color-text-medium);
     line-height: 1.5;
+    margin-bottom: 0.5rem;
 }
 
 .getting-started-list span {
