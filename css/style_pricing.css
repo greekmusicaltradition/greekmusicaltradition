@@ -360,13 +360,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     
-    .pricing-card.featured {
-        transform: none;
-    }
-    
-    .pricing-card.featured:hover {
-        transform: translateY(-8px);
-    }
+
 }
 
 /* ========================================
