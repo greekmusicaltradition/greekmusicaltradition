@@ -371,6 +371,17 @@
     flex-direction: column !important;
 }
 
+
+.music-type-badge {
+    font-size: 1rem;
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    margin: 1.2rem 0 0.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
 .footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
     margin-top: auto !important;
 }
