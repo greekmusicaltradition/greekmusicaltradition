@@ -452,3 +452,55 @@
         font-size: 1.3rem;
     }
 }
+
+
+/* ========================================
+   PRICING GRID & CARDS
+   ======================================== */
+
+.pricing-grid {
+    display: grid;
+    /* Default: 1 column for small screens */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px; /* Increased max-width for wider displays */
+    margin: 0 auto;
+    padding: 0 1rem; /* Add some padding for smaller screens */
+}
+
+/* For medium screens (e.g., tablets and larger phones), 2 columns */
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        padding: 0 2rem;
+    }
+}
+
+/* For large screens (e.g., desktops), 4 columns */
+@media (min-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns */
+        gap: 1.5rem; /* Slightly reduced gap for 4 columns */
+    }
+}
+
+/* Ensure cards don't stretch too wide on very large screens if content is sparse */
+.pricing-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px var(--shadow-medium);
+}
+
+
+
