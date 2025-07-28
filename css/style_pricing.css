@@ -1,4 +1,3 @@
-
 /* =========================================
    PRICING SECTION LAYOUT
    ========================================= */
@@ -244,6 +243,87 @@
 }
 
 /* =========================================
+   ADDITIONAL INFORMATION SECTION
+   ========================================= */
+.additional-info {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(47, 85, 151, 0.02), rgba(47, 85, 151, 0.05));
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.info-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 25px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(47, 85, 151, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-blue), var(--color-accent-gold));
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-medium);
+}
+
+.info-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+}
+
+.info-card h4 {
+    color: var(--color-primary-blue);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.info-card p {
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* =========================================
    RESPONSIVE TWEAKS
    ========================================= */
 @media (max-width: 992px) {
@@ -267,6 +347,28 @@
     .offer-price .amount {
         font-size: 1.8rem;
     }
+    
+    /* Additional info responsive adjustments */
+    .additional-info {
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+    
+    .info-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .info-icon {
+        font-size: 2.5rem;
+    }
+    
+    .info-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    .info-card p {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -288,5 +390,19 @@
     .section-title {
         font-size: 1.5rem;
     }
+    
+    /* Additional info mobile adjustments */
+    .info-card {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .info-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .info-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
 }
-/* END OF STYLE */
