@@ -69,7 +69,6 @@ function loadHeader() {
                 <ul class="nav-menu">
                     <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
                     <li><a href="lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
-                    <li><a href="pricing.html" class="${pageName === 'pricing' ? 'active' : ''}">${content[lang].nav.pricing}</a></li>
                     <li><a href="about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
                     <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
                     
