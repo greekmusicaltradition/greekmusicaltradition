@@ -1,3 +1,8 @@
+/* ========================================
+   CSS VARIABLES & RESET
+   (Keep your main CSS variables here)
+   ======================================== */
+
 /* --- Lesson Cards Grid --- */
 .lessons-grid {
     display: grid;
@@ -66,14 +71,14 @@
 .lesson-details h4 {
     color: var(--color-primary-blue);
     margin-bottom: 1rem;
-    margin-top: 1rem;                
+    margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
 .lesson-details p {
     margin-bottom: 1rem;
-    margin-left: 1rem;    
+    margin-left: 1rem;
     color: var(--color-text-medium);
     line-height: 1.7;
 }
@@ -153,7 +158,7 @@
     display: flex;
     align-items: flex-start;
     font-size: 1rem;
-    color: var(--color-text-dark);  
+    color: var(--color-text-dark);
 }
 
 .getting-started-list li::before {
@@ -182,7 +187,7 @@
     color: var(--color-primary-blue);
     font-size: 1.05rem;
     line-height: 1.2;
-    
+
 }
 
 .getting-started-list li span {
@@ -208,31 +213,31 @@
 
 /* Getting Started as own full width section */
 .getting-started-full-width {
-  width: 100%;
-  margin-bottom: 2rem;
-  display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: block;
 }
 .getting-started-full-width .lesson-card {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* === Info Boxes for Requirements and Materials Side-by-side === */
 .info-box-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .info-box-container > section {
-  flex: 1 1 48%;
-  max-width: 48%;
+    flex: 1 1 48%;
+    max-width: 48%;
 }
 
 .info-box-container > section .lesson-card {
-  max-width: 100%;
-  margin: 0;
+    max-width: 100%;
+    margin: 0;
 }
 
 .technical-requirements-box .lesson-header {
@@ -264,7 +269,7 @@
     .info-box-container {
         flex-direction: column;
     }
-    .info-box-container > section, 
+    .info-box-container > section,
     .info-box-container > section .lesson-card {
         max-width: 100%;
     }
@@ -296,81 +301,19 @@
    BUTTONS
    ======================================== */
 
+/* To make both buttons equal width and height */
 .cta-buttons-lessons {
     display: flex;
     gap: 1rem;
     margin-top: auto;
     flex-wrap: wrap;
+    align-items: stretch; /* Ensures buttons have the same height */
 }
 
-/* CTA cards (bottom call to action) */
-/*
-.lessons-grid .lesson-card.cta-card {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
+/* To make the buttons fill the space equally */
+.cta-buttons-lessons .cta-button-prominent {
+    flex-grow: 1;
 }
-.lessons-grid .lesson-card.cta-card .lesson-header {
-    background: transparent !important;
-    color: #4b7988 !important;
-    padding: 1rem 0 0.5rem 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-.lessons-grid .lesson-card.cta-card .lesson-content {
-    padding: 0.5rem 0 1rem 0 !important;
-    background: transparent !important;
-    border: none !important;
-}
-.lessons-grid .lesson-card.cta-card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-.lessons-grid .lesson-card.cta-card .lesson-description-box {
-    display: none !important;
-} */
-
-/* Icon spacing for lesson intro */
-.icon-spacing {
-    margin-right: 8px;
-    color: #4CAF50;
-}
-
-/* Optional: style for the bolded text */
-.welcome-content p strong {
-    color: #333;
-}
-
-
-
-
-
-.footer-info .lessons-grid {
-    align-items: stretch;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card {
-    flex: 1 1 auto;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
-    flex: 1 1 auto;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
 
 .music-type-badge {
     font-size: 1rem;
@@ -381,11 +324,6 @@
     align-items: center;
     gap: 0.4rem;
 }
-
-.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
-    margin-top: auto !important;
-}
-
 
 /* Prominent CTA Button Styles - Higher Specificity */
 .lesson-description-box .cta-button-container .cta-button-prominent {
@@ -468,13 +406,13 @@
     outline-offset: 3px !important;
 }
 
-/* Make the button container more prominent */
+/* Make the button container more prominent and remove the dashed border */
 .lesson-description-box .cta-button-container {
     background: rgba(255, 255, 255, 0.15) !important;
     padding: 2rem 1.5rem !important;
     border-radius: 12px !important;
     margin: 1.5rem 0 0 0 !important;
-    border: 3px dashed rgba(255, 255, 255, 0.4) !important;
+    border: none !important; /* Removed dashed border */
     text-align: center !important;
     backdrop-filter: blur(5px) !important;
 }
@@ -507,4 +445,31 @@
         min-width: 200px !important;
         letter-spacing: 0.5px !important;
     }
+}
+
+/* The footer-info styles are still needed from the main file for proper layout */
+.footer-info .lessons-grid {
+    align-items: stretch;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
+    margin-top: auto !important;
 }
