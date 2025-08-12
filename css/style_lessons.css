@@ -385,3 +385,126 @@
 .footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
     margin-top: auto !important;
 }
+
+
+/* Prominent CTA Button Styles - Higher Specificity */
+.lesson-description-box .cta-button-container .cta-button-prominent {
+    display: inline-block !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    padding: 1.3rem 3rem !important;
+    border: 4px solid transparent !important;
+    border-radius: 15px !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-width: 280px !important;
+    margin: 10px 0 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+}
+
+/* Shimmer effect */
+.lesson-description-box .cta-button-container .cta-button-prominent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.lesson-description-box .cta-button-container .cta-button-prominent:hover::before {
+    left: 100%;
+}
+
+/* Primary button (Online Lessons) */
+.lesson-description-box .cta-button-container .cta-button-prominent.primary {
+    background: linear-gradient(135deg, #d4af37, #f4c842, #d4af37) !important;
+    color: #ffffff !important;
+    border-color: #d4af37 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
+}
+
+.lesson-description-box .cta-button-container .cta-button-prominent.primary:hover {
+    background: linear-gradient(135deg, #f4c842, #ffdd57, #f4c842) !important;
+    transform: translateY(-6px) scale(1.08) !important;
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5) !important;
+    border-color: #f4c842 !important;
+}
+
+/* Secondary button (Local Lessons) */
+.lesson-description-box .cta-button-container .cta-button-prominent.secondary {
+    background: linear-gradient(135deg, #4b7988, #6b9daf, #4b7988) !important;
+    color: #ffffff !important;
+    border-color: #4b7988 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
+}
+
+.lesson-description-box .cta-button-container .cta-button-prominent.secondary:hover {
+    background: linear-gradient(135deg, #6b9daf, #7bb3c7, #6b9daf) !important;
+    transform: translateY(-6px) scale(1.08) !important;
+    box-shadow: 0 15px 35px rgba(75, 121, 136, 0.5) !important;
+    border-color: #6b9daf !important;
+}
+
+/* Active state */
+.lesson-description-box .cta-button-container .cta-button-prominent:active {
+    transform: translateY(-3px) scale(1.05) !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Focus state for accessibility */
+.lesson-description-box .cta-button-container .cta-button-prominent:focus {
+    outline: 4px solid rgba(212, 175, 55, 0.6) !important;
+    outline-offset: 3px !important;
+}
+
+/* Make the button container more prominent */
+.lesson-description-box .cta-button-container {
+    background: rgba(255, 255, 255, 0.15) !important;
+    padding: 2rem 1.5rem !important;
+    border-radius: 12px !important;
+    margin: 1.5rem 0 0 0 !important;
+    border: 3px dashed rgba(255, 255, 255, 0.4) !important;
+    text-align: center !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* Override any existing button styles */
+.lesson-card .lesson-description-box a.cta-button-prominent {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+}
+
+.lesson-card .lesson-description-box a.cta-button-prominent::after {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lesson-description-box .cta-button-container .cta-button-prominent {
+        font-size: 1.2rem !important;
+        padding: 1.1rem 2.5rem !important;
+        min-width: 240px !important;
+        letter-spacing: 1px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson-description-box .cta-button-container .cta-button-prominent {
+        font-size: 1.1rem !important;
+        padding: 1rem 2rem !important;
+        min-width: 200px !important;
+        letter-spacing: 0.5px !important;
+    }
+}
