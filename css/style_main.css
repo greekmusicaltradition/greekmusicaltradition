@@ -1384,81 +1384,31 @@ a:focus {
     transform: rotate(180deg);
 }
 
+/* Dropdown Menu Container - FIXED width to prevent expansion */
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    min-width: 200px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: var(--color-white);
+    border: 2px solid var(--color-light-blue);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+    width: 280px; /* Fixed width instead of min-width */
     z-index: 1000;
     display: none;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
 .dropdown-menu.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
-.dropdown-menu li {
-    list-style: none;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 16px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu a.active {
-    background-color: #f8f9fa;
-    color: #007bff;
-}
-
-.dropdown-menu li:last-child a {
-    border-bottom: none;
-}
-
-/* Mobile Dropdown Styles */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        border-left: 3px solid #007bff;
-        margin-left: 20px;
-        background: #f8f9fa;
-        min-width: auto;
-        width: calc(100% - 20px);
-    }
-    
-    .dropdown-menu a {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-    
-    .nav-menu.active .dropdown-menu {
-        display: block;
-    }
-}
-
-/* Active state for parent dropdown items */
-.dropdown.active > .dropdown-toggle {
-    color: #007bff;
-    font-weight: 500;
-}
-
-
-/* Dropdown Menu Items - ENHANCED for better visual appeal */
+/* Dropdown Menu Items - STRAIGHT LINES, no expansion */
 .dropdown-menu a {
     display: block;
     padding: 14px 20px;
@@ -1480,6 +1430,7 @@ a:focus {
     background-color: rgba(255, 255, 255, 0.95);
     border-left: 3px solid transparent;
     box-shadow: inset 0 0 0 1px rgba(75, 121, 136, 0.08);
+    border-radius: 0; /* Remove all border radius for straight lines */
 }
 
 /* Add subtle gradient background for unselected items */
@@ -1500,22 +1451,23 @@ a:focus {
     z-index: -1;
 }
 
-/* Hover state improvements */
+/* Hover state improvements - STRAIGHT LINES */
 .dropdown-menu a:hover {
     background-size: 100% 100%;
     color: var(--color-primary-blue);
-    padding-left: 24px;
+    padding-left: 20px; /* Keep consistent padding, no expansion */
     font-weight: 600;
     border-left: 3px solid var(--color-secondary-blue);
     box-shadow: inset 0 0 0 1px rgba(75, 121, 136, 0.2);
-    transform: translateX(2px);
+    transform: none; /* Remove the translateX transform */
+    border-radius: 0; /* Ensure straight lines on hover */
 }
 
 .dropdown-menu a:hover::before {
     opacity: 0;
 }
 
-/* Active state styling */
+/* Active state styling - STRAIGHT LINES */
 .dropdown-menu a.active {
     background: linear-gradient(135deg, 
         var(--color-light-blue), 
@@ -1524,8 +1476,9 @@ a:focus {
     color: var(--color-primary-blue);
     font-weight: 600;
     border-left: 4px solid var(--color-accent-gold);
-    padding-left: 20px;
+    padding-left: 20px; /* Consistent padding */
     box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.3);
+    border-radius: 0; /* Straight lines for active state */
 }
 
 .dropdown-menu a.active::before {
@@ -1539,17 +1492,32 @@ a:focus {
     );
     color: var(--color-white);
     box-shadow: inset 0 0 0 1px rgba(75, 121, 136, 0.4);
+    border-radius: 0; /* Keep straight lines */
 }
 
-/* First and last item styling refinements */
+/* Remove ALL border radius from first and last items for consistent straight lines */
 .dropdown-menu li:first-child a {
-    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+    border-radius: 0; /* Straight lines at top */
     border-top: none;
 }
 
 .dropdown-menu li:last-child a {
     border-bottom: none;
-    border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+    border-radius: 0; /* Straight lines at bottom */
+}
+
+/* Enhanced focus state - STRAIGHT LINES */
+.dropdown-menu a:focus {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: -2px;
+    background: linear-gradient(135deg, 
+        rgba(212, 175, 55, 0.1), 
+        rgba(248, 240, 200, 0.2)
+    );
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    border-left: 3px solid var(--color-accent-gold);
+    border-radius: 0; /* Straight lines for focus state */
 }
 
 /* Add subtle text shadow for better readability */
@@ -1562,50 +1530,46 @@ a:focus {
     text-shadow: 0 1px 2px rgba(75, 121, 136, 0.2);
 }
 
-/* Enhanced focus state */
-.dropdown-menu a:focus {
-    outline: 2px solid var(--color-accent-gold);
-    outline-offset: -2px;
-    background: linear-gradient(135deg, 
-        rgba(212, 175, 55, 0.1), 
-        rgba(248, 240, 200, 0.2)
-    );
-    color: var(--color-primary-blue);
-    font-weight: 600;
-    border-left: 3px solid var(--color-accent-gold);
-}
-
-/* Mobile enhancements */
+/* Mobile styles remain the same but with straight lines */
 @media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-left: 4px solid var(--color-accent-gold);
+        margin: 0.5rem 0 0.5rem 20px;
+        background: linear-gradient(135deg, 
+            rgba(184, 220, 232, 0.1), 
+            rgba(208, 232, 240, 0.1)
+        );
+        backdrop-filter: blur(5px);
+        width: calc(100% - 40px); /* Fixed width calculation */
+        border-radius: 0; /* Remove border radius on mobile too */
+        overflow: visible;
+    }
+    
     .dropdown-menu a {
         padding: 12px 20px;
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.9);
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(255, 255, 255, 0.05);
-        background-size: 100% 100%;
         white-space: normal;
         overflow: visible;
         text-overflow: initial;
         line-height: 1.4;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         border-left: 3px solid transparent;
-    }
-    
-    .dropdown-menu a::before {
-        background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.05) 0%,
-            rgba(255, 255, 255, 0.02) 50%,
-            rgba(255, 255, 255, 0.08) 100%
-        );
+        border-radius: 0; /* Straight lines on mobile */
     }
     
     .dropdown-menu a:hover {
         background: rgba(255, 255, 255, 0.15);
         color: var(--color-light-blue);
-        padding-left: 24px;
+        padding-left: 20px; /* No padding expansion on mobile */
         border-left: 3px solid var(--color-light-blue);
-        transform: none;
+        border-radius: 0;
     }
     
     .dropdown-menu a.active {
@@ -1613,10 +1577,12 @@ a:focus {
         color: var(--color-accent-gold);
         border-left: 4px solid var(--color-accent-gold);
         font-weight: 600;
+        border-radius: 0;
     }
     
     .dropdown-menu a.active:hover {
         background: rgba(212, 175, 55, 0.35);
         color: var(--color-accent-gold);
+        border-radius: 0;
     }
 }
