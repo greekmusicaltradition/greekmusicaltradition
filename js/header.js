@@ -40,7 +40,7 @@ function loadHeader() {
             <div class="nav-container">
                 <div class="nav-brand">
                     <a href="index.html" class="brand-link">
-                        <img src="../pictures/logo_woman.jpeg" alt="Logo">
+                        <img src="../pictures/logo_woman.jpg" alt="Logo">
                         <span>${content[lang].brand}</span>
                     </a>
                 </div>
