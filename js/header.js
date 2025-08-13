@@ -15,7 +15,7 @@ function loadHeader() {
             nav: {
                 home: "Home",
                 lessons: "Lessons",
-                about: "About Me",
+                about: "About",
                 contact: "Contact"
             }
         },
