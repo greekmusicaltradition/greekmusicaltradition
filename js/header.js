@@ -15,13 +15,7 @@ function loadHeader() {
             nav: {
                 home: "Home",
                 lessons: "Lessons",
-                lessonsOnline: "Online Lessons",
-                lessonsLocal: "Local Lessons",
-                about: "About",
-                aboutMe: "About Me",
-                aboutByzantine: "About Byzantine Music",
-                aboutGreekSinging: "About Greek Singing",
-                aboutGreekMusic: "About Greek Music",
+                about: "About Me",
                 contact: "Contact"
             }
         },
@@ -30,13 +24,7 @@ function loadHeader() {
             nav: {
                 home: "Αρχική",
                 lessons: "Μαθήματα",
-                lessonsOnline: "Διαδικτυακά Μαθήματα",
-                lessonsLocal: "Τοπικά Μαθήματα",
-                about: "Σχετικά",
-                aboutMe: "Σχετικά με Εμένα",
-                aboutByzantine: "Σχετικά με τη Βυζαντινή Μουσική",
-                aboutGreekSinging: "Σχετικά με το Ελληνικό Τραγούδι",
-                aboutGreekMusic: "Σχετικά με την Ελληνική Μουσική",
+                about: "Σχετικά με Εμένα",
                 contact: "Επικοινωνία"
             }
         }
@@ -78,27 +66,8 @@ function loadHeader() {
                 
                 <ul class="nav-menu">
                     <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
-                    
-                    <!-- Lessons Dropdown -->
-                    <li class="dropdown ${['lessons', 'lessons_online', 'lessons_local'].includes(pageName) ? 'active' : ''}">
-                        <a href="lessons.html" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.lessons} <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="lessons_online.html" class="${pageName === 'lessons_online' ? 'active' : ''}">${content[lang].nav.lessonsOnline}</a></li>
-                            <li><a href="lessons_local.html" class="${pageName === 'lessons_local' ? 'active' : ''}">${content[lang].nav.lessonsLocal}</a></li>
-                        </ul>
-                    </li>
-                    
-                    <!-- About Dropdown -->
-<li class="dropdown ${['about_me', 'about_byzantine', 'about_greek_singing', 'about_greek_music'].includes(pageName) ? 'active' : ''}">
-    <a href="about_me.html" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.about} <span class="dropdown-arrow">▼</span></a>
-    <ul class="dropdown-menu">
-        <li><a href="about_me.html" class="${pageName === 'about_me' ? 'active' : ''}">${content[lang].nav.aboutMe}</a></li>
-        <li><a href="about_byzantine.html" class="${pageName === 'about_byzantine' ? 'active' : ''}">${content[lang].nav.aboutByzantine}</a></li>
-        <li><a href="about_greek_singing.html" class="${pageName === 'about_greek_singing' ? 'active' : ''}">${content[lang].nav.aboutGreekSinging}</a></li>
-        <li><a href="about_greek_music.html" class="${pageName === 'about_greek_music' ? 'active' : ''}">${content[lang].nav.aboutGreekMusic}</a></li>
-    </ul>
-</li>
-                    
+                    <li><a href="lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
+                    <li><a href="about_me.html" class="${pageName === 'about_me' ? 'active' : ''}">${content[lang].nav.about}</a></li>
                     <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
                     
                     <!-- Mobile language switcher -->
@@ -121,10 +90,7 @@ function loadHeader() {
     
     document.getElementById('header').innerHTML = headerHTML;
     
-    // Add dropdown functionality
-    addDropdownFunctionality();
-    
-    // Add mobile menu functionality
+    // Simplified mobile menu functionality (no dropdowns needed)
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -143,16 +109,13 @@ function loadHeader() {
         });
     }
     
-    // Close mobile menu when clicking on a non-dropdown link
+    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Don't close menu if clicking dropdown toggle on mobile
-            if (!link.hasAttribute('data-has-dropdown') || window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
     
@@ -162,89 +125,7 @@ function loadHeader() {
             navMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
             document.body.style.overflow = '';
-            
-            // Also close any open dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.remove('show');
-                menu.style.display = 'none';
-            });
         }
-    });
-}
-
-// Enhanced dropdown functionality
-function addDropdownFunctionality() {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!toggle || !menu) return;
-        
-        // Desktop hover behavior
-        dropdown.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 768) {
-                // Close other dropdowns first
-                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-                    if (otherMenu !== menu) {
-                        otherMenu.classList.remove('show');
-                        setTimeout(() => otherMenu.style.display = 'none', 200);
-                    }
-                });
-                
-                menu.style.display = 'block';
-                setTimeout(() => menu.classList.add('show'), 10);
-            }
-        });
-        
-        dropdown.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 768) {
-                menu.classList.remove('show');
-                setTimeout(() => {
-                    if (!menu.classList.contains('show')) {
-                        menu.style.display = 'none';
-                    }
-                }, 200);
-            }
-        });
-        
-        // Mobile click behavior
-        toggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                
-                const isOpen = menu.classList.contains('show');
-                
-                // Close all other dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-                    if (otherMenu !== menu) {
-                        otherMenu.classList.remove('show');
-                        otherMenu.style.display = 'none';
-                    }
-                });
-                
-                // Toggle current dropdown
-                if (isOpen) {
-                    menu.classList.remove('show');
-                    setTimeout(() => menu.style.display = 'none', 200);
-                } else {
-                    menu.style.display = 'block';
-                    setTimeout(() => menu.classList.add('show'), 10);
-                }
-            }
-        });
-        
-        // Close dropdown when clicking on submenu item (mobile)
-        const submenuLinks = menu.querySelectorAll('a');
-        submenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    menu.classList.remove('show');
-                    setTimeout(() => menu.style.display = 'none', 200);
-                }
-            });
-        });
     });
 }
 
@@ -283,41 +164,3 @@ function switchLanguage(targetLang) {
 
 // Load header when page loads
 document.addEventListener('DOMContentLoaded', loadHeader);
-
-// Add this to your existing header.js after the mobile menu functionality
-// Enhanced mobile menu closing
-document.addEventListener('click', (e) => {
-    const navMenu = document.querySelector('.nav-menu');
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    
-    if (!e.target.closest('.nav-container')) {
-        navMenu?.classList.remove('active');
-        mobileToggle?.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        // Close any open dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            menu.classList.remove('show');
-            menu.style.display = 'none';
-        });
-    }
-});
-
-// Handle window resize
-window.addEventListener('resize', () => {
-    const navMenu = document.querySelector('.nav-menu');
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    
-    if (window.innerWidth > 992) {
-        navMenu?.classList.remove('active');
-        mobileToggle?.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        // Reset dropdown displays for desktop
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            menu.style.display = 'none';
-            menu.classList.remove('show');
-        });
-    }
-});
-
