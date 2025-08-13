@@ -1660,3 +1660,24 @@ a:focus {
         text-align: center !important;
     }
 }
+
+/* Simple footer spacing fix */
+.footer-content .footer-section {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.footer-content .footer-section h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+
+.footer-contact-compact h4 {
+    font-size: 1.2rem !important; /* Same as other h4s */
+}
+
+.contact-text {
+    font-size: 1rem !important; /* Same as other paragraphs */
+    opacity: 1 !important; /* Remove the dimming effect */
+}
