@@ -27,6 +27,7 @@ function loadFooter() {
             },
             contactTitle: "Have Questions? We're Here to Help!",
             contactText: "Not sure where to begin? We'll help you choose the right path for your voice and interests.",
+            contactHighlight: "",
             cta: "Contact Us Form",
             legal: {
                 privacy: "Privacy Policy",
