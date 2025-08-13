@@ -89,15 +89,15 @@ function loadHeader() {
                     </li>
                     
                     <!-- About Dropdown -->
-                    <li class="dropdown ${['about_me', 'about_byzantine', 'about_greek_singing', 'about_greek_music'].includes(pageName) ? 'active' : ''}">
-                        <a href="#" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.about} <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="about_me.html" class="${pageName === 'about_me' ? 'active' : ''}">${content[lang].nav.aboutMe}</a></li>
-                            <li><a href="about_byzantine.html" class="${pageName === 'about_byzantine' ? 'active' : ''}">${content[lang].nav.aboutByzantine}</a></li>
-                            <li><a href="about_greek_singing.html" class="${pageName === 'about_greek_singing' ? 'active' : ''}">${content[lang].nav.aboutGreekSinging}</a></li>
-                            <li><a href="about_greek_music.html" class="${pageName === 'about_greek_music' ? 'active' : ''}">${content[lang].nav.aboutGreekMusic}</a></li>
-                        </ul>
-                    </li>
+<li class="dropdown ${['about_me', 'about_byzantine', 'about_greek_singing', 'about_greek_music'].includes(pageName) ? 'active' : ''}">
+    <a href="about_me.html" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.about} <span class="dropdown-arrow">▼</span></a>
+    <ul class="dropdown-menu">
+        <li><a href="about_me.html" class="${pageName === 'about_me' ? 'active' : ''}">${content[lang].nav.aboutMe}</a></li>
+        <li><a href="about_byzantine.html" class="${pageName === 'about_byzantine' ? 'active' : ''}">${content[lang].nav.aboutByzantine}</a></li>
+        <li><a href="about_greek_singing.html" class="${pageName === 'about_greek_singing' ? 'active' : ''}">${content[lang].nav.aboutGreekSinging}</a></li>
+        <li><a href="about_greek_music.html" class="${pageName === 'about_greek_music' ? 'active' : ''}">${content[lang].nav.aboutGreekMusic}</a></li>
+    </ul>
+</li>
                     
                     <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
                     
