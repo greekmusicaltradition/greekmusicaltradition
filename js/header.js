@@ -80,8 +80,8 @@ function loadHeader() {
                     <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
                     
                     <!-- Lessons Dropdown -->
-                    <li class="dropdown ${['lessons_online', 'lessons_local'].includes(pageName) ? 'active' : ''}">
-                        <a href="#" class="dropdown-toggle">${content[lang].nav.lessons} <span class="dropdown-arrow">▼</span></a>
+                    <li class="dropdown ${['lessons', 'lessons_online', 'lessons_local'].includes(pageName) ? 'active' : ''}">
+                        <a href="lessons.html" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.lessons} <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="lessons_online.html" class="${pageName === 'lessons_online' ? 'active' : ''}">${content[lang].nav.lessonsOnline}</a></li>
                             <li><a href="lessons_local.html" class="${pageName === 'lessons_local' ? 'active' : ''}">${content[lang].nav.lessonsLocal}</a></li>
@@ -90,7 +90,7 @@ function loadHeader() {
                     
                     <!-- About Dropdown -->
                     <li class="dropdown ${['about_me', 'about_byzantine', 'about_greek_singing', 'about_greek_music'].includes(pageName) ? 'active' : ''}">
-                        <a href="#" class="dropdown-toggle">${content[lang].nav.about} <span class="dropdown-arrow">▼</span></a>
+                        <a href="#" class="dropdown-toggle" data-has-dropdown="true">${content[lang].nav.about} <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="about_me.html" class="${pageName === 'about_me' ? 'active' : ''}">${content[lang].nav.aboutMe}</a></li>
                             <li><a href="about_byzantine.html" class="${pageName === 'about_byzantine' ? 'active' : ''}">${content[lang].nav.aboutByzantine}</a></li>
@@ -128,19 +128,30 @@ function loadHeader() {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
-    mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
-    });
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
     
-    // Close mobile menu when clicking on a link
+    // Close mobile menu when clicking on a non-dropdown link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Don't close menu if clicking dropdown toggle
-            if (!link.classList.contains('dropdown-toggle')) {
+            // Don't close menu if clicking dropdown toggle on mobile
+            if (!link.hasAttribute('data-has-dropdown') || window.innerWidth > 768) {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     });
@@ -150,11 +161,18 @@ function loadHeader() {
         if (!e.target.closest('.nav-container')) {
             navMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Also close any open dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+                menu.style.display = 'none';
+            });
         }
     });
 }
 
-// Dropdown functionality
+// Enhanced dropdown functionality
 function addDropdownFunctionality() {
     const dropdowns = document.querySelectorAll('.dropdown');
     
@@ -162,9 +180,19 @@ function addDropdownFunctionality() {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
         
+        if (!toggle || !menu) return;
+        
         // Desktop hover behavior
         dropdown.addEventListener('mouseenter', () => {
             if (window.innerWidth > 768) {
+                // Close other dropdowns first
+                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                    if (otherMenu !== menu) {
+                        otherMenu.classList.remove('show');
+                        setTimeout(() => otherMenu.style.display = 'none', 200);
+                    }
+                });
+                
                 menu.style.display = 'block';
                 setTimeout(() => menu.classList.add('show'), 10);
             }
@@ -183,9 +211,9 @@ function addDropdownFunctionality() {
         
         // Mobile click behavior
         toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            
             if (window.innerWidth <= 768) {
+                e.preventDefault();
+                
                 const isOpen = menu.classList.contains('show');
                 
                 // Close all other dropdowns
@@ -206,20 +234,17 @@ function addDropdownFunctionality() {
                 }
             }
         });
-    });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.remove('show');
-                setTimeout(() => {
-                    if (!menu.classList.contains('show')) {
-                        menu.style.display = 'none';
-                    }
-                }, 200);
+        
+        // Close dropdown when clicking on submenu item (mobile)
+        const submenuLinks = menu.querySelectorAll('a');
+        submenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    menu.classList.remove('show');
+                    setTimeout(() => menu.style.display = 'none', 200);
+                }
             });
-        }
+        });
     });
 }
 
@@ -230,7 +255,7 @@ function getCurrentPageName() {
     return filename.replace('.html', '') || 'index';
 }
 
-// Language switching function - SINGLE VERSION FOR GITHUB PAGES
+// Language switching function
 function switchLanguage(targetLang) {
     const currentPage = getCurrentPageName();
     const currentPath = window.location.pathname;
