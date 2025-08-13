@@ -991,7 +991,7 @@ a:focus {
 }
 
 .footer-contact-compact h4 {
-    color: var(--color-accent-gold) !important;
+    color: white !important;
     font-size: 1.3rem !important;
     margin-bottom: 0.8rem !important;
 }
