@@ -283,3 +283,41 @@ function switchLanguage(targetLang) {
 
 // Load header when page loads
 document.addEventListener('DOMContentLoaded', loadHeader);
+
+// Add this to your existing header.js after the mobile menu functionality
+// Enhanced mobile menu closing
+document.addEventListener('click', (e) => {
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (!e.target.closest('.nav-container')) {
+        navMenu?.classList.remove('active');
+        mobileToggle?.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Close any open dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('show');
+            menu.style.display = 'none';
+        });
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (window.innerWidth > 992) {
+        navMenu?.classList.remove('active');
+        mobileToggle?.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset dropdown displays for desktop
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+            menu.classList.remove('show');
+        });
+    }
+});
+
