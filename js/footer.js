@@ -23,11 +23,11 @@ function loadFooter() {
             lessonTypes: {
                 byzantine: "Byzantine Music",
                 traditional: "Traditional Singing",
-                pricing: "Pricing"
+               
             },
-            contactTitle: "Have Questions? We're Here to Help!",
+            contactTitle: "Have Questions?                              We're Here to Help!",
             contactText: "Not sure where to begin? We'll help you choose the right path for your voice and interests.",
-            cta: "Contact Us Form",
+            cta: "Contact Us!",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
@@ -49,9 +49,9 @@ function loadFooter() {
             lessonTypes: {
                 byzantine: "Βυζαντινή Μουσική",
                 traditional: "Παραδοσιακό Τραγούδι",
-                pricing: "Τιμές"
+                
             },
-            contactTitle: "Έχετε Ερωτήσεις; Είμαστε Εδώ για να Βοηθήσουμε!",
+            contactTitle: "Έχετε Ερωτήσεις;                              Είμαστε Εδώ για να Βοηθήσουμε!",
             contactText: "Δεν είστε σίγουροι από πού να ξεκινήσετε; Θα σας βοηθήσουμε να επιλέξετε την κατάλληλη πορεία για τη φωνή και τα ενδιαφέροντά σας.",
             contactHighlight: "Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα",
             cta: "Φόρμα Επικοινωνίας",
