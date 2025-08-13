@@ -104,7 +104,7 @@ function loadFooter() {
                     <div class="footer-section footer-contact-compact">
                         <h4>${content[lang].contactTitle}</h4>
                         <p class="contact-text">${content[lang].contactText}</p>
-                        <p class="contact-highlight">${content[lang].contactHighlight}</p>
+                        ${content[lang].contactHighlight ? `<p class="contact-highlight">${content[lang].contactHighlight}</p>` : ''}
                         <a href="${relativePath}contact.html" class="footer-cta-compact">${content[lang].cta}</a>
                     </div>
                 </div>
