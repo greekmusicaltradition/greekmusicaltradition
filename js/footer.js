@@ -27,7 +27,6 @@ function loadFooter() {
             },
             contactTitle: "Have Questions? We're Here to Help!",
             contactText: "Not sure where to begin? We'll help you choose the right path for your voice and interests.",
-            contactHighlight: "",
             cta: "Contact Us Form",
             legal: {
                 privacy: "Privacy Policy",
@@ -52,10 +51,10 @@ function loadFooter() {
                 traditional: "Παραδοσιακό Τραγούδι",
                 pricing: "Τιμές"
             },
-            contactTitle: "Έτοιμοι να Ξεκινήσετε;",
-            contactText: "Ανακαλύψτε την ομορφιά των αυθεντικών ελληνικών μουσικών παραδόσεων.",
+            contactTitle: "Έχετε Ερωτήσεις; Είμαστε Εδώ για να Βοηθήσουμε!",
+            contactText: "Δεν είστε σίγουροι από πού να ξεκινήσετε; Θα σας βοηθήσουμε να επιλέξετε την κατάλληλη πορεία για τη φωνή και τα ενδιαφέροντά σας.",
             contactHighlight: "Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα",
-            cta: "Ξεκινήστε το Ταξίδι σας",
+            cta: "Φόρμα Επικοινωνίας",
             legal: {
                 privacy: "Πολιτική Απορρήτου",
                 terms: "Όροι Υπηρεσίας",
