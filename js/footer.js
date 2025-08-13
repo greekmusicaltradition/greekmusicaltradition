@@ -25,10 +25,9 @@ function loadFooter() {
                 traditional: "Traditional Singing",
                 pricing: "Pricing"
             },
-            contactTitle: "Ready to Start?",
-            contactText: "Discover the beauty of authentic Greek music traditions.",
-            contactHighlight: "Free consultation • All levels welcome",
-            cta: "Begin Your Journey",
+            contactTitle: "Have Questions? We're Here to Help!",
+            contactText: "Not sure where to begin? We'll help you choose the right path for your voice and interests.",
+            cta: "Contact Us Form",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
