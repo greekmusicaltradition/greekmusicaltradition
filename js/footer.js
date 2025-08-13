@@ -67,6 +67,13 @@ function loadFooter() {
     const pathPrefix = isGreek ? 'gr' : 'en';
     const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
     
+    // Define legal page paths - corrected to match your actual file structure
+    const legalPaths = {
+        privacy: isGreek ? '../gr/privacy_policy.html' : '../en/privacy_policy.html',
+        terms: '../terms_of_service.html', // Root level as specified
+        lessonTerms: isGreek ? '../gr/lesson_terms.html' : '../en/lesson_terms.html'
+    };
+    
     const footerHTML = `
         <footer class="site-footer">
             <div class="container">
@@ -100,9 +107,9 @@ function loadFooter() {
                 </div>
                 <div class="footer-bottom">
                     <ul class="legal-links">
-                        <li><a href="${relativePath}privacy-policy.html">${content[lang].legal.privacy}</a></li>
-                        <li><a href="${relativePath}terms-of-service.html">${content[lang].legal.terms}</a></li>
-                        <li><a href="${relativePath}lesson-terms.html">${content[lang].legal.lessonTerms}</a></li>
+                        <li><a href="${legalPaths.privacy}">${content[lang].legal.privacy}</a></li>
+                        <li><a href="${legalPaths.terms}">${content[lang].legal.terms}</a></li>
+                        <li><a href="${legalPaths.lessonTerms}">${content[lang].legal.lessonTerms}</a></li>
                     </ul>
                     <p>${content[lang].copyright}</p>
                 </div>
