@@ -1667,8 +1667,8 @@ a:focus {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Give more space to first and last sections */
-    gap: 2rem;
+    grid-template-columns: 1.6fr 0.9fr 0.9fr 1.3fr !important;
+    gap: 2.5rem !important;
     margin-bottom: 2rem;
     align-items: flex-start;
 }
