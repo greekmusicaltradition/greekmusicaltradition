@@ -25,10 +25,10 @@ function loadFooter() {
                 traditional: "Traditional Singing",
                 pricing: "Pricing"
             },
-            contactTitle: "Start Your Musical Journey",
-            contactText: "Transform your voice and connect with centuries of Greek musical heritage. Join students worldwide who are discovering the beauty of authentic Greek music traditions.",
-            contactSubtext: "✨ Free consultation • Personalized lessons • All skill levels welcome",
-            cta: "Begin Your Journey Today",
+            contactTitle: "Ready to Start?",
+            contactText: "Discover the beauty of authentic Greek music traditions.",
+            contactHighlight: "Free consultation • All levels welcome",
+            cta: "Begin Your Journey",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
@@ -52,10 +52,10 @@ function loadFooter() {
                 traditional: "Παραδοσιακό Τραγούδι",
                 pricing: "Τιμές"
             },
-            contactTitle: "Ξεκινήστε το Μουσικό σας Ταξίδι",
-            contactText: "Μεταμορφώστε τη φωνή σας και συνδεθείτε με αιώνες ελληνικής μουσικής κληρονομιάς. Ενωθείτε με μαθητές από όλο τον κόσμο που ανακαλύπτουν την ομορφιά των αυθεντικών ελληνικών μουσικών παραδόσεων.",
-            contactSubtext: "✨ Δωρεάν συμβουλευτική • Εξατομικευμένα μαθήματα • Όλα τα επίπεδα ευπρόσδεκτα",
-            cta: "Ξεκινήστε το Ταξίδι σας Σήμερα",
+            contactTitle: "Έτοιμοι να Ξεκινήσετε;",
+            contactText: "Ανακαλύψτε την ομορφιά των αυθεντικών ελληνικών μουσικών παραδόσεων.",
+            contactHighlight: "Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα",
+            cta: "Ξεκινήστε το Ταξίδι σας",
             legal: {
                 privacy: "Πολιτική Απορρήτου",
                 terms: "Όροι Υπηρεσίας",
@@ -101,11 +101,11 @@ function loadFooter() {
                             <li><a href="${relativePath}lessons.html#pricing">${content[lang].lessonTypes.pricing}</a></li>
                         </ul>
                     </div>
-                    <div class="footer-section contact-cta">
+                    <div class="footer-section footer-contact-compact">
                         <h4>${content[lang].contactTitle}</h4>
-                        <p class="contact-description">${content[lang].contactText}</p>
-                        <p class="contact-benefits">${content[lang].contactSubtext}</p>
-                        <a href="${relativePath}contact.html" class="footer-cta-button">${content[lang].cta}</a>
+                        <p class="contact-text">${content[lang].contactText}</p>
+                        <p class="contact-highlight">${content[lang].contactHighlight}</p>
+                        <a href="${relativePath}contact.html" class="footer-cta-compact">${content[lang].cta}</a>
                     </div>
                 </div>
                 <div class="footer-bottom">
