@@ -1661,23 +1661,67 @@ a:focus {
     }
 }
 
-/* Simple footer spacing fix */
+/* ========================================
+   FOOTER SECTION SPACING FIX
+   ======================================== */
+
 .footer-content .footer-section {
-    margin-bottom: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .footer-content .footer-section h4 {
-    font-size: 1.2rem !important;
     margin-bottom: 1rem !important;
     margin-top: 0 !important;
 }
 
+.footer-content .footer-section p {
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure consistent spacing for the contact section */
 .footer-contact-compact h4 {
-    font-size: 1.2rem !important; /* Same as other h4s */
+    color: var(--color-accent-gold) !important;
+    font-size: 1.2rem !important;  /* Match other h4 sizes */
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
 }
 
 .contact-text {
-    font-size: 1rem !important; /* Same as other paragraphs */
-    opacity: 1 !important; /* Remove the dimming effect */
+    font-size: 1rem !important;  /* Match other paragraph sizes */
+    line-height: 1.6 !important; /* Match footer standard */
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+    opacity: 1 !important; /* Remove the opacity that makes it look different */
+}
+
+.contact-highlight {
+    font-size: 0.9rem !important;
+    color: var(--color-light-blue) !important;
+    font-style: italic !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+    opacity: 0.8 !important;
+}
+
+.footer-cta-compact {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Ensure all footer sections have consistent top alignment */
+.footer-content {
+    align-items: flex-start !important;
+}
+
+/* Remove any extra spacing that might be causing imbalance */
+.footer-section:first-child,
+.footer-section:nth-child(2),
+.footer-section:nth-child(3),
+.footer-section:nth-child(4) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 }
