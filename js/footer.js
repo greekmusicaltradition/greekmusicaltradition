@@ -25,9 +25,10 @@ function loadFooter() {
                 traditional: "Traditional Singing",
                 pricing: "Pricing"
             },
-            contactTitle: "Contact",
-            contactText: "Ready to begin your musical journey?",
-            cta: "Get Started Today",
+            contactTitle: "Start Your Musical Journey",
+            contactText: "Transform your voice and connect with centuries of Greek musical heritage. Join students worldwide who are discovering the beauty of authentic Greek music traditions.",
+            contactSubtext: "✨ Free consultation • Personalized lessons • All skill levels welcome",
+            cta: "Begin Your Journey Today",
             legal: {
                 privacy: "Privacy Policy",
                 terms: "Terms of Service",
@@ -51,9 +52,10 @@ function loadFooter() {
                 traditional: "Παραδοσιακό Τραγούδι",
                 pricing: "Τιμές"
             },
-            contactTitle: "Επικοινωνία",
-            contactText: "Έτοιμοι να ξεκινήσετε το μουσικό σας ταξίδι;",
-            cta: "Ξεκινήστε Σήμερα",
+            contactTitle: "Ξεκινήστε το Μουσικό σας Ταξίδι",
+            contactText: "Μεταμορφώστε τη φωνή σας και συνδεθείτε με αιώνες ελληνικής μουσικής κληρονομιάς. Ενωθείτε με μαθητές από όλο τον κόσμο που ανακαλύπτουν την ομορφιά των αυθεντικών ελληνικών μουσικών παραδόσεων.",
+            contactSubtext: "✨ Δωρεάν συμβουλευτική • Εξατομικευμένα μαθήματα • Όλα τα επίπεδα ευπρόσδεκτα",
+            cta: "Ξεκινήστε το Ταξίδι σας Σήμερα",
             legal: {
                 privacy: "Πολιτική Απορρήτου",
                 terms: "Όροι Υπηρεσίας",
@@ -67,10 +69,10 @@ function loadFooter() {
     const pathPrefix = isGreek ? 'gr' : 'en';
     const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
     
-    // Define legal page paths - corrected to match your actual file structure
+    // Define legal page paths
     const legalPaths = {
         privacy: isGreek ? '../gr/privacy_policy.html' : '../en/privacy_policy.html',
-        terms: '../terms_of_service.html', // Root level as specified
+        terms: '../terms_of_service.html',
         lessonTerms: isGreek ? '../gr/lesson_terms.html' : '../en/lesson_terms.html'
     };
     
@@ -99,10 +101,11 @@ function loadFooter() {
                             <li><a href="${relativePath}lessons.html#pricing">${content[lang].lessonTypes.pricing}</a></li>
                         </ul>
                     </div>
-                    <div class="footer-section">
+                    <div class="footer-section contact-cta">
                         <h4>${content[lang].contactTitle}</h4>
-                        <p>${content[lang].contactText}</p>
-                        <a href="${relativePath}contact.html" class="footer-cta">${content[lang].cta}</a>
+                        <p class="contact-description">${content[lang].contactText}</p>
+                        <p class="contact-benefits">${content[lang].contactSubtext}</p>
+                        <a href="${relativePath}contact.html" class="footer-cta-button">${content[lang].cta}</a>
                     </div>
                 </div>
                 <div class="footer-bottom">
