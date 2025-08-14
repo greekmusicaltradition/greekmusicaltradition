@@ -773,3 +773,165 @@
         padding: 0.7rem 0.8rem;
     }
 }
+
+/* Update the group-image-section to be relative positioned */
+.group-image-section {
+    flex: 0 0 400px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Under-photo content overlay */
+.under-photo-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(75, 121, 136, 0.95), rgba(75, 121, 136, 0.7));
+    padding: 0.8rem;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+/* Location and Schedule Info */
+.location-info, .schedule-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    opacity: 0.95;
+}
+
+.location-info i, .schedule-info i {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* Special Offer for Pantovasilissa */
+.special-offer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background: linear-gradient(135deg, #d4af37, #f4c842);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    margin: 0.3rem auto 0.5rem auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.4);
+    animation: gentle-pulse 2s ease-in-out infinite;
+    max-width: fit-content;
+}
+
+.special-offer i {
+    font-size: 0.65rem;
+}
+
+/* Gentle pulse animation for special offer */
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* Contact Me Button Under Photo */
+.under-photo-contact-btn {
+    background: var(--color-white);
+    color: var(--color-secondary-blue);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.under-photo-contact-btn:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .group-image-section {
+        flex: 0 0 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .group-image-section {
+        flex: 0 0 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .group-image-section {
+        flex: 0 0 120px;
+        height: 120px;
+        width: 100%;
+    }
+    
+    .under-photo-content {
+        padding: 0.6rem;
+    }
+    
+    .location-info, .schedule-info {
+        font-size: 0.7rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .special-offer {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+        margin: 0.2rem auto 0.4rem auto;
+    }
+    
+    .under-photo-contact-btn {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .group-image-section {
+        flex: 0 0 100px;
+        height: 100px;
+    }
+    
+    .under-photo-content {
+        padding: 0.5rem;
+    }
+    
+    .location-info, .schedule-info {
+        font-size: 0.65rem;
+    }
+    
+    .special-offer {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .under-photo-contact-btn {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
