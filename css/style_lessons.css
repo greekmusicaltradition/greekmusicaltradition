@@ -568,7 +568,8 @@
     color: var(--color-white);
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.8rem; /* More space below */
+    margin-bottom: 0.8rem; 
+    margin-top: 0.6rem;
     opacity: 1;
     text-transform: uppercase;
     letter-spacing: 0.5px;
