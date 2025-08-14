@@ -474,34 +474,6 @@
     margin-top: auto !important;
 }
 
-/* Horizontal Music Groups Styles - Landscape Image Orientation */
-.music-groups-section {
-    margin: 3rem 0;
-}
-
-.music-groups-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.music-group-card.horizontal {
-    display: flex;
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    overflow: hidden;
-    box-shadow: 0 8px 32px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 220px; /* Reduced height for landscape approach */
-}
-
-.music-group-card.horizontal:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px var(--shadow-medium);
-}
-
 /* Horizontal Music Groups Styles - True Landscape Image Orientation */
 .music-groups-section {
     margin: 3rem 0;
