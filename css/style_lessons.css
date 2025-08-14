@@ -473,3 +473,72 @@
 .footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
     margin-top: auto !important;
 }
+
+/* Music Groups Specific Styles */
+.pricing-card.music-group-card {
+    min-height: 600px;
+}
+
+.group-image-placeholder {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
+    border: 2px dashed var(--color-secondary-blue);
+    border-radius: var(--border-radius-medium);
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    color: var(--color-text-medium);
+}
+
+.image-placeholder i {
+    font-size: 3rem;
+    color: var(--color-secondary-blue);
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.image-placeholder span {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-text-medium);
+}
+
+.group-description {
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.group-description p {
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-style: italic;
+    background: rgba(75, 121, 136, 0.05);
+    padding: 1rem;
+    border-radius: var(--border-radius-small);
+    border-left: 3px solid var(--color-secondary-blue);
+}
+
+/* Responsive adjustments for music groups */
+@media (max-width: 768px) {
+    .pricing-card.music-group-card {
+        min-height: auto;
+    }
+    
+    .image-placeholder {
+        min-height: 140px;
+        padding: 2rem 1rem;
+    }
+    
+    .image-placeholder i {
+        font-size: 2.5rem;
+    }
+}
