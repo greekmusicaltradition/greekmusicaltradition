@@ -502,14 +502,44 @@
     box-shadow: 0 12px 40px var(--shadow-medium);
 }
 
-/* Image Section - Left Side - Now Landscape Oriented */
+/* Horizontal Music Groups Styles - True Landscape Image Orientation */
+.music-groups-section {
+    margin: 3rem 0;
+}
+
+.music-groups-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.music-group-card.horizontal {
+    display: flex;
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 180px; /* Reduced height for true landscape */
+}
+
+.music-group-card.horizontal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+}
+
+/* Image Section - True Landscape Orientation (much wider than tall) */
 .group-image-section {
-    flex: 0 0 320px; /* Increased width for landscape */
+    flex: 0 0 400px; /* Much wider for true landscape */
+    height: 180px; /* Fixed height to create landscape ratio */
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
     position: relative;
+    overflow: hidden;
 }
 
 .group-image-section .image-placeholder {
@@ -521,18 +551,18 @@
     height: 100%;
     border: none;
     background: transparent;
-    padding: 1.5rem 2rem; /* Adjusted padding for landscape */
+    padding: 1rem 2rem;
 }
 
 .group-image-section .image-placeholder i {
-    font-size: 3.5rem; /* Slightly smaller icon for landscape */
+    font-size: 3rem;
     color: var(--color-secondary-blue);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     opacity: 0.8;
 }
 
 .group-image-section .image-placeholder span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-medium);
     text-align: center;
     font-style: italic;
@@ -541,83 +571,88 @@
 /* Content Section - Right Side */
 .group-content-section {
     flex: 1;
-    padding: 1.8rem 2rem; /* Adjusted padding for better proportion */
+    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 180px;
 }
 
 .group-content-section .music-type-badge {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-secondary-blue);
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     align-self: flex-start;
 }
 
 .group-content-section h3 {
     color: var(--color-primary-blue);
-    font-size: 1.3rem; /* Slightly smaller for better fit */
+    font-size: 1.1rem;
     font-weight: 700;
-    margin: 0 0 0.8rem 0;
-    line-height: 1.3;
+    margin: 0 0 0.6rem 0;
+    line-height: 1.2;
 }
 
-/* Schedule Highlight - Compact for Landscape Layout */
+/* Schedule Highlight - Compact Horizontal Layout */
 .schedule-highlight {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
     color: var(--color-white);
-    padding: 0.8rem 1.2rem; /* More compact padding */
+    padding: 0.6rem 1rem;
     border-radius: var(--border-radius-small);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     text-align: center;
     box-shadow: 0 4px 12px rgba(75, 121, 136, 0.3);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .schedule-day {
-    font-size: 1.2rem; /* Slightly smaller for compact layout */
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
 }
 
 .schedule-time {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     opacity: 0.95;
 }
 
-/* Group Description - More Compact */
+/* Group Description - Very Compact */
 .group-content-section .group-description {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.8rem 0;
     flex-grow: 1;
 }
 
 .group-content-section .group-description p {
     color: var(--color-text-medium);
-    line-height: 1.5; /* Tighter line height */
-    font-size: 0.95rem; /* Slightly smaller text */
+    line-height: 1.4;
+    font-size: 0.85rem;
     margin: 0;
     background: rgba(75, 121, 136, 0.05);
-    padding: 0.8rem; /* More compact padding */
+    padding: 0.6rem;
     border-radius: var(--border-radius-small);
     border-left: 3px solid var(--color-secondary-blue);
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-/* Horizontal Features List - More Compact */
+/* Features List - Horizontal Compact */
 .features-list.horizontal {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 1.2rem; /* Reduced gaps */
-    margin-bottom: 1rem;
+    gap: 0.3rem 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .features-list.horizontal .feature {
-    font-size: 0.85rem; /* Smaller font */
+    font-size: 0.75rem;
     color: var(--color-text-medium);
     display: flex;
     align-items: center;
@@ -627,27 +662,28 @@
 .features-list.horizontal .feature .check {
     color: var(--color-secondary-blue);
     font-weight: bold;
-    margin-right: 0.4rem;
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
 }
 
-/* Group Action Buttons - More Compact */
+/* Group Action Buttons - Compact */
 .group-actions {
     display: flex;
-    gap: 0.8rem;
+    gap: 0.6rem;
     margin-top: auto;
 }
 
 .group-cta {
-    padding: 0.7rem 1.2rem; /* More compact padding */
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius-small);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem; /* Slightly smaller font */
+    font-size: 0.8rem;
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     flex: 1;
-    max-width: 140px; /* Slightly smaller max width */
+    max-width: 120px;
 }
 
 .group-cta.primary {
@@ -674,13 +710,19 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .group-image-section {
+        flex: 0 0 350px;
+    }
+}
+
 @media (max-width: 900px) {
     .group-image-section {
-        flex: 0 0 280px; /* Adjust landscape width for tablets */
+        flex: 0 0 300px;
     }
     
     .group-content-section {
-        padding: 1.5rem;
+        padding: 1.2rem 1.5rem;
     }
 }
 
@@ -690,13 +732,16 @@
         min-height: auto;
     }
     
+    /* Even on mobile, maintain landscape orientation */
     .group-image-section {
-        flex: 0 0 140px; /* Landscape orientation maintained on mobile */
+        flex: 0 0 120px; /* Short height */
+        height: 120px;
         width: 100%;
     }
     
     .group-content-section {
         padding: 1.5rem;
+        min-height: auto;
     }
     
     .group-content-section h3 {
@@ -705,24 +750,29 @@
     
     .schedule-highlight {
         margin-bottom: 1rem;
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
         padding: 0.8rem 1rem;
     }
     
     .schedule-day {
         font-size: 1.1rem;
-        margin-bottom: 0;
     }
     
     .schedule-time {
         font-size: 1rem;
     }
     
+    .group-content-section .group-description p {
+        font-size: 0.95rem;
+        -webkit-line-clamp: none; /* Remove line limit on mobile */
+    }
+    
     .features-list.horizontal {
         flex-direction: column;
         gap: 0.5rem;
+    }
+    
+    .features-list.horizontal .feature {
+        font-size: 0.9rem;
     }
     
     .group-actions {
@@ -732,12 +782,15 @@
     
     .group-cta {
         max-width: none;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .group-image-section {
-        flex: 0 0 120px; /* Maintain landscape even on small screens */
+        flex: 0 0 100px; /* Very short for true landscape */
+        height: 100px;
     }
     
     .group-content-section {
@@ -746,11 +799,5 @@
     
     .schedule-highlight {
         padding: 0.7rem 0.8rem;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .schedule-day {
-        margin-bottom: 0.2rem;
     }
 }
