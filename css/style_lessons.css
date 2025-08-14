@@ -1,9 +1,7 @@
 /* ========================================
-   CSS VARIABLES & RESET
-   (Keep your main CSS variables here)
+   LESSONS GRID & CARDS (Keep existing styles that work with main CSS)
    ======================================== */
 
-/* --- Lesson Cards Grid --- */
 .lessons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -36,6 +34,7 @@
 .lesson-header h3 {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
+    margin: 0;
 }
 
 .lesson-content {
@@ -83,7 +82,7 @@
     line-height: 1.7;
 }
 
-/* --- Custom Bullets for Lesson Details --- */
+/* Custom Bullets for Lesson Details */
 .lesson-details ul {
     list-style: none;
     width: 100%;
@@ -187,7 +186,6 @@
     color: var(--color-primary-blue);
     font-size: 1.05rem;
     line-height: 1.2;
-
 }
 
 .getting-started-list li span {
@@ -217,12 +215,13 @@
     margin-bottom: 2rem;
     display: block;
 }
+
 .getting-started-full-width .lesson-card {
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* === Info Boxes for Requirements and Materials Side-by-side === */
+/* Info Boxes for Requirements and Materials Side-by-side */
 .info-box-container {
     display: flex;
     justify-content: space-between;
@@ -243,6 +242,7 @@
 .technical-requirements-box .lesson-header {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
 }
+
 .materials-provided-box .lesson-header {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
 }
@@ -255,6 +255,7 @@
     position: relative;
     padding-left: 1.4em;
 }
+
 .requirements-list li:before, .materials-list li:before {
     content: '✓';
     color: var(--color-secondary-blue);
@@ -275,209 +276,8 @@
     }
 }
 
-/* ==== Lesson Format Subbox (used for lesson format in cards) ==== */
-.lesson-format-box {
-    background: var(--color-lighter-blue);
-    border-left: 6px solid var(--color-secondary-blue);
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 4px 12px var(--shadow-light);
-    padding: 1.2rem 1.5rem;
-    margin: 1.5rem 0 0 0;
-}
-.lesson-format-box h4 {
-    margin-top: 0;
-    color: var(--color-primary-blue);
-    font-size: 1.12rem;
-    font-weight: 700;
-    margin-bottom: 0.7rem;
-}
-.lesson-format-box p {
-    margin: 0 0 0.4rem 0;
-    color: var(--color-text-dark);
-    line-height: 1.6;
-}
-
 /* ========================================
-   BUTTONS
-   ======================================== */
-
-/* To make both buttons equal width and height */
-.cta-buttons-lessons {
-    display: flex;
-    gap: 1rem;
-    margin-top: auto;
-    flex-wrap: wrap;
-    align-items: stretch; /* Ensures buttons have the same height */
-}
-
-/* To make the buttons fill the space equally */
-.cta-buttons-lessons .cta-button-prominent {
-    flex-grow: 1;
-}
-
-.music-type-badge {
-    font-size: 1rem;
-    color: var(--color-primary-blue);
-    font-weight: 600;
-    margin: 1.2rem 0 0.2rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-/* Prominent CTA Button Styles - Higher Specificity */
-.lesson-description-box .cta-button-container .cta-button-prominent {
-    display: inline-block !important;
-    font-size: 1.4rem !important;
-    font-weight: 700 !important;
-    padding: 1.3rem 3rem !important;
-    border: 4px solid transparent !important;
-    border-radius: 15px !important;
-    text-decoration: none !important;
-    text-align: center !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    position: relative !important;
-    overflow: hidden !important;
-    min-width: 280px !important;
-    margin: 10px 0 !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-}
-
-/* Shimmer effect */
-.lesson-description-box .cta-button-container .cta-button-prominent::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.6s ease;
-    z-index: -1;
-}
-
-.lesson-description-box .cta-button-container .cta-button-prominent:hover::before {
-    left: 100%;
-}
-
-/* Primary button (Online Lessons) */
-.lesson-description-box .cta-button-container .cta-button-prominent.primary {
-    background: linear-gradient(135deg, #d4af37, #f4c842, #d4af37) !important;
-    color: #ffffff !important;
-    border-color: #d4af37 !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
-}
-
-.lesson-description-box .cta-button-container .cta-button-prominent.primary:hover {
-    background: linear-gradient(135deg, #f4c842, #ffdd57, #f4c842) !important;
-    transform: translateY(-6px) scale(1.08) !important;
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5) !important;
-    border-color: #f4c842 !important;
-}
-
-/* Secondary button (Local Lessons) */
-.lesson-description-box .cta-button-container .cta-button-prominent.secondary {
-    background: linear-gradient(135deg, #4b7988, #6b9daf, #4b7988) !important;
-    color: #ffffff !important;
-    border-color: #4b7988 !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
-}
-
-.lesson-description-box .cta-button-container .cta-button-prominent.secondary:hover {
-    background: linear-gradient(135deg, #6b9daf, #7bb3c7, #6b9daf) !important;
-    transform: translateY(-6px) scale(1.08) !important;
-    box-shadow: 0 15px 35px rgba(75, 121, 136, 0.5) !important;
-    border-color: #6b9daf !important;
-}
-
-/* Active state */
-.lesson-description-box .cta-button-container .cta-button-prominent:active {
-    transform: translateY(-3px) scale(1.05) !important;
-    transition: all 0.1s ease !important;
-}
-
-/* Focus state for accessibility */
-.lesson-description-box .cta-button-container .cta-button-prominent:focus {
-    outline: 4px solid rgba(212, 175, 55, 0.6) !important;
-    outline-offset: 3px !important;
-}
-
-/* Make the button container more prominent and remove the dashed border */
-.lesson-description-box .cta-button-container {
-    background: rgba(255, 255, 255, 0.15) !important;
-    padding: 2rem 1.5rem !important;
-    border-radius: 12px !important;
-    margin: 1.5rem 0 0 0 !important;
-    border: none !important; /* Removed dashed border */
-    text-align: center !important;
-    backdrop-filter: blur(5px) !important;
-}
-
-/* Override any existing button styles */
-.lesson-card .lesson-description-box a.cta-button-prominent {
-    color: #ffffff !important;
-    background-color: transparent !important;
-    border-bottom: none !important;
-}
-
-.lesson-card .lesson-description-box a.cta-button-prominent::after {
-    display: none !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .lesson-description-box .cta-button-container .cta-button-prominent {
-        font-size: 1.2rem !important;
-        padding: 1.1rem 2.5rem !important;
-        min-width: 240px !important;
-        letter-spacing: 1px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .lesson-description-box .cta-button-container .cta-button-prominent {
-        font-size: 1.1rem !important;
-        padding: 1rem 2rem !important;
-        min-width: 200px !important;
-        letter-spacing: 0.5px !important;
-    }
-}
-
-/* The footer-info styles are still needed from the main file for proper layout */
-.footer-info .lessons-grid {
-    align-items: stretch;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card {
-    flex: 1 1 auto;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
-    flex: 1 1 auto;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
-    margin-top: auto !important;
-}
-
-
-
-/* ========================================
-   HORIZONTAL MUSIC GROUPS STYLES
+   MUSIC GROUPS SECTION
    ======================================== */
 
 .music-groups-section {
@@ -499,7 +299,7 @@
     overflow: hidden;
     box-shadow: 0 8px 32px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 240px; /* Increased to accommodate more content */
+    min-height: 240px;
 }
 
 .music-group-card.horizontal:hover {
@@ -507,10 +307,7 @@
     box-shadow: 0 12px 40px var(--shadow-medium);
 }
 
-/* ========================================
-   IMAGE SECTION - LANDSCAPE WITH MORE SPACIOUS INFO
-   ======================================== */
-
+/* IMAGE SECTION - LANDSCAPE WITH MORE SPACIOUS INFO */
 .group-image-section {
     flex: 0 0 400px;
     display: flex;
@@ -520,7 +317,6 @@
     overflow: hidden;
 }
 
-/* Image placeholder takes up most of the space */
 .group-image-section .image-placeholder {
     display: flex;
     flex-direction: column;
@@ -548,36 +344,12 @@
     font-style: italic;
 }
 
-/* ========================================
-   UNDER-PHOTO CONTENT - MORE SPACIOUS WITH GROUP LESSONS
-   ======================================== */
-
+/* UNDER-PHOTO CONTENT - MORE SPACIOUS WITH GROUP LESSONS */
 .under-photo-content {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    padding: 1.5rem 1rem; /* Increased padding for more space */
+    padding: 1.5rem 1rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Group Lessons Info - NEW */
-.group-lessons-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    color: var(--color-white);
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem; 
-    margin-top: 0.6rem;
-    opacity: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.group-lessons-info i {
-    font-size: 0.95rem;
-    opacity: 0.95;
 }
 
 /* Location and Schedule Info - LARGER FONTS WITH MORE SPACE */
@@ -589,7 +361,7 @@
     color: var(--color-white);
     font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 0.7rem; /* Increased spacing between items */
+    margin-bottom: 0.7rem;
     opacity: 0.98;
 }
 
@@ -598,55 +370,35 @@
     opacity: 0.9;
 }
 
-/* Remove bottom margin from last item */
-.schedule-info {
-    margin-bottom: 0;
-}
-
-/* ========================================
-   SPECIAL OFFER - NOW POSITIONED ABOVE BUTTONS
-   ======================================== */
-
-.special-offer-right {
+/* Group Lessons Info */
+.group-lessons-info {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #d4af37, #f4c842);
+    justify-content: center;
+    gap: 0.6rem;
     color: var(--color-white);
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
-    padding: 0.6rem 1rem;
-    border-radius: 15px;
-    margin: 0 0 1rem 0; /* Positioned right above the buttons */
+    margin-bottom: 0;
+    margin-top: 0.6rem;
+    opacity: 1;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
-    animation: gentle-pulse 2s ease-in-out infinite;
 }
 
-.special-offer-right i {
-    font-size: 0.8rem;
-    flex-shrink: 0;
+.group-lessons-info i {
+    font-size: 0.95rem;
+    opacity: 0.95;
 }
 
-/* Gentle pulse animation for special offer */
-@keyframes gentle-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-}
-
-/* ========================================
-   CONTENT SECTION - RIGHT SIDE
-   ======================================== */
-
+/* CONTENT SECTION - RIGHT SIDE */
 .group-content-section {
     flex: 1;
-    padding: 0rem 1.8rem 2rem;
+    padding: 1.8rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 240px; /* Increased to match card height */
+    min-height: 240px;
 }
 
 .group-content-section .music-type-badge {
@@ -704,35 +456,76 @@
     margin-right: 0.4rem;
 }
 
-/* Group Action Buttons - Now come after special offer */
-.group-actions {
+/* SPECIAL OFFER - POSITIONED ABOVE BUTTONS */
+.special-offer-right {
     display: flex;
-    gap: 0.8rem;
-    margin-top: 0; /* Remove auto margin since special offer is now above */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #d4af37, #f4c842);
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+    animation: gentle-pulse 2s ease-in-out infinite;
 }
 
+.special-offer-right i {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* ========================================
+   BUTTONS - FORMATTED ACCORDING TO MAIN STYLE
+   ======================================== */
+
+/* Group Action Buttons - Using Main Style System */
+.group-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+/* Updated to match main CSS button styling */
 .group-cta {
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: var(--border-radius-small);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: inline-block;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
-    max-width: 140px;
+    min-width: 140px;
 }
 
 .group-cta.primary {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    background: var(--color-accent-gold);
     color: var(--color-white);
+    border-color: var(--color-accent-gold);
 }
 
 .group-cta.primary:hover {
-    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    background: #c09f2d;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .group-cta.secondary {
@@ -745,6 +538,16 @@
     background: var(--color-secondary-blue);
     color: var(--color-white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Section Title Styling */
+.section-title {
+    color: var(--color-primary-blue);
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 
 /* ========================================
@@ -783,7 +586,6 @@
         font-size: 0.75rem;
     }
     
-    /* Keep larger fonts for location/schedule on tablet */
     .location-info, .schedule-info {
         font-size: 0.9rem;
     }
@@ -800,7 +602,7 @@
     }
     
     .group-image-section {
-        flex: 0 0 160px; /* Increased for more spacious content */
+        flex: 0 0 160px;
         height: 160px;
         width: 100%;
     }
@@ -819,7 +621,7 @@
     }
     
     .under-photo-content {
-        padding: 1.2rem 0.8rem; /* More generous padding on mobile */
+        padding: 1.2rem 0.8rem;
     }
     
     .group-lessons-info {
@@ -827,7 +629,6 @@
         margin-bottom: 0.7rem;
     }
     
-    /* Maintain larger fonts on mobile */
     .location-info, .schedule-info {
         font-size: 0.85rem;
         margin-bottom: 0.6rem;
@@ -851,6 +652,7 @@
     
     .group-cta {
         max-width: none;
+        min-width: auto;
     }
 }
 
@@ -879,5 +681,10 @@
     .special-offer-right {
         font-size: 0.7rem;
         padding: 0.4rem 0.7rem;
+    }
+    
+    .group-cta {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
     }
 }
