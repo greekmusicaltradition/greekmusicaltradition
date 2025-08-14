@@ -474,7 +474,10 @@
     margin-top: auto !important;
 }
 
-/* Horizontal Music Groups Styles - True Landscape Image Orientation */
+/* ========================================
+   HORIZONTAL MUSIC GROUPS STYLES
+   ======================================== */
+
 .music-groups-section {
     margin: 3rem 0;
 }
@@ -494,7 +497,7 @@
     overflow: hidden;
     box-shadow: 0 8px 32px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 180px; /* Reduced height for true landscape */
+    min-height: 220px;
 }
 
 .music-group-card.horizontal:hover {
@@ -502,28 +505,31 @@
     box-shadow: 0 12px 40px var(--shadow-medium);
 }
 
-/* Image Section - True Landscape Orientation (much wider than tall) */
+/* ========================================
+   IMAGE SECTION - LANDSCAPE WITH INFO PANEL BELOW
+   ======================================== */
+
 .group-image-section {
-    flex: 0 0 400px; /* Much wider for true landscape */
-    height: 180px; /* Fixed height to create landscape ratio */
+    flex: 0 0 400px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
     position: relative;
     overflow: hidden;
 }
 
+/* Image placeholder takes up most of the space */
 .group-image-section .image-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    flex: 1;
     border: none;
     background: transparent;
     padding: 1rem 2rem;
+    min-height: 120px;
 }
 
 .group-image-section .image-placeholder i {
@@ -540,262 +546,15 @@
     font-style: italic;
 }
 
-/* Content Section - Right Side */
-.group-content-section {
-    flex: 1;
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
-}
+/* ========================================
+   UNDER-PHOTO CONTENT - BELOW THE IMAGE
+   ======================================== */
 
-.group-content-section .music-type-badge {
-    font-size: 0.85rem;
-    color: var(--color-secondary-blue);
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-    align-self: flex-start;
-}
-
-.group-content-section h3 {
-    color: var(--color-primary-blue);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0 0 0.6rem 0;
-    line-height: 1.2;
-}
-
-/* Schedule Highlight - Compact Horizontal Layout */
-.schedule-highlight {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    color: var(--color-white);
-    padding: 0.6rem 1rem;
-    border-radius: var(--border-radius-small);
-    margin-bottom: 0.8rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-.schedule-day {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.schedule-time {
-    font-size: 0.9rem;
-    font-weight: 500;
-    opacity: 0.95;
-}
-
-/* Group Description - Very Compact */
-.group-content-section .group-description {
-    margin: 0 0 0.8rem 0;
-    flex-grow: 1;
-}
-
-.group-content-section .group-description p {
-    color: var(--color-text-medium);
-    line-height: 1.4;
-    font-size: 0.85rem;
-    margin: 0;
-    background: rgba(75, 121, 136, 0.05);
-    padding: 0.6rem;
-    border-radius: var(--border-radius-small);
-    border-left: 3px solid var(--color-secondary-blue);
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Features List - Horizontal Compact */
-.features-list.horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem 1rem;
-    margin-bottom: 0.8rem;
-}
-
-.features-list.horizontal .feature {
-    font-size: 0.75rem;
-    color: var(--color-text-medium);
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.features-list.horizontal .feature .check {
-    color: var(--color-secondary-blue);
-    font-weight: bold;
-    margin-right: 0.3rem;
-    font-size: 0.8rem;
-}
-
-/* Group Action Buttons - Compact */
-.group-actions {
-    display: flex;
-    gap: 0.6rem;
-    margin-top: auto;
-}
-
-.group-cta {
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-small);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    flex: 1;
-    max-width: 120px;
-}
-
-.group-cta.primary {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    color: var(--color-white);
-}
-
-.group-cta.primary:hover {
-    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
-}
-
-.group-cta.secondary {
-    background: transparent;
-    color: var(--color-secondary-blue);
-    border-color: var(--color-secondary-blue);
-}
-
-.group-cta.secondary:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white);
-    transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .group-image-section {
-        flex: 0 0 350px;
-    }
-}
-
-@media (max-width: 900px) {
-    .group-image-section {
-        flex: 0 0 300px;
-    }
-    
-    .group-content-section {
-        padding: 1.2rem 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .music-group-card.horizontal {
-        flex-direction: column;
-        min-height: auto;
-    }
-    
-    /* Even on mobile, maintain landscape orientation */
-    .group-image-section {
-        flex: 0 0 120px; /* Short height */
-        height: 120px;
-        width: 100%;
-    }
-    
-    .group-content-section {
-        padding: 1.5rem;
-        min-height: auto;
-    }
-    
-    .group-content-section h3 {
-        font-size: 1.2rem;
-    }
-    
-    .schedule-highlight {
-        margin-bottom: 1rem;
-        padding: 0.8rem 1rem;
-    }
-    
-    .schedule-day {
-        font-size: 1.1rem;
-    }
-    
-    .schedule-time {
-        font-size: 1rem;
-    }
-    
-    .group-content-section .group-description p {
-        font-size: 0.95rem;
-        -webkit-line-clamp: none; /* Remove line limit on mobile */
-    }
-    
-    .features-list.horizontal {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .features-list.horizontal .feature {
-        font-size: 0.9rem;
-    }
-    
-    .group-actions {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .group-cta {
-        max-width: none;
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .group-image-section {
-        flex: 0 0 100px; /* Very short for true landscape */
-        height: 100px;
-    }
-    
-    .group-content-section {
-        padding: 1rem;
-    }
-    
-    .schedule-highlight {
-        padding: 0.7rem 0.8rem;
-    }
-}
-
-/* Update the group-image-section to be relative positioned */
-.group-image-section {
-    flex: 0 0 400px;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Under-photo content overlay */
 .under-photo-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(75, 121, 136, 0.95), rgba(75, 121, 136, 0.7));
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
     padding: 0.8rem;
     text-align: center;
-    backdrop-filter: blur(3px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Location and Schedule Info */
@@ -870,10 +629,128 @@
     box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
 }
 
-/* Responsive adjustments */
+/* ========================================
+   CONTENT SECTION - RIGHT SIDE
+   ======================================== */
+
+.group-content-section {
+    flex: 1;
+    padding: 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+}
+
+.group-content-section .music-type-badge {
+    font-size: 0.9rem;
+    color: var(--color-secondary-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+.group-content-section h3 {
+    color: var(--color-primary-blue);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.3;
+}
+
+/* Group Description */
+.group-content-section .group-description {
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+}
+
+.group-content-section .group-description p {
+    color: var(--color-text-medium);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+    background: rgba(75, 121, 136, 0.05);
+    padding: 0.8rem;
+    border-radius: var(--border-radius-small);
+    border-left: 3px solid var(--color-secondary-blue);
+}
+
+/* Features List - Horizontal Compact */
+.features-list.horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.features-list.horizontal .feature {
+    font-size: 0.85rem;
+    color: var(--color-text-medium);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.features-list.horizontal .feature .check {
+    color: var(--color-secondary-blue);
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
+/* Group Action Buttons */
+.group-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.group-cta {
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius-small);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex: 1;
+    max-width: 140px;
+}
+
+.group-cta.primary {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+}
+
+.group-cta.primary:hover {
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
+}
+
+.group-cta.secondary {
+    background: transparent;
+    color: var(--color-secondary-blue);
+    border-color: var(--color-secondary-blue);
+}
+
+.group-cta.secondary:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
 @media (max-width: 1024px) {
     .group-image-section {
         flex: 0 0 350px;
+    }
+    
+    .group-content-section {
+        padding: 1.6rem 1.8rem;
     }
 }
 
@@ -881,13 +758,39 @@
     .group-image-section {
         flex: 0 0 300px;
     }
+    
+    .group-content-section {
+        padding: 1.4rem 1.6rem;
+    }
+    
+    .group-content-section h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .music-group-card.horizontal {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
     .group-image-section {
-        flex: 0 0 120px;
-        height: 120px;
+        flex: 0 0 160px;
+        height: 160px;
         width: 100%;
+    }
+    
+    .group-image-section .image-placeholder {
+        min-height: 100px;
+    }
+    
+    .group-content-section {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    
+    .group-content-section h3 {
+        font-size: 1.2rem;
     }
     
     .under-photo-content {
@@ -909,12 +812,53 @@
         font-size: 0.7rem;
         padding: 0.35rem 0.8rem;
     }
+    
+    .group-content-section .group-description p {
+        font-size: 0.95rem;
+    }
+    
+    .features-list.horizontal {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .features-list.horizontal .feature {
+        font-size: 0.9rem;
+    }
+    
+    .group-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .group-cta {
+        max-width: none;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .group-image-section {
-        flex: 0 0 100px;
-        height: 100px;
+        flex: 0 0 140px;
+        height: 140px;
+    }
+    
+    .group-image-section .image-placeholder {
+        min-height: 80px;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .group-image-section .image-placeholder i {
+        font-size: 2.5rem;
+    }
+    
+    .group-content-section {
+        padding: 1rem;
+    }
+    
+    .group-content-section h3 {
+        font-size: 1.1rem;
     }
     
     .under-photo-content {
