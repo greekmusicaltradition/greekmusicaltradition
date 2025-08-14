@@ -476,7 +476,6 @@
 
 
 
-
 /* ========================================
    HORIZONTAL MUSIC GROUPS STYLES
    ======================================== */
@@ -500,7 +499,7 @@
     overflow: hidden;
     box-shadow: 0 8px 32px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 220px;
+    min-height: 240px; /* Increased to accommodate more content */
 }
 
 .music-group-card.horizontal:hover {
@@ -509,7 +508,7 @@
 }
 
 /* ========================================
-   IMAGE SECTION - LANDSCAPE WITH LARGER INFO TEXT
+   IMAGE SECTION - LANDSCAPE WITH MORE SPACIOUS INFO
    ======================================== */
 
 .group-image-section {
@@ -550,36 +549,61 @@
 }
 
 /* ========================================
-   UNDER-PHOTO CONTENT - LARGER FONTS, NO BUTTON
+   UNDER-PHOTO CONTENT - MORE SPACIOUS WITH GROUP LESSONS
    ======================================== */
 
 .under-photo-content {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    padding: 1rem; /* Increased padding for larger text */
+    padding: 1.5rem 1rem; /* Increased padding for more space */
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Location and Schedule Info - LARGER FONTS */
+/* Group Lessons Info - NEW */
+.group-lessons-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem; /* More space below */
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.group-lessons-info i {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Location and Schedule Info - LARGER FONTS WITH MORE SPACE */
 .location-info, .schedule-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem; /* Increased gap */
+    gap: 0.6rem;
     color: var(--color-white);
-    font-size: 0.95rem; /* Increased from 0.75rem */
-    font-weight: 600; /* Increased weight */
-    margin-bottom: 0.5rem; /* Increased margin */
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem; /* Increased spacing between items */
     opacity: 0.98;
 }
 
 .location-info i, .schedule-info i {
-    font-size: 0.9rem; /* Increased from 0.7rem */
+    font-size: 0.9rem;
     opacity: 0.9;
 }
 
+/* Remove bottom margin from last item */
+.schedule-info {
+    margin-bottom: 0;
+}
+
 /* ========================================
-   SPECIAL OFFER - NOW ON RIGHT SIDE
+   SPECIAL OFFER - NOW POSITIONED ABOVE BUTTONS
    ======================================== */
 
 .special-offer-right {
@@ -593,7 +617,7 @@
     font-weight: 700;
     padding: 0.6rem 1rem;
     border-radius: 15px;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem 0; /* Positioned right above the buttons */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
@@ -621,7 +645,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 220px;
+    min-height: 240px; /* Increased to match card height */
 }
 
 .group-content-section .music-type-badge {
@@ -679,11 +703,11 @@
     margin-right: 0.4rem;
 }
 
-/* Group Action Buttons */
+/* Group Action Buttons - Now come after special offer */
 .group-actions {
     display: flex;
     gap: 0.8rem;
-    margin-top: auto;
+    margin-top: 0; /* Remove auto margin since special offer is now above */
 }
 
 .group-cta {
@@ -763,8 +787,8 @@
         font-size: 0.9rem;
     }
     
-    .location-info i, .schedule-info i {
-        font-size: 0.85rem;
+    .group-lessons-info {
+        font-size: 0.95rem;
     }
 }
 
@@ -775,8 +799,8 @@
     }
     
     .group-image-section {
-        flex: 0 0 140px; /* Reduced since no button */
-        height: 140px;
+        flex: 0 0 160px; /* Increased for more spacious content */
+        height: 160px;
         width: 100%;
     }
     
@@ -794,17 +818,18 @@
     }
     
     .under-photo-content {
-        padding: 0.8rem; /* Increased for larger text */
+        padding: 1.2rem 0.8rem; /* More generous padding on mobile */
+    }
+    
+    .group-lessons-info {
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
     }
     
     /* Maintain larger fonts on mobile */
     .location-info, .schedule-info {
-        font-size: 0.85rem; /* Larger than before */
-        margin-bottom: 0.4rem;
-    }
-    
-    .location-info i, .schedule-info i {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
     }
     
     .special-offer-right {
@@ -813,17 +838,9 @@
         margin-bottom: 1rem;
     }
     
-    .group-content-section .group-description p {
-        font-size: 0.95rem;
-    }
-    
     .features-list.horizontal {
         flex-direction: column;
         gap: 0.5rem;
-    }
-    
-    .features-list.horizontal .feature {
-        font-size: 0.9rem;
     }
     
     .group-actions {
@@ -833,45 +850,29 @@
     
     .group-cta {
         max-width: none;
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .group-image-section {
-        flex: 0 0 120px; /* Further reduced since no button */
-        height: 120px;
-    }
-    
-    .group-image-section .image-placeholder {
-        min-height: 60px;
-        padding: 0.8rem 1.5rem;
-    }
-    
-    .group-image-section .image-placeholder i {
-        font-size: 2.5rem;
+        flex: 0 0 140px;
+        height: 140px;
     }
     
     .group-content-section {
         padding: 1rem;
     }
     
-    .group-content-section h3 {
-        font-size: 1.1rem;
-    }
-    
     .under-photo-content {
-        padding: 0.7rem;
+        padding: 1rem 0.7rem;
     }
     
-    /* Keep fonts readable on small screens */
+    .group-lessons-info {
+        font-size: 0.85rem;
+    }
+    
     .location-info, .schedule-info {
         font-size: 0.8rem;
-    }
-    
-    .location-info i, .schedule-info i {
-        font-size: 0.75rem;
     }
     
     .special-offer-right {
