@@ -97,7 +97,6 @@ function loadFooter() {
                         <ul class="footer-links">
                             <li><a href="${relativePath}lessons.html#byzantine">${content[lang].lessonTypes.byzantine}</a></li>
                             <li><a href="${relativePath}lessons.html#traditional">${content[lang].lessonTypes.traditional}</a></li>
-                            <li><a href="${relativePath}lessons.html#pricing">${content[lang].lessonTypes.pricing}</a></li>
                         </ul>
                     </div>
                     <div class="footer-section footer-contact-compact">
