@@ -1,0 +1,449 @@
+/* ====
+   FOOTER STYLES
+   ==== */
+
+/* ====
+   FOOTER CTA CARDS WITH BUTTONS
+   ==== */
+.footer-info .lessons-grid .lesson-card.cta-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-header {
+    background: transparent !important;
+    color: #4b7988 !important;
+    padding: 1rem 0 0.5rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-align: center !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    padding: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: none !important;
+    align-items: center !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 500px !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details p {
+    color: var(--color-text-medium) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0.5rem 0 1rem 0 !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button {
+    display: inline-block !important;
+    color: var(--color-white) !important;
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    padding: 1rem 2.5rem !important;
+    border: none !important;
+    border-radius: var(--border-radius-medium) !important;
+    background: linear-gradient(135deg, 
+        var(--color-secondary-blue), 
+        var(--color-primary-blue)
+    ) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.2) !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    min-width: 200px !important;
+    min-height: 44px !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button:hover {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button:active {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button:focus {
+    outline: 3px solid rgba(212, 175, 55, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button.primary {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button.primary:hover {
+    background: linear-gradient(135deg, 
+        var(--color-secondary-blue), 
+        var(--color-primary-blue)
+    ) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button.secondary {
+    background: linear-gradient(135deg, 
+        var(--color-primary-blue), 
+        var(--color-secondary-blue)
+    ) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button.secondary:hover {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ====
+   FOOTER
+   ==== */
+.footer-info {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer-info .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.site-footer {
+    background: linear-gradient(135deg, 
+        var(--color-primary-blue), 
+        var(--color-secondary-blue)
+    );
+    color: var(--color-white);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.6fr 0.9fr 0.9fr 1.3fr;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.footer-section h4 {
+    color: var(--color-light-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-light-blue);
+}
+
+.footer-cta {
+    background: var(--color-accent-gold);
+    color: var(--color-white) !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-cta:hover {
+    background-color: #c09f2d;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-bottom .legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom .legal-links li {
+    margin-bottom: 0;
+}
+
+.footer-bottom .legal-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-bottom .legal-links a:hover {
+    opacity: 1;
+    color: var(--color-light-blue);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* ====
+   COMPACT FOOTER CONTACT SECTION
+   ==== */
+.footer-contact-compact {
+    position: relative;
+}
+
+.footer-contact-compact h4 {
+    color: white !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 0.8rem !important;
+}
+
+.contact-text {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.6rem !important;
+    opacity: 0.9 !important;
+}
+
+.contact-highlight {
+    font-size: 0.85rem !important;
+    color: var(--color-light-blue) !important;
+    font-style: italic !important;
+    margin-bottom: 1rem !important;
+    opacity: 0.8 !important;
+}
+
+.footer-cta-compact {
+    background: var(--color-accent-gold) !important;
+    color: var(--color-white) !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: var(--border-radius-small) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2) !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.footer-cta-compact:hover {
+    background: #c09f2d !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+    color: var(--color-white) !important;
+}
+
+.footer-cta-compact:active {
+    transform: translateY(0) !important;
+}
+
+/* ====
+   CTA BUTTON ALIGNMENT FIX
+   ==== */
+.footer-info .lessons-grid {
+    align-items: stretch;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-content {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-info .lessons-grid .lesson-card.cta-card .cta-button-container {
+    margin-top: auto !important;
+}
+
+/* ====
+   FOOTER LINK STYLING OVERRIDES
+   ==== */
+.footer-links a,
+.nav-brand a {
+    border-bottom: none !important;
+}
+
+.footer-links a::after,
+.nav-brand a::after {
+    display: none !important;
+}
+
+.footer-cta,
+.footer-cta-compact {
+    border-bottom: none !important;
+}
+
+.footer-cta::after,
+.footer-cta-compact::after {
+    display: none !important;
+}
+
+/* ====
+   RESPONSIVE DESIGN - TABLET (FOOTER)
+   ==== */
+@media (max-width: 992px) {
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-button {
+        font-size: 1.1rem !important;
+        padding: 0.9rem 2rem !important;
+        min-width: 180px !important;
+    }
+}
+
+/* ====
+   RESPONSIVE DESIGN - MOBILE (FOOTER)
+   ==== */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-bottom .legal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links {
+        padding: 0;
+    }
+    
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+        padding: 0 1rem !important;
+        max-width: 100% !important;
+    }
+    
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-button {
+        font-size: 1rem !important;
+        padding: 0.8rem 1.5rem !important;
+        width: 90% !important;
+        max-width: 280px !important;
+        min-width: auto !important;
+        margin: 0.5rem auto 1rem auto !important;
+        display: block !important;
+    }
+    
+    .footer-contact-compact h4 {
+        font-size: 1.2rem !important;
+    }
+    
+    .contact-text {
+        font-size: 0.9rem !important;
+    }
+    
+    .contact-highlight {
+        font-size: 0.8rem !important;
+    }
+    
+    .footer-cta-compact {
+        padding: 0.7rem 1.4rem !important;
+        font-size: 0.9rem !important;
+        width: auto !important;
+        text-align: center !important;
+    }
+}
+
+/* ====
+   RESPONSIVE DESIGN - SMALL MOBILE (FOOTER)
+   ==== */
+@media (max-width: 480px) {
+    .footer-info .lessons-grid .lesson-card.cta-card .lesson-details {
+        padding: 0 0.5rem !important;
+    }
+    
+    .footer-info .lessons-grid .lesson-card.cta-card .cta-button {
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1.2rem !important;
+        width: 95% !important;
+        max-width: 240px !important;
+    }
+}
