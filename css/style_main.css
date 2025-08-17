@@ -663,6 +663,7 @@ a:focus {
 .lesson-details ul {
     list-style: none;
     padding: 0;
+    padding-left: 2rem;
     margin: 0;
 }
 
