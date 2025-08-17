@@ -489,7 +489,23 @@
    BUTTONS - FORMATTED ACCORDING TO MAIN STYLE
    ======================================== */
 
-/* Group Action Buttons - Using Main Style System */
+/* CTA Button Container - works with main CSS buttons */
+.cta-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cta-button-container {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+
+/* Group Action Buttons - Using Main Style System 
 .group-actions {
     display: flex;
     gap: 1rem;
@@ -497,7 +513,9 @@
     flex-wrap: wrap;
 }
 
-/* Updated to match main CSS button styling */
+*/
+
+/* Updated to match main CSS button styling 
 .group-cta {
     padding: 0.8rem 1.5rem;
     border-radius: var(--border-radius-small);
@@ -540,15 +558,17 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--shadow-medium);
 }
-
-/* Section Title Styling */
+*/
+/* Section Title Styling 
 .section-title {
     color: var(--color-primary-blue);
     font-size: clamp(1.8rem, 4vw, 2.2rem);
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 600;
-}
+}  */
+
+
 
 /* ========================================
    RESPONSIVE DESIGN
