@@ -130,22 +130,24 @@ body {
 }
 
 .nav-menu a {
-    color: var(--color-white);
+    color: transparent;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
     display: block;
     padding: 0.5rem 0;
-    font-size: 1.15rem;   
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-shadow: 0 0 0 var(--color-white);
 }
 
 .nav-menu a:hover {
-    color: var(--color-light-blue);
+    text-shadow: 0 0 0 var(--color-light-blue);
 }
 
 .nav-menu a.active {
-    color: var(--color-light-blue);
-    font-weight: 600;
+    text-shadow: 0 0 0 var(--color-light-blue);
 }
+
 
 .nav-right {
     display: flex;
