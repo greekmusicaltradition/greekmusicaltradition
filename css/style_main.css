@@ -576,6 +576,37 @@ a:focus {
     box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
+/* Custom button for better visibility on light backgrounds */
+.btn-secondary-dark {
+    background: var(--color-primary-blue);
+    color: var(--color-white);
+    border-color: var(--color-primary-blue);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary-dark:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Override link styling */
+.btn-secondary-dark::after {
+    display: none !important;
+}
+
 .card-cta-buttons {
     display: flex;
     justify-content: center;
