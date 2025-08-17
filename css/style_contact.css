@@ -293,6 +293,7 @@
     .faq-section {
         padding: 2rem; /* Reduce padding */
         margin: 0 1rem 3rem 1rem; /* Adjust horizontal margin */
+        margin-top: 3rem;
     }
 
     .contact-form h2,
