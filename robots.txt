@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacy_policy.html
+Disallow: /terms_of_service.html
+
+Sitemap: https://www.yoursite.com/sitemap.xml
