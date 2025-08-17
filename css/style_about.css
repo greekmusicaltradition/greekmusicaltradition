@@ -1,7 +1,6 @@
-/* ========================================
+/* ========
    STYLES FOR THE ABOUT PAGE
-   ======================================== */
-
+   ======== */
 /* Main Section Layout */
 .about-section {
     background-color: var(--color-white);
@@ -226,8 +225,9 @@
     flex-wrap: wrap;
 }
 
-.primary-cta,
-.secondary-cta {
+/* Fixed button styles - using correct class names */
+.explore-link,
+.contact-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -243,13 +243,13 @@
     justify-content: center;
 }
 
-.primary-cta {
+.explore-link {
     background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
     color: var(--color-white);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
-.primary-cta::before {
+.explore-link::before {
     content: '';
     position: absolute;
     top: 0;
@@ -260,24 +260,24 @@
     transition: left 0.6s ease;
 }
 
-.primary-cta:hover::before {
+.explore-link:hover::before {
     left: 100%;
 }
 
-.primary-cta:hover {
+.explore-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
     background: linear-gradient(135deg, #c09f2d, var(--color-accent-gold));
 }
 
-.secondary-cta {
+.contact-link {
     background: var(--color-white);
     color: var(--color-primary-blue);
     border: 2px solid var(--color-primary-blue);
     box-shadow: 0 4px 15px rgba(54, 87, 142, 0.15);
 }
 
-.secondary-cta:hover {
+.contact-link:hover {
     background: var(--color-primary-blue);
     color: var(--color-white);
     transform: translateY(-3px);
@@ -291,16 +291,36 @@
     transition: transform 0.3s ease;
 }
 
-.primary-cta:hover .btn-arrow {
+.explore-link:hover .btn-arrow {
     transform: translateX(4px);
 }
 
-.secondary-cta:hover .contact-icon {
+.contact-link:hover .contact-icon {
     transform: scale(1.1);
 }
 
-/* Responsive adjustments */
+/* ========
+   RESPONSIVE ADJUSTMENTS
+   ======== */
 @media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack icon and content vertically */
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .section-icon {
+        width: 100px; /* Slightly smaller on mobile but still rectangular */
+        height: 70px;
+    }
+    
+    .read-more-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
     .call-to-action {
         padding: 3rem 1.5rem;
     }
@@ -322,8 +342,8 @@
         gap: 1rem;
     }
     
-    .primary-cta,
-    .secondary-cta {
+    .explore-link,
+    .contact-link {
         width: 100%;
         max-width: 280px;
         padding: 14px 28px;
@@ -331,12 +351,23 @@
 }
 
 @media (max-width: 480px) {
+    .section-icon {
+        width: 90px; /* Even smaller on very small screens */
+        height: 60px;
+    }
+    
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+    
     .call-to-action {
         padding: 2.5rem 1rem;
     }
     
-    .primary-cta,
-    .secondary-cta {
+    .explore-link,
+    .contact-link {
         padding: 12px 24px;
         font-size: 1rem;
         gap: 8px;
@@ -346,68 +377,5 @@
     .contact-icon {
         width: 16px;
         height: 16px;
-    }
-}
-}
-
-/* ========================================
-   RESPONSIVE ADJUSTMENTS
-   ======================================== */
-
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column; /* Stack icon and content vertically */
-        align-items: center;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 1.5rem;
-    }
-
-    .section-icon {
-        width: 100px; /* Slightly smaller on mobile but still rectangular */
-        height: 70px;
-    }
-
-    .read-more-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .btn-arrow {
-        width: 16px;
-        height: 16px;
-    }
-
-    .call-to-action {
-        padding: 2.5rem 1.5rem;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .explore-link,
-    .contact-link {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-icon {
-        width: 90px; /* Even smaller on very small screens */
-        height: 60px;
-    }
-
-    .read-more-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        gap: 6px;
-    }
-
-    .btn-arrow {
-        width: 14px;
-        height: 14px;
     }
 }
