@@ -24,7 +24,7 @@ function loadHeader() {
             nav: {
                 home: "Αρχική",
                 lessons: "Μαθήματα",
-                about: "Σχετικά με Εμένα",
+                about: "Σχετικά",
                 contact: "Επικοινωνία"
             }
         }
