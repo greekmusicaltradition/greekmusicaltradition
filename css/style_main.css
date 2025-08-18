@@ -375,12 +375,21 @@ a:focus {
 
 .btn-primary,
 .btn-secondary,
-.cta-button {
-    border-bottom: none !important;
+.cta-button
+.btn-secondary-dark {
+    border-radius: 50px !important;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-secondary-dark:active
+.cta-button::after {
+    border-radius: 50px;
 }
 
 .btn-primary::after,
 .btn-secondary::after,
+.btn-secondary-dark:active 
 .cta-button::after {
     display: none !important;
 }
