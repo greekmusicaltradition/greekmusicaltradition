@@ -1,29 +1,3 @@
-/* css/style_contact.css */
-
-/*
-  This stylesheet provides specific styles for the contact page.
-  It is designed to be linked AFTER style_main.css to allow for
-  overriding and adding contact-specific formatting.
-
-  Assumed CSS Variables (can be defined in style_main.css or a variables.css):
-  --color-primary-blue: A main blue color for headings, etc.
-  --color-secondary-blue: A darker blue for gradients.
-  --color-accent-gold: An accent color for interactive elements.
-  --color-text-dark: Dark text color.
-  --color-text-medium: Medium grey text color.
-  --color-white: White background color.
-  --color-light-grey: Light grey background for inputs.
-  --color-border: General border color.
-  --color-success-light: Light green for success messages.
-  --color-success-dark: Dark green for success message text.
-  --color-success-border: Green border for success messages.
-  --shadow-light: Light shadow for cards/containers.
-  --shadow-medium: Medium shadow for hover effects.
-  --shadow-dark: Darker shadow for button hover.
-  --border-radius-small: Small border radius.
-  --border-radius-medium: Medium border radius.
-  --border-radius-large: Larger border radius for main sections.
-*/
 
 /* General container adjustments for the contact page content */
 .main-content .container {
@@ -87,7 +61,8 @@
     border-radius: var(--border-radius-large, 12px);
     box-shadow: 0 8px 25px var(--shadow-light, rgba(0, 0, 0, 0.08));
     padding: 3rem;
-    margin: 0 auto 4rem auto; /* Center the form and add bottom margin */
+    margin: 0 auto 4rem auto; 
+    margin-top: 2rem;
     max-width: 800px; /* Max width for the form container */
     border: 1px solid var(--color-border, #e0e0e0);
 }
