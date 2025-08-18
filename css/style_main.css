@@ -1266,3 +1266,13 @@ a:focus {
         justify-content: center;
     }
 }
+
+/* Force rounded corners for all read-more button states - FIX */
+.read-more-btn,
+.read-more-btn:active,
+.read-more-btn:focus,
+.read-more-btn:visited,
+.read-more-btn:hover {
+    border-radius: 25px !important;
+    box-sizing: border-box;
+}
