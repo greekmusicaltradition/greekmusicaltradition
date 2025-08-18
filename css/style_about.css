@@ -597,6 +597,15 @@ a.btn-secondary-dark:visited {
   border-radius: 0;
 }
 
+.section-icon {
+  display: inline-block;
+  font-size: 1.45rem;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  color: var(--color-primary-blue); /* Soft blue, not a white circle */
+}
+
+
 .about-section h2 {
   display: flex;
   align-items: center;
@@ -607,13 +616,6 @@ a.btn-secondary-dark:visited {
   margin-bottom: 1.1rem;
 }
 
-.section-icon {
-  display: inline-block;
-  font-size: 1.45rem;
-  vertical-align: middle;
-  margin-right: 0.5em;
-  color: var(--color-primary-blue); /* Soft blue, not a white circle */
-}
 
 .about-divider {
   border: none;
