@@ -723,6 +723,18 @@ a:focus {
     line-height: 1.6;
 }
 
+/* Isolate CTA buttons from container background */
+.lesson-description-box .cta-button-container {
+    background: transparent !important;
+    padding: 1.5rem 0 0 0 !important;
+}
+
+.lesson-description-box .cta-button {
+    position: relative !important;
+    z-index: 1 !important;
+    background-clip: padding-box !important;
+}
+
 /* ====
    CTA GRID & CARDS
    ==== */
