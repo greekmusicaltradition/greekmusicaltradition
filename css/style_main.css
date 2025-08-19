@@ -514,79 +514,10 @@ a:focus {
     color: var(--color-primary-blue);
     margin-top: 1.5rem;
 }
-/* ============================================
-   CALL TO ACTION (CTA) BUTTONS
-   ============================================ */
+/* ============ CTA BUTTONS (Main CSS) ============ */
 
-.cta-button-container {
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid transparent;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    margin: 0;
-    line-height: normal;
-    width: auto;
-    height: auto;
-}
-
-.cta-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3);
-}
-
-.cta-button.primary {
-    background: linear-gradient(135deg, #b8860b, #daa520);
-    color: #fff;
-    border-color: #b8860b;
-}
-.cta-button.primary:hover,
-.cta-button.primary:focus {
-    background: linear-gradient(135deg, #daa520, #ffd700);
-    border-color: #daa520;
-    color: #2c3e50;
-}
-
-.cta-button.secondary {
-    background: #fff;
-    color: #b8860b;
-    border-color: #b8860b;
-}
-.cta-button.secondary:hover,
-.cta-button.secondary:focus {
-    background: #b8860b;
-    color: #fff;
-    border-color: #b8860b;
-}
-
-.cta-button.secondary-dark {
-    background: #2c3e50;
-    color: #fff;
-    border-color: #2c3e50;
-}
-.cta-button.secondary-dark:hover,
-.cta-button.secondary-dark:focus {
-    background: #34495e;
-    border-color: #34495e;
-    color: #ffd700;
-    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2);
-}
-
-/* Remove any underline or pseudo-element from all states */
+/* Prevent link and pseudo styles from interfering with CTA buttons anywhere */
+.cta-button,
 .cta-button:link,
 .cta-button:visited,
 .cta-button:active {
@@ -599,28 +530,10 @@ a:focus {
     content: none !important;
 }
 
-/* Ensure visited colors are always appropriate */
-.cta-button.primary:visited   { color: #fff !important; }
-.cta-button.secondary:visited { color: #b8860b !important; }
-.cta-button.secondary-dark:visited { color: #fff !important; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 0.95rem;
-        width: 100%;
-        max-width: 280px;
-    }
-    .cta-button-container {
-        margin-top: 1rem;
-    }
-}
-@media (max-width: 480px) {
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
+/* Basic alignment for containers */
+.cta-button-container {
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 
