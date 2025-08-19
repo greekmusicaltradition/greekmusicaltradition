@@ -225,34 +225,7 @@
     flex-wrap: wrap;
 }
 
-/* ====
-   CTA BUTTONS FOR ABOUT PAGE
-   ==== */
 
-/* Use the same styling as footer buttons */
-.action-buttons .cta-button {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 16px 32px !important;
-    border-radius: 50px !important; /* Keep the rounded style for about page */
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 1.05rem !important;
-    transition: all 0.3s ease !important;
-    position: relative !important;
-    overflow: hidden !important;
-    min-width: 180px !important;
-    justify-content: center !important;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
 
 /* ========
    RESPONSIVE ADJUSTMENTS
