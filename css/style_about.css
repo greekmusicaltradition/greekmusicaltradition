@@ -723,60 +723,31 @@ a.btn-secondary-dark:visited {
         max-width: 100%;
     }
     
-    /* Protect header from width constraints */
-    .navbar,
-    .nav-container,
+  }
+
+@media (max-width: 480px) {
+    /* DO NOT set max-width on header elements */
+    .navbar, 
+    .nav-container, 
     .nav-menu {
-        max-width: unset !important;
-        width: auto !important;
-    }
-}
-
-/* ====
-   MOBILE HEADER WIDTH FIX FOR ABOUT PAGE
-   ==== */
-
-    
-    /* Prevent any nav elements from overflowing */
-    .nav-menu,
-    .nav-brand,
-    .language-switcher {
-        max-width: 100% !important;
+        max-width: none !important; /* Remove any width constraints */
+        width: 100% !important; /* Let them use full viewport width */
         box-sizing: border-box !important;
+        overflow: visible !important; /* Prevent clipping */
     }
-}
-
-/* Additional overflow prevention */
-body {
-    overflow-x: hidden !important;
-}
-
-
-
-/* EMERGENCY HEADER FIX */
-@media (max-width: 768px) {
+    
+    /* Ensure mobile menu functions properly */
     .mobile-menu-toggle {
         z-index: 1002 !important;
-        position: relative !important;
         pointer-events: auto !important;
+        display: flex !important;
     }
     
+    /* Nav menu positioning */
     .nav-menu {
-        z-index: 1001 !important;
-    }
-    
-    /* Override any cookie banner interference */
-    [id*="cookie"], [class*="cookie"], .cookie-banner {
-        z-index: 998 !important;
-    }
-    
-    /* Remove problematic global rules for mobile */
-    * {
-        max-width: unset !important;
-    }
-    
-    /* Re-apply only to content areas */
-    .about-section, .about-container {
-        max-width: 100% !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        position: absolute !important;
     }
 }
