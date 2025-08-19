@@ -266,10 +266,10 @@
     }
 }
 
-/* Mobile Design */
-@media (max-width: 480px) {
+/* Mobile Design */ 
+/*@media (max-width: 480px) { */
     /* Header/Nav remains at full width and not restricted */
-    .navbar, .nav-container, .nav-menu {
+/*    .navbar, .nav-container, .nav-menu {
         max-width: none !important;
         width: 100% !important;
         box-sizing: border-box !important;
@@ -329,7 +329,7 @@
         width: 16px;
         height: 16px;
     }
-}
+}   */
 
 /* Any button hover/focus fixes - universal */
 .read-more-btn:hover,
