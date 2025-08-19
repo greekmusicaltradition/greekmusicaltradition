@@ -267,8 +267,8 @@
 }
 
 /* Mobile Design */ 
-/*@media (max-width: 480px) { 
-   .navbar, .nav-container, .nav-menu {
+@media (max-width: 480px) { 
+  /* .navbar, .nav-container, .nav-menu {
         max-width: 100% !important;
         width: 100% !important;
         box-sizing: border-box !important;
