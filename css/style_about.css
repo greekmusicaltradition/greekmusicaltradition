@@ -81,7 +81,7 @@
     background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
     color: var(--color-white);
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: var(--border-radius-medium) !important;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
@@ -379,7 +379,7 @@
   align-items: center;
   gap: 10px;
   padding: 16px 32px;
-  border-radius: 50px;
+  bborder-radius: var(--border-radius-medium) !important;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
@@ -474,7 +474,7 @@ a.read-more-btn,
 a.btn-primary,
 a.btn-secondary,
 a.btn-secondary-dark {
-    border-radius: 50px !important;
+    border-radius: var(--border-radius-medium) !important;
     box-sizing: border-box !important;
     padding: 16px 32px;
     transition: all 0.3s ease;
@@ -492,7 +492,7 @@ a.read-more-btn:focus,
 a.btn-primary:focus,
 a.btn-secondary:focus,
 a.btn-secondary-dark:focus {
-    border-radius: 50px !important;
+    border-radius: var(--border-radius-medium) !important;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -503,7 +503,7 @@ a.read-more-btn:visited,
 a.btn-primary:visited,
 a.btn-secondary:visited,
 a.btn-secondary-dark:visited {
-    border-radius: 50px !important;
+    border-radius: var(--border-radius-medium) !important;
 }
 
 .about-main-content {
@@ -578,7 +578,7 @@ a.btn-secondary-dark:visited {
     font-weight: 600 !important;
     padding: 1rem 2.5rem !important;
     border: none !important;
-    border-radius: 50px !important; /* Keeping the rounded style for about page */
+    border-radius: var(--border-radius-medium) !important;
     background: linear-gradient(135deg, 
         var(--color-secondary-blue), 
         var(--color-primary-blue)
