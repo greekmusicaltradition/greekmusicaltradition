@@ -132,6 +132,10 @@
     font-size: 0.9rem;
 }
 
+.method-card .lesson-format-box p i {
+    margin-right: 0.8rem; /* Adjust this value to increase/decrease spacing */
+}
+
 /* ========
    RESPONSIVE ADJUSTMENTS
    ======== */
