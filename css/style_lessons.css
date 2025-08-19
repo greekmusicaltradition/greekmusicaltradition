@@ -45,10 +45,6 @@
     z-index: 1;
 }
 
-.subject-card:hover {
-    border-color: var(--color-accent-gold);
-    transform: translateY(-3px);
-}
 
 .subject-header {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
@@ -84,12 +80,6 @@
     border: 2px solid var(--color-lighter-blue);
     background: linear-gradient(145deg, var(--color-white), #fafbfc);
     position: relative;
-}
-
-.method-card:hover {
-    border-color: var(--color-secondary-blue);
-    transform: translateY(-5px);
-    background: var(--color-white);
 }
 
 .method-header {
