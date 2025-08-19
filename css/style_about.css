@@ -677,3 +677,26 @@ a.btn-secondary-dark:visited {
 .contact-link:focus {
     border-radius: var(--border-radius-medium) !important;
 }
+
+
+/* Force all read-more buttons to have white text on hover */
+.read-more-btn:hover,
+.read-more-btn:hover span,
+.read-more-btn:hover svg {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+}
+
+.read-more-btn:active,
+.read-more-btn:active span,
+.read-more-btn:active svg {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+}
+
+.read-more-btn:focus,
+.read-more-btn:focus span,
+.read-more-btn:focus svg {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+}
