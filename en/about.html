@@ -122,21 +122,7 @@
     <script src="../js/scroll-animations.js"></script>
 
     <!-- Add this before closing </body> tag -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    }
-});
-</script>
+
 
 </body>
 </html>
