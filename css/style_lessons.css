@@ -110,8 +110,7 @@
 }
 
 .method-card .lesson-content {
-    border-left: 3px solid var(--color-secondary-blue);
-    margin-left: 1rem;
+     margin-left: 1rem;
     padding-left: 0.5rem;
 }
 
