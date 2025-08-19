@@ -225,20 +225,34 @@
     flex-wrap: wrap;
 }
 
-/* Minimal CTA Button compatibility for About Page */
-.cta-button,
-.cta-button:link,
-.cta-button:visited,
-.cta-button:active {
+/* ====
+   CTA BUTTONS FOR ABOUT PAGE
+   ==== */
+
+/* Use the same styling as footer buttons */
+.action-buttons .cta-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 16px 32px !important;
+    border-radius: 50px !important; /* Keep the rounded style for about page */
     text-decoration: none !important;
-    border-bottom: none !important;
-    border-radius: 50px !important; /* To match about page’s round style if desired */
-}
-.cta-button-container {
-    text-align: center;
-    margin-top: 1.5rem;
+    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-width: 180px !important;
+    justify-content: center !important;
 }
 
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
 
 /* ========
    RESPONSIVE ADJUSTMENTS
