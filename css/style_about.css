@@ -705,9 +705,11 @@ a.btn-secondary-dark:visited {
 
 /* Mobile width fixes */
 @media (max-width: 480px) {
+    /* Specific targeting instead of global * rule */
     .about-section {
         padding: 1rem 0.5rem !important;
         gap: 1rem !important;
+        max-width: 100%;
     }
     
     .section-icon {
@@ -716,11 +718,19 @@ a.btn-secondary-dark:visited {
         margin: 0 auto !important;
     }
     
-    .container {
-        padding: 0 10px !important;
-        overflow-x: hidden;
+    .about-container {
+        padding: 0 15px !important;
+        max-width: 100%;
     }
     
+    /* Protect header from width constraints */
+    .navbar,
+    .nav-container,
+    .nav-menu {
+        max-width: unset !important;
+        width: auto !important;
+    }
+}
 
 /* ====
    MOBILE HEADER WIDTH FIX FOR ABOUT PAGE
