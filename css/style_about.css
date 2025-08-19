@@ -267,7 +267,7 @@
 }
 
 /* Mobile Design */ 
-@media (max-width: 480px) { 
+/*@media (max-width: 480px) { 
    .navbar, .nav-container, .nav-menu {
         max-width: 100% !important;
         width: 100% !important;
@@ -284,7 +284,7 @@
         right: 0 !important;
         position: absolute !important;
         width: 100% !important;
-    }
+    }*/
 
     .about-section {
         padding: 1rem 0.5rem !important;
