@@ -700,3 +700,34 @@ a.btn-secondary-dark:visited {
     color: var(--color-white) !important;
     fill: var(--color-white) !important;
 }
+
+/* Mobile width fixes */
+@media (max-width: 480px) {
+    .about-section {
+        padding: 1rem 0.5rem !important;
+        gap: 1rem !important;
+    }
+    
+    .section-icon {
+        width: 60px !important;
+        height: 80px !important;
+        margin: 0 auto !important;
+    }
+    
+    .container {
+        padding: 0 10px !important;
+        overflow-x: hidden;
+    }
+    
+    /* Prevent any element from being wider than viewport */
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* General overflow prevention */
+body {
+    overflow-x: hidden;
+}
+
