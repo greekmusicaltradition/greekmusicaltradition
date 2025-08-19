@@ -360,3 +360,55 @@
     color: var(--color-white) !important;
     fill: var(--color-white) !important;
 }
+
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: var(--border-radius-medium);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.13);
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+}
+
+.cta-button.primary:hover,
+.cta-button.primary:focus {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-primary-blue));
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(75,121,136,0.16);
+}
+
+.cta-button.secondary-dark {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+    color: var(--color-white);
+}
+
+.cta-button.secondary-dark:hover,
+.cta-button.secondary-dark:focus {
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(212,175,55,0.18);
+}
+
+/* Responsive touch targets */
+@media (max-width: 600px) {
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 16px;
+        min-width: 120px;
+    }
+}
