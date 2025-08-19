@@ -39,17 +39,6 @@
     background: var(--color-white);
 }
 
-.subject-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-accent-gold), #f4c842);
-    z-index: 1;
-}
-
 
 .subject-header {
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
