@@ -379,7 +379,7 @@
   align-items: center;
   gap: 10px;
   padding: 16px 32px;
-  bborder-radius: var(--border-radius-medium) !important;
+  border-radius: var(--border-radius-medium) !important;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
@@ -647,4 +647,33 @@ a.btn-secondary-dark:visited {
     gap: 1rem !important;
     flex-wrap: wrap !important;
     text-align: center !important;
+}
+
+
+/* ====
+   FIX HOVER BORDER-RADIUS FOR ALL BUTTONS
+   ==== */
+
+/* Read More Button Hover Fix */
+.read-more-btn:hover,
+.read-more-btn:active,
+.read-more-btn:focus {
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* CTA Button Container Hover Fix */
+.cta-button-container .cta-button:hover,
+.cta-button-container .cta-button:active,
+.cta-button-container .cta-button:focus {
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* Explore/Contact Link Hover Fix */
+.explore-link:hover,
+.explore-link:active,
+.explore-link:focus,
+.contact-link:hover,
+.contact-link:active,
+.contact-link:focus {
+    border-radius: var(--border-radius-medium) !important;
 }
