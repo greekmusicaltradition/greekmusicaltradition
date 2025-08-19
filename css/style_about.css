@@ -1,40 +1,36 @@
-/* ========
-   STYLES FOR THE ABOUT PAGE
-   ======== */
-/* Main Section Layout */
+/* ==== BASE STYLES FOR THE ABOUT PAGE ==== */
+
 .about-section {
     background-color: var(--color-white);
     border-radius: var(--border-radius-large);
     box-shadow: 0 8px 32px var(--shadow-light);
     padding: 2.5rem;
     display: flex;
-    align-items: flex-start; /* Aligns items to the top */
+    align-items: flex-start;
     gap: 2.5rem;
     margin-bottom: 3rem;
 }
 
-/* Rectangular Picture Container */
 .section-icon {
     flex-shrink: 0;
-    width: 160px; /* Increased from 80px for more space */
-    height: 220px; /* Keeping the same height as requested */
+    width: 160px;
+    height: 220px;
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
-    border-radius: var(--border-radius-large); /* Rounded rectangle instead of circle */
+    border-radius: var(--border-radius-large);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem; /* Slightly reduced for better proportion */
+    font-size: 2.5rem;
     color: var(--color-white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Ensures images don't overflow the container */
+    overflow: hidden;
 }
 
-/* Image styling inside the icon container */
 .section-icon img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills container without distortion */
-    border-radius: var(--border-radius-large); /* Matches parent border radius */
+    object-fit: cover;
+    border-radius: var(--border-radius-large);
 }
 
 .section-content {
@@ -61,10 +57,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.title-link:visited {
-    color: inherit;
-}
-
+/* Section Text */
 .section-content p {
     color: var(--color-text-medium);
     line-height: 1.7;
@@ -91,7 +84,6 @@
     position: relative;
     overflow: hidden;
 }
-
 .read-more-btn::before {
     content: '';
     position: absolute;
@@ -102,17 +94,12 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
-
-.read-more-btn:hover::before {
-    left: 100%;
-}
-
+.read-more-btn:hover::before { left: 100%; }
 .read-more-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
     background: linear-gradient(135deg, #c09f2d, var(--color-accent-gold));
 }
-
 .read-more-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
@@ -124,28 +111,12 @@
     height: 18px;
     transition: transform 0.3s ease;
 }
+.read-more-btn:hover .btn-arrow { transform: translateX(4px); }
 
-.read-more-btn:hover .btn-arrow {
-    transform: translateX(4px);
-}
-
-/* Make sure the text inside the fixed lesson cards is styled correctly */
-.about-section .lesson-card .lesson-content {
-    padding: 1.5rem; /* Restore padding */
-}
-
-.about-section .lesson-card .lesson-content p {
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-/* Call to Action Section Styling */
+/* Call to Action Section */
 .call-to-action {
     position: relative;
-    background: linear-gradient(135deg, 
-        var(--color-white) 0%, 
-        var(--color-lighter-blue) 50%, 
-        var(--color-light-blue) 100%);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-lighter-blue) 50%, var(--color-light-blue) 100%);
     padding: 4rem 2rem;
     border-radius: var(--border-radius-large);
     text-align: center;
@@ -155,8 +126,6 @@
     margin-bottom: 4rem;
     overflow: hidden;
 }
-
-/* Decorative elements */
 .cta-decoration {
     position: absolute;
     top: -50px;
@@ -167,7 +136,6 @@
     border-radius: 50%;
     opacity: 0.1;
 }
-
 .cta-accent {
     position: absolute;
     bottom: -30px;
@@ -178,12 +146,7 @@
     border-radius: 50%;
     opacity: 0.08;
 }
-
-.cta-content {
-    position: relative;
-    z-index: 2;
-}
-
+.cta-content { position: relative; z-index: 2; }
 .cta-icon {
     width: 60px;
     height: 60px;
@@ -196,12 +159,7 @@
     color: var(--color-white);
     box-shadow: 0 8px 25px rgba(54, 87, 142, 0.3);
 }
-
-.cta-icon svg {
-    width: 28px;
-    height: 28px;
-}
-
+.cta-icon svg { width: 28px; height: 28px; }
 .call-to-action h2 {
     color: var(--color-primary-blue);
     font-size: clamp(2.2rem, 5vw, 2.8rem);
@@ -209,7 +167,6 @@
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
 .call-to-action p {
     color: var(--color-text-medium);
     font-size: 1.1rem;
@@ -217,7 +174,6 @@
     margin: 0 auto 2.5rem auto;
     line-height: 1.6;
 }
-
 .action-buttons {
     display: flex;
     justify-content: center;
@@ -225,452 +181,163 @@
     flex-wrap: wrap;
 }
 
-
-
-/* ========
-   RESPONSIVE ADJUSTMENTS
-   ======== */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column; /* Stack icon and content vertically */
-        align-items: center;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 1.5rem;
-    }
-    
-    .section-icon {
-        width: 100px; /* Slightly smaller on mobile but still rectangular */
-        height: 70px;
-    }
-    
-    .read-more-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .call-to-action {
-        padding: 3rem 1.5rem;
-    }
-    
-    .cta-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 1rem;
-    }
-    
-    .cta-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .explore-link,
-    .contact-link {
-        width: 100%;
-        max-width: 280px;
-        padding: 14px 28px;
-    }
-}
-
-
-
-@media (max-width: 480px) {
-    .section-icon {
-        width: 90px; /* Even smaller on very small screens */
-        height: 60px;
-    }
-    
-    .read-more-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        gap: 6px;
-    }
-    
-    .call-to-action {
-        padding: 2.5rem 1rem;
-    }
-    
-    .explore-link,
-    .contact-link {
-        padding: 12px 24px;
-        font-size: 1rem;
-        gap: 8px;
-    }
-    
-    .btn-arrow,
-    .contact-icon {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-/* About Page Unified Layout and Section Styles */
-
-.about-main-content {
-  background: linear-gradient(135deg, #f9f9fc 0%, #f2f8ff 100%);
-  padding: 3rem 0 0 0;
-}
-
-.about-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1.2rem;
-}
-
-.about-section {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  margin-bottom: 0;
-  padding: 2.5rem 0 2rem 0;
-}
-
-.section-icon {
-  font-size: 2rem;
-  vertical-align: middle;
-  margin-right: 0.7em;
-  flex-shrink: 0;
-  display: inline-block;
-  color: var(--color-primary-blue);
-}
-
-.about-section h2 {
-  margin-bottom: 1em;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-primary-blue);
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-}
-
-.about-divider {
-  border: none;
-  border-top: 1.5px solid #e1e6f0;
-  margin: 0;
-  opacity: 0.6;
-}
-
-.call-to-action {
-  margin-top: 3rem;
-  background: linear-gradient(135deg, #f5fde5 0%, #e6eafd 100%);
-  border-radius: 1.2em;
-  box-shadow: 0 8px 32px var(--shadow-light);
-  text-align: center;
-  padding: 3.5rem 2rem;
-}
-
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-/* CTA Buttons */
-.explore-link,
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  border-radius: var(--border-radius-medium) !important;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  min-width: 180px;
-  justify-content: center;
-}
-
-.explore-link {
-  background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
-  color: var(--color-white);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-}
-
-.explore-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
-  background: linear-gradient(135deg, #c09f2d, var(--color-accent-gold));
-}
-
-.contact-link {
-  background: var(--color-white);
-  color: var(--color-primary-blue);
-  border: 2px solid var(--color-primary-blue);
-  box-shadow: 0 4px 15px rgba(54, 87, 142, 0.15);
-}
-
-.contact-link:hover {
-  background: var(--color-primary-blue);
-  color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(54, 87, 142, 0.3);
-}
-
-.welcome-message {
-  margin-top: 2.5rem;
-  font-size: 1.15rem;
-  color: var(--color-primary-blue);
-  font-weight: 600;
-}
-
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .about-container {
-    padding: 0 0.3rem;
-  }
-
-  .about-section {
-    padding: 1.2rem 0 1.2rem 0;
-  }
-  .call-to-action {
-    padding: 2rem 0.7rem;
-  }
-  .about-section h2 {
-    font-size: 1.3rem;
-  }
-  .section-icon {
-    font-size: 1.3rem;
-    margin-right: 0.5em;
-  }
-}
-
-@media (max-width: 480px) {
-  .call-to-action {
-    padding: 1.3rem 0.5rem;
-  }
-  .action-buttons {
-    gap: 1rem;
-  }
-  .explore-link,
-  .contact-link {
-    width: 100%;
-    max-width: 220px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    gap: 7px;
-  }
-  .about-section h2 {
-    font-size: 1.1rem;
-  }
-  .welcome-message {
-    font-size: 1.05rem;
-  }
-}
-
-
-a.explore-link,
-a.contact-link,
-a.read-more-btn,
-a.btn-primary,
-a.btn-secondary,
-a.btn-secondary-dark {
+/* ==== CTA BUTTONS ==== */
+.explore-link, .contact-link, .read-more-btn, .btn-primary, .btn-secondary, .btn-secondary-dark {
     border-radius: var(--border-radius-medium) !important;
     box-sizing: border-box !important;
     padding: 16px 32px;
     transition: all 0.3s ease;
 }
 
-a.explore-link:active,
-a.contact-link:active,
-a.read-more-btn:active,
-a.btn-primary:active,
-a.btn-secondary:active,
-a.btn-secondary-dark:active,
-a.explore-link:focus,
-a.contact-link:focus,
-a.read-more-btn:focus,
-a.btn-primary:focus,
-a.btn-secondary:focus,
-a.btn-secondary-dark:focus {
-    border-radius: var(--border-radius-medium) !important;
-    outline: none !important;
-    box-shadow: none !important;
+/* CTA Button Special Cases */
+.explore-link {
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+.explore-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #c09f2d, var(--color-accent-gold));
+}
+.contact-link {
+    background: var(--color-white);
+    color: var(--color-primary-blue);
+    border: 2px solid var(--color-primary-blue);
+    box-shadow: 0 4px 15px rgba(54, 87, 142, 0.15);
+}
+.contact-link:hover {
+    background: var(--color-primary-blue);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(54, 87, 142, 0.3);
 }
 
-a.explore-link:visited,
-a.contact-link:visited,
-a.read-more-btn:visited,
-a.btn-primary:visited,
-a.btn-secondary:visited,
-a.btn-secondary-dark:visited {
-    border-radius: var(--border-radius-medium) !important;
+/* ====== MOBILE & TABLET RESPONSIVE SECTION ====== */
+@media (max-width: 1024px) {
+    .about-container {
+        padding: 0 0.8rem;
+    }
 }
 
-.about-main-content {
-  background: linear-gradient(135deg, #f9f9fc 0%, #f2f8ff 100%);
-  padding: 3rem 0 0 0;
+/* Tablet Design */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    .section-icon {
+        width: 100px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    .section-content h2 {
+        font-size: 1.4rem;
+    }
+    .read-more-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .call-to-action {
+        padding: 3rem 1.2rem;
+    }
+    .cta-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+    .cta-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .explore-link, .contact-link {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 28px;
+    }
 }
 
-.about-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1.2rem;
+/* Mobile Design */
+@media (max-width: 480px) {
+    /* Header/Nav remains at full width and not restricted */
+    .navbar, .nav-container, .nav-menu {
+        max-width: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+    }
+    .mobile-menu-toggle {
+        z-index: 1002 !important;
+        pointer-events: auto !important;
+        display: flex !important;
+    }
+    .nav-menu {
+        left: 0 !important;
+        right: 0 !important;
+        position: absolute !important;
+        width: 100% !important;
+    }
+
+    .about-section {
+        padding: 1rem 0.5rem !important;
+        gap: 1rem !important;
+        max-width: 100%;
+    }
+    .section-icon {
+        width: 60px !important;
+        height: 70px !important;
+        margin: 0 auto !important;
+        font-size: 1.05rem;
+    }
+    .about-container {
+        padding: 0 10px !important;
+        max-width: 100%;
+    }
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+    .call-to-action {
+        padding: 1.4rem 0.5rem;
+    }
+    .cta-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .cta-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    .explore-link, .contact-link {
+        width: 100%;
+        max-width: 220px;
+        padding: 12px 18px;
+        font-size: 1rem;
+        gap: 5px;
+    }
+    .btn-arrow, .contact-icon {
+        width: 16px;
+        height: 16px;
+    }
 }
 
-.about-section {
-  padding: 1.6rem 0 1.4rem 0;
-  margin-bottom: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.section-icon {
-  display: inline-block;
-  font-size: 1.45rem;
-  vertical-align: middle;
-  margin-right: 0.5em;
-  color: var(--color-primary-blue); /* Soft blue, not a white circle */
-}
-
-
-.about-section h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  color: var(--color-primary-blue);
-  font-size: 1.65rem;
-  font-weight: 600;
-  margin-bottom: 1.1rem;
-}
-
-
-.about-divider {
-  border: none;
-  border-top: 1.5px solid #e1e6f0; /* pastel blue/grey line */
-  margin: 0 0 2rem 0;
-  opacity: 0.7;
-}
-
-@media (max-width: 700px) {
-  .about-section {
-    padding: 1rem 0 0.9rem 0;
-    font-size: 1rem;
-  }
-  .section-icon {
-    font-size: 1.25rem;
-    margin-right: 0.34em;
-  }
-  .about-section h2 {
-    font-size: 1.15rem;
-  }
-}
-
-/* ====
-   OVERRIDE ABOUT PAGE BUTTONS TO MATCH FOOTER STYLE
-   ==== */
-
-.cta-button-container .cta-button {
-    display: inline-block !important;
-    color: var(--color-white) !important;
-    text-decoration: none !important;
-    font-size: 1.2rem !important;
-    font-weight: 600 !important;
-    padding: 1rem 2.5rem !important;
-    border: none !important;
-    border-radius: var(--border-radius-medium) !important;
-    background: linear-gradient(135deg, 
-        var(--color-secondary-blue), 
-        var(--color-primary-blue)
-    ) !important;
-    transition: all 0.3s ease !important;
-    position: relative !important;
-    transform: translateY(0) !important;
-    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.2) !important;
-    cursor: pointer !important;
-    text-align: center !important;
-    min-width: 200px !important;
-    min-height: 44px !important;
-    margin: 0 0.5rem !important;
-}
-
-.cta-button-container .cta-button:hover {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
-        #c09f2d
-    ) !important;
-    transform: translateY(-4px) !important;
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3) !important;
-}
-
-.cta-button-container .cta-button:active {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4) !important;
-}
-
-.cta-button-container .cta-button:focus {
-    outline: 3px solid rgba(212, 175, 55, 0.5) !important;
-    outline-offset: 2px !important;
-}
-
-.cta-button-container .cta-button.primary {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
-        #c09f2d
-    ) !important;
-}
-
-.cta-button-container .cta-button.primary:hover {
-    background: linear-gradient(135deg, 
-        var(--color-secondary-blue), 
-        var(--color-primary-blue)
-    ) !important;
-}
-
-.cta-button-container .cta-button.secondary-dark {
-    background: linear-gradient(135deg, 
-        var(--color-primary-blue), 
-        var(--color-secondary-blue)
-    ) !important;
-}
-
-.cta-button-container .cta-button.secondary-dark:hover {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
-        #c09f2d
-    ) !important;
-}
-
-.cta-button-container {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 1rem !important;
-    flex-wrap: wrap !important;
-    text-align: center !important;
-}
-
-
-/* ====
-   FIX HOVER BORDER-RADIUS FOR ALL BUTTONS
-   ==== */
-
-/* Read More Button Hover Fix */
+/* Any button hover/focus fixes - universal */
 .read-more-btn:hover,
 .read-more-btn:active,
-.read-more-btn:focus {
-    border-radius: var(--border-radius-medium) !important;
-}
-
-/* CTA Button Container Hover Fix */
+.read-more-btn:focus,
 .cta-button-container .cta-button:hover,
 .cta-button-container .cta-button:active,
-.cta-button-container .cta-button:focus {
-    border-radius: var(--border-radius-medium) !important;
-}
-
-/* Explore/Contact Link Hover Fix */
+.cta-button-container .cta-button:focus,
 .explore-link:hover,
 .explore-link:active,
 .explore-link:focus,
@@ -680,74 +347,16 @@ a.btn-secondary-dark:visited {
     border-radius: var(--border-radius-medium) !important;
 }
 
-
-/* Force all read-more buttons to have white text on hover */
+/* Read-more text always white on hover/focus */
 .read-more-btn:hover,
 .read-more-btn:hover span,
-.read-more-btn:hover svg {
-    color: var(--color-white) !important;
-    fill: var(--color-white) !important;
-}
-
+.read-more-btn:hover svg,
 .read-more-btn:active,
 .read-more-btn:active span,
-.read-more-btn:active svg {
-    color: var(--color-white) !important;
-    fill: var(--color-white) !important;
-}
-
+.read-more-btn:active svg,
 .read-more-btn:focus,
 .read-more-btn:focus span,
 .read-more-btn:focus svg {
     color: var(--color-white) !important;
     fill: var(--color-white) !important;
-}
-
-/* Mobile width fixes */
-@media (max-width: 480px) {
-    /* Specific targeting instead of global * rule */
-    .about-section {
-        padding: 1rem 0.5rem !important;
-        gap: 1rem !important;
-        max-width: 100%;
-    }
-    
-    .section-icon {
-        width: 60px !important;
-        height: 80px !important;
-        margin: 0 auto !important;
-    }
-    
-    .about-container {
-        padding: 0 15px !important;
-        max-width: 100%;
-    }
-    
-  }
-
-@media (max-width: 480px) {
-    /* DO NOT set max-width on header elements */
-    .navbar, 
-    .nav-container, 
-    .nav-menu {
-        max-width: none !important; /* Remove any width constraints */
-        width: 100% !important; /* Let them use full viewport width */
-        box-sizing: border-box !important;
-        overflow: visible !important; /* Prevent clipping */
-    }
-    
-    /* Ensure mobile menu functions properly */
-    .mobile-menu-toggle {
-        z-index: 1002 !important;
-        pointer-events: auto !important;
-        display: flex !important;
-    }
-    
-    /* Nav menu positioning */
-    .nav-menu {
-        width: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-        position: absolute !important;
-    }
 }
