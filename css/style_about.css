@@ -721,17 +721,6 @@ a.btn-secondary-dark:visited {
         overflow-x: hidden;
     }
     
-    /* Prevent any element from being wider than viewport */
-    * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-}
-
-/* General overflow prevention */
-body {
-    overflow-x: hidden;
-}
 
 /* ====
    MOBILE HEADER WIDTH FIX FOR ABOUT PAGE
@@ -752,6 +741,4 @@ body {
     overflow-x: hidden !important;
 }
 
-html {
-    overflow-x: hidden !important;
-}
+
