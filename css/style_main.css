@@ -535,92 +535,62 @@ a:focus {
     margin-top: 1.5rem;
 }
 
-/* ====
-   BUTTONS
+//* ====
+   LESSON EXPLORATION BUTTONS - Unified format with existing colors
    ==== */
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-}
 
-.btn-primary,
-.btn-secondary
-.btn-secondary-dark {
+/* Target the specific CTA buttons in lesson cards */
+.cta-button-container .btn-primary,
+.cta-button-container .btn-secondary-dark {
     padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius-small);
+    border-radius: 25px !important; /* Unified rounded shape */
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    display: inline-block;
-    text-align: center;
-    min-height: 44px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
+    min-width: 140px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transform: translateY(0);
 }
 
-.btn-primary {
-    background: var(--color-accent-gold);
-    color: var(--color-white);
-}
-
-.btn-primary:hover {
-    background: #c09f2d;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--color-secondary-blue);
-    border-color: var(--color-secondary-blue);
-}
-
-.btn-secondary:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
-}
-
-/* Custom button for better visibility on light backgrounds */
-.btn-secondary-dark {
-    background: var(--color-primary-blue);
-    color: var(--color-white);
-    border-color: var(--color-primary-blue);
-}
-
-
-
-.btn-secondary-dark:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
-}
-
-/* Override link styling */
-.btn-secondary-dark::after {
+/* Remove any conflicting pseudo-elements for these specific buttons */
+.cta-button-container .btn-primary::after,
+.cta-button-container .btn-secondary-dark::after {
     display: none !important;
 }
 
-.card-cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    margin-top: auto;
-    background: transparent;
+/* Keep existing colors but add unified hover behavior */
+.cta-button-container .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
-.card-cta-buttons .btn-primary,
-.card-cta-buttons .btn-secondary {
-    min-width: 140px;
-    text-align: center;
+.cta-button-container .btn-secondary-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
 }
+
+/* Active states */
+.cta-button-container .btn-primary:active,
+.cta-button-container .btn-secondary-dark:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px var(--shadow-medium);
+}
+
+/* Focus states */
+.cta-button-container .btn-primary:focus,
+.cta-button-container .btn-secondary-dark:focus {
+    outline: 3px solid rgba(212, 175, 55, 0.5);
+    outline-offset: 2px;
+}
+
 
 /* ====
    LESSONS GRID & CARDS
