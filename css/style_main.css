@@ -373,26 +373,6 @@ a:focus {
     display: none !important;
 }
 
-.btn-primary,
-.btn-secondary,
-.cta-button
-.btn-secondary-dark {
-    border-radius: 25px !important;
-}
-
-.btn-primary:active,
-.btn-secondary:active,
-.btn-secondary-dark:active
-.cta-button::after {
-    border-radius: 25px;
-}
-
-.btn-primary::after,
-.btn-secondary::after,
-.btn-secondary-dark:active 
-.cta-button::after {
-    display: none !important;
-}
 
 /* ====
    HERO SECTION
@@ -534,147 +514,112 @@ a:focus {
     color: var(--color-primary-blue);
     margin-top: 1.5rem;
 }
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
 
-/* ====
-   UNIFIED BUTTON SYSTEM - Complete Replacement
-   ==== */
+.cta-button-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
 
-/* Base button styles - all buttons */
-.btn-primary,
-.btn-secondary,
-.btn-secondary-dark,
-.cta-button,
-.group-cta,
-.read-more-btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
     text-decoration: none;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    min-width: 140px;
     cursor: pointer;
-    box-sizing: border-box;
+    border: 2px solid transparent;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
     transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Remove conflicting pseudo-elements */
-.btn-primary::after,
-.btn-secondary::after,
-.btn-secondary-dark::after,
-.cta-button::after,
-.group-cta::after,
-.read-more-btn::after {
-    display: none !important;
+/* Primary CTA Button */
+.cta-button.primary {
+    background: linear-gradient(135deg, #b8860b, #daa520);
+    color: #ffffff;
+    border-color: #b8860b;
 }
 
-/* Primary Button - Gold (your existing color) */
-.btn-primary {
-    background: var(--color-accent-gold);
-    color: var(--color-white);
-    border-color: var(--color-accent-gold);
+.cta-button.primary:hover {
+    background: linear-gradient(135deg, #daa520, #ffd700);
+    border-color: #daa520;
+    color: #2c3e50;
 }
 
-.btn-primary:hover {
-    background: #c09f2d;
-    border-color: #c09f2d;
-    color: var(--color-white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+/* Secondary CTA Button */
+.cta-button.secondary {
+    background-color: #ffffff;
+    color: #b8860b;
+    border-color: #b8860b;
 }
 
-/* Secondary Button - Blue border (your existing style) */
-.btn-secondary {
-    background: transparent;
-    color: var(--color-secondary-blue);
-    border-color: var(--color-secondary-blue);
+.cta-button.secondary:hover {
+    background-color: #b8860b;
+    color: #ffffff;
+    border-color: #b8860b;
 }
 
-.btn-secondary:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white);
-    border-color: var(--color-secondary-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(107, 157, 175, 0.4);
+/* Secondary Dark CTA Button */
+.cta-button.secondary-dark {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-color: #2c3e50;
 }
 
-/* Secondary Dark Button - Dark blue (your existing color) */
-.btn-secondary-dark {
-    background: var(--color-primary-blue);
-    color: var(--color-white);
-    border-color: var(--color-primary-blue);
+.cta-button.secondary-dark:hover {
+    background-color: #34495e;
+    border-color: #34495e;
+    color: #ffd700;
 }
 
-.btn-secondary-dark:hover {
-    background: var(--color-secondary-blue);
-    color: var(--color-white);
-    border-color: var(--color-secondary-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
-}
-
-/* Button containers */
-.cta-buttons,
-.card-cta-buttons,
-.group-actions,
-.cta-button-container {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Active/Focus states */
-.btn-primary:active,
-.btn-secondary:active,
-.btn-secondary-dark:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px var(--shadow-medium);
-}
-
-.btn-primary:focus,
-.btn-secondary:focus,
-.btn-secondary-dark:focus {
-    outline: 3px solid rgba(212, 175, 55, 0.5);
-    outline-offset: 2px;
-}
-
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .cta-buttons,
-    .card-cta-buttons,
-    .group-actions,
-    .cta-button-container {
-        flex-direction: column;
-        align-items: center;
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
     }
     
-    .btn-primary,
-    .btn-secondary,
-    .btn-secondary-dark {
-        width: 100%;
-        max-width: 250px;
+    .cta-button-container {
+        margin-top: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .btn-primary,
-    .btn-secondary,
-    .btn-secondary-dark {
+    .cta-button {
+        padding: 10px 20px;
         font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-        max-width: 200px;
     }
 }
 
+/* Focus states for accessibility */
+.cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3);
+}
+
+.cta-button.secondary-dark:focus {
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.3);
+}
 
 
 /* ====
