@@ -267,10 +267,9 @@
 }
 
 /* Mobile Design */ 
-/*@media (max-width: 480px) { */
-    /* Header/Nav remains at full width and not restricted */
-/*    .navbar, .nav-container, .nav-menu {
-        max-width: none !important;
+@media (max-width: 480px) { 
+   .navbar, .nav-container, .nav-menu {
+        max-width: 100% !important;
         width: 100% !important;
         box-sizing: border-box !important;
         overflow: visible !important;
