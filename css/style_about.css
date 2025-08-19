@@ -565,3 +565,86 @@ a.btn-secondary-dark:visited {
     font-size: 1.15rem;
   }
 }
+
+/* ====
+   OVERRIDE ABOUT PAGE BUTTONS TO MATCH FOOTER STYLE
+   ==== */
+
+.action-buttons .cta-button {
+    display: inline-block !important;
+    color: var(--color-white) !important;
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    padding: 1rem 2.5rem !important;
+    border: none !important;
+    border-radius: 50px !important; /* Keeping the rounded style for about page */
+    background: linear-gradient(135deg, 
+        var(--color-secondary-blue), 
+        var(--color-primary-blue)
+    ) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.2) !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    min-width: 200px !important;
+    min-height: 44px !important;
+}
+
+.action-buttons .cta-button:hover {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3) !important;
+}
+
+.action-buttons .cta-button:active {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+.action-buttons .cta-button:focus {
+    outline: 3px solid rgba(212, 175, 55, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+.action-buttons .cta-button.primary {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+}
+
+.action-buttons .cta-button.primary:hover {
+    background: linear-gradient(135deg, 
+        var(--color-secondary-blue), 
+        var(--color-primary-blue)
+    ) !important;
+}
+
+.action-buttons .cta-button.secondary-dark {
+    background: linear-gradient(135deg, 
+        var(--color-primary-blue), 
+        var(--color-secondary-blue)
+    ) !important;
+}
+
+.action-buttons .cta-button.secondary-dark:hover {
+    background: linear-gradient(135deg, 
+        var(--color-accent-gold), 
+        #c09f2d
+    ) !important;
+}
+
+.action-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 2rem !important;
+}
+
