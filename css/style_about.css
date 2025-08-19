@@ -570,7 +570,7 @@ a.btn-secondary-dark:visited {
    OVERRIDE ABOUT PAGE BUTTONS TO MATCH FOOTER STYLE
    ==== */
 
-.action-buttons .cta-button {
+.cta-button-container .cta-button {
     display: inline-block !important;
     color: var(--color-white) !important;
     text-decoration: none !important;
@@ -591,9 +591,10 @@ a.btn-secondary-dark:visited {
     text-align: center !important;
     min-width: 200px !important;
     min-height: 44px !important;
+    margin: 0 0.5rem !important;
 }
 
-.action-buttons .cta-button:hover {
+.cta-button-container .cta-button:hover {
     background: linear-gradient(135deg, 
         var(--color-accent-gold), 
         #c09f2d
@@ -602,49 +603,48 @@ a.btn-secondary-dark:visited {
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3) !important;
 }
 
-.action-buttons .cta-button:active {
+.cta-button-container .cta-button:active {
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4) !important;
 }
 
-.action-buttons .cta-button:focus {
+.cta-button-container .cta-button:focus {
     outline: 3px solid rgba(212, 175, 55, 0.5) !important;
     outline-offset: 2px !important;
 }
 
-.action-buttons .cta-button.primary {
+.cta-button-container .cta-button.primary {
     background: linear-gradient(135deg, 
         var(--color-accent-gold), 
         #c09f2d
     ) !important;
 }
 
-.action-buttons .cta-button.primary:hover {
+.cta-button-container .cta-button.primary:hover {
     background: linear-gradient(135deg, 
         var(--color-secondary-blue), 
         var(--color-primary-blue)
     ) !important;
 }
 
-.action-buttons .cta-button.secondary-dark {
+.cta-button-container .cta-button.secondary-dark {
     background: linear-gradient(135deg, 
         var(--color-primary-blue), 
         var(--color-secondary-blue)
     ) !important;
 }
 
-.action-buttons .cta-button.secondary-dark:hover {
+.cta-button-container .cta-button.secondary-dark:hover {
     background: linear-gradient(135deg, 
         var(--color-accent-gold), 
         #c09f2d
     ) !important;
 }
 
-.action-buttons {
+.cta-button-container {
     display: flex !important;
     justify-content: center !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     flex-wrap: wrap !important;
-    margin-bottom: 2rem !important;
+    text-align: center !important;
 }
-
