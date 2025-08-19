@@ -535,15 +535,19 @@ a:focus {
     margin-top: 1.5rem;
 }
 
-//* ====
-   LESSON EXPLORATION BUTTONS - Unified format with existing colors
+/* ====
+   UNIFIED BUTTON SYSTEM - Complete Replacement
    ==== */
 
-/* Target the specific CTA buttons in lesson cards */
-.cta-button-container .btn-primary,
-.cta-button-container .btn-secondary-dark {
+/* Base button styles - all buttons */
+.btn-primary,
+.btn-secondary,
+.btn-secondary-dark,
+.cta-button,
+.group-cta,
+.read-more-btn {
     padding: 0.8rem 1.5rem;
-    border-radius: 25px !important; /* Unified rounded shape */
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -560,36 +564,117 @@ a:focus {
     transform: translateY(0);
 }
 
-/* Remove any conflicting pseudo-elements for these specific buttons */
-.cta-button-container .btn-primary::after,
-.cta-button-container .btn-secondary-dark::after {
+/* Remove conflicting pseudo-elements */
+.btn-primary::after,
+.btn-secondary::after,
+.btn-secondary-dark::after,
+.cta-button::after,
+.group-cta::after,
+.read-more-btn::after {
     display: none !important;
 }
 
-/* Keep existing colors but add unified hover behavior */
-.cta-button-container .btn-primary:hover {
+/* Primary Button - Gold (your existing color) */
+.btn-primary {
+    background: var(--color-accent-gold);
+    color: var(--color-white);
+    border-color: var(--color-accent-gold);
+}
+
+.btn-primary:hover {
+    background: #c09f2d;
+    border-color: #c09f2d;
+    color: var(--color-white);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
 }
 
-.cta-button-container .btn-secondary-dark:hover {
+/* Secondary Button - Blue border (your existing style) */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-secondary-blue);
+    border-color: var(--color-secondary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    border-color: var(--color-secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 157, 175, 0.4);
+}
+
+/* Secondary Dark Button - Dark blue (your existing color) */
+.btn-secondary-dark {
+    background: var(--color-primary-blue);
+    color: var(--color-white);
+    border-color: var(--color-primary-blue);
+}
+
+.btn-secondary-dark:hover {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    border-color: var(--color-secondary-blue);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(75, 121, 136, 0.4);
 }
 
-/* Active states */
-.cta-button-container .btn-primary:active,
-.cta-button-container .btn-secondary-dark:active {
+/* Button containers */
+.cta-buttons,
+.card-cta-buttons,
+.group-actions,
+.cta-button-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Active/Focus states */
+.btn-primary:active,
+.btn-secondary:active,
+.btn-secondary-dark:active {
     transform: translateY(0);
     box-shadow: 0 2px 6px var(--shadow-medium);
 }
 
-/* Focus states */
-.cta-button-container .btn-primary:focus,
-.cta-button-container .btn-secondary-dark:focus {
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-secondary-dark:focus {
     outline: 3px solid rgba(212, 175, 55, 0.5);
     outline-offset: 2px;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cta-buttons,
+    .card-cta-buttons,
+    .group-actions,
+    .cta-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-secondary-dark {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-secondary-dark {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+        max-width: 200px;
+    }
+}
+
 
 
 /* ====
