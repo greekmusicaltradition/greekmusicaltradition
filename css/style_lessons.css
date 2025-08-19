@@ -63,13 +63,13 @@
 }
 
 .subject-card .lesson-image {
-    background: linear-gradient(135deg, var(--color-accent-gold), #f4c842);
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
     border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
 .subject-card .traditional-icon,
 .subject-card .byzantine-icon {
-    color: var(--color-white);
+    color: var(--color-primary-blue);
     font-size: 42px;
 }
 
