@@ -225,79 +225,20 @@
     flex-wrap: wrap;
 }
 
-/* Fixed button styles - using correct class names */
-.explore-link,
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.05rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    min-width: 180px;
-    justify-content: center;
+/* Minimal CTA Button compatibility for About Page */
+.cta-button,
+.cta-button:link,
+.cta-button:visited,
+.cta-button:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    border-radius: 50px !important; /* To match about page’s round style if desired */
+}
+.cta-button-container {
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
-.explore-link {
-    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
-    color: var(--color-white);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-}
-
-.explore-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.6s ease;
-}
-
-.explore-link:hover::before {
-    left: 100%;
-}
-
-.explore-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
-    background: linear-gradient(135deg, #c09f2d, var(--color-accent-gold));
-}
-
-.contact-link {
-    background: var(--color-white);
-    color: var(--color-primary-blue);
-    border: 2px solid var(--color-primary-blue);
-    box-shadow: 0 4px 15px rgba(54, 87, 142, 0.15);
-}
-
-.contact-link:hover {
-    background: var(--color-primary-blue);
-    color: var(--color-white);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(54, 87, 142, 0.3);
-}
-
-.btn-arrow,
-.contact-icon {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease;
-}
-
-.explore-link:hover .btn-arrow {
-    transform: translateX(4px);
-}
-
-.contact-link:hover .contact-icon {
-    transform: scale(1.1);
-}
 
 /* ========
    RESPONSIVE ADJUSTMENTS
