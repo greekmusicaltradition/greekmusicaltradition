@@ -1,3 +1,8 @@
+.hero {
+    margin-top: -80px !important;
+    padding-top: calc(2.5rem + 80px) !important;
+}
+
 .about-section {
     margin-bottom: 2rem;
 }
