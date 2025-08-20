@@ -20,12 +20,6 @@ function loadHeader() {
                 lessons: "Lessons",
                 about: "About",
                 contact: "Contact"
-            },
-            heroTitles: {
-                index: "Greek Traditional & Byzantine Music",
-                about: "About - Greek Traditional & Byzantine Music",
-                lessons: "Music Lessons",
-                contact: "Contact Us"
             }
         },
         gr: {
@@ -35,18 +29,12 @@ function loadHeader() {
                 lessons: "Μαθήματα",
                 about: "Σχετικά",
                 contact: "Επικοινωνία"
-            },
-            heroTitles: {
-                index: "Ελληνική Παραδοσιακή & Βυζαντινή Μουσική",
-                about: "Σχετικά - Ελληνική Μουσική Παράδοση",
-                lessons: "Μαθήματα Μουσικής",
-                contact: "Επικοινωνία"
             }
         }
     };
     
-    // Get hero title for current page
-    const heroTitle = content[lang].heroTitles[pageName] || content[lang].heroTitles.index;
+    // Use the same title for all pages
+    const heroTitle = "Greek Traditional & Byzantine Music";
     
     const headerHTML = `
         <nav class="navbar">
