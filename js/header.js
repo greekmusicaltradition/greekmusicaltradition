@@ -33,8 +33,8 @@ function loadHeader() {
         }
     };
     
-    // Use the same title for all pages
-    const heroTitle = "Greek Traditional & Byzantine Music";
+    // Language-specific hero title
+    const heroTitle = lang === 'gr' ? "Ελληνική Παραδοσιακή & Βυζαντινή Μουσική" : "Greek Traditional & Byzantine Music";
     
     const headerHTML = `
         <nav class="navbar">
