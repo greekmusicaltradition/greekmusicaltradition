@@ -1,4 +1,4 @@
-// header.js
+// header.js - Updated to include hero section
 function loadHeader() {
     // Detect current language from URL
     const currentPath = window.location.pathname;
@@ -7,6 +7,9 @@ function loadHeader() {
     
     // Default to English if no language detected
     const lang = isGreek ? 'gr' : 'en';
+    
+    // Get current page name for page-specific hero titles
+    const pageName = getCurrentPageName();
      
     // Language-specific content
     const content = {
@@ -17,6 +20,12 @@ function loadHeader() {
                 lessons: "Lessons",
                 about: "About",
                 contact: "Contact"
+            },
+            heroTitles: {
+                index: "Greek Traditional & Byzantine Music",
+                about: "About - Greek Traditional & Byzantine Music",
+                lessons: "Music Lessons",
+                contact: "Contact Us"
             }
         },
         gr: {
@@ -26,12 +35,18 @@ function loadHeader() {
                 lessons: "Μαθήματα",
                 about: "Σχετικά",
                 contact: "Επικοινωνία"
+            },
+            heroTitles: {
+                index: "Ελληνική Παραδοσιακή & Βυζαντινή Μουσική",
+                about: "Σχετικά - Ελληνική Μουσική Παράδοση",
+                lessons: "Μαθήματα Μουσικής",
+                contact: "Επικοινωνία"
             }
         }
     };
     
-    // Get current page name
-    const pageName = getCurrentPageName();
+    // Get hero title for current page
+    const heroTitle = content[lang].heroTitles[pageName] || content[lang].heroTitles.index;
     
     const headerHTML = `
         <nav class="navbar">
@@ -86,6 +101,12 @@ function loadHeader() {
                 </ul>
             </div>
         </nav>
+        
+        <header class="hero">
+            <div class="hero-content">
+                <h1>${heroTitle}</h1>
+            </div>
+        </header>
     `;
     
     document.getElementById('header').innerHTML = headerHTML;
