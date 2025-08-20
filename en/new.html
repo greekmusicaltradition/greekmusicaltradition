@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Traditional & Byzantine Music</title>
+    <link rel="icon" href="../pictures/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/style_main.css"> 
+    <link rel="stylesheet" href="../css/style_footer.css"> 
+    <script src="../js/cookie-consent.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+   <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="combined-panel">
+                    
+                    
+                </div>
+            </div>
+
+         
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');  
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Note: Removed the fade-in animation observer code
+        // All content now loads visible from the start
+    </script>
+</body>
+</html>
