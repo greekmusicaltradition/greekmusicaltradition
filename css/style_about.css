@@ -3,9 +3,10 @@
     padding-top: calc(2.5rem + 80px) !important;
 } */
 
-.about-section {
+/*.about-section {
     margin-bottom: 2rem;
-}
+} */
+
 .about-content {
     display: flex;
     align-items: center;
