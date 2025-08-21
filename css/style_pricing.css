@@ -78,6 +78,13 @@
     color: var(--color-white);
     padding: 1.5rem;
     text-align: center;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    text-overflow: clip !important;
+    overflow: visible !important;
+    /* Prevent word breaking */
+    word-wrap: normal;
 }
 .pricing-header h4 {
     font-size: 1.3rem;
