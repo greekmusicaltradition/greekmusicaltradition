@@ -64,26 +64,26 @@
                 </div>
 
                 <!-- Lesson Schedule Information -->
-                <div class="schedule-info" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <h3 style="margin-top: 0; color: #2c3e50;">Current Group Lesson Schedule</h3>
+                <div class="schedule-info">
+                    <h3>Current Group Lesson Schedule</h3>
                     
-                    <div style="margin-bottom: 15px;">
-                        <h4 style="color: #8b4513; margin-bottom: 8px;">🎵 Greek Traditional Singing</h4>
-                        <ul style="margin: 0; padding-left: 20px;">
+                    <div class="schedule-category">
+                        <h4 class="traditional-icon">🎵 Greek Traditional Singing</h4>
+                        <ul>
                             <li><strong>Beginners:</strong> Tuesdays, 7:00 PM - 8:30 PM (Athens time)</li>
                             <li><strong>Intermediate:</strong> Thursdays, 6:30 PM - 8:00 PM (Athens time)</li>
                         </ul>
                     </div>
                     
-                    <div>
-                        <h4 style="color: #8b4513; margin-bottom: 8px;">⛪ Byzantine Music</h4>
-                        <ul style="margin: 0; padding-left: 20px;">
+                    <div class="schedule-category">
+                        <h4 class="byzantine-icon">⛪ Byzantine Music</h4>
+                        <ul>
                             <li><strong>Beginners:</strong> Wednesdays, 7:30 PM - 9:00 PM (Athens time)</li>
                             <li><strong>Advanced:</strong> Saturdays, 4:00 PM - 5:30 PM (Athens time)</li>
                         </ul>
                     </div>
                     
-                    <p style="margin: 15px 0 0 0; font-size: 14px; color: #666;">
+                    <p class="schedule-note">
                         <em>All lessons are conducted online. Times shown are Athens/Greece timezone (EET/EEST).</em>
                     </p>
                 </div>
@@ -112,26 +112,26 @@
 
                 <div class="form-group">
                     <label for="availableSchedules">Which of the current schedules work for you? *</label>
-                    <div style="margin-top: 8px;">
-                        <label style="display: block; margin-bottom: 8px; font-weight: normal; cursor: pointer;">
-                            <input type="checkbox" name="availableSchedules" value="tuesday_traditional_beginner" style="margin-right: 8px;">
-                            Tuesday 7:00 PM - Greek Traditional (Beginners)
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="tuesday_traditional_beginner">
+                            <span class="checkbox-text">Tuesday 7:00 PM - Greek Traditional (Beginners)</span>
                         </label>
-                        <label style="display: block; margin-bottom: 8px; font-weight: normal; cursor: pointer;">
-                            <input type="checkbox" name="availableSchedules" value="thursday_traditional_intermediate" style="margin-right: 8px;">
-                            Thursday 6:30 PM - Greek Traditional (Intermediate)
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="thursday_traditional_intermediate">
+                            <span class="checkbox-text">Thursday 6:30 PM - Greek Traditional (Intermediate)</span>
                         </label>
-                        <label style="display: block; margin-bottom: 8px; font-weight: normal; cursor: pointer;">
-                            <input type="checkbox" name="availableSchedules" value="wednesday_byzantine_beginner" style="margin-right: 8px;">
-                            Wednesday 7:30 PM - Byzantine Music (Beginners)
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="wednesday_byzantine_beginner">
+                            <span class="checkbox-text">Wednesday 7:30 PM - Byzantine Music (Beginners)</span>
                         </label>
-                        <label style="display: block; margin-bottom: 8px; font-weight: normal; cursor: pointer;">
-                            <input type="checkbox" name="availableSchedules" value="saturday_byzantine_advanced" style="margin-right: 8px;">
-                            Saturday 4:00 PM - Byzantine Music (Advanced)
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="saturday_byzantine_advanced">
+                            <span class="checkbox-text">Saturday 4:00 PM - Byzantine Music (Advanced)</span>
                         </label>
-                        <label style="display: block; margin-bottom: 8px; font-weight: normal; cursor: pointer;">
-                            <input type="checkbox" name="availableSchedules" value="none_suggest_alternative" style="margin-right: 8px;">
-                            None of these work - I'll suggest alternatives below
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="none_suggest_alternative">
+                            <span class="checkbox-text">None of these work - I'll suggest alternatives below</span>
                         </label>
                     </div>
                 </div>
@@ -142,9 +142,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label style="display: block; margin-bottom: 10px;">
-                        <input type="checkbox" name="notifications" value="yes" style="margin-right: 8px;" required>
-                        I agree to receive email notifications when spots become available in my selected group lessons. *
+                    <label class="checkbox-label agreement-checkbox">
+                        <input type="checkbox" name="notifications" value="yes" required>
+                        <span class="checkbox-text">I agree to receive email notifications when spots become available in my selected group lessons. *</span>
                     </label>
                 </div>
 
