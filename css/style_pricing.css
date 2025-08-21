@@ -47,7 +47,6 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    border: 2px solid transparent;
     min-width: 0; /* Prevent card overflow in grid */
 }
 .pricing-card:hover {
