@@ -446,3 +446,41 @@
         max-width: 240px !important;
     }
 }
+
+
+/* ====
+   CONTAINER WIDTH CONSISTENCY FIX
+   ==== */
+.footer-info {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+    /* Add container constraints to match pricing section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    /* Match pricing section width constraints */
+    max-width: 1200px;  /* Same as pricing section */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;    /* Same as pricing section */
+}
+
+/* Responsive width matching */
+@media (min-width: 768px) {
+    .footer-info .lessons-grid {
+        padding: 0 2rem;   /* Same as pricing section tablet padding */
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-info .lessons-grid {
+        gap: 1.5rem;      /* Same as pricing section desktop gap */
+    }
+}
