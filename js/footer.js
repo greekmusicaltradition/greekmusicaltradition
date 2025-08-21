@@ -16,6 +16,7 @@ function loadFooter() {
             nav: {
                 home: "Home",
                 lessons: "Lessons",
+                pricing: "Pricing",
                 about: "About",
                 contact: "Contact"
             },
@@ -42,6 +43,7 @@ function loadFooter() {
             nav: {
                 home: "Αρχική",
                 lessons: "Μαθήματα",
+                pricing: "Τιμές",
                 about: "Σχετικά",
                 contact: "Επικοινωνία"
             },
@@ -88,6 +90,7 @@ function loadFooter() {
                         <ul class="footer-links">
                             <li><a href="${relativePath}index.html">${content[lang].nav.home}</a></li>
                             <li><a href="${relativePath}lessons.html">${content[lang].nav.lessons}</a></li>
+                            <li><a href="${relativePath}pricing.html">${content[lang].nav.pricing}</a></li>
                             <li><a href="${relativePath}about.html">${content[lang].nav.about}</a></li>
                             <li><a href="${relativePath}contact.html">${content[lang].nav.contact}</a></li>
                         </ul>
