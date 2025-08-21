@@ -539,6 +539,11 @@ a:focus {
 }
 
 
+.pricing-cta::after {
+    display: none !important;
+    content: none !important;
+}
+
 /* ====
    LESSONS GRID & CARDS
    ==== */
