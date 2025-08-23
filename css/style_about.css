@@ -16,6 +16,9 @@
     box-shadow: 0 4px 16px var(--shadow-light);
     padding: 2rem;
 }
+.section-content {
+    padding:2rem;
+}
 .about-image {
     flex: 0 0 120px;
     display: flex;
