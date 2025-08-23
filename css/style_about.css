@@ -22,7 +22,8 @@
 .section-content h2 {
     padding:2rem;
     color: var(--color-primary-blue);
-    font-size:2rem;
+    font-size:1.4rem;
+    align-items: center;
 }
 .about-image {
     flex: 0 0 120px;
