@@ -19,6 +19,11 @@
 .section-content {
     padding:2rem;
 }
+.section-content h2 {
+    padding:2rem;
+    color: var(--color-primary-blue);
+    font-size:2rem;
+}
 .about-image {
     flex: 0 0 120px;
     display: flex;
