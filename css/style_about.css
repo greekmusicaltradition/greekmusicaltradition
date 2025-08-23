@@ -106,6 +106,14 @@
     );
     animation: shine 8s infinite;
 }
+.call-to-action p{
+    color: var(--color-white);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 4rem 0;
+}
 
 @keyframes shine {
     0% { transform: translateX(-100%); }
