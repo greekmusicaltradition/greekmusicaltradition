@@ -1,3 +1,4 @@
+blue
 /* =========================================
    PRICING SECTION LAYOUT
    ========================================= */ 
@@ -156,7 +157,29 @@
     margin: 0 0.75rem 4rem 0.75rem; /* Space from card edges and bottom margin */
 }
 
-/* Blue variant for group lesson cards */
+.special-offer-gold {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
+    border: 2px solid var(--color-secondary-gold);
+    border-radius: var(--border-radius-large);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
+    backdrop-filter: blur(10px);
+    animation: gentleFloatBlue 4s ease-in-out infinite;
+    margin: 0 0.75rem 4rem 0.75rem;
+}
+
+.offer-badge-gold {
+    color: var(--color-secondary-gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+    margin: 0;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+}
+
 .special-offer-blue {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-secondary-blue);
