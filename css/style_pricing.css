@@ -159,18 +159,17 @@ blue
 
 .special-offer-gold {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
-    border: 2px solid var(--color-secondary-gold);
+    border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
     padding: 0.5rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
     backdrop-filter: blur(10px);
     animation: gentleFloatBlue 4s ease-in-out infinite;
-    margin: 0 0.75rem 4rem 0.75rem;
 }
 
 .offer-badge-gold {
-    color: var(--color-secondary-gold);
+    color: var(--color-accent-gold);
     font-size: 1.1rem;
     letter-spacing: 0.8px;
     margin: 0;
@@ -306,7 +305,7 @@ blue
    CARD FOOTER & CTA
    ========================================= */
 .pricing-footer {
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--color-background-light);
     margin-top: auto;
 }
