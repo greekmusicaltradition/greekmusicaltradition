@@ -146,13 +146,13 @@
    ========================================= */
 .special-offer {
     position: absolute;
-    bottom: 100px; /* Fixed distance from button - adjust this value as needed */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 110px; /* More space from button */
+    left: 0.75rem; /* Small space from left border */
+    right: 0.75rem; /* Small space from right border */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem; /* More padding top/bottom */
     text-align: center;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     backdrop-filter: blur(10px);
@@ -176,11 +176,11 @@
 
 @keyframes gentleFloat {
     0%, 100% { 
-        transform: translateX(-50%) translateY(0px);
+        transform: translateY(0px);
         box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     }
     50% { 
-        transform: translateX(-50%) translateY(-2px);
+        transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
     }
 }
@@ -190,10 +190,10 @@
    ========================================= */
 @media (max-width: 768px) {
     .special-offer {
-        bottom: 85px; /* Slightly closer on mobile */
-        left: 1rem;
-        right: 1rem;
-        transform: none; /* Remove centering transform on mobile */
+        bottom: 95px; /* Slightly closer on mobile but still more space than before */
+        left: 0.5rem; /* Even smaller space from border on mobile */
+        right: 0.5rem;
+        padding: 0.6rem 0.8rem; /* Adequate padding for mobile */
         font-size: 0.9rem;
     }
     
@@ -204,8 +204,10 @@
 
 @media (max-width: 480px) {
     .special-offer {
-        bottom: 75px;
-        padding: 0.4rem 0.8rem;
+        bottom: 85px;
+        left: 0.4rem; /* Very small space from border */
+        right: 0.4rem;
+        padding: 0.5rem 0.7rem;
     }
     
     .offer-badge {
