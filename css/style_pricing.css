@@ -149,7 +149,7 @@ blue
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     backdrop-filter: blur(10px);
@@ -172,6 +172,7 @@ blue
     margin: 0;
     background: none;
     padding: 0;
+    padding-bottom:1rem;
     border-radius: 0;
     display: block;
 }
