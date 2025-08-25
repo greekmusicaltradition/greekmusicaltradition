@@ -144,7 +144,7 @@
 /* =========================================
    SPECIAL OFFERS IN FOOTER - FLOATING BADGE
    ========================================= */
-.special-offer .offer-sentence{
+.special-offer {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
