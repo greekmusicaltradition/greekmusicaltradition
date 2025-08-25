@@ -142,23 +142,69 @@
 }
 
 /* =========================================
-   UPDATED SPECIAL OFFERS - FLOATING BADGE
+   SPECIAL OFFERS IN FOOTER - FLOATING BADGE
    ========================================= */
 .special-offer {
-    position: absolute;
-    bottom: 110px; /* More space from button */
-    left: 0.75rem; /* Small space from left border */
-    right: 0.75rem; /* Small space from right border */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
-    padding: 0.75rem 1rem; /* More padding top/bottom */
+    padding: 0.75rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     backdrop-filter: blur(10px);
     animation: gentleFloat 4s ease-in-out infinite;
-    z-index: 2;
-    margin-bottom: 0; /* Remove any margin that might interfere */
+    margin: 0 0.75rem 1rem 0.75rem; /* Space from card edges and bottom margin */
+}
+
+/* Blue variant for group lesson cards */
+.special-offer-blue {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
+    border: 2px solid var(--color-secondary-blue);
+    border-radius: var(--border-radius-large);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
+    backdrop-filter: blur(10px);
+    animation: gentleFloatBlue 4s ease-in-out infinite;
+    margin: 0 0.75rem 1rem 0.75rem;
+}
+
+.offer-badge-blue {
+    color: var(--color-secondary-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+}
+
+@keyframes gentleFloatBlue {
+    0%, 100% { 
+        transform: translateY(0px);
+        box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
+    }
+    50% { 
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(107, 157, 175, 0.2);
+    }
+}
+
+/* Update secondary button to dark blue with white text */
+.pricing-cta.secondary {
+    background: var(--color-secondary-blue);
+    color: var(--color-white);
+    border: 2px solid var(--color-secondary-blue);
+}
+.pricing-cta.secondary:hover {
+    background: var(--color-primary-blue);
+    border-color: var(--color-primary-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.3);
 }
 
 .offer-badge {
@@ -168,10 +214,10 @@
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin: 0;
-    background: none; /* Override existing background */
-    padding: 0; /* Override existing padding */
-    border-radius: 0; /* Override existing border-radius */
-    display: block; /* Override existing display if needed */
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    display: block;
 }
 
 @keyframes gentleFloat {
@@ -189,28 +235,28 @@
    RESPONSIVE ADJUSTMENTS FOR FLOATING BADGE
    ========================================= */
 @media (max-width: 768px) {
-    .special-offer {
-        bottom: 95px; /* Slightly closer on mobile but still more space than before */
-        left: 0.5rem; /* Even smaller space from border on mobile */
-        right: 0.5rem;
-        padding: 0.6rem 0.8rem; /* Adequate padding for mobile */
+    .special-offer,
+    .special-offer-blue {
+        margin: 0 0.5rem 1rem 0.5rem;
+        padding: 0.6rem 0.8rem;
         font-size: 0.9rem;
     }
     
-    .offer-badge {
+    .offer-badge,
+    .offer-badge-blue {
         font-size: 0.7rem;
     }
 }
 
 @media (max-width: 480px) {
-    .special-offer {
-        bottom: 85px;
-        left: 0.4rem; /* Very small space from border */
-        right: 0.4rem;
+    .special-offer,
+    .special-offer-blue {
+        margin: 0 0.4rem 1rem 0.4rem;
         padding: 0.5rem 0.7rem;
     }
     
-    .offer-badge {
+    .offer-badge,
+    .offer-badge-blue {
         font-size: 0.65rem;
         letter-spacing: 0.6px;
     }
