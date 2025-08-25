@@ -148,12 +148,12 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-accent-gold);
     border-radius: var(--border-radius-large);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     backdrop-filter: blur(10px);
     animation: gentleFloat 4s ease-in-out infinite;
-    margin: 0 0.75rem 1rem 0.75rem; /* Space from card edges and bottom margin */
+    margin: 0 0.75rem 4rem 0.75rem; /* Space from card edges and bottom margin */
 }
 
 /* Blue variant for group lesson cards */
@@ -161,12 +161,12 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
     border: 2px solid var(--color-secondary-blue);
     border-radius: var(--border-radius-large);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
     backdrop-filter: blur(10px);
     animation: gentleFloatBlue 4s ease-in-out infinite;
-    margin: 0 0.75rem 1rem 0.75rem;
+    margin: 0 0.75rem 4rem 0.75rem;
 }
 
 .offer-badge-blue {
