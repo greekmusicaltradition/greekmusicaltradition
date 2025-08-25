@@ -171,9 +171,7 @@
 
 .offer-badge-blue {
     color: var(--color-secondary-blue);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 1.1rem;
     letter-spacing: 0.8px;
     margin: 0;
     background: none;
@@ -209,9 +207,7 @@
 
 .offer-badge {
     color: var(--color-accent-gold);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 1.1rem;
     letter-spacing: 0.8px;
     margin: 0;
     background: none;
