@@ -200,16 +200,6 @@ blue
     display: block;
 }
 
-@keyframes gentleFloatBlue {
-    0%, 100% { 
-        transform: translateY(0px);
-        box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
-    }
-    50% { 
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(107, 157, 175, 0.2);
-    }
-}
 
 /* Update secondary button to dark blue with white text */
 .pricing-cta.secondary {
@@ -236,16 +226,7 @@ blue
     display: block;
 }
 
-@keyframes gentleFloat {
-    0%, 100% { 
-        transform: translateY(0px);
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
-    }
-    50% { 
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
-    }
-}
+
 
 /* =========================================
    RESPONSIVE ADJUSTMENTS FOR FLOATING BADGE
