@@ -1,4 +1,9 @@
-blue
+/* =========================================
+   PRICING SECTION LAYOUT
+   ========================================= */ 
+.pricing-section {
+    margin: 3rem 0;
+}
 
 /* =========================================
    PRICING GRID & CARD LAYOUT
