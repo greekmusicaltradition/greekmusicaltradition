@@ -85,11 +85,11 @@
         var(--color-secondary-blue)
     );
     color: var(--color-white);
-    padding: 2rem 0 1rem 0;
+    padding: 3rem 0 1rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin: 2rem 0 1rem 0;            
+    margin: 3rem 0 1rem 0;            
 }
 
 .call-to-action::before {
