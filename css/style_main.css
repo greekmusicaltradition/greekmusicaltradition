@@ -264,7 +264,8 @@ a:hover {
     color: var(--color-primary-blue);
 }
 
-a:visited {
+.nav-menu a:visited,
+.nav-brand a:visited {
     color: var(--color-white);
 }
 
