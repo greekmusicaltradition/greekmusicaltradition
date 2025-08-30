@@ -108,7 +108,7 @@
 }
 .call-to-action p{
     color: var(--color-white);
-    padding: 1rem 0 4rem 0    ;
+    padding: 1rem 0 2rem 0    ;
     text-align: center;
     position: relative;
     overflow: hidden;
