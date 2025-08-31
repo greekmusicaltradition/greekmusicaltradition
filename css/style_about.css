@@ -5,7 +5,7 @@
   padding: 2rem;
   box-shadow: 0 12px 40px var(--shadow-medium);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-columns: 240px 1fr; /* Left column fixed width, right column takes remaining space */
   gap: 2rem;
   align-items: start; /* Changed from center to start for better column alignment */
   width: 100%;
@@ -18,7 +18,8 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 0.5rem; /* Reduced horizontal padding for tighter fit */
+  width: 100%;
 }
 
 /* Right column (info-panel) - contains content */
