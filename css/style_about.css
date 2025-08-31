@@ -389,14 +389,6 @@ IMPROVED CALL TO ACTION SECTION
   width: 100%;
 }
 
-/* Right column (info-panel) - contains content */
-.info-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-
 
 /* Photo styling - positioned at top of left column */
 .decorative-image {
