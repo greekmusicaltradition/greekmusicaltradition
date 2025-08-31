@@ -364,18 +364,17 @@ IMPROVED CALL TO ACTION SECTION
 }
 
 
-/* ===== About Me: two-column layout (page-specific) ===== /
+/* ===== About Me: strict two-column layout ===== /
 .about-panel {
 display: grid;
-grid-template-columns: auto 1fr; / left fits image width, right fills */
+grid-template-columns: auto 1fr; / left fits image block, right fills */
 gap: 2rem;
 align-items: start;
 }
 
 .about-panel .decorative-panel {
-width: min(220px, 30vw); /* keep column only as wide as photo /
-/ Remove min-height from generic decorative-panel on this page only */
-min-height: 0;
+width: 200px; /* left column width equals photo width /
+min-height: 0; / override global min-height to avoid tall empty block */
 }
 
 .about-panel .decorative-image {
@@ -405,23 +404,22 @@ border-radius: var(--border-radius-large);
 box-shadow: 0 8px 25px var(--shadow-light);
 }
 
-/* Headings and paragraph rhythm in right column */
+/* Heading and paragraph spacing */
 .about-panel .info-panel h2 {
-margin-top: 0;
-margin-bottom: 1rem;
+margin: 0 0 1rem 0;
 }
 .about-panel .info-panel p {
-margin-bottom: 1rem;
+margin: 0 0 1rem 0;
 }
 
-/* Responsive: stack on small screens */
+/* Responsive: stack on small screens /
 @media (max-width: 768px) {
 .about-panel {
 grid-template-columns: 1fr;
 gap: 1.25rem;
 }
 .about-panel .decorative-panel {
-width: min(220px, 65vw);
+width: 220px; / keep a nice size on mobile and center */
 margin: 0 auto;
 }
 .about-panel .info-panel.welcome-content {
