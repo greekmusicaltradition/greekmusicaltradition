@@ -202,7 +202,7 @@ CALL TO ACTION SECTION
 
 .cta-button-container {
   display: flex;
-  gap: 1rem;
+  gap: 8rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
