@@ -325,6 +325,11 @@ IMPROVED CALL TO ACTION SECTION
     opacity: 0.15;
 }
 
+   .welcome-message {
+      margin-top: 2rem;
+   }
+
+
 /* Responsive design */
 @media (max-width: 768px) {
     .about-content {
