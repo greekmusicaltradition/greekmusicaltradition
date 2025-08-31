@@ -119,16 +119,31 @@
 CALL TO ACTION SECTION
 ==== */
 .call-to-action {
-  background: linear-gradient(135deg, 
-    var(--color-primary-blue), 
-    var(--color-secondary-blue)
-  );
+  background: var(--color-white);
+  border: 4px solid var(--color-secondary-blue);
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 12px 40px var(--shadow-medium);
   color: var(--color-white);
   padding: 3rem 3rem 1rem 3rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   margin: 3rem 0 1rem 0; 
+}
+
+.cta-panel h2 {
+    color: var(--color-primary-blue);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cta-panel .cta-button-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .call-to-action::before {
@@ -147,12 +162,14 @@ CALL TO ACTION SECTION
 }
 
 .call-to-action p{
-  color: var(--color-white);
   padding: 1rem 0 1rem 0 ;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 0;
+  margin-bottom: 1rem;
+  color: var(--color-text-medium);
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 @keyframes shine {
@@ -205,34 +222,3 @@ CALL TO ACTION SECTION
 
 
 
-.cta-panel {
-    background: var(--color-white);
-    border: 4px solid var(--color-secondary-blue);
-    border-radius: var(--border-radius-large);
-    padding: 2rem;
-    box-shadow: 0 12px 40px var(--shadow-medium);
-    text-align: center;
-    width: 100%;
-}
-
-.cta-panel h2 {
-    color: var(--color-primary-blue);
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.cta-panel p {
-    margin-bottom: 1rem;
-    color: var(--color-text-medium);
-    line-height: 1.7;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.cta-panel .cta-button-container {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
