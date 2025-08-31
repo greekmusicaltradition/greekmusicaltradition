@@ -139,7 +139,7 @@ IMPROVED CALL TO ACTION SECTION
         0 20px 60px rgba(75, 121, 136, 0.08),
         0 8px 30px rgba(107, 157, 175, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    padding: 4rem 3rem 3rem 3rem;
+    padding: 4rem 3rem 1rem 3rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -326,7 +326,7 @@ IMPROVED CALL TO ACTION SECTION
 }
 
    .welcome-message {
-      margin-top: 2rem;
+      margin-top: 3rem;
    }
 
 
