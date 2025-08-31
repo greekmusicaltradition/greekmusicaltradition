@@ -178,7 +178,7 @@ CALL TO ACTION SECTION
   padding: 2rem 2rem;
 }
 
-.cta-content h2 {
+.call-to-action h2 {
   color: var(--color-primary-blue);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 600;
