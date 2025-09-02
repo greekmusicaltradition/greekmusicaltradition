@@ -190,7 +190,7 @@
 }
 
 
-/* Update secondary button to dark blue with white text */
+/* Update secondary button to dark blue with white text 
 .pricing-cta.secondary {
     background: var(--color-secondary-blue);
     color: var(--color-white);
@@ -202,7 +202,7 @@
     color: var(--color-white);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(75, 121, 136, 0.3);
-}
+}*/
 
 .offer-badge {
     color: var(--color-accent-gold);
