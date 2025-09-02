@@ -151,7 +151,6 @@
 .special-offer-gold {
     border-radius: var(--border-radius-large);
     text-align: center;
-    box-shadow: 0 4px 15px rgba(107, 157, 175, 0.15);
     backdrop-filter: blur(10px);
     animation: gentleFloatBlue 4s ease-in-out infinite;
 }
@@ -275,7 +274,6 @@
    ========================================= */
 .pricing-footer {
     padding: 1rem;
-    background: var(--color-background-light);
     margin-top: auto;
 }
 .pricing-cta {
