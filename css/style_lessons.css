@@ -449,6 +449,7 @@
     background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
     position: relative;
     overflow: hidden;
+   padding: 1rem;   
 }
 
 .group-image-section .image-placeholder {
