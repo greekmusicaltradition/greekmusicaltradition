@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 Disallow: /privacy_policy.html
 Disallow: /terms_of_service.html
 
