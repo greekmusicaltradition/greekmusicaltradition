@@ -226,10 +226,6 @@
         font-size: 0.9rem;
     }
     
-    .offer-badge,
-    .offer-badge-blue {
-        font-size: 0.7rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -241,7 +237,6 @@
     
     .offer-badge,
     .offer-badge-blue {
-        font-size: 0.65rem;
         letter-spacing: 0.6px;
     }
 }
