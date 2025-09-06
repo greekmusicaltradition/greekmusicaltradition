@@ -314,17 +314,6 @@ IMPROVED CALL TO ACTION SECTION
     /* Empty element for potential future decoration */
 }
 
-.cta-accent {
-    position: absolute;
-    bottom: -30px;
-    right: 10%;
-    width: 60px;
-    height: 60px;
-    background: var(--color-accent-gold);
-    border-radius: 50%;
-    opacity: 0.15;
-}
-
    .welcome-message {
       margin-top: 3rem;
    }
