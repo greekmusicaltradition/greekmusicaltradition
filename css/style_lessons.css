@@ -28,6 +28,7 @@
     color: var(--color-white);
     padding: 1.5rem;
     text-align: center;
+    min-height: 8rem;
 }
 
 .lesson-header h3 {
@@ -1084,8 +1085,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, rgba(75, 121, 136, 0.05), rgba(116, 164, 180, 0.08));
-    border-top: 1px solid rgba(75, 121, 136, 0.1);
     padding: 1.2rem;
 }
 
