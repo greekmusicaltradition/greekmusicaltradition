@@ -1060,20 +1060,14 @@
     
 }
 
-/* Fix text alignment issues in lesson cards */
+/* Fix text alignment and spacing */
 .lesson-details p {
     margin-bottom: 1.5rem;
-    margin-left: 0; /* Remove left margin that was causing alignment issues */
+    margin-left: 0;
     color: var(--color-text-medium);
     line-height: 1.6;
     text-align: left;
     font-size: 1rem;
-}
-
-/* Ensure proper spacing and alignment for online lesson cards */
-.lesson-details .cta-button-container {
-    margin-top: auto; /* Push button to bottom */
-    padding-top: 1rem;
 }
 
 .lesson-icon {
@@ -1081,14 +1075,105 @@
     color: var(--color-primary-blue);
 }
 
-/* Responsive adjustments for online lesson cards */
+/* Full-width button styling for online lesson cards */
+.lesson-details .cta-button-container {
+    margin-top: auto;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(75, 121, 136, 0.05), rgba(116, 164, 180, 0.08));
+    border-top: 1px solid rgba(75, 121, 136, 0.1);
+    padding: 1.2rem;
+}
+
+/* Make lesson cards relative positioned for absolute button positioning */
+.lesson-card {
+    position: relative;
+    padding-bottom: 80px; /* Space for the button */
+}
+
+/* Enhanced button styling */
+.lesson-details .cta-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius-medium);
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-details .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.lesson-details .cta-button:hover::before {
+    left: 100%;
+}
+
+.lesson-details .cta-button:hover {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-primary-blue));
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(75, 121, 136, 0.4);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.lesson-details .cta-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.3);
+}
+
+.lesson-details .cta-button:focus {
+    outline: 3px solid rgba(212, 175, 55, 0.6);
+    outline-offset: 3px;
+}
+
+.lesson-details .cta-button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.lesson-details .cta-button:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .lesson-card {
+        padding-bottom: 85px;
+    }
+    
     .lesson-content {
         padding: 1rem;
     }
     
     .lesson-details {
         text-align: center;
+        padding-bottom: 0;
     }
     
     .lesson-details p {
@@ -1101,5 +1186,26 @@
         text-align: center;
         width: fit-content;
         margin: 0 auto 0.8rem auto;
+    }
+    
+    .lesson-details .cta-button {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+    }
+    
+    .lesson-details .cta-button-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson-card {
+        padding-bottom: 90px;
+    }
+    
+    .lesson-details .cta-button {
+        font-size: 1rem;
+        padding: 12px 16px;
+        letter-spacing: 0.3px;
     }
 }
