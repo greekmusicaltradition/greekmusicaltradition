@@ -1053,11 +1053,11 @@
     border-radius: var(--border-radius-small);
     font-size: 0.85rem;
     font-weight: 800;
-    font-color: var(--color-primary-blue);
+    color: var(--color-primary-blue);
     margin-bottom: 0.8rem;
     text-align: center;
     border: 1px solid var(--color-secondary-blue);
-    border-radius: var(--border-radius-large);
+    
 }
 
 /* Fix text alignment issues in lesson cards */
