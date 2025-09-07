@@ -273,7 +273,7 @@
 
 .lessons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1049,7 +1049,6 @@
    ======== */
 .lesson-type-badge {
     display: inline-block;
-    background: rgba(75, 121, 136, 0.1);
     padding: 0.3rem 0.8rem;
     border-radius: var(--border-radius-small);
     font-size: 0.85rem;
@@ -1058,6 +1057,7 @@
     margin-bottom: 0.8rem;
     text-align: center;
     border: 1px solid var(--color-secondary-blue);
+    max-width: 15rem;
     
 }
 
@@ -1081,11 +1081,11 @@
     margin-top: auto;
     padding: 0;
     width: 100%;
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 1.2rem;
+    max-width: 20rem;   
 }
 
 /* Make lesson cards relative positioned for absolute button positioning */
