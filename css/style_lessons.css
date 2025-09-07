@@ -1049,11 +1049,11 @@
 .lesson-type-badge {
     display: inline-block;
     background: rgba(75, 121, 136, 0.1);
-    color: var(--color-lighter-blue);
     padding: 0.3rem 0.8rem;
     border-radius: var(--border-radius-small);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 800;
+    font-color: var(--color-dark-blue);
     margin-bottom: 0.8rem;
     text-align: center;
     border: 1px solid var(--color-secondary-blue);
