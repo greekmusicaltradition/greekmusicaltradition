@@ -907,3 +907,63 @@
     width: 100% !important;
     margin: 1.5rem 0 1rem 0 !important;
 }
+
+
+/* ========
+   ONLINE LESSON BOOKING CARDS - Simplified
+   ======== */
+.lesson-type-badge {
+    display: inline-block;
+    background: rgba(75, 121, 136, 0.1);
+    color: var(--color-secondary-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-small);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+/* Fix text alignment issues in lesson cards */
+.lesson-details p {
+    margin-bottom: 1.5rem;
+    margin-left: 0; /* Remove left margin that was causing alignment issues */
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Ensure proper spacing and alignment for online lesson cards */
+.lesson-details .cta-button-container {
+    margin-top: auto; /* Push button to bottom */
+    padding-top: 1rem;
+}
+
+.lesson-icon {
+    font-size: 42px;
+    color: var(--color-primary-blue);
+}
+
+/* Responsive adjustments for online lesson cards */
+@media (max-width: 768px) {
+    .lesson-content {
+        padding: 1rem;
+    }
+    
+    .lesson-details {
+        text-align: center;
+    }
+    
+    .lesson-details p {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .lesson-type-badge {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto 0.8rem auto;
+    }
+}
