@@ -1088,12 +1088,6 @@
     max-width: 20rem;   
 }
 
-/* Make lesson cards relative positioned for absolute button positioning */
-.lesson-card {
-    position: relative;
-    padding-bottom: 80px; /* Space for the button */
-}
-
 /* Enhanced button styling */
 .lesson-details .cta-button {
     width: 100%;
