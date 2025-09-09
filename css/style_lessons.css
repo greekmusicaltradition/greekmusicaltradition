@@ -1089,7 +1089,7 @@
 }
 
 /* Enhanced button styling */
-.lesson-details .lesson-footer .cta-button {
+.lesson-details .cta-button {
     width: 100%;
     display: flex;
     align-items: center;
