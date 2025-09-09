@@ -1161,7 +1161,7 @@
 }
 
 .lesson-footer p {
-   padding: 0.5rem;
+   padding: 0 3rem 0 3rem;
    color: var(--color-primary-blue);
 }
 
