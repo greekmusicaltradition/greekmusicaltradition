@@ -1160,6 +1160,17 @@
     transform: scale(1.1);
 }
 
+/*Lesson Footer --------------- */
+.lesson-footer {
+   padding: 0.5rem;
+   
+}
+
+.lesson-footer p {
+   padding: 0.5rem;
+   color: var(----color-primary-blue);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .lesson-card {
