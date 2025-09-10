@@ -318,8 +318,8 @@
 /* Icon on the left of each lesson */
 .lesson-image {
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
     border-radius: 4px;
