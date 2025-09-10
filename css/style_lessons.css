@@ -1189,7 +1189,9 @@
     overflow: hidden;
 }
 
-
+.lesson-footer a {
+   color: var(--color-accent-gold);
+}
 
 
 
