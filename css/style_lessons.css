@@ -1054,10 +1054,9 @@
     font-size: 0.85rem;
     font-weight: 800;
     color: var(--color-primary-blue);
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
     text-align: center;
     border: 1px solid var(--color-secondary-blue);
-    max-width: 15rem;
     
 }
 
@@ -1065,7 +1064,7 @@
 .lesson-details p {
     margin-bottom: 1.5rem;
     margin-left: 0;
-    color: var(--color-text-medium);
+    color: var(--color-primary-blue);
     line-height: 1.6;
     text-align: left;
     font-size: 1rem;
