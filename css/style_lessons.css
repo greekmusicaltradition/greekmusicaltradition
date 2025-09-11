@@ -30,23 +30,6 @@
    LESSON HEADER SECTION
    ======================================== */
 
-/*.lesson-header {
-    background: linear-gradient(135deg, 
-        var(--color-primary-blue), 
-        var(--color-secondary-blue)
-    );
-    color: var(--color-white);
-    padding: 3rem;
-    text-align: center;
-    min-height: 8rem;
-}
-
-.lesson-header h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-}   */
-
 
 .lesson-header {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
@@ -66,12 +49,6 @@
    LESSON CONTENT SECTION
    ======================================== */
 
-/*.lesson-content {
-    padding: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-} */
 
 .lesson-content {
     padding: 0.5rem;
@@ -85,18 +62,6 @@
 /* ========================================
    LESSON IMAGE SECTION
    ======================================== */
-
-/*.lesson-image {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-light-blue);
-    border-radius: 50%;
-    font-size: 1.5rem;
-} */
 
 /* Icon on the left of each lesson */
 .lesson-image {
@@ -125,12 +90,6 @@
    flex: 1;
 }
 
-/*.lesson-details ul {
-    list-style: none;
-    padding: 0;
-    padding-left: 2rem;
-    margin: 0;
-} */
 
 .lesson-details ul {
     list-style: none;
@@ -140,18 +99,6 @@
     margin: 0;
 }
 
-/* .lesson-details li {
-    padding: 0.3rem 0;
-    color: var(--color-text-medium);
-    font-size: 0.95rem;
-} */
-
-/*.lesson-details li:before {
-    content: "✓";
-    color: var(--color-accent-gold);
-    font-weight: bold;
-    margin-right: 0.5rem;
-} */
 
 .lesson-details li {
     margin-bottom: 0.5rem;
@@ -179,13 +126,6 @@
     font-weight: 600;
 }
 
-/* .lesson-details p {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    color: var(--color-text-medium);
-    line-height: 1.7;
-}   */
-
 
 /* Fix text alignment and spacing */
 .lesson-details p {
@@ -196,7 +136,6 @@
     text-align: left;
     font-size: 1rem;
 }
-
 
 
 /* ========================================
@@ -217,13 +156,6 @@
 }
 
 
-/*.lesson-description-box p {
-    margin: 0 0 2rem 0;
-    color: var(--color-text-medium);
-    font-style: italic;
-    line-height: 1.6;
-} */
-
 .lesson-description-box p {
     color: var(--color-white);
     margin-bottom: 0;
@@ -231,7 +163,6 @@
     font-style: italic;
     line-height: 1.6;
 }
-
 
 
 /* ========================================
@@ -968,27 +899,6 @@
     border-left: 3px solid var(--color-secondary-blue);
 }
 
-/* Features List - Horizontal Compact */
-/*.features-list.horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.features-list.horizontal .feature {
-    font-size: 0.85rem;
-    color: var(--color-text-medium);
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.features-list.horizontal .feature .check {
-    color: var(--color-secondary-blue);
-    font-weight: bold;
-    margin-right: 0.4rem;
-} */
 
 /* SPECIAL OFFER - POSITIONED ABOVE BUTTONS */
 .special-offer-right {
