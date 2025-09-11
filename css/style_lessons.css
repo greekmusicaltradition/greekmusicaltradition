@@ -920,6 +920,24 @@
 }
 
 /* CONTENT SECTION - RIGHT SIDE */
+
+.group-content-section {
+    flex: 1;
+    padding: 1.8rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+}
+
+.group-content-section .music-type-badge {
+    font-size: 0.9rem;
+    color: var(--color-secondary-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
 .group-content-section h3 {
     color: var(--color-primary-blue);
     font-size: 1.3rem;
@@ -927,6 +945,7 @@
     margin: 0 0 0.8rem 0;
     line-height: 1.3;
 }
+
 
 /* Group Description */
 .group-content-section .group-description {
