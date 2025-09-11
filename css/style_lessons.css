@@ -1307,3 +1307,6 @@
     align-self: flex-start;
 }
 
+.group-content-section {
+   padding: 2rem;
+}
