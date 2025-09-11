@@ -1065,7 +1065,7 @@
 .lesson-details p {
     margin-bottom: 1.5rem;
     margin-left: 0;
-    color: var(--color-primary-blue);
+    color: var(--color-text-medium);
     line-height: 1.6;
     text-align: left;
     font-size: 1rem;
