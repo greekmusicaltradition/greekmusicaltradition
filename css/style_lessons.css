@@ -829,6 +829,20 @@
 
 .under-photo-content ul {
   list-style-type: none;
+   padding: 1.5rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom:10px;
+    height: 100%
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    opacity: 0.98;
 }
 
 
