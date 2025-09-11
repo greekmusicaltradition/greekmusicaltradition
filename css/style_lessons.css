@@ -827,8 +827,7 @@
 }
 
 
-.under-photo-content ul {
-  list-style-type: none;
+.under-photo-content p {
    padding: 1.5rem 1rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
