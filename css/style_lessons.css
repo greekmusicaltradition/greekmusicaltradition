@@ -810,25 +810,22 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom:10px;
     height: 100%
-}
-
-/* Location and Schedule Info - LARGER FONTS WITH MORE SPACE */
-.location-info, .schedule-info {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    align-items: center;
     color: var(--color-white);
+    gap: 0.6rem;
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.7rem;
     opacity: 0.98;
 }
 
-.location-info i, .schedule-info i {
+.under-photo-content i {
     font-size: 0.9rem;
     opacity: 0.9;
 }
+
 
 /* Group Lessons Info */
 .group-lessons-info {
