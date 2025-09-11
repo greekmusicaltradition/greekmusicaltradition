@@ -966,7 +966,7 @@
 }
 
 /* Features List - Horizontal Compact */
-.features-list.horizontal {
+/*.features-list.horizontal {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem 1.2rem;
@@ -985,7 +985,7 @@
     color: var(--color-secondary-blue);
     font-weight: bold;
     margin-right: 0.4rem;
-}
+} */
 
 /* SPECIAL OFFER - POSITIONED ABOVE BUTTONS */
 .special-offer-right {
