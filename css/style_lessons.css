@@ -827,6 +827,11 @@
 }
 
 
+.under-photo-content ul {
+  list-style-type: none;
+}
+
+
 /* Group Lessons Info */
 .group-lessons-info {
     display: flex;
