@@ -26,26 +26,11 @@
     margin-bottom: 3rem;
 }
 
-.lesson-card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    overflow: hidden;
-    box-shadow: 0 8px 32px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px var(--shadow-medium);
-}
-
 /* ========================================
    LESSON HEADER SECTION
    ======================================== */
 
-.lesson-header {
+/*.lesson-header {
     background: linear-gradient(135deg, 
         var(--color-primary-blue), 
         var(--color-secondary-blue)
@@ -60,31 +45,33 @@
     font-size: 1.3rem;
     font-weight: 600;
     margin: 0;
-}
+}   */
+
 
 .lesson-header {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
     color: var(--color-white);
     padding: 1.5rem;
     text-align: center;
+   min-height: 8rem;
 }
 
 .lesson-header h3 {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
     margin: 0;
-}
+} 
 
 /* ========================================
    LESSON CONTENT SECTION
    ======================================== */
 
-.lesson-content {
+/*.lesson-content {
     padding: 1.5rem;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-}
+} */
 
 .lesson-content {
     padding: 0.5rem;
@@ -99,7 +86,7 @@
    LESSON IMAGE SECTION
    ======================================== */
 
-.lesson-image {
+/*.lesson-image {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
@@ -109,7 +96,7 @@
     background: var(--color-light-blue);
     border-radius: 50%;
     font-size: 1.5rem;
-}
+} */
 
 /* Icon on the left of each lesson */
 .lesson-image {
@@ -131,57 +118,40 @@
    ======================================== */
 
 .lesson-details {
-    flex: 1;
+   display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem; 
+   flex: 1;
 }
 
-.lesson-details ul {
+/*.lesson-details ul {
     list-style: none;
     padding: 0;
     padding-left: 2rem;
     margin: 0;
+} */
+
+.lesson-details ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    padding-left: 0;
+    margin: 0;
 }
 
-.lesson-details li {
+/* .lesson-details li {
     padding: 0.3rem 0;
     color: var(--color-text-medium);
     font-size: 0.95rem;
-}
+} */
 
-.lesson-details li:before {
+/*.lesson-details li:before {
     content: "✓";
     color: var(--color-accent-gold);
     font-weight: bold;
     margin-right: 0.5rem;
-}
-
-.lesson-details {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.5rem;
-}
-
-.lesson-details h4 {
-    color: var(--color-primary-blue);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.lesson-details p {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    color: var(--color-text-medium);
-    line-height: 1.7;
-}
-
-/* Custom Bullets for Lesson Details */
-.lesson-details ul {
-    list-style: none;
-    width: 100%;
-    padding-left: 0;
-}
+} */
 
 .lesson-details li {
     margin-bottom: 0.5rem;
@@ -193,59 +163,76 @@
 
 .lesson-details li::before {
     content: '•';
-    color: var(--color-secondary-blue);
+    color: var(--color-accent-gold);
     position: absolute;
+    font-weight: bold;
+    margin-right: 0.5rem;
     left: 0;
 }
+
+
+.lesson-details h4 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* .lesson-details p {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: var(--color-text-medium);
+    line-height: 1.7;
+}   */
+
+
+/* Fix text alignment and spacing */
+.lesson-details p {
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    text-align: left;
+    font-size: 1rem;
+}
+
+
 
 /* ========================================
    LESSON DESCRIPTION BOX SECTION
    ======================================== */
 
 .lesson-description-box {
-    padding: 1.5rem 1.5rem 0 1.5rem;
-    background: var(--color-lighter-blue);
-    margin-top: auto;
-}
-
-.lesson-description-box p {
-    margin: 0 0 2rem 0;
-    color: var(--color-text-medium);
-    font-style: italic;
-    line-height: 1.6;
-}
-
-/* Isolate CTA buttons from container background */
-.lesson-description-box .cta-button-container {
-    background: transparent !important;
-    padding: 1.5rem 0 0 0 !important;
-}
-
-.lesson-description-box .cta-button {
-    position: relative !important;
-    z-index: 1 !important;
-    background-clip: padding-box !important;
-}
-
-/* Lesson Description Box (bottom of card) */
-.lesson-description-box {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    color: var(--color-white);
     padding: 1.5rem;
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    margin-top: auto;
+    color: var(--color-white);
     text-align: center;
     font-size: 0.95rem;
     line-height: 1.5;
     border-bottom-left-radius: var(--border-radius-medium);
     border-bottom-right-radius: var(--border-radius-medium);
-    margin-top: auto;
     width: 100%;
 }
+
+
+/*.lesson-description-box p {
+    margin: 0 0 2rem 0;
+    color: var(--color-text-medium);
+    font-style: italic;
+    line-height: 1.6;
+} */
 
 .lesson-description-box p {
     color: var(--color-white);
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
 }
+
+
 
 /* ========================================
    LESSON DESCRIPTION BOX BUTTONS SECTION
@@ -264,8 +251,10 @@
         var(--color-secondary-blue), 
         var(--color-primary-blue)
     ) !important;
+    background-clip: padding-box !important;
     transition: all 0.3s ease !important;
     position: relative !important;
+    z-index: 1 !important;
     transform: translateY(0) !important;
     box-shadow: 0 6px 15px rgba(75, 121, 136, 0.2) !important;
     cursor: pointer !important;
@@ -326,7 +315,11 @@
     justify-content: center !important;
     width: 100% !important;
     margin: 1.5rem 0 1rem 0 !important;
+    background: transparent !important;
+    padding: 1.5rem 0 0 0 !important;
 }
+}
+
 
 /* ========================================
    LESSON DETAILS BUTTONS SECTION
@@ -409,15 +402,6 @@
     transform: scale(1.1);
 }
 
-/* Fix text alignment and spacing */
-.lesson-details p {
-    margin-bottom: 1.5rem;
-    margin-left: 0;
-    color: var(--color-text-medium);
-    line-height: 1.6;
-    text-align: left;
-    font-size: 1rem;
-}
 
 /* ========================================
    LESSON FOOTER SECTION
