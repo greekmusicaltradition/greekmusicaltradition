@@ -277,7 +277,7 @@ a:active {
 .info-panel a,
 p a,
 .description a {
-    color: var(--color-secondary-blue);
+    color: var(--color-accent-gold);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
