@@ -213,7 +213,7 @@
 
 .call-to-action p {
     color: var(--color-text-medium);
-    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    font-size: clamp(1.2rem, 2.2vw, 1.3rem);
     line-height: 1.7;
     margin-bottom: 2rem;
     font-weight: 400;
@@ -371,7 +371,7 @@
     margin-bottom: 1rem;
     color: var(--color-text-medium);
     line-height: 1.7;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(1.2rem, 2vw, 1rem);
 }
 
 .journey-text {
@@ -472,7 +472,7 @@
     color: var(--color-text-medium);
     line-height: 1.6;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .lesson-details ul {
