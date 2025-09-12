@@ -1254,6 +1254,87 @@ a:focus {
 }
 
 /* ========================================
+   LESSON DETAILS SECTION
+   ======================================== */
+
+.lesson-details {
+   display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem; 
+   flex: 1;
+}
+
+
+.lesson-details ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    padding-left: 0;
+    margin: 0;
+}
+
+
+.lesson-details li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-medium);
+    position: relative;
+    padding-left: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.lesson-details li::before {
+    content: '•';
+    color: var(--color-accent-gold);
+    position: absolute;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    left: 0;
+}
+
+
+.lesson-details h4 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* Fix text alignment and spacing */
+.lesson-details p {
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    text-align: left;
+    font-size: 1rem;
+}
+
+
+/* ========================================
+   LESSON IMAGE SECTION
+   ======================================== */
+
+/* Icon on the left of each lesson */
+.lesson-image {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+
+
+/* ========================================
    RESPONSIVE DESIGN - LESSON CARDS AND BUTTONS
    ======================================== */
 
