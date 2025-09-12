@@ -152,6 +152,7 @@
     border-bottom-left-radius: var(--border-radius-medium);
     border-bottom-right-radius: var(--border-radius-medium);
     width: 100%;
+    min-width:20rem;   
 }
 
 
