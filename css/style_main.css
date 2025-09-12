@@ -40,6 +40,10 @@ body {
     padding-top: 80px; /* Space for the fixed header */
 }
 
+p {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
