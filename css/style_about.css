@@ -22,6 +22,14 @@
     border-radius: 2px;
 }
 
+
+/* About photo caption */
+
+.photo-caption  {
+   font-size: 1rem;
+   color: var(--color-primary-blue);
+   align:right;
+
 /* About sections styling */
 .about-section {
     margin-bottom: 4rem;
