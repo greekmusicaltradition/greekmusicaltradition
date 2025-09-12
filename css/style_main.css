@@ -1165,3 +1165,138 @@ a:focus {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(212,175,55,0.18);
 }
+
+
+/* ========================================
+   LESSONS GRID & CARDS SECTION
+   ======================================== */
+
+.lesson-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    border-color: var(--color-light-blue);
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ========================================
+   LESSON HEADER SECTION
+   ======================================== */
+
+
+.lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.lesson-header h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 600;
+    margin: 0;
+} 
+
+/* ========================================
+   LESSON CONTENT SECTION
+   ======================================== */
+
+
+.lesson-content {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+
+/* ========================================
+   LESSON DESCRIPTION BOX SECTION
+   ======================================== */
+
+.lesson-description-box {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    margin-top: auto;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    width: 100%;
+}
+
+
+.lesson-description-box p {
+    color: var(--color-white);
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - LESSON CARDS AND BUTTONS
+   ======================================== */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lesson-card {
+        padding-bottom: 85px;
+    }
+    
+    .lesson-content {
+        padding: 1rem;
+    }
+    
+    .lesson-details {
+        text-align: center;
+        padding-bottom: 0;
+    }
+    
+    .lesson-details p {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .lesson-type-badge {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto 0.8rem auto;
+    }
+    
+    .lesson-details .cta-button {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+    }
+    
+    .lesson-details .cta-button-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson-card {
+        padding-bottom: 90px;
+    }
+    
+
