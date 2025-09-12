@@ -26,9 +26,12 @@
 /* About photo caption */
 
 .photo-caption  {
-   font-size: 1rem;
    color: var(--color-primary-blue);
-   align:right;
+   align: right;
+}
+   .photo-caption p {
+   font-size: 1rem;
+}
 
 /* About sections styling */
 .about-section {
