@@ -1,178 +1,97 @@
-// header.js - Updated to include hero section and pricing page
-function loadHeader() {
-    // Detect current language from URL
-    const currentPath = window.location.pathname;
-    const isGreek = currentPath.includes('/gr/');
-    const isEnglish = currentPath.includes('/en/');
+// Mobile menu toggle functionality
+function initializeMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
     
-    // Default to English if no language detected
-    const lang = isGreek ? 'gr' : 'en';
-    
-    // Get current page name for page-specific hero titles
-    const pageName = getCurrentPageName();
-     
-    // Language-specific content
-    const content = {
-        en: {
-            brand: "greekmusicaltradition.com",
-            nav: {
-                home: "Home",
-                lessons: "Lessons",
-                pricing: "Pricing",
-                about: "About",
-                contact: "Contact"
-            }
-        },
-        gr: {
-            brand: "Ελληνική Μουσική Παράδοση",
-            nav: {
-                home: "Αρχική",
-                lessons: "Μαθήματα",
-                pricing: "Τιμές",
-                about: "Σχετικά",
-                contact: "Επικοινωνία"
-            }
-        }
-    };
-    
-    // Language-specific hero title
-    const heroTitle = lang === 'gr' ? "Ελληνική Παραδοσιακή & Βυζαντινή Μουσική" : "Greek Traditional & Byzantine Music";
-    
-    const headerHTML = `
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <a href="index.html" class="brand-link">
-                        <img src="../pictures/logo_woman.jpg" alt="Logo">
-                        <span>${content[lang].brand}</span>
-                    </a>
-                </div>
-                
-                <div class="nav-right">
-                    <div class="language-switcher">
-                        <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
-                                onclick="switchLanguage('en')" 
-                                title="English">
-                            <span>English</span>
-                        </button>
-                        <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
-                                onclick="switchLanguage('gr')" 
-                                title="Ελληνικά">
-                            <span>Ελληνικά</span>
-                        </button>
-                    </div>
-                    
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                </div>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
-                    <li><a href="lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
-                    <li><a href="pricing.html" class="${pageName === 'pricing' ? 'active' : ''}">${content[lang].nav.pricing}</a></li>
-                    <li><a href="about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
-                    <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
-                    
-                    <!-- Mobile language switcher -->
-                    <li class="mobile-lang-switcher">
-                        <div class="mobile-lang-buttons">
-                            <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
-                                    onclick="switchLanguage('en')">
-                                <span>English</span>
-                            </button>
-                            <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
-                                    onclick="switchLanguage('gr')">
-                                <span>Ελληνικά</span>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-        <header class="hero">
-            <div class="hero-content">
-                <h1>${heroTitle}</h1>
-            </div>
-        </header>
-    `;
-    
-    document.getElementById('header').innerHTML = headerHTML;
-    
-    // Simplified mobile menu functionality (no dropdowns needed)
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            navMenu.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
+    if (!mobileMenuToggle || !navMenu) {
+        console.warn('Mobile menu elements not found');
+        return;
     }
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    // Add click event listener to toggle button
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Toggle active class on button (for hamburger animation)
+        this.classList.toggle('active');
+        
+        // Toggle active class on menu (to show/hide it)
+        navMenu.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking on navigation links
+    const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav-container')) {
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navMenu.contains(event.target);
+        const isClickOnToggle = mobileMenuToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Handle window resize - close menu if switching to desktop view
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
 }
 
-// Helper function to get current page name
-function getCurrentPageName() {
-    const path = window.location.pathname;
-    const filename = path.split('/').pop();
-    return filename.replace('.html', '') || 'index';
+// Language switcher functionality
+function initializeLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+        });
+    });
 }
 
-// Language switching function
-function switchLanguage(targetLang) {
-    const currentPage = getCurrentPageName();
-    const currentPath = window.location.pathname;
-    
-    // Extract repository name from path (for GitHub Pages)
-    const pathSegments = currentPath.split('/').filter(segment => segment);
-    
-    let newPath;
-    
-    if (window.location.hostname.includes('github.io')) {
-        // GitHub Pages - format: username.github.io/repository-name
-        const repoName = pathSegments[0]; // First segment is repository name
-        newPath = `/${repoName}/${targetLang}/${currentPage}.html`;
-    } else if (window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')) {
-        // Local development
-        newPath = `/${targetLang}/${currentPage}.html`;
-    } else {
-        // Other hosting (custom domain, etc.)
-        newPath = `/${targetLang}/${currentPage}.html`;
+// Navbar scroll effect
+function initializeNavbarScrollEffect() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     }
-    
-    console.log('Redirecting to:', newPath);
-    window.location.href = newPath;
 }
 
-// Load header when page loads
-document.addEventListener('DOMContentLoaded', loadHeader);
+// Initialize all header functionality
+function initializeHeader() {
+    initializeMobileMenu();
+    initializeLanguageSwitcher();
+    initializeNavbarScrollEffect();
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initializeHeader);
