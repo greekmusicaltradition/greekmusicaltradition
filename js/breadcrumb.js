@@ -11,6 +11,9 @@ class BreadcrumbGenerator {
         // Define home-equivalent pages to filter from paths
         this.homePages = ['index', 'home', ''];
         
+        // Define specific segments to filter from paths (new addition)
+        this.filteredSegments = ['greekmusical', 'tradition'];
+        
         // Define custom page titles for better readability
         this.pageTitles = {
             'lessons': 'Lessons',
@@ -58,10 +61,12 @@ class BreadcrumbGenerator {
         // Clean and filter the path
         let pathParts = currentPath.split('/').filter(part => part.length > 0);
         
-        // Remove language codes and home-equivalent pages
+        // Remove language codes, home-equivalent pages, and specific filtered segments
         pathParts = pathParts.filter(part => {
             const lowerPart = part.toLowerCase();
-            return !this.languageCodes.includes(lowerPart) && !this.homePages.includes(lowerPart);
+            return !this.languageCodes.includes(lowerPart) && 
+                   !this.homePages.includes(lowerPart) &&
+                   !this.filteredSegments.includes(lowerPart);
         });
         
         // Always start with home
@@ -190,4 +195,9 @@ function addPageTitle(urlSegment, displayTitle) {
 // Function to update breadcrumb for dynamic content
 function setBreadcrumbPath(customPath) {
     breadcrumb.render('breadcrumb', customPath);
+}
+
+// Function to add segments to filter list dynamically
+function addFilteredSegment(segment) {
+    breadcrumb.filteredSegments.push(segment.toLowerCase());
 }
