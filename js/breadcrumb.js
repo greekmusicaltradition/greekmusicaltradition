@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
+    let currentPath = '/';
 
     // Add the "Home" link
     breadcrumbs.push({
@@ -17,50 +18,35 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < pathnames.length; i++) {
         const part = pathnames[i];
         
-        // Skip specific segments
+        // Skip specific segments like the root folder, language codes, and index files
         const isRootFolder = i === 0 && part === 'greekmusicaltradition';
         const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
-        const isFilename = part.includes('.html');
+        const isIndex = part === 'index.html';
         
-        if (isRootFolder || isLanguageCode) {
-            continue; // Skip these segments and move to the next one
+        if (isRootFolder || isLanguageCode || isIndex) {
+            continue;
         }
 
-        // Handle filenames differently
-        if (isFilename) {
-            const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-            let formattedText = decodedPart.replace('.html', '');
+        // Handle the last segment (the current page)
+        if (i === pathnames.length - 1 && part.includes('.html')) {
+            const decodedPart = decodeURIComponent(part.replace(/-/g, ' ').replace('.html', ''));
+            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
             
-            // Special cases for filenames that should have a specific name
-            if (formattedText === 'index') {
-                formattedText = ''; // Don't display "index" in the breadcrumb
-            } else if (formattedText === 'privacy-policy') {
-                formattedText = 'Privacy Policy';
-            } else if (formattedText === 'terms-of-service') {
-                formattedText = 'Terms of Service';
-            } else if (formattedText === 'lesson-terms') {
-                formattedText = 'Lesson Terms';
-            } else {
-                formattedText = formattedText.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-            }
-
-            if (formattedText) {
-                breadcrumbs.push({
-                    text: formattedText,
-                    href: window.location.pathname
-                });
-            }
-            break; // Stop after finding the filename
+            breadcrumbs.push({
+                text: formattedText,
+                href: window.location.pathname
+            });
+            break; // Stop after processing the last part
         }
 
-        // Process a regular directory part
-        const fullPath = '/' + pathnames.slice(0, i + 1).join('/');
+        // Handle directories
+        currentPath += part + '/';
         const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
         const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         
         breadcrumbs.push({
             text: formattedText,
-            href: fullPath
+            href: currentPath
         });
     }
 
