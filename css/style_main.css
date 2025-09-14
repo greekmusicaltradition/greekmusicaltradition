@@ -1573,6 +1573,17 @@ a:focus {
     color: var(--color-primary-blue); /* Changed to dark blue */
 }
 
+.breadcrumb-item:first-child:last-child {
+    color: var(--color-primary-blue); /* Matches the color of the last, active breadcrumb item */
+    font-weight: 600; /* Bolder font weight for emphasis */
+    padding: 0; /* Remove any padding that might be intended for links */
+}
+
+/* Optional: To make it look more like a title */
+.breadcrumb-container .breadcrumb .breadcrumb-item:first-child:last-child span {
+    font-size: 1.1em; /* Slightly larger font size */
+}
+
 /* Mobile responsiveness for breadcrumbs */
 @media (max-width: 768px) {
     .breadcrumb-container {
