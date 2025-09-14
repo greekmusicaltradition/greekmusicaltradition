@@ -1,64 +1,82 @@
+/* =========================================================================
+   MUSIC LESSONS WEBSITE - MAIN STYLESHEET
+========================================================================= */
 
-/* ====
-   CSS VARIABLES & RESET 
-   ==== */
-/* Reset and base styles */
+/* =========================================================================
+   1. CSS VARIABLES & RESET
+========================================================================= */
+
+/* 1.1 CSS Reset */
 * {
     margin: 0;
-    padding: 0; 
-    box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model */
 }
 
+/* 1.2 CSS Custom Properties */
 :root {
-    /* Colors */
+    /* Brand Color Palette */
     --color-primary-blue: #4b7988;
     --color-secondary-blue: #6b9daf;
     --color-tertiary-blue: #7bb3c7;
     --color-accent-gold: #d4af37;
     --color-light-blue: #b8dce8;
     --color-lighter-blue: #d0e8f0;
+    
+    /* Text Colors */
     --color-text-dark: #333;
     --color-text-medium: #555;
     --color-background-light: #f5f5f5;
     --color-white: #ffffff;
-    /* Shadows & Borders */
+    
+    /* Shadows & Effects */
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-medium: rgba(0, 0, 0, 0.15);
     --border-light: #e0e0e0;
+    
+    /* Border Radius Scale */
     --border-radius-small: 8px;
     --border-radius-medium: 15px;
     --border-radius-large: 20px;
 }
 
-/* ====
-   BASE STYLES
-   ==== */
+/* =========================================================================
+   2. BASE STYLES & TYPOGRAPHY
+========================================================================= */
+
+/* 2.1 Body & Container */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--color-text-dark);
     background-color: var(--color-background-light);
-    padding-top: 80px; /* Space for the fixed header */
+    padding-top: 80px; /* Space for fixed header */
 }
 
+/* 2.2 Typography */
 p {
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
+/* 2.3 Container Layouts */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    padding: 2rem;
+    /* NOTE: Duplicate padding found - choose one */
+    /* padding: 2rem; */ /* Alternative padding - DUPLICATE */
 }
 
-/* ====
-   NAVIGATION
-   ==== */
+/* =========================================================================
+   3. NAVIGATION & HEADER
+========================================================================= */
+
+/* 3.1 Header Background */
 #header {
-    background-color: #4b7988; 
+    background-color: #4b7988; /* Matches primary blue */
 }
 
+/* 3.2 Main Navbar */
 .navbar {
     background: var(--color-primary-blue);
     background-image: linear-gradient(135deg,
@@ -76,11 +94,13 @@ p {
     transition: all 0.3s ease;
 }
 
+/* Navbar when scrolled */
 .navbar.scrolled {
     padding: 0.5rem 0;
     box-shadow: 0 2px 20px var(--shadow-medium);
 }
 
+/* 3.3 Navigation Container */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -91,6 +111,7 @@ p {
     position: relative;
 }
 
+/* 3.4 Brand Logo & Text */
 .nav-brand {
     display: flex;
     align-items: center;
@@ -120,6 +141,7 @@ p {
     color: #b8dce8;
 }
 
+/* Normalize brand link states */
 .nav-brand .brand-link:link,
 .nav-brand .brand-link:visited,
 .nav-brand .brand-link:active {
@@ -127,6 +149,7 @@ p {
     text-decoration: none;
 }
 
+/* 3.5 Navigation Menu */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -134,8 +157,9 @@ p {
     transition: all 0.3s ease;
 }
 
+/* Navigation links with text-shadow technique */
 .nav-menu a {
-    color: transparent;
+    color: transparent; /* Relies on text-shadow for visibility */
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     display: block;
@@ -153,16 +177,18 @@ p {
     text-shadow: 0 0 0 var(--color-light-blue);
 }
 
-
+/* 3.6 Right Side Elements */
 .nav-right {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* ====
-   MOBILE MENU
-   ==== */
+/* =========================================================================
+   4. MOBILE MENU & LANGUAGE SWITCHER
+========================================================================= */
+
+/* 4.1 Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -171,12 +197,13 @@ p {
     cursor: pointer;
     padding: 5px;
     z-index: 1001;
-    min-height: 44px;
+    min-height: 44px; /* Accessibility: touch target */
     min-width: 44px;
     justify-content: center;
     align-items: center;
 }
 
+/* Hamburger lines */
 .hamburger-line {
     width: 25px;
     height: 3px;
@@ -186,6 +213,7 @@ p {
     border-radius: 2px;
 }
 
+/* Hamburger animation when active */
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -198,9 +226,7 @@ p {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* ====
-   LANGUAGE SWITCHER
-   ==== */
+/* 4.2 Language Switcher */
 .language-switcher {
     display: flex;
     background: rgba(255, 255, 255, 0.1);
@@ -223,7 +249,7 @@ p {
     transition: all 0.3s ease;
     font-size: 0.9rem;
     font-weight: 500;
-    min-height: 44px;
+    min-height: 44px; /* Accessibility */
 }
 
 .lang-btn:hover {
@@ -235,6 +261,7 @@ p {
     box-shadow: 0 2px 8px var(--shadow-light);
 }
 
+/* Mobile language switcher */
 .mobile-lang-switcher {
     display: none;
     padding: 1rem 0;
@@ -255,9 +282,11 @@ p {
     gap: 8px;
 }
 
-/* ====
-   LINK STYLING
-   ==== */
+/* =========================================================================
+   5. LINKS & ACCESSIBILITY
+========================================================================= */
+
+/* 5.1 Base Link Styles */
 a {
     color: var(--color-accent-gold);
     text-decoration: none;
@@ -269,15 +298,17 @@ a:hover {
     color: var(--color-primary-blue);
 }
 
+a:active {
+    color: var(--color-primary-blue);
+}
+
+/* 5.2 Navigation Link States */
 .nav-menu a:visited,
 .nav-brand a:visited {
     color: var(--color-white);
 }
 
-a:active {
-    color: var(--color-primary-blue);
-}
-
+/* 5.3 Content Links (with enhanced styling) */
 .lesson-details a,
 .info-panel a,
 p a,
@@ -298,6 +329,7 @@ p a:hover,
     text-shadow: 0 1px 2px rgba(75, 121, 136, 0.1);
 }
 
+/* Animated underline effect */
 .lesson-details a::after,
 .info-panel a::after,
 p a::after,
@@ -319,6 +351,7 @@ p a:hover::after,
     width: 100%;
 }
 
+/* 5.4 Emphasis Links */
 .link-emphasis {
     color: var(--color-accent-gold);
     font-weight: 600;
@@ -333,6 +366,7 @@ p a:hover::after,
     transform: translateY(-1px);
 }
 
+/* 5.5 Heading Links */
 h1 a, h2 a, h3 a, h4 a {
     color: inherit;
     text-decoration: none;
@@ -348,6 +382,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
     text-shadow: 0 2px 4px rgba(107, 157, 175, 0.2);
 }
 
+/* 5.6 External Link Indicators */
 a[href^="http"]:not([href*="yourdomain.com"])::after,
 a[target="_blank"]::after {
     font-size: 0.8em;
@@ -362,12 +397,14 @@ a[target="_blank"]:hover::after {
     color: var(--color-accent-gold);
 }
 
+/* 5.7 Focus States for Accessibility */
 a:focus {
     outline: 2px solid var(--color-accent-gold);
     outline-offset: 2px;
     border-radius: 2px;
 }
 
+/* 5.8 Prevent Link Effects on Navigation */
 .nav-menu a,
 .nav-brand a {
     border-bottom: none !important;
@@ -378,14 +415,14 @@ a:focus {
     display: none !important;
 }
 
+/* =========================================================================
+   6. HERO SECTION
+========================================================================= */
 
-/* ====
-   HERO SECTION
-   ==== */
 .hero {
-    background: linear-gradient(135deg, 
-        var(--color-primary-blue), 
-        var(--color-secondary-blue), 
+    background: linear-gradient(135deg,
+        var(--color-primary-blue),
+        var(--color-secondary-blue),
         var(--color-tertiary-blue)
     );
     color: var(--color-white);
@@ -396,9 +433,8 @@ a:focus {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 0;
-    margin-top: -80px; /* Pull hero up to cover the body padding */
-    padding-top: calc(2.5rem + 80px); /* Add the space back to padding */
+    margin-top: -80px; /* Pull up to cover header spacing */
+    padding-top: calc(2.5rem + 80px); /* Compensate for pulled margin */
 }
 
 .hero-content {
@@ -420,9 +456,11 @@ a:focus {
     font-weight: 300;
 }
 
-/* ====
-   MAIN CONTENT LAYOUT
-   ==== */
+/* =========================================================================
+   7. MAIN LAYOUT & SECTIONS
+========================================================================= */
+
+/* 7.1 Main Content Areas */
 .main-content {
     padding: 0rem 0;
 }
@@ -440,6 +478,7 @@ a:focus {
     min-height: 400px;
 }
 
+/* 7.2 Combined Panels */
 .combined-panel {
     background: var(--color-white);
     border: 4px solid var(--color-secondary-blue);
@@ -457,10 +496,9 @@ a:focus {
     grid-template-columns: 1fr;
 }
 
-/* ========
-   SECTION SEPARATORS & TITLES
-   ======== */
-.subjects-section, .methods-section {
+/* 7.3 Section Organization */
+.subjects-section, 
+.methods-section {
     margin-bottom: 4rem;
 }
 
@@ -483,9 +521,11 @@ a:focus {
     border-radius: 2px;
 }
 
-/* ====
-   DECORATIVE & INFO PANELS
-   ==== */
+/* =========================================================================
+   8. PANELS & INFO CONTENT
+========================================================================= */
+
+/* 8.1 Decorative Panels */
 .decorative-panel {
     position: relative;
     border-radius: var(--border-radius-medium);
@@ -500,6 +540,7 @@ a:focus {
     display: block;
 }
 
+/* 8.2 Information Panels */
 .info-panel {
     background: transparent;
     padding: 0;
@@ -521,6 +562,7 @@ a:focus {
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
+/* 8.3 Content Variants */
 .hero-subtitle {
     font-size: 1.1rem;
     font-weight: 500;
@@ -547,9 +589,12 @@ a:focus {
     color: var(--color-primary-blue);
     margin-top: 1.5rem;
 }
-/* ============ CTA BUTTONS (Main CSS) ============ */
 
-/* Prevent link and pseudo styles from interfering with CTA buttons anywhere */
+/* =========================================================================
+   9. BUTTONS & CTAs
+========================================================================= */
+
+/* 9.1 CTA Button Reset & Normalization */
 .cta-button,
 .cta-button:link,
 .cta-button:visited,
@@ -557,29 +602,116 @@ a:focus {
     text-decoration: none !important;
     border-bottom: none !important;
 }
+
 .cta-button::after,
 .cta-button::before {
     display: none !important;
     content: none !important;
 }
 
-/* Basic alignment for containers */
-.cta-button-container {
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-
 .pricing-cta::after {
     display: none !important;
     content: none !important;
 }
 
+/* 9.2 CTA Containers */
+.cta-button-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
 
-/* ====
-   ICON STYLING
-   ==== */
-.byzantine-icon, 
+/* 9.3 Base CTA Button Styles */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: var(--border-radius-medium);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.13);
+    margin: 2px;
+}
+
+/* 9.4 Primary CTA Variant */
+.cta-button.primary {
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+}
+
+.cta-button.primary:hover,
+.cta-button.primary:focus {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-primary-blue));
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(75,121,136,0.16);
+}
+
+/* 9.5 Secondary Dark CTA Variant */
+.cta-button.secondary-dark {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+    color: var(--color-white);
+}
+
+.cta-button.secondary-dark:hover,
+.cta-button.secondary-dark:focus {
+    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(212,175,55,0.18);
+}
+
+/* 9.6 Read More Button Special Cases */
+/* Force consistent rounded corners */
+.read-more-btn,
+.read-more-btn:active,
+.read-more-btn:focus,
+.read-more-btn:visited,
+.read-more-btn:hover {
+    border-radius: 25px !important;
+    box-sizing: border-box;
+}
+
+/* Ensure white text/icons on interactive states */
+.read-more-btn:hover,
+.read-more-btn:hover span,
+.read-more-btn:hover svg,
+.read-more-btn:active,
+.read-more-btn:active span,
+.read-more-btn:active svg,
+.read-more-btn:focus,
+.read-more-btn:focus span,
+.read-more-btn:focus svg {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+}
+
+/* 9.7 Universal Button Hover Consistency */
+.read-more-btn:hover,
+.read-more-btn:active,
+.read-more-btn:focus,
+.cta-button-container .cta-button:hover,
+.cta-button-container .cta-button:active,
+.cta-button-container .cta-button:focus,
+.explore-link:hover,
+.explore-link:active,
+.explore-link:focus,
+.contact-link:hover,
+.contact-link:active,
+.contact-link:focus {
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* =========================================================================
+   10. ICONS & DECORATIVE ELEMENTS
+========================================================================= */
+
+.byzantine-icon,
 .traditional-icon {
     font-size: 2rem;
     display: inline-block;
@@ -588,9 +720,10 @@ a:focus {
     vertical-align: middle;
 }
 
-/* ====
-   BACK TO TOP BUTTON
-   ==== */
+/* =========================================================================
+   11. BACK TO TOP BUTTON
+========================================================================= */
+
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -624,50 +757,198 @@ a:focus {
     transform: translateY(-8px);
 }
 
-/* ====
-   ANIMATIONS
-   ==== */
+/* =========================================================================
+   12. LESSONS: GRID, CARDS & CONTENT
+========================================================================= */
+
+/* 12.1 Lessons Grid Layout */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 12.2 Lesson Card Container */
+.lesson-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    border-color: var(--color-light-blue);
+}
+
+/* 12.3 Lesson Card Header */
+.lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.lesson-header h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* 12.4 Lesson Card Content */
+.lesson-content {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+
+/* 12.5 Lesson Description Box */
+.lesson-description-box {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+    margin-top: auto;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    width: 100%;
+}
+
+.lesson-description-box p {
+    color: var(--color-white);
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* 12.6 Lesson Details Section */
+.lesson-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.lesson-details ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.lesson-details li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-medium);
+    position: relative;
+    padding-left: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.lesson-details li::before {
+    content: '•';
+    color: var(--color-accent-gold);
+    position: absolute;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    left: 0;
+}
+
+.lesson-details h4 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lesson-details p {
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* 12.7 Lesson Image/Icon */
+.lesson-image {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+/* =========================================================================
+   13. ANIMATIONS
+========================================================================= */
+
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @keyframes slideInLeft {
-    from { 
-        opacity: 0; 
-        transform: translateX(-50px); 
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateX(0); 
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
 @keyframes slideInRight {
-    from { 
-        opacity: 0; 
-        transform: translateX(50px); 
+    from {
+        opacity: 0;
+        transform: translateX(50px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateX(0); 
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-/* ====
-   RESPONSIVE DESIGN - TABLET
-   ==== */
+/* =========================================================================
+   14. RESPONSIVE DESIGN
+========================================================================= */
+
+/* =======================================================================
+   14.1 TABLET BREAKPOINT (992px and below)
+======================================================================= */
+
 @media (max-width: 992px) {
+    /* Navigation adjustments */
     .nav-menu {
         flex-direction: column;
-        background: linear-gradient(135deg, 
-            rgba(75, 121, 136, 0.98), 
+        background: linear-gradient(135deg,
+            rgba(75, 121, 136, 0.98),
             rgba(107, 157, 175, 0.98)
         );
         position: absolute;
@@ -687,123 +968,131 @@ a:focus {
         border-radius: 0 0 15px 15px;
         overflow: hidden;
     }
-    
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
         padding: 1rem 20px;
     }
-    
+
     .nav-menu li {
         width: 100%;
         margin: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .nav-menu li:last-child {
         border-bottom: none;
     }
-    
+
     .nav-menu a {
         padding: 1rem 0;
         font-size: 1.1rem;
         width: 100%;
-        display: block;
+        display: flex; /* DUPLICATE - consolidate with block */
         transition: all 0.3s ease;
         min-height: 44px;
-        display: flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     .nav-menu a:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--color-light-blue);
     }
-    
+
+    /* Mobile controls */
     .mobile-menu-toggle {
         display: flex;
         order: 3;
     }
-    
+
+    /* Language switcher mobile */
     .language-switcher {
         display: none;
     }
-    
+
     .mobile-lang-switcher {
         display: block;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         margin-top: 0.5rem;
         padding-top: 1rem;
     }
-    
+
     .mobile-lang-buttons {
         flex-direction: row;
         justify-content: center;
     }
-    
+
+    /* Layout adjustments */
     .content-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .combined-panel {
         grid-template-columns: 1fr;
     }
-    
+
     .decorative-panel {
         height: 250px;
     }
-    
+
+    /* Button adjustments */
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn-primary,
     .btn-secondary {
         width: 100%;
         max-width: 250px;
     }
-    
+
+    /* Lesson details alignment */
     .lesson-details ul {
         text-align: left !important;
         display: inline-block;
     }
-    
+
     .lesson-details li {
         text-align: left !important;
     }
 }
 
-/* ====
-   RESPONSIVE DESIGN - MOBILE
-   ==== */
+/* =======================================================================
+   14.2 MOBILE BREAKPOINT (768px and below)
+======================================================================= */
+
 @media (max-width: 768px) {
+    /* Body adjustments */
     body {
         padding-top: 70px;
     }
-    
+
+    /* Navbar mobile sizing */
     .navbar {
         padding: 0.8rem 0;
         min-height: 70px;
     }
-    
+
     .nav-container {
         padding: 0 15px;
         min-height: 50px;
     }
-    
+
     .nav-brand {
         font-size: 1rem;
         z-index: 1001;
     }
-    
+
     .nav-brand img {
         width: 45px;
         height: 45px;
     }
-    
+
+    /* Dropdown menu mobile */
     .dropdown-menu {
         position: static;
         transform: none;
@@ -811,8 +1100,8 @@ a:focus {
         border: none;
         border-left: 4px solid var(--color-accent-gold);
         margin: 0.5rem 0 0.5rem 20px;
-        background: linear-gradient(135deg, 
-            rgba(184, 220, 232, 0.15), 
+        background: linear-gradient(135deg,
+            rgba(184, 220, 232, 0.15),
             rgba(208, 232, 240, 0.15)
         );
         backdrop-filter: blur(5px);
@@ -825,13 +1114,13 @@ a:focus {
         transition: max-height 0.3s ease, padding 0.3s ease;
         padding: 0;
     }
-    
+
     .dropdown-menu.show {
         display: block;
         max-height: 200px;
         padding: 0.5rem 0;
     }
-    
+
     .dropdown-menu a {
         padding: 12px 20px;
         font-size: 0.95rem;
@@ -842,225 +1131,236 @@ a:focus {
         border-left: 3px solid transparent;
         border-radius: 0;
         line-height: 1.4;
-        display: block;
+        display: flex; /* DUPLICATE - consolidate */
         min-height: 44px;
-        display: flex;
         align-items: center;
     }
-    
+
     .dropdown-menu a:hover,
     .dropdown-menu a:focus {
         background: rgba(255, 255, 255, 0.15);
         color: var(--color-light-blue);
         border-left: 3px solid var(--color-light-blue);
     }
-    
+
     .dropdown-menu a.active {
         background: rgba(212, 175, 55, 0.25);
         color: var(--color-accent-gold);
         border-left: 4px solid var(--color-accent-gold);
         font-weight: 600;
     }
-    
+
+    /* Dropdown arrow animation */
     .dropdown-arrow {
         transition: transform 0.3s ease;
     }
-    
+
     .dropdown-menu.show ~ .dropdown-toggle .dropdown-arrow,
     .dropdown.active .dropdown-arrow {
         transform: rotate(180deg);
     }
-    
+
+    /* Hero mobile adjustments */
     .hero {
         padding: 1.5rem 0;
         margin-top: 0;
     }
-    
+
     .hero h1 {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
         margin-bottom: 0.8rem;
     }
-    
+
     .hero-content {
         padding: 0 1rem;
     }
-    
+
     .hero-content p {
         font-size: 1rem;
         line-height: 1.5;
     }
-    
+
+    /* Main content adjustments */
     .main-content {
         padding: 2rem 0;
     }
-    
+
     .container {
-        padding: 0 15px;
+        padding: 0 15px; /* DUPLICATE - consolidate with base */
     }
-    
+
     .combined-panel {
         padding: 1.5rem;
         border-width: 2px;
         margin-bottom: 2rem;
     }
-    
+
+    /* Typography adjustments */
     .info-panel h2 {
         font-size: clamp(1.4rem, 5vw, 1.8rem);
         margin-bottom: 1rem;
     }
-    
+
     .info-panel p {
         font-size: clamp(0.9rem, 2.5vw, 1rem);
         line-height: 1.6;
         margin-bottom: 1rem;
     }
-    
+
+    /* Lessons mobile layout */
     .lessons-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .lesson-card {
         margin-bottom: 1rem;
+        padding-bottom: 85px; /* DUPLICATE with 480px breakpoint */
     }
-    
+
     .lesson-content {
         flex-direction: column;
         text-align: center;
         padding: 1rem;
     }
-    
+
     .lesson-image {
         align-self: center;
         margin-bottom: 1rem;
         width: 50px;
         height: 50px;
     }
-    
+
     .lesson-details {
         width: 100%;
+        /* DUPLICATE RULES - consolidate */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        padding-bottom: 0;
     }
-    
+
     .lesson-details ul {
-        text-align: left;
-        display: inline-block;
+        text-align: left !important; /* DUPLICATE */
+        display: inline-block !important; /* DUPLICATE */
         max-width: 280px;
         margin: 0 auto;
+        width: auto !important; /* DUPLICATE */
     }
-    
+
     .lesson-details li {
         font-size: 0.9rem;
         padding: 0.2rem 0;
+        text-align: left !important; /* DUPLICATE */
     }
-    
+
+    .lesson-details p {
+        text-align: center; /* Override previous left alignment */
+        margin-left: 0;
+    }
+
+    /* Button adjustments */
     .card-cta-buttons {
         padding: 1rem;
     }
-    
+
     .card-cta-buttons .btn-primary,
     .card-cta-buttons .btn-secondary {
         min-width: 120px;
         font-size: 0.9rem;
     }
-    
-    .lesson-details {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    
-    .lesson-details ul {
-        text-align: left !important;
-        width: auto !important;
-        display: inline-block !important;
-    }
-    
-    .lesson-details li {
-        text-align: left !important;
-    }
-    
-    /* Improve touch targets */
+
+    /* Accessibility improvements */
     .nav-menu a,
     .dropdown-menu a,
     .mobile-menu-toggle,
     .lang-btn {
-        min-height: 44px;
-        display: flex;
+        min-height: 44px; /* DUPLICATE - consolidate */
+        display: flex; /* DUPLICATE - consolidate */
         align-items: center;
         justify-content: center;
     }
-    
-    /* Better focus indicators on mobile */
+
+    /* Focus indicators */
     .nav-menu a:focus,
     .dropdown-menu a:focus,
     .mobile-menu-toggle:focus {
         outline: 3px solid var(--color-accent-gold);
         outline-offset: 2px;
     }
-    
+
     /* Prevent zoom on input focus */
     input, select, textarea {
         font-size: 16px;
     }
 }
 
-/* ====
-   RESPONSIVE DESIGN - SMALL MOBILE
-   ==== */
+/* =======================================================================
+   14.3 SMALL MOBILE BREAKPOINT (480px and below)
+======================================================================= */
+
 @media (max-width: 480px) {
+    /* Navigation brand adjustments */
     .nav-brand span {
         display: none;
     }
-    
+
     .nav-brand img {
         width: 40px;
         height: 40px;
     }
-    
+
+    /* Container adjustments */
     .container {
-        padding: 0 10px;
+        padding: 0 10px; /* DUPLICATE - consolidate */
     }
-    
+
     .nav-container {
-        padding: 0 10px;
+        padding: 0 10px; /* DUPLICATE - consolidate */
     }
-    
+
     .combined-panel {
-        padding: 1rem;
-        border-width: 2px;
+        padding: 1rem; /* DUPLICATE - consolidate */
+        border-width: 2px; /* DUPLICATE - consolidate */
     }
-    
+
+    /* Typography scaling */
     .hero h1 {
         font-size: clamp(1.4rem, 7vw, 1.8rem);
     }
-    
+
     .lesson-header h3 {
         font-size: 1.1rem;
     }
-    
+
+    /* Lesson content adjustments */
     .lesson-content {
         padding: 0.8rem;
     }
-    
+
     .lesson-details li {
         font-size: 0.85rem;
     }
-    
+
     .lesson-card {
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; /* DUPLICATE - consolidate */
+        padding-bottom: 90px; /* DUPLICATE - slightly different from 768px */
     }
-    
+
+    /* Button layout adjustments */
     .card-cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .card-cta-buttons .btn-primary,
     .card-cta-buttons .btn-secondary {
         width: 100%;
         max-width: 200px;
     }
-    
+
+    /* Back to top button scaling */
     #back-to-top {
         width: 40px;
         height: 40px;
@@ -1068,320 +1368,58 @@ a:focus {
         bottom: 15px;
         right: 15px;
     }
-    
+
+    /* CTA buttons layout */
     .cta-buttons {
         gap: 0.5rem;
         justify-content: center;
     }
-    
+
+    /* Mobile language buttons */
     .mobile-lang-buttons {
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
     }
-    
+
     .mobile-lang-buttons .lang-btn {
         width: 120px;
         justify-content: center;
     }
-}
 
-/* Force rounded corners for all read-more button states - FIX */
-.read-more-btn,
-.read-more-btn:active,
-.read-more-btn:focus,
-.read-more-btn:visited,
-.read-more-btn:hover {
-    border-radius: 25px !important;
-    box-sizing: border-box;
-}
-
-
-* Any button hover/focus fixes - universal */
-.read-more-btn:hover,
-.read-more-btn:active,
-.read-more-btn:focus,
-.cta-button-container .cta-button:hover,
-.cta-button-container .cta-button:active,
-.cta-button-container .cta-button:focus,
-.explore-link:hover,
-.explore-link:active,
-.explore-link:focus,
-.contact-link:hover,
-.contact-link:active,
-.contact-link:focus {
-    border-radius: var(--border-radius-medium) !important;
-}
-
-/* Read-more text always white on hover/focus */
-.read-more-btn:hover,
-.read-more-btn:hover span,
-.read-more-btn:hover svg,
-.read-more-btn:active,
-.read-more-btn:active span,
-.read-more-btn:active svg,
-.read-more-btn:focus,
-.read-more-btn:focus span,
-.read-more-btn:focus svg {
-    color: var(--color-white) !important;
-    fill: var(--color-white) !important;
-}
-
-
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 30px;
-    border: none;
-    border-radius: var(--border-radius-medium);
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-    box-shadow: 0 6px 15px rgba(75, 121, 136, 0.13);
-    margin: 2px;
-}
-
-.cta-button.primary {
-    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
-    color: var(--color-white);
-}
-
-.cta-button.primary:hover,
-.cta-button.primary:focus {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-primary-blue));
-    color: var(--color-white);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(75,121,136,0.16);
-}
-
-.cta-button.secondary-dark {
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
-    color: var(--color-white);
-}
-
-.cta-button.secondary-dark:hover,
-.cta-button.secondary-dark:focus {
-    background: linear-gradient(135deg, var(--color-accent-gold), #c09f2d);
-    color: var(--color-white);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(212,175,55,0.18);
-}
-
-
-/* ========================================
-   LESSONS GRID & CARDS SECTION
-   ======================================== */
-
-.lesson-card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 8px 25px var(--shadow-light);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px var(--shadow-medium);
-    border-color: var(--color-light-blue);
-}
-
-.lessons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* ========================================
-   LESSON HEADER SECTION
-   ======================================== */
-
-
-.lesson-header {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    color: var(--color-white);
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.lesson-header h3 {
-    font-size: clamp(1.1rem, 3vw, 1.3rem);
-    font-weight: 600;
-    margin: 0;
-} 
-
-/* ========================================
-   LESSON CONTENT SECTION
-   ======================================== */
-
-
-.lesson-content {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem;
-    flex-grow: 1;
-}
-
-/* ========================================
-   LESSON DESCRIPTION BOX SECTION
-   ======================================== */
-
-.lesson-description-box {
-    padding: 1.5rem;
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-    margin-top: auto;
-    color: var(--color-white);
-    text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    border-bottom-left-radius: var(--border-radius-medium);
-    border-bottom-right-radius: var(--border-radius-medium);
-    width: 100%;
-}
-
-
-.lesson-description-box p {
-    color: var(--color-white);
-    margin-bottom: 0;
-    font-size: 1.2rem;
-    font-style: italic;
-    line-height: 1.6;
-}
-
-/* ========================================
-   LESSON DETAILS SECTION
-   ======================================== */
-
-.lesson-details {
-   display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.5rem; 
-   flex: 1;
-}
-
-
-.lesson-details ul {
-    list-style: none;
-    width: 100%;
-    padding: 0;
-    padding-left: 0;
-    margin: 0;
-}
-
-
-.lesson-details li {
-    margin-bottom: 0.5rem;
-    color: var(--color-text-medium);
-    position: relative;
-    padding-left: 1rem;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.lesson-details li::before {
-    content: '•';
-    color: var(--color-accent-gold);
-    position: absolute;
-    font-weight: bold;
-    margin-right: 0.5rem;
-    left: 0;
-}
-
-
-.lesson-details h4 {
-    color: var(--color-primary-blue);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-
-/* Fix text alignment and spacing */
-.lesson-details p {
-    margin-bottom: 1.5rem;
-    margin-left: 0;
-    color: var(--color-text-medium);
-    line-height: 1.6;
-    text-align: left;
-    font-size: 1rem;
-}
-
-
-/* ========================================
-   LESSON IMAGE SECTION
-   ======================================== */
-
-/* Icon on the left of each lesson */
-.lesson-image {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-}
-
-
-
-/* ========================================
-   RESPONSIVE DESIGN - LESSON CARDS AND BUTTONS
-   ======================================== */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .lesson-card {
-        padding-bottom: 85px;
-    }
-    
-    .lesson-content {
-        padding: 1rem;
-    }
-    
-    .lesson-details {
-        text-align: center;
-        padding-bottom: 0;
-    }
-    
-    .lesson-details p {
-        text-align: center;
-        margin-left: 0;
-    }
-    
+    /* Button type overrides - special fixes */
     .lesson-type-badge {
         display: block;
         text-align: center;
         width: fit-content;
         margin: 0 auto 0.8rem auto;
     }
-    
+
     .lesson-details .cta-button {
         font-size: 1.1rem;
         padding: 14px 20px;
     }
-    
+
     .lesson-details .cta-button-container {
         padding: 1rem;
     }
 }
 
-@media (max-width: 480px) {
-    .lesson-card {
-        padding-bottom: 90px;
-    }
-    
+/* =========================================================================
+   DUPLICATE CONSOLIDATION NOTES:
+   
+   The following rules appear multiple times and should be merged:
+   
+   1. .container padding (lines vary)
+   2. .lesson-details display/alignment rules (multiple mobile breakpoints)
+   3. .lesson-details ul text-align (tablet + mobile)
+   4. .lesson-details li text-align (tablet + mobile)
+   5. .lesson-card margin-bottom (multiple breakpoints)
+   6. min-height: 44px rules (multiple selectors)
+   7. display: flex rules (multiple nav elements)
+   8. .nav-menu a display rules (conflicting block/flex)
+   9. .dropdown-menu a display rules (conflicting block/flex)
+   10. Combined panel padding/border-width (multiple breakpoints)
+   
+   Consider consolidating these to reduce file size and improve maintainability.
+========================================================================= */
