@@ -49,17 +49,26 @@ class BreadcrumbGenerator {
     generateBreadcrumbs(currentPath = window.location.pathname) {
         const breadcrumbItems = [];
         
+        // Clean and filter the path
+        let pathParts = currentPath.split('/').filter(part => part.length > 0);
+        
+        // Remove language codes and home-equivalent pages
+        pathParts = pathParts.filter(part => {
+            const lowerPart = part.toLowerCase();
+            return !this.languageCodes.includes(lowerPart) && !this.homePages.includes(lowerPart);
+        });
+        
         // Always start with home
+        const isHomePage = pathParts.length === 0;
         breadcrumbItems.push({
             title: 'Home',
             url: '/',
             isHome: true,
-            isCurrent: currentPath === '/'
+            isCurrent: isHomePage
         });
         
-        // If we're not on homepage, process the path
-        if (currentPath !== '/') {
-            const pathParts = currentPath.split('/').filter(part => part.length > 0);
+        // If we have actual subpages, process them
+        if (!isHomePage) {
             let currentUrl = '';
             
             pathParts.forEach((part, index) => {
