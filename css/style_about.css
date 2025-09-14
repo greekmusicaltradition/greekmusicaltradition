@@ -525,7 +525,19 @@
         gap: 1.5rem;
         padding: 1.5rem;
         margin-bottom: 2rem;
+        display: block;
     }
+
+   .photo-caption p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .photo-caption {
+        width: 100%;
+        margin-top: 1rem;
+    }
+   
 
     .decorative-panel {
         padding: 1rem;
@@ -613,10 +625,7 @@
         margin-bottom: 1.5rem;
     }
 
-   .photo-caption p {
-        font-size: 0.9rem;
-        line-height: 1.2;
-    }
+
 }
 
 @media (max-width: 480px) {
