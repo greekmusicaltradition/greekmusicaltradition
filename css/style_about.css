@@ -27,7 +27,7 @@
 
 .photo-caption  {
    color: var(--color-primary-blue);
-   align: right;
+   margin-bottom: 2rem;
 }
    .photo-caption p {
    font-size: 1rem;
