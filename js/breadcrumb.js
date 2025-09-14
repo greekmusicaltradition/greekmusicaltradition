@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
-    let currentPath = '';
+    let currentPath = '/'; // Start with a slash for the root
 
     // Add the "Home" link
     breadcrumbs.push({
@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Process path segments
     pathnames.forEach((part, index) => {
-        // Skip parts that are language codes or "index.html"
+        // Skip parts that are a language code, a filename, or the root folder name
         const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
         const isFilename = part.includes('.html');
-        const isRoot = index === 0 && part === 'greekmusicaltradition';
+        const isRootFolder = index === 0 && part === 'greekmusicaltradition';
         
-        // This is the core change: we process everything that's not a language code, filename, or the root directory.
-        if (!isLanguageCode && !isFilename && !isRoot) {
-            currentPath += '/' + part;
+        if (!isLanguageCode && !isFilename && !isRootFolder) {
+            // Append the part to the current path
+            currentPath += part + '/';
             
-            // Format the text for display (e.g., "about-byzantine-music" becomes "About Byzantine Music")
+            // Format the text for display
             const formattedText = decodeURIComponent(part.replace(/-/g, ' '))
                                      .split(' ')
                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
