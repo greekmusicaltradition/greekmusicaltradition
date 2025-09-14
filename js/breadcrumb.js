@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Get the path and filter out empty strings
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
 
@@ -13,21 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
         href: '/'
     });
 
-    // Process path segments
+    // Process path segments, starting from the second element
+    // This skips the first directory, e.g., "greekmusicaltradition"
     pathnames.forEach((part, index) => {
-        // Skip parts that are language codes (like 'en', 'gr') or filenames ('index.html')
-        const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
-        const isFilename = part.includes('.html');
+        // Only process if it's not the first directory in the path
+        if (index > 0) {
+            const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
+            const isFilename = part.includes('.html');
+            
+            if (!isLanguageCode && !isFilename) {
+                const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
+                const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
+                const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
-        if (!isLanguageCode && !isFilename) {
-            const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
-            const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-
-            breadcrumbs.push({
-                text: formattedText,
-                href: fullPath
-            });
+                breadcrumbs.push({
+                    text: formattedText,
+                    href: fullPath
+                });
+            }
         }
     });
 
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLast = index === breadcrumbs.length - 1;
         const link = `<a href="${crumb.href}">${crumb.text}</a>`;
         const text = `<span>${crumb.text}</span>`;
-
+        
         return `
             <li>
                 ${isLast ? text : link}
