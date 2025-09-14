@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Skip parts that are language codes or "index.html"
         const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
         const isFilename = part.includes('.html');
+        const isRoot = index === 0 && part === 'greekmusicaltradition';
         
-        // This is the core change: we process everything that's not a language code or filename
-        if (!isLanguageCode && !isFilename) {
+        // This is the core change: we process everything that's not a language code, filename, or the root directory.
+        if (!isLanguageCode && !isFilename && !isRoot) {
             currentPath += '/' + part;
             
             // Format the text for display (e.g., "about-byzantine-music" becomes "About Byzantine Music")
