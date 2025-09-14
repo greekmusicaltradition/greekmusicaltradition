@@ -64,9 +64,17 @@ class BreadcrumbGenerator {
         // Remove language codes, home-equivalent pages, and specific filtered segments
         pathParts = pathParts.filter(part => {
             const lowerPart = part.toLowerCase();
-            return !this.languageCodes.includes(lowerPart) && 
-                   !this.homePages.includes(lowerPart) &&
-                   !this.filteredSegments.includes(lowerPart);
+            // Check if it's a language code
+            if (this.languageCodes.includes(lowerPart)) return false;
+            // Check if it's a home page
+            if (this.homePages.includes(lowerPart)) return false;
+            // Check if it's in filtered segments
+            if (this.filteredSegments.includes(lowerPart)) return false;
+            // Check if it contains any filtered segments (for compound names)
+            for (let filtered of this.filteredSegments) {
+                if (lowerPart.includes(filtered)) return false;
+            }
+            return true;
         });
         
         // Always start with home
