@@ -5,6 +5,12 @@
 
 class BreadcrumbGenerator {
     constructor() {
+        // Define language codes to filter from paths
+        this.languageCodes = ['en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'ru', 'zh', 'ja'];
+        
+        // Define home-equivalent pages to filter from paths
+        this.homePages = ['index', 'home', ''];
+        
         // Define custom page titles for better readability
         this.pageTitles = {
             'lessons': 'Lessons',
@@ -91,17 +97,19 @@ class BreadcrumbGenerator {
     render(containerId = 'breadcrumb', currentPath = window.location.pathname) {
         const container = document.getElementById(containerId);
         if (!container) {
-            console.error('Breadcrumb container not found');
+            console.error('Breadcrumb container not found: ' + containerId);
             return;
         }
         
         const breadcrumbItems = this.generateBreadcrumbs(currentPath);
-        let html = '';
+        
+        // Create breadcrumb list structure
+        let html = '<nav class="breadcrumb-nav" aria-label="Breadcrumb"><ul class="breadcrumb-list">';
         
         breadcrumbItems.forEach((item, index) => {
             // Add separator before non-first items
             if (index > 0) {
-                html += `<li class="breadcrumb-separator">${this.separator}</li>`;
+                html += `<li class="breadcrumb-separator" aria-hidden="true">${this.separator}</li>`;
             }
             
             html += '<li class="breadcrumb-item">';
@@ -109,34 +117,42 @@ class BreadcrumbGenerator {
             if (item.url) {
                 // Clickable link
                 if (item.isHome) {
-                    html += `<a href="${item.url}" class="breadcrumb-home">
-                                <span class="breadcrumb-home-icon">${this.homeIcon}</span>
-                                ${item.title}
+                    html += `<a href="${item.url}" class="breadcrumb-home" title="Go to homepage">
+                                <span class="breadcrumb-home-icon" aria-hidden="true">${this.homeIcon}</span>
+                                <span class="breadcrumb-text">${item.title}</span>
                              </a>`;
                 } else {
-                    html += `<a href="${item.url}">${item.title}</a>`;
+                    html += `<a href="${item.url}" title="Go to ${item.title}">${item.title}</a>`;
                 }
             } else {
                 // Current page (no link)
                 if (item.isHome) {
-                    html += `<span class="breadcrumb-home">
-                                <span class="breadcrumb-home-icon">${this.homeIcon}</span>
-                                ${item.title}
+                    html += `<span class="breadcrumb-home breadcrumb-current" aria-current="page">
+                                <span class="breadcrumb-home-icon" aria-hidden="true">${this.homeIcon}</span>
+                                <span class="breadcrumb-text">${item.title}</span>
                              </span>`;
                 } else {
-                    html += item.title;
+                    html += `<span class="breadcrumb-current" aria-current="page">${item.title}</span>`;
                 }
             }
             
             html += '</li>';
         });
         
+        html += '</ul></nav>';
         container.innerHTML = html;
     }
     
     // Initialize and set up automatic updates
     init(containerId = 'breadcrumb') {
-        this.render(containerId);
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.render(containerId);
+            });
+        } else {
+            this.render(containerId);
+        }
         
         // Optional: Update breadcrumb when browser back/forward buttons are used
         window.addEventListener('popstate', () => {
@@ -169,4 +185,9 @@ function updateBreadcrumb(path) {
 // Function to add custom page titles dynamically
 function addPageTitle(urlSegment, displayTitle) {
     breadcrumb.pageTitles[urlSegment] = displayTitle;
+}
+
+// Function to update breadcrumb for dynamic content
+function setBreadcrumbPath(customPath) {
+    breadcrumb.render('breadcrumb', customPath);
 }
