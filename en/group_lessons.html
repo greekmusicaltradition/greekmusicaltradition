@@ -1,57 +1,301 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const breadcrumbContainer = document.getElementById('breadcrumb');
-    if (!breadcrumbContainer) {
-        return;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Lesson Waiting List - Greek Traditional & Byzantine Music</title>
+    <link rel="icon" href="../pictures/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/style_main.css"> 
+    <link rel="stylesheet" href="../css/style_contact.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
+    <script src="../js/cookie-consent.js"></script>
+</head>
+<body> 
+    <div id="header"></div>
 
-    const pathnames = window.location.pathname.split('/').filter(Boolean);
-    const breadcrumbs = [];
-    let currentPath = '/'; // Start with a slash for the root
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol class="breadcrumb" id="breadcrumb">
+                <!-- JavaScript will populate this automatically -->
+            </ol>
+        </nav>
+    </div>
 
-    // Add the "Home" link
-    breadcrumbs.push({
-        text: 'Home',
-        href: '/'
-    });
 
-    // Process path segments
-    pathnames.forEach((part, index) => {
-        // Skip parts that are a language code, a filename, or the root folder name
-        const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
-        const isFilename = part.includes('.html');
-        const isRootFolder = index === 0 && part === 'greekmusicaltradition';
-        
-        if (!isLanguageCode && !isFilename && !isRootFolder) {
-            // Append the part to the current path
-            currentPath += part + '/';
+    <main class="main-content">
+        <div class="contact-form-container">
+            <form class="contact-form" id="waitlistForm" action="https://formspree.io/f/mkgzglaz" method="POST">
+                <h2>Join Our Group Lesson Waiting List</h2>
+                <p class="contact-intro">
+                    Join our waiting list to be notified when new group lessons become available. Group lessons offer a wonderful opportunity to learn alongside fellow music enthusiasts while enjoying a more affordable learning experience.
+                </p>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    Thank you for joining our waiting list! We'll contact you as soon as a spot becomes available in your preferred group lesson.
+                </div>
+                
+                <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
+                    There was an error processing your request. Please try again later.
+                </div>
+
+                <!-- Hidden field to identify this as a waitlist form -->
+                <input type="hidden" name="form_type" value="group_lesson_waitlist">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="For urgent notifications about available spots">
+                </div>
+
+                <div class="form-group">
+                    <label for="lessonType">Select Lesson Type *</label>
+                    <select id="lessonType" name="lessonType" required>
+                        <option value="">Please select...</option>
+                        <option value="traditional">Greek Traditional Singing</option>
+                        <option value="byzantine">Byzantine Music</option>
+                        <option value="both">Both (separate waiting lists)</option>
+                    </select>
+                </div>
+
+                <!-- Lesson Schedule Information -->
+                <div class="schedule-info">
+                    <h3>Current Group Lesson Schedule</h3>
+                    
+                    <div class="schedule-category">
+                        <h4 class="traditional-icon">🎵 Greek Traditional Singing</h4>
+                        <ul>
+                            <li><strong>Beginners:</strong> Tuesdays, 7:00 PM - 8:30 PM (Athens time)</li>
+                            <li><strong>Intermediate:</strong> Thursdays, 6:30 PM - 8:00 PM (Athens time)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="schedule-category">
+                        <h4 class="byzantine-icon">⛪ Byzantine Music</h4>
+                        <ul>
+                            <li><strong>Beginners:</strong> Wednesdays, 7:30 PM - 9:00 PM (Athens time)</li>
+                            <li><strong>Advanced:</strong> Saturdays, 4:00 PM - 5:30 PM (Athens time)</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="schedule-note">
+                        <em>All lessons are conducted online. Times shown are Athens/Greece timezone (EET/EEST).</em>
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="experience">Your Experience Level *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Please select...</option>
+                            <option value="beginner">Complete Beginner</option>
+                            <option value="some">Some Experience</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredLanguage">Preferred Language *</label>
+                        <select id="preferredLanguage" name="preferredLanguage" required>
+                            <option value="">Please select...</option>
+                            <option value="english">English</option>
+                            <option value="greek">Greek</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="availableSchedules">Which of the current schedules work for you? *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="tuesday_traditional_beginner">
+                            <span class="checkbox-text">Tuesday 7:00 PM - Greek Traditional (Beginners)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="thursday_traditional_intermediate">
+                            <span class="checkbox-text">Thursday 6:30 PM - Greek Traditional (Intermediate)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="wednesday_byzantine_beginner">
+                            <span class="checkbox-text">Wednesday 7:30 PM - Byzantine Music (Beginners)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="saturday_byzantine_advanced">
+                            <span class="checkbox-text">Saturday 4:00 PM - Byzantine Music (Advanced)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availableSchedules" value="none_suggest_alternative">
+                            <span class="checkbox-text">None of these work - I'll suggest alternatives below</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" placeholder="Any scheduling preferences, alternative times you'd prefer, questions about group lessons, or other information that would help us serve you better..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label agreement-checkbox">
+                        <input type="checkbox" name="notifications" value="yes" required>
+                        <span class="checkbox-text">I agree to receive email notifications when spots become available in my selected group lessons. *</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Join Waiting List</button>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <h2>About Group Lessons</h2>
             
-            // Format the text for display
-            const formattedText = decodeURIComponent(part.replace(/-/g, ' '))
-                                     .split(' ')
-                                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                     .join(' ');
-            
-            breadcrumbs.push({
-                text: formattedText,
-                href: currentPath
+            <div class="faq-item">
+                <div class="faq-question">How do group lessons work?</div>
+                <div class="faq-answer">Group lessons are conducted online with 4-6 students per class. They provide an interactive learning environment where students can learn from each other while receiving individual attention from the instructor.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What are the benefits of group lessons?</div>
+                <div class="faq-answer">Group lessons offer a more affordable option, create a supportive learning community, provide opportunities to practice with others, and often motivate students through peer interaction and shared musical experiences.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long is the waiting list?</div>
+                <div class="faq-answer">Wait times vary depending on the lesson type and level. We typically form new groups when we have 4-6 interested students with compatible schedules. We'll keep you informed about your position and expected timeline.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I switch between group and individual lessons?</div>
+                <div class="faq-answer">Yes! Many students start with group lessons and later move to individual instruction, or combine both. We're flexible and can discuss the best approach for your learning goals.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if the current schedule doesn't work for me?</div>
+                <div class="faq-answer">Please let us know your preferred times in the notes section. If we receive enough interest for alternative time slots, we may be able to form new groups with different schedules.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How will I be notified when a spot opens?</div>
+                <div class="faq-answer">We'll contact you via email (and phone if provided) as soon as a spot becomes available. You'll have 48 hours to confirm your interest before we move to the next person on the waiting list.</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <script>
+        // Waitlist form handling
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Validate that at least one schedule is selected
+            const scheduleCheckboxes = document.querySelectorAll('input[name="availableSchedules"]:checked');
+            if (scheduleCheckboxes.length === 0) {
+                errorMessage.textContent = 'Please select at least one schedule option or indicate that none work for you.';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // Create FormData object from the form
+            const formData = new FormData(form);
+
+            // Add selected schedules as a formatted string
+            const selectedSchedules = Array.from(scheduleCheckboxes).map(cb => cb.value).join(', ');
+            formData.append('selected_schedules', selectedSchedules);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset form after a short delay
+                    setTimeout(() => {
+                        form.reset();
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 5000); 
+                    }, 1000);
+                } else {
+                    console.error('Form submission failed:', response.status, response.statusText);
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    response.json().then(data => {
+                        if (data.errors) {
+                            console.error('Formspree validation errors:', data.errors);
+                            errorMessage.textContent = 'Please correct the errors in the form and try again.';
+                        } else {
+                            errorMessage.textContent = 'There was an error processing your request. Please try again later.';
+                        }
+                    }).catch(() => {
+                        errorMessage.textContent = 'There was an error processing your request. Please try again later.';
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Network error:', error);
+                errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
-        }
-    });
+        });
 
-    // Generate the HTML for the breadcrumb trail with correct classes and separators
-    const breadcrumbHtml = breadcrumbs.map((crumb, index) => {
-        const isLast = index === breadcrumbs.length - 1;
-        const link = `<a href="${crumb.href}">${crumb.text}</a>`;
-        const text = `<span>${crumb.text}</span>`;
-        const separator = !isLast ? `<span class="breadcrumb-separator">/</span>` : '';
-        
-        return `
-            <li class="breadcrumb-item">
-                ${isLast ? text : link}
-                ${separator}
-            </li>
-        `;
-    }).join('\n');
+        // Add interactive feedback for form fields
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
 
-    breadcrumbContainer.innerHTML = breadcrumbHtml;
-});
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.faq-question').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    question.classList.toggle('active');
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
