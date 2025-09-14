@@ -1,7 +1,8 @@
 /* ========================================
-   LESSONS GRID & CARDS SECTION
+   1. LESSON CARDS & GRID SYSTEM
    ======================================== */
 
+/* Main lesson card container - flexible layout with hover effects */
 .lesson-card {
     background: var(--color-white);
     border-radius: var(--border-radius-medium);
@@ -13,12 +14,14 @@
     height: 100%;
 }
 
+/* Lesson card hover state - subtle lift effect */
 .lesson-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 35px var(--shadow-medium);
     border-color: var(--color-light-blue);
 }
 
+/* Grid layout for lesson cards - responsive auto-fit */
 .lessons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -26,11 +29,13 @@
     margin-bottom: 3rem;
 }
 
+
 /* ========================================
-   LESSON HEADER SECTION
+   2. LESSON COMPONENTS
    ======================================== */
 
-
+/* === LESSON HEADER === */
+/* Header section with gradient background */
 .lesson-header {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
     color: var(--color-white);
@@ -38,17 +43,15 @@
     text-align: center;
 }
 
+/* Lesson title in header */
 .lesson-header h3 {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
     margin: 0;
-} 
+}
 
-/* ========================================
-   LESSON CONTENT SECTION
-   ======================================== */
-
-
+/* === LESSON CONTENT === */
+/* Main content area - horizontal flex layout */
 .lesson-content {
     padding: 0.5rem;
     display: flex;
@@ -58,11 +61,8 @@
     flex-grow: 1;
 }
 
-/* ========================================
-   LESSON IMAGE SECTION
-   ======================================== */
-
-/* Icon on the left of each lesson */
+/* === LESSON IMAGE === */
+/* Icon container on the left side of lessons */
 .lesson-image {
     flex-shrink: 0;
     width: 80px;
@@ -77,19 +77,29 @@
     margin-left: 1.5rem;
 }
 
-/* ========================================
-   LESSON DETAILS SECTION
-   ======================================== */
-
-.lesson-details {
-   display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.5rem; 
-   flex: 1;
+/* Music type icons styling */
+.lesson-icon {
+    font-size: 42px;
+    color: var(--color-primary-blue);
 }
 
+.traditional-icon,
+.byzantine-icon {
+    color: var(--color-primary-blue);
+    font-size: 42px;
+}
 
+/* === LESSON DETAILS === */
+/* Details section - right side content */
+.lesson-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+    flex: 1;
+}
+
+/* Lesson details list styling */
 .lesson-details ul {
     list-style: none;
     width: 100%;
@@ -98,7 +108,7 @@
     margin: 0;
 }
 
-
+/* Individual list items with custom bullets */
 .lesson-details li {
     margin-bottom: 0.5rem;
     color: var(--color-text-medium);
@@ -107,6 +117,7 @@
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
+/* Custom bullet points for lesson details */
 .lesson-details li::before {
     content: '•';
     color: var(--color-accent-gold);
@@ -116,7 +127,7 @@
     left: 0;
 }
 
-
+/* Lesson details headings */
 .lesson-details h4 {
     color: var(--color-primary-blue);
     margin-bottom: 1rem;
@@ -125,8 +136,7 @@
     font-weight: 600;
 }
 
-
-/* Fix text alignment and spacing */
+/* Lesson details paragraphs - improved alignment and spacing */
 .lesson-details p {
     margin-bottom: 1.5rem;
     margin-left: 0;
@@ -136,11 +146,8 @@
     font-size: 1rem;
 }
 
-
-/* ========================================
-   LESSON DESCRIPTION BOX SECTION
-   ======================================== */
-
+/* === LESSON DESCRIPTION BOX === */
+/* Bottom description section with gradient background */
 .lesson-description-box {
     padding: 1.5rem;
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
@@ -152,10 +159,10 @@
     border-bottom-left-radius: var(--border-radius-medium);
     border-bottom-right-radius: var(--border-radius-medium);
     width: 100%;
-    min-height:18rem;   
+    min-height: 18rem;
 }
 
-
+/* Description text styling */
 .lesson-description-box p {
     color: var(--color-white);
     margin-bottom: 0;
@@ -165,11 +172,66 @@
     min-height: 8rem;
 }
 
+/* === LESSON FOOTER === */
+.lesson-footer {
+    padding: 0.5rem;
+}
+
+.lesson-footer p {
+    padding: 0 3rem 1rem 3rem;
+    color: var(--color-primary-blue);
+}
+
+.lesson-footer a {
+    color: var(--color-accent-gold);
+}
+
+/* === LESSON TYPE BADGE === */
+/* Badge for lesson type identification */
+.lesson-type-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-small);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--color-primary-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid var(--color-secondary-blue);
+}
+
 
 /* ========================================
-   LESSON DESCRIPTION BOX BUTTONS SECTION
+   3. BUTTON STYLES & CTA ELEMENTS
    ======================================== */
 
+/* === CTA GRID SYSTEM === */
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cta-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    border-color: var(--color-light-blue);
+}
+
+/* === LESSON DESCRIPTION BOX BUTTONS === */
+/* Buttons within the description box */
 .lesson-description-box .cta-button {
     display: inline-block !important;
     color: var(--color-white) !important;
@@ -179,8 +241,8 @@
     padding: 1rem 2.5rem !important;
     border: none !important;
     border-radius: var(--border-radius-medium) !important;
-    background: linear-gradient(135deg, 
-        var(--color-secondary-blue), 
+    background: linear-gradient(135deg,
+        var(--color-secondary-blue),
         var(--color-primary-blue)
     ) !important;
     background-clip: padding-box !important;
@@ -195,9 +257,10 @@
     min-height: 44px !important;
 }
 
+/* Hover states for description box buttons */
 .lesson-description-box .cta-button:hover {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
+    background: linear-gradient(135deg,
+        var(--color-accent-gold),
         #c09f2d
     ) !important;
     transform: translateY(-4px) !important;
@@ -214,34 +277,36 @@
     outline-offset: 2px !important;
 }
 
+/* Button variants */
 .lesson-description-box .cta-button.primary {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
+    background: linear-gradient(135deg,
+        var(--color-accent-gold),
         #c09f2d
     ) !important;
 }
 
 .lesson-description-box .cta-button.primary:hover {
-    background: linear-gradient(135deg, 
-        var(--color-secondary-blue), 
+    background: linear-gradient(135deg,
+        var(--color-secondary-blue),
         var(--color-primary-blue)
     ) !important;
 }
 
 .lesson-description-box .cta-button.secondary-dark {
-    background: linear-gradient(135deg, 
-        var(--color-primary-blue), 
+    background: linear-gradient(135deg,
+        var(--color-primary-blue),
         var(--color-secondary-blue)
     ) !important;
 }
 
 .lesson-description-box .cta-button.secondary-dark:hover {
-    background: linear-gradient(135deg, 
-        var(--color-accent-gold), 
+    background: linear-gradient(135deg,
+        var(--color-accent-gold),
         #c09f2d
     ) !important;
 }
 
+/* Button container for description box */
 .lesson-description-box .cta-button-container {
     display: flex !important;
     justify-content: center !important;
@@ -250,14 +315,9 @@
     background: transparent !important;
     padding: 1.5rem 0 0 0 !important;
 }
-}
 
-
-/* ========================================
-   LESSON DETAILS BUTTONS SECTION
-   ======================================== */
-
-/* Full-width button styling for online lesson cards */
+/* === LESSON DETAILS BUTTONS === */
+/* Full-width button styling for lesson detail cards */
 .lesson-details .cta-button-container {
     margin-top: auto;
     padding: 0;
@@ -265,10 +325,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.2rem;  
+    padding: 1.2rem;
 }
 
-/* Enhanced button styling */
+/* Enhanced button styling for lesson details */
 .lesson-details .cta-button {
     width: 100%;
     display: flex;
@@ -292,6 +352,7 @@
     overflow: hidden;
 }
 
+/* Shimmer effect for buttons */
 .lesson-details .cta-button::before {
     content: '';
     position: absolute;
@@ -307,6 +368,7 @@
     left: 100%;
 }
 
+/* Button hover states */
 .lesson-details .cta-button:hover {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-primary-blue));
     transform: translateY(-2px);
@@ -325,6 +387,7 @@
     outline-offset: 3px;
 }
 
+/* Button icons */
 .lesson-details .cta-button i {
     font-size: 1.1rem;
     transition: transform 0.3s ease;
@@ -334,20 +397,8 @@
     transform: scale(1.1);
 }
 
-
-/* ========================================
-   LESSON FOOTER SECTION
-   ======================================== */
-
-.lesson-footer {
-   padding: 0.5rem;
-}
-
-.lesson-footer p {
-   padding: 0 3rem 1rem 3rem;
-   color: var(--color-primary-blue);
-}
-
+/* === LESSON FOOTER BUTTONS === */
+/* Footer button styling - similar to lesson details but in footer context */
 .lesson-footer .cta-button {
     width: 100%;
     display: flex;
@@ -371,10 +422,7 @@
     overflow: hidden;
 }
 
-.lesson-footer a {
-   color: var(--color-accent-gold);
-}
-
+/* Footer button effects */
 .lesson-footer .cta-button::before {
     content: '';
     position: absolute;
@@ -423,65 +471,12 @@
     margin: 0rem 2.5rem 2.5rem 2.5rem;
 }
 
-/* ========================================
-   LESSON TYPE BADGE SECTION
-   ======================================== */
-
-.lesson-type-badge {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--border-radius-small);
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--color-primary-blue);
-    margin-bottom: 2rem;
-    text-align: center;
-    border: 1px solid var(--color-secondary-blue);
-}
-
-.lesson-icon {
-    font-size: 42px;
-    color: var(--color-primary-blue);
-}
-
-.traditional-icon,
-.byzantine-icon {
-    color: var(--color-primary-blue);
-    font-size: 42px;
-}
 
 /* ========================================
-   CTA GRID & CARDS SECTION
+   4. SUBJECT & METHOD CARDS
    ======================================== */
 
-.cta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.cta-card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 8px 25px var(--shadow-light);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.cta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px var(--shadow-medium);
-    border-color: var(--color-light-blue);
-}
-
-/* ========================================
-   SUBJECT CARDS SECTION (What We Teach) - Traditional & Elegant
-   ======================================== */
-
+/* === SUBJECT CARDS (What We Teach) - Traditional & Elegant === */
 .subject-card {
     border: 2px solid var(--color-lighter-blue);
     background: linear-gradient(145deg, var(--color-white), #fafbfc);
@@ -499,6 +494,7 @@
     position: relative;
 }
 
+/* Decorative line under subject header */
 .subject-header::after {
     content: '';
     position: absolute;
@@ -510,6 +506,7 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Subject card images */
 .subject-card .lesson-image {
     background: linear-gradient(135deg, var(--color-tertiary-blue), var(--color-secondary-blue));
     border: 2px solid rgba(255, 255, 255, 0.9);
@@ -521,10 +518,7 @@
     font-size: 42px;
 }
 
-/* ========================================
-   METHOD CARDS SECTION (How We Teach) - Modern & Action-Oriented
-   ======================================== */
-
+/* === METHOD CARDS (How We Teach) - Modern & Action-Oriented === */
 .method-card {
     border: 2px solid var(--color-lighter-blue);
     background: linear-gradient(145deg, var(--color-white), #fafbfc);
@@ -536,6 +530,7 @@
     position: relative;
 }
 
+/* Method header with icons */
 .method-header h3 {
     display: flex;
     align-items: center;
@@ -549,7 +544,7 @@
     font-size: 1.1rem;
 }
 
-/* Add icons to method headers */
+/* Add specific icons to method headers */
 .method-card:nth-child(1) .method-header h3::before {
     content: '\f109'; /* laptop icon */
 }
@@ -558,11 +553,13 @@
     content: '\f007'; /* user icon */
 }
 
+/* === METHOD CARD CONTENT === */
 .method-card .lesson-content {
-     margin-left: 1rem;
+    margin-left: 1rem;
     padding-left: 0.5rem;
 }
 
+/* Method lesson format box */
 .method-card .lesson-format-box {
     background: linear-gradient(135deg, rgba(75, 121, 136, 0.08), rgba(116, 164, 180, 0.12));
     border: 1px solid rgba(75, 121, 136, 0.15);
@@ -588,156 +585,15 @@
 }
 
 .method-card .lesson-format-box p i {
-    margin-right: 0.8rem; /* Adjust this value to increase/decrease spacing */
+    margin-right: 0.8rem; /* Spacing for icons in paragraphs */
 }
+
 
 /* ========================================
-   GETTING STARTED SECTION
+   5. MUSIC GROUPS SECTION
    ======================================== */
 
-/* Getting Started List Styles */
-.getting-started-list {
-    list-style: none;
-    counter-reset: step-counter;
-}
-
-.getting-started-content {
-    padding: 0.8rem;
-    margin-bottom: 0;
-    margin-left: 2rem;
-}
-
-.getting-started-list li .getting-started-content {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.getting-started-list li {
-    background-color: var(--color-white);
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: var(--border-radius-small);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.08);
-    display: flex;
-    align-items: flex-start;
-    font-size: 1rem;
-    color: var(--color-text-dark);
-}
-
-.getting-started-list li::before {
-    content: counter(step-counter);
-    counter-increment: step-counter;
-    background-color: var(--color-secondary-blue);
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: 1.1rem;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-top: 2rem;
-    flex-shrink: 0;
-}
-
-.getting-started-list li strong {
-    display: flex;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary-blue);
-    font-size: 1.05rem;
-    line-height: 1.2;
-}
-
-.getting-started-list li span {
-    display: flex;
-    color: var(--color-text-medium);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-}
-
-.getting-started-list span {
-    font-style: italic;
-}
-
-/* Single column for welcome panel */
-.combined-panel.single-column {
-    grid-template-columns: 1fr;
-    text-align: center;
-}
-
-.combined-panel.single-column .info-panel {
-    max-width: none;
-}
-
-/* Getting Started as own full width section */
-.getting-started-full-width {
-    width: 100%;
-    margin-bottom: 2rem;
-    display: block;
-}
-
-.getting-started-full-width .lesson-card {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* ========================================
-   INFO BOXES SECTION
-   ======================================== */
-
-/* Info Boxes for Requirements and Materials Side-by-side */
-.info-box-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.info-box-container > section {
-    flex: 1 1 48%;
-    max-width: 48%;
-}
-
-.info-box-container > section .lesson-card {
-    max-width: 100%;
-    margin: 0;
-}
-
-.technical-requirements-box .lesson-header {
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
-}
-
-.materials-provided-box .lesson-header {
-    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
-}
-
-.requirements-list li, .materials-list li {
-    padding: 0.5rem 0;
-    color: var(--color-text-medium);
-    font-size: 1rem;
-    list-style: none;
-    position: relative;
-    padding-left: 1.4em;
-}
-
-.requirements-list li:before, .materials-list li:before {
-    content: '✓';
-    color: var(--color-secondary-blue);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.1rem;
-}
-
-/* ========================================
-   MUSIC GROUPS SECTION
-   ======================================== */
-
+/* === MAIN MUSIC GROUPS CONTAINER === */
 .music-groups-section {
     margin: 3rem 0;
 }
@@ -750,6 +606,7 @@
     margin: 0 auto;
 }
 
+/* === HORIZONTAL MUSIC GROUP CARDS === */
 .music-group-card.horizontal {
     display: flex;
     background: var(--color-white);
@@ -765,7 +622,8 @@
     box-shadow: 0 12px 40px var(--shadow-medium);
 }
 
-/* IMAGE SECTION - LANDSCAPE WITH MORE SPACIOUS INFO */
+/* === GROUP IMAGE SECTION === */
+/* Left side - landscape layout with spacious info */
 .group-image-section {
     flex: 0 0 400px;
     display: flex;
@@ -773,9 +631,10 @@
     background: linear-gradient(135deg, var(--color-lighter-blue), #f0f4f7);
     position: relative;
     overflow: hidden;
-   padding: 1rem;   
+    padding: 1rem;
 }
 
+/* Image placeholder */
 .group-image-section .image-placeholder {
     display: flex;
     flex-direction: column;
@@ -803,14 +662,15 @@
     font-style: italic;
 }
 
-/* UNDER-PHOTO CONTENT - MORE SPACIOUS WITH GROUP LESSONS */
+/* === UNDER-PHOTO CONTENT === */
+/* Content below the photo - group lessons info */
 .under-photo-content {
     background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
     padding: 1.5rem 1rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom:10px;
-    height: 100%
+    padding-bottom: 10px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -827,13 +687,12 @@
     opacity: 0.9;
 }
 
-
 .under-photo-content p {
-   padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom:10px;
-    height: 100%
+    padding-bottom: 10px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -845,8 +704,7 @@
     opacity: 0.98;
 }
 
-
-/* Group Lessons Info */
+/* Group lessons info styling */
 .group-lessons-info {
     display: flex;
     align-items: center;
@@ -867,8 +725,8 @@
     opacity: 0.95;
 }
 
-/* CONTENT SECTION - RIGHT SIDE */
-
+/* === GROUP CONTENT SECTION === */
+/* Right side content area */
 .group-content-section {
     flex: 1;
     padding: 1.8rem 2rem 2rem;
@@ -876,9 +734,9 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 240px;
-    
 }
 
+/* Music type badge */
 .group-content-section .music-type-badge {
     font-size: 0.9rem;
     color: var(--color-secondary-blue);
@@ -887,6 +745,7 @@
     align-self: flex-start;
 }
 
+/* Group title */
 .group-content-section h3 {
     color: var(--color-primary-blue);
     font-size: 1.3rem;
@@ -896,8 +755,7 @@
     text-align: center;
 }
 
-
-/* Group Description */
+/* === GROUP DESCRIPTION === */
 .group-content-section .group-description {
     margin: 0 0 1rem 0;
     flex-grow: 1;
@@ -915,8 +773,8 @@
     border-left: 3px solid var(--color-secondary-blue);
 }
 
-
-/* SPECIAL OFFER - POSITIONED ABOVE BUTTONS */
+/* === SPECIAL OFFER === */
+/* Positioned above buttons with animation */
 .special-offer-right {
     display: flex;
     align-items: center;
@@ -940,15 +798,161 @@
     flex-shrink: 0;
 }
 
-@keyframes gentle-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-}
 
 /* ========================================
-   LESSON TERMS SECTION
+   6. INFO BOXES & GETTING STARTED
    ======================================== */
 
+/* === INFO BOXES FOR REQUIREMENTS AND MATERIALS === */
+/* Side-by-side layout */
+.info-box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.info-box-container > section {
+    flex: 1 1 48%;
+    max-width: 48%;
+}
+
+.info-box-container > section .lesson-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Technical requirements box header */
+.technical-requirements-box .lesson-header {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-blue));
+}
+
+/* Materials provided box header */
+.materials-provided-box .lesson-header {
+    background: linear-gradient(135deg, var(--color-secondary-blue), var(--color-tertiary-blue));
+}
+
+/* Requirements and materials lists */
+.requirements-list li, .materials-list li {
+    padding: 0.5rem 0;
+    color: var(--color-text-medium);
+    font-size: 1rem;
+    list-style: none;
+    position: relative;
+    padding-left: 1.4em;
+}
+
+.requirements-list li:before, .materials-list li:before {
+    content: '✓';
+    color: var(--color-secondary-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* === GETTING STARTED SECTION === */
+/* Numbered list styling */
+.getting-started-list {
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.getting-started-content {
+    padding: 0.8rem;
+    margin-bottom: 0;
+    margin-left: 2rem;
+}
+
+.getting-started-list li .getting-started-content {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Getting started list items with numbered circles */
+.getting-started-list li {
+    background-color: var(--color-white);
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+/* Numbered counter circles */
+.getting-started-list li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    background-color: var(--color-secondary-blue);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    flex-shrink: 0;
+}
+
+/* Getting started content styling */
+.getting-started-list li strong {
+    display: flex;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-blue);
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.getting-started-list li span {
+    display: flex;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.getting-started-list span {
+    font-style: italic;
+}
+
+/* === COMBINED PANEL LAYOUTS === */
+/* Single column for welcome panel */
+.combined-panel.single-column {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.combined-panel.single-column .info-panel {
+    max-width: none;
+}
+
+/* Getting Started as full width section */
+.getting-started-full-width {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.getting-started-full-width .lesson-card {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   7. LESSON TERMS SECTION
+   ======================================== */
+
+/* Main lesson terms container */
 .lesson-terms-section {
     margin: 3rem 0 2rem 0;
     padding: 2rem;
@@ -958,6 +962,7 @@
     text-align: center;
 }
 
+/* Terms content styling */
 .lesson-terms-content h2 {
     color: var(--color-primary-blue);
     font-size: clamp(1.4rem, 3vw, 1.8rem);
@@ -979,6 +984,7 @@
     margin-bottom: 0;
 }
 
+/* Terms links styling */
 .lesson-terms-link {
     color: var(--color-secondary-blue) !important;
     text-decoration: none;
@@ -996,265 +1002,305 @@
     color: var(--color-secondary-blue) !important;
 }
 
+
 /* ========================================
-   RESPONSIVE DESIGN - GENERAL
+   8. RESPONSIVE DESIGN
    ======================================== */
 
+/* === TABLET AND SMALLER DEVICES (768px and below) === */
 @media (max-width: 768px) {
+    /* General sections spacing */
     .subjects-section, .methods-section {
         margin-bottom: 3rem;
     }
-    
+
+    /* Section titles */
     .section-title {
         font-size: clamp(1.4rem, 4vw, 1.8rem);
         margin-bottom: 2rem;
     }
-    
+
+    /* Method card content adjustments */
     .method-card .lesson-content {
         border-left: none;
         margin-left: 0;
         padding-left: 0.5rem;
     }
-}
 
-/* ========================================
-   RESPONSIVE DESIGN - INFO BOXES
-   ======================================== */
-
-/* Responsive: Stack boxes on smaller screens */
-@media (max-width: 900px) {
-    .info-box-container {
-        flex-direction: column;
-    }
-    .info-box-container > section,
-    .info-box-container > section .lesson-card {
-        max-width: 100%;
-    }
-}
-
-/* ========================================
-   RESPONSIVE DESIGN - MUSIC GROUPS
-   ======================================== */
-
-@media (max-width: 1024px) {
-    .group-image-section {
-        flex: 0 0 350px;
-    }
-    
-    .group-content-section {
-        padding: 1.6rem 1.8rem;
-    }
-    
-    .special-offer-right {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.8rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .group-image-section {
-        flex: 0 0 300px;
-    }
-    
-    .group-content-section {
-        padding: 1.4rem 1.6rem;
-    }
-    
-    .group-content-section h3 {
-        font-size: 1.2rem;
-    }
-    
-    .special-offer-right {
-        font-size: 0.75rem;
-    }
-    
-    .location-info, .schedule-info {
-        font-size: 0.9rem;
-    }
-    
-    .group-lessons-info {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .music-group-card.horizontal {
-        flex-direction: column;
-        min-height: auto;
-    }
-    
-    .group-image-section {
-        flex: 0 0 160px;
-        height: 160px;
-        width: 100%;
-    }
-    
-    .group-image-section .image-placeholder {
-        min-height: 80px;
-    }
-    
-    .group-content-section {
-        padding: 1.5rem;
-        min-height: auto;
-    }
-    
-    .group-content-section h3 {
-        font-size: 1.2rem;
-    }
-    
-    .under-photo-content {
-        padding: 1.2rem 0.8rem;
-    }
-    
-    .group-lessons-info {
-        font-size: 0.9rem;
-        margin-bottom: 0.7rem;
-    }
-    
-    .location-info, .schedule-info {
-        font-size: 0.85rem;
-        margin-bottom: 0.6rem;
-    }
-    
-    .special-offer-right {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .features-list.horizontal {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .group-actions {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .group-cta {
-        max-width: none;
-        min-width: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .group-image-section {
-        flex: 0 0 140px;
-        height: 140px;
-    }
-    
-    .group-content-section {
-        padding: 1rem;
-    }
-    
-    .under-photo-content {
-        padding: 1rem 0.7rem;
-    }
-    
-    .group-lessons-info {
-        font-size: 0.85rem;
-    }
-    
-    .location-info, .schedule-info {
-        font-size: 0.8rem;
-    }
-    
-    .special-offer-right {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.7rem;
-    }
-    
-    .group-cta {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-    }
-}
-
-/* ========================================
-   RESPONSIVE DESIGN - LESSON TERMS
-   ======================================== */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .lesson-terms-section {
-        margin: 2rem 0 1.5rem 0;
-        padding: 1.5rem;
-    }
-    
-    .lesson-terms-content p {
-        font-size: 0.95rem;
-    }
-}
-
-/* ========================================
-   RESPONSIVE DESIGN - LESSON CARDS AND BUTTONS
-   ======================================== */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    /* Lesson card adjustments */
     .lesson-card {
         padding-bottom: 85px;
     }
-    
+
     .lesson-content {
         padding: 1rem;
     }
-    
+
     .lesson-details {
         text-align: center;
         padding-bottom: 0;
     }
-    
+
     .lesson-details p {
         text-align: center;
         margin-left: 0;
     }
-    
+
+    /* Lesson type badge centering */
     .lesson-type-badge {
         display: block;
         text-align: center;
         width: fit-content;
         margin: 0 auto 0.8rem auto;
     }
-    
+
+    /* Button adjustments */
     .lesson-details .cta-button {
         font-size: 1.1rem;
         padding: 14px 20px;
     }
-    
+
     .lesson-details .cta-button-container {
         padding: 1rem;
     }
+
+    /* Lesson terms section */
+    .lesson-terms-section {
+        margin: 2rem 0 1.5rem 0;
+        padding: 1.5rem;
+    }
+
+    .lesson-terms-content p {
+        font-size: 0.95rem;
+    }
 }
 
+/* === MOBILE DEVICES (480px and below) === */
 @media (max-width: 480px) {
     .lesson-card {
         padding-bottom: 90px;
     }
-    
+
     .lesson-details .cta-button {
         font-size: 1rem;
         padding: 12px 16px;
         letter-spacing: 0.3px;
     }
-} {
-    flex: 1;
-    padding: 1.8rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
 }
 
-.group-content-section .music-type-badge {
-    font-size: 0.9rem;
-    color: var(--color-secondary-blue);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    align-self: flex-start;
+/* === INFO BOXES RESPONSIVE (900px and below) === */
+@media (max-width: 900px) {
+    .info-box-container {
+        flex-direction: column;
+    }
+
+    .info-box-container > section,
+    .info-box-container > section .lesson-card {
+        max-width: 100%;
+    }
 }
 
-.group-content-section {
-   padding: 2rem;
+/* === MUSIC GROUPS RESPONSIVE === */
+/* Large tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .group-image-section {
+        flex: 0 0 350px;
+    }
+
+    .group-content-section {
+        padding: 1.6rem 1.8rem;
+    }
+
+    .special-offer-right {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
 }
+
+/* Medium tablets (900px and below) */
+@media (max-width: 900px) {
+    .group-image-section {
+        flex: 0 0 300px;
+    }
+
+    .group-content-section {
+        padding: 1.4rem 1.6rem;
+    }
+
+    .group-content-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .special-offer-right {
+        font-size: 0.75rem;
+    }
+
+    .location-info, .schedule-info {
+        font-size: 0.9rem;
+    }
+
+    .group-lessons-info {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .music-group-card.horizontal {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .group-image-section {
+        flex: 0 0 160px;
+        height: 160px;
+        width: 100%;
+    }
+
+    .group-image-section .image-placeholder {
+        min-height: 80px;
+    }
+
+    .group-content-section {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .group-content-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .under-photo-content {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .group-lessons-info {
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .location-info, .schedule-info {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .special-offer-right {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .features-list.horizontal {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .group-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .group-cta {
+        max-width: none;
+        min-width: auto;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .group-image-section {
+        flex: 0 0 140px;
+        height: 140px;
+    }
+
+    .group-content-section {
+        padding: 1rem;
+    }
+
+    .under-photo-content {
+        padding: 1rem 0.7rem;
+    }
+
+    .group-lessons-info {
+        font-size: 0.85rem;
+    }
+
+    .location-info, .schedule-info {
+        font-size: 0.8rem;
+    }
+
+    .special-offer-right {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.7rem;
+    }
+
+    .group-cta {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+
+/* ========================================
+   9. UTILITY CLASSES & ANIMATIONS
+   ======================================== */
+
+/* === ANIMATIONS === */
+/* Gentle pulse animation for special offers */
+@keyframes gentle-pulse {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.02); 
+    }
+}
+
+
+/* ========================================
+   DUPLICATE SELECTORS TO MERGE
+   ======================================== */
+
+/*
+=== IMPORTANT: DUPLICATE SELECTORS FOUND ===
+The following selectors appear multiple times in your CSS.
+Please merge them manually:
+
+1. .method-card .lesson-content
+   - Instance 1: margin-left: 1rem; padding-left: 0.5rem;
+   - Instance 2: border-left: none; margin-left: 0; padding-left: 0.5rem; (responsive)
+
+2. .group-content-section
+   - Multiple instances with different padding values (responsive breakpoints)
+   - Consider consolidating responsive rules
+
+3. .group-content-section h3
+   - Multiple font-size variations for responsive design
+
+4. .special-offer-right
+   - Multiple font-size and padding variations for responsive design
+
+5. .group-lessons-info
+   - Multiple font-size variations for responsive design
+
+6. .location-info, .schedule-info
+   - Multiple font-size variations for responsive design
+
+7. .under-photo-content
+   - Multiple padding variations for responsive design
+
+8. .group-cta
+   - Multiple property variations for responsive design
+
+9. .lesson-terms-content p
+   - Font-size variations for responsive design
+
+10. @media queries for .lesson-details .cta-button
+    - Multiple responsive variations
+
+11. .group-content-section .music-type-badge
+    - Exact duplicate - can be merged immediately
+
+RECOMMENDATION: Review these duplicates and merge them by consolidating
+the responsive variations into proper media query blocks.
+*/
