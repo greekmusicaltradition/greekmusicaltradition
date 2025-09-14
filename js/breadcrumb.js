@@ -9,10 +9,10 @@ class BreadcrumbGenerator {
         this.languageCodes = ['en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'ru', 'zh', 'ja'];
         
         // Define home-equivalent pages to filter from paths
-        this.homePages = ['index', 'home', ''];
+        this.homePages = ['index', 'home', '', 'index.html', 'index.htm'];
         
-        // Define specific segments to filter from paths (new addition)
-        this.filteredSegments = ['greekmusical', 'tradition'];
+        // Define specific segments to filter from paths
+        this.filteredSegments = ['greekmusical', 'tradition', 'greekmusical-tradition'];
         
         // Define custom page titles for better readability
         this.pageTitles = {
@@ -38,14 +38,17 @@ class BreadcrumbGenerator {
             'gallery': 'Gallery'
         };
         
-        this.homeIcon = '🏠'; // You can change this to Font Awesome icon: '<i class="fas fa-home"></i>'
+        this.homeIcon = '🏠';
         this.separator = '›';
     }
     
     // Convert URL segment to readable title
     formatTitle(segment) {
-        if (this.pageTitles[segment]) {
-            return this.pageTitles[segment];
+        // Remove file extensions
+        segment = segment.replace(/\.(html?|php|asp|jsp)$/i, '');
+        
+        if (this.pageTitles[segment.toLowerCase()]) {
+            return this.pageTitles[segment.toLowerCase()];
         }
         
         // Default formatting: replace hyphens with spaces and capitalize
@@ -61,18 +64,21 @@ class BreadcrumbGenerator {
         // Clean and filter the path
         let pathParts = currentPath.split('/').filter(part => part.length > 0);
         
-        // Remove language codes, home-equivalent pages, and specific filtered segments
+        // Remove unwanted segments
         pathParts = pathParts.filter(part => {
             const lowerPart = part.toLowerCase();
-            // Check if it's a language code
-            if (this.languageCodes.includes(lowerPart)) return false;
-            // Check if it's a home page
-            if (this.homePages.includes(lowerPart)) return false;
-            // Check if it's in filtered segments
-            if (this.filteredSegments.includes(lowerPart)) return false;
-            // Check if it contains any filtered segments (for compound names)
+            // Remove file extensions for comparison
+            const cleanPart = lowerPart.replace(/\.(html?|php|asp|jsp)$/i, '');
+            
+            // Filter out language codes
+            if (this.languageCodes.includes(cleanPart)) return false;
+            // Filter out home pages
+            if (this.homePages.includes(cleanPart)) return false;
+            // Filter out specific segments
+            if (this.filteredSegments.includes(cleanPart)) return false;
+            // Filter out segments containing filtered terms
             for (let filtered of this.filteredSegments) {
-                if (lowerPart.includes(filtered)) return false;
+                if (cleanPart.includes(filtered)) return false;
             }
             return true;
         });
@@ -86,7 +92,7 @@ class BreadcrumbGenerator {
             isCurrent: isHomePage
         });
         
-        // If we have actual subpages, process them
+        // Add subpages if they exist
         if (!isHomePage) {
             let currentUrl = '';
             
@@ -96,7 +102,7 @@ class BreadcrumbGenerator {
                 
                 breadcrumbItems.push({
                     title: this.formatTitle(part),
-                    url: isLast ? null : currentUrl, // Last item has no link
+                    url: isLast ? null : currentUrl,
                     isHome: false,
                     isCurrent: isLast
                 });
@@ -106,7 +112,7 @@ class BreadcrumbGenerator {
         return breadcrumbItems;
     }
     
-    // Render breadcrumb HTML
+    // Render breadcrumb HTML with inline styles
     render(containerId = 'breadcrumb', currentPath = window.location.pathname) {
         const container = document.getElementById(containerId);
         if (!container) {
@@ -116,43 +122,45 @@ class BreadcrumbGenerator {
         
         const breadcrumbItems = this.generateBreadcrumbs(currentPath);
         
-        // Create breadcrumb list structure
-        let html = '<nav class="breadcrumb-nav" aria-label="Breadcrumb"><ul class="breadcrumb-list">';
+        // If only home page, don't show breadcrumb
+        if (breadcrumbItems.length === 1 && breadcrumbItems[0].isCurrent) {
+            container.innerHTML = '';
+            return;
+        }
+        
+        // Create horizontal breadcrumb with inline styles
+        let html = '<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none;">';
         
         breadcrumbItems.forEach((item, index) => {
             // Add separator before non-first items
             if (index > 0) {
-                html += `<li class="breadcrumb-separator" aria-hidden="true">${this.separator}</li>`;
+                html += `<span style="color: #666; user-select: none;">${this.separator}</span>`;
             }
-            
-            html += '<li class="breadcrumb-item">';
             
             if (item.url) {
                 // Clickable link
                 if (item.isHome) {
-                    html += `<a href="${item.url}" class="breadcrumb-home" title="Go to homepage">
-                                <span class="breadcrumb-home-icon" aria-hidden="true">${this.homeIcon}</span>
-                                <span class="breadcrumb-text">${item.title}</span>
+                    html += `<a href="${item.url}" style="display: flex; align-items: center; gap: 4px; text-decoration: none; color: #0066cc;">
+                                <span>${this.homeIcon}</span>
+                                <span>${item.title}</span>
                              </a>`;
                 } else {
-                    html += `<a href="${item.url}" title="Go to ${item.title}">${item.title}</a>`;
+                    html += `<a href="${item.url}" style="text-decoration: none; color: #0066cc;">${item.title}</a>`;
                 }
             } else {
                 // Current page (no link)
                 if (item.isHome) {
-                    html += `<span class="breadcrumb-home breadcrumb-current" aria-current="page">
-                                <span class="breadcrumb-home-icon" aria-hidden="true">${this.homeIcon}</span>
-                                <span class="breadcrumb-text">${item.title}</span>
+                    html += `<span style="display: flex; align-items: center; gap: 4px; font-weight: 500; color: #333;">
+                                <span>${this.homeIcon}</span>
+                                <span>${item.title}</span>
                              </span>`;
                 } else {
-                    html += `<span class="breadcrumb-current" aria-current="page">${item.title}</span>`;
+                    html += `<span style="font-weight: 500; color: #333;">${item.title}</span>`;
                 }
             }
-            
-            html += '</li>';
         });
         
-        html += '</ul></nav>';
+        html += '</div>';
         container.innerHTML = html;
     }
     
@@ -167,7 +175,7 @@ class BreadcrumbGenerator {
             this.render(containerId);
         }
         
-        // Optional: Update breadcrumb when browser back/forward buttons are used
+        // Update breadcrumb when browser back/forward buttons are used
         window.addEventListener('popstate', () => {
             this.render(containerId);
         });
