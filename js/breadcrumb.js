@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
+    let currentPath = '';
 
     // Add the "Home" link
     breadcrumbs.push({
@@ -15,19 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Process path segments
     pathnames.forEach((part, index) => {
-        // Skip specific parts that should not be in the breadcrumb
-        const isWebsiteRoot = index === 0 && part === 'greekmusicaltradition'; // Adjust this if your root folder name changes
+        // Skip parts that are language codes or "index.html"
         const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
         const isFilename = part.includes('.html');
-
-        if (!isWebsiteRoot && !isLanguageCode && !isFilename) {
-            const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
-            const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-
+        
+        // This is the core change: we process everything that's not a language code or filename
+        if (!isLanguageCode && !isFilename) {
+            currentPath += '/' + part;
+            
+            // Format the text for display (e.g., "about-byzantine-music" becomes "About Byzantine Music")
+            const formattedText = decodeURIComponent(part.replace(/-/g, ' '))
+                                     .split(' ')
+                                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                     .join(' ');
+            
             breadcrumbs.push({
                 text: formattedText,
-                href: fullPath
+                href: currentPath
             });
         }
     });
