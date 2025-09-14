@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
-    let currentPath = '/';
+    let currentPath = '';
 
     // Add the "Home" link
     breadcrumbs.push({
@@ -14,43 +14,45 @@ document.addEventListener('DOMContentLoaded', () => {
         href: '/'
     });
 
-    // Build the breadcrumb trail
-    for (let i = 0; i < pathnames.length; i++) {
-        const part = pathnames[i];
-        
-        // Skip specific segments like the root folder, language codes, and index files
-        const isRootFolder = i === 0 && part === 'greekmusicaltradition';
+    // Process each part of the URL path
+    pathnames.forEach((part, index) => {
+        // Skip root folder and language code
+        const isRootFolder = index === 0 && part === 'greekmusicaltradition';
         const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
-        const isIndex = part === 'index.html';
         
-        if (isRootFolder || isLanguageCode || isIndex) {
-            continue;
+        if (isRootFolder || isLanguageCode) {
+            return;
         }
 
-        // Handle the last segment (the current page)
-        if (i === pathnames.length - 1 && part.includes('.html')) {
-            const decodedPart = decodeURIComponent(part.replace(/-/g, ' ').replace('.html', ''));
-            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        // Handle the last segment of the path (the current page)
+        const isLastPart = index === pathnames.length - 1;
+        const isFilename = part.includes('.html');
+
+        if (isLastPart && isFilename) {
+            // This is the final page. Format the name and add it as text, not a link.
+            const formattedText = decodeURIComponent(part.replace(/-/g, ' ').replace('.html', ''));
+            const finalFormattedText = formattedText.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
             
             breadcrumbs.push({
-                text: formattedText,
-                href: window.location.pathname
+                text: finalFormattedText,
+                href: window.location.pathname, // The href is the full path
+                isLast: true
             });
-            break; // Stop after processing the last part
+            return;
         }
 
-        // Handle directories
-        currentPath += part + '/';
-        const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-        const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-        
+        // For all other directories, create a link
+        currentPath += '/' + part;
+        const formattedText = decodeURIComponent(part.replace(/-/g, ' '));
+        const finalFormattedText = formattedText.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
         breadcrumbs.push({
-            text: formattedText,
+            text: finalFormattedText,
             href: currentPath
         });
-    }
+    });
 
-    // Generate the HTML for the breadcrumb trail with correct classes and separators
+    // Generate the HTML for the breadcrumb trail
     const breadcrumbHtml = breadcrumbs.map((crumb, index) => {
         const isLast = index === breadcrumbs.length - 1;
         const link = `<a href="${crumb.href}">${crumb.text}</a>`;
