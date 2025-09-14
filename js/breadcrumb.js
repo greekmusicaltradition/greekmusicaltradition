@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Get the path and filter out empty strings
     const pathnames = window.location.pathname.split('/').filter(Boolean);
     const breadcrumbs = [];
 
@@ -14,14 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         href: '/'
     });
 
-    // Process path segments, starting from the second element
-    // This skips the first directory, e.g., "greekmusicaltradition"
+    // Process path segments
     pathnames.forEach((part, index) => {
-        // Only process if it's not the first directory in the path
+        // Skip first directory, language codes, and filenames
         if (index > 0) {
             const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
             const isFilename = part.includes('.html');
-            
+
             if (!isLanguageCode && !isFilename) {
                 const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
                 const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
@@ -35,15 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Generate the HTML for the breadcrumb trail
+    // Generate the HTML for the breadcrumb trail with correct classes and separators
     const breadcrumbHtml = breadcrumbs.map((crumb, index) => {
         const isLast = index === breadcrumbs.length - 1;
         const link = `<a href="${crumb.href}">${crumb.text}</a>`;
         const text = `<span>${crumb.text}</span>`;
+        const separator = !isLast ? `<span class="breadcrumb-separator">/</span>` : '';
         
         return `
-            <li>
+            <li class="breadcrumb-item">
                 ${isLast ? text : link}
+                ${separator}
             </li>
         `;
     }).join('\n');
