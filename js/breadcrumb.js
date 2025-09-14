@@ -15,21 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Process path segments
     pathnames.forEach((part, index) => {
-        // Skip first directory, language codes, and filenames
-        if (index > 0) {
-            const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
-            const isFilename = part.includes('.html');
+        // Skip specific parts that should not be in the breadcrumb
+        const isWebsiteRoot = index === 0 && part === 'greekmusicaltradition'; // Adjust this if your root folder name changes
+        const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
+        const isFilename = part.includes('.html');
 
-            if (!isLanguageCode && !isFilename) {
-                const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
-                const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-                const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        if (!isWebsiteRoot && !isLanguageCode && !isFilename) {
+            const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
+            const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
+            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
-                breadcrumbs.push({
-                    text: formattedText,
-                    href: fullPath
-                });
-            }
+            breadcrumbs.push({
+                text: formattedText,
+                href: fullPath
+            });
         }
     });
 
