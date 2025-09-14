@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const breadcrumbContainer = document.getElementById('breadcrumb');
     if (!breadcrumbContainer) {
-        return; // Exit if the breadcrumb container doesn't exist
+        return;
     }
 
     const pathnames = window.location.pathname.split('/').filter(Boolean);
@@ -13,16 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
         href: '/'
     });
 
-    // Generate links for each part of the URL
+    // Process path segments
     pathnames.forEach((part, index) => {
-        const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
-        const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
-        const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        // Skip parts that are language codes (like 'en', 'gr') or filenames ('index.html')
+        const isLanguageCode = part.length === 2 && /^[a-z]{2}$/.test(part);
+        const isFilename = part.includes('.html');
 
-        breadcrumbs.push({
-            text: formattedText,
-            href: fullPath
-        });
+        if (!isLanguageCode && !isFilename) {
+            const fullPath = '/' + pathnames.slice(0, index + 1).join('/');
+            const decodedPart = decodeURIComponent(part.replace(/-/g, ' '));
+            const formattedText = decodedPart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+            breadcrumbs.push({
+                text: formattedText,
+                href: fullPath
+            });
+        }
     });
 
     // Generate the HTML for the breadcrumb trail
@@ -30,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLast = index === breadcrumbs.length - 1;
         const link = `<a href="${crumb.href}">${crumb.text}</a>`;
         const text = `<span>${crumb.text}</span>`;
-        
+
         return `
             <li>
                 ${isLast ? text : link}
