@@ -1612,18 +1612,4 @@ a:focus {
         font-size: 0.85rem;
     }
     
-    /* Hide middle items on very small screens */
-    .breadcrumb-item:not(:first-child):not(:last-child) {
-        display: none;
-    }
-    
-    .breadcrumb-item:nth-last-child(2) .breadcrumb-separator {
-        display: none;
-    }
-    
-    .breadcrumb-item:first-child::after {
-        content: "...";
-        margin: 0 0.5rem;
-        color: var(--color-light-blue);
-    }
 }
