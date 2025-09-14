@@ -1490,20 +1490,129 @@ a:focus {
 
 
 /* =========================================================================
-   DUPLICATE CONSOLIDATION NOTES:
-   
-   The following rules appear multiple times and should be merged:
-   
-   1. .container padding (lines vary)
-   2. .lesson-details display/alignment rules (multiple mobile breakpoints)
-   3. .lesson-details ul text-align (tablet + mobile)
-   4. .lesson-details li text-align (tablet + mobile)
-   5. .lesson-card margin-bottom (multiple breakpoints)
-   6. min-height: 44px rules (multiple selectors)
-   7. display: flex rules (multiple nav elements)
-   8. .nav-menu a display rules (conflicting block/flex)
-   9. .dropdown-menu a display rules (conflicting block/flex)
-   10. Combined panel padding/border-width (multiple breakpoints)
-   
-   Consider consolidating these to reduce file size and improve maintainability.
-========================================================================= */
+   BREADCRUMB NAVIGATION STYLES - ADD TO YOUR EXISTING CSS
+   ========================================================================= */
+
+.breadcrumb-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1rem 0;
+    margin-top: -1px; /* Seamless connection with navbar */
+    position: relative;
+    z-index: 998;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(75, 121, 136, 0.05);
+}
+
+.breadcrumb-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-medium);
+}
+
+.breadcrumb-item a {
+    color: var(--color-secondary-blue);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius-small);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    border-bottom: none !important;
+}
+
+/* Remove any inherited link effects */
+.breadcrumb-item a::after {
+    display: none !important;
+}
+
+.breadcrumb-item a:hover {
+    background: rgba(107, 157, 175, 0.1);
+    color: var(--color-primary-blue);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(75, 121, 136, 0.1);
+}
+
+.breadcrumb-item:last-child {
+    color: var(--color-primary-blue);
+    font-weight: 600;
+}
+
+.breadcrumb-separator {
+    color: var(--color-light-blue);
+    margin: 0 0.3rem;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+.breadcrumb-home {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.breadcrumb-home-icon {
+    font-size: 1rem;
+    color: var(--color-accent-gold);
+}
+
+/* Mobile responsiveness for breadcrumbs */
+@media (max-width: 768px) {
+    .breadcrumb-container {
+        padding: 0.8rem 0;
+    }
+    
+    .breadcrumb-nav {
+        padding: 0 15px;
+    }
+    
+    .breadcrumb {
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-item a {
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb-nav {
+        padding: 0 10px;
+    }
+    
+    .breadcrumb {
+        font-size: 0.85rem;
+    }
+    
+    /* Hide middle items on very small screens */
+    .breadcrumb-item:not(:first-child):not(:last-child) {
+        display: none;
+    }
+    
+    .breadcrumb-item:nth-last-child(2) .breadcrumb-separator {
+        display: none;
+    }
+    
+    .breadcrumb-item:first-child::after {
+        content: "...";
+        margin: 0 0.5rem;
+        color: var(--color-light-blue);
+    }
+}
