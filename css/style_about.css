@@ -612,6 +612,11 @@
     .call-to-action p {
         margin-bottom: 1.5rem;
     }
+
+   .photo-caption p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
 }
 
 @media (max-width: 480px) {
