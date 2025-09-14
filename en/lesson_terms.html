@@ -12,14 +12,20 @@
 <body>
     <div id="header"></div>
 
-<div class="breadcrumb-container">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-            <ol class="breadcrumb" id="breadcrumb">
-                <!-- JavaScript will populate this automatically -->
-            </ol>
-        </nav>
-    </div>
-
+ <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/about/">Lesson Terms</a>
+                <span class="breadcrumb-separator">/</span>
+            </li>
+        </ol>
+    </nav>
+</div>
 
     
     <main class="main-content">
@@ -188,6 +194,5 @@
     <div id="footer"></div>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
-    <script src="../js/breadcrumb.js"></script> 
 </body>
 </html>
