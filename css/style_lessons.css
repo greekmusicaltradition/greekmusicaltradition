@@ -680,6 +680,7 @@
     font-weight: 600;
     margin-bottom: 0.7rem;
     opacity: 0.98;
+   flex-direction: column;   
 }
 
 .under-photo-content i {
