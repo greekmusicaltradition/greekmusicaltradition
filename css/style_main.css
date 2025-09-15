@@ -831,6 +831,7 @@ a:focus {
     font-size: 1.2rem;
     font-style: italic;
     line-height: 1.6;
+    font-weight: normal;
 }
 
 /* 12.6 Lesson Details Section */
