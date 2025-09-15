@@ -564,7 +564,7 @@ a:focus {
     margin-bottom: 1rem;
     color: var(--color-text-medium);
     line-height: 1.7;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 /* 8.3 Content Variants */
@@ -860,7 +860,7 @@ a:focus {
     color: var(--color-text-medium);
     position: relative;
     padding-left: 1rem;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .lesson-details li::before {
