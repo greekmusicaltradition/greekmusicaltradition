@@ -292,6 +292,7 @@ a {
     text-decoration: underline;
     transition: all 0.3s ease;
     position: relative;
+   
 }
 
 a:hover {
@@ -300,6 +301,10 @@ a:hover {
 
 a:active {
     color: var(--color-primary-blue);
+}
+
+strong a {
+  font-weight: bold;
 }
 
 /* 5.2 Navigation Link States */
