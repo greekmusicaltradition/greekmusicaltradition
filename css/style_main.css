@@ -886,7 +886,7 @@ a:focus {
     color: var(--color-text-medium);
     line-height: 1.6;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* 12.7 Lesson Image/Icon */
@@ -1208,7 +1208,7 @@ a:focus {
     }
 
     .info-panel p {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
         line-height: 1.6;
         margin-bottom: 1rem;
     }
