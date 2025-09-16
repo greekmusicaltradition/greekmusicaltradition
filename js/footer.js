@@ -20,13 +20,29 @@ function loadFooter() {
                 about: "About",
                 contact: "Contact"
             },
+            // Add subpages structure
+            subPages: {
+                lessons: [
+                    { name: "Byzantine Music", link: "lessons.html#byzantine" },
+                    { name: "Traditional Singing", link: "lessons.html#traditional" }
+                ],
+                about: [
+                    { name: "Our Story", link: "about.html#story" },
+                    { name: "Teaching Philosophy", link: "about.html#philosophy" },
+                    { name: "Meet the Teachers", link: "about.html#teachers" }
+                ],
+                pricing: [
+                    { name: "Individual Lessons", link: "pricing.html#individual" },
+                    { name: "Group Classes", link: "pricing.html#group" },
+                    { name: "Packages", link: "pricing.html#packages" }
+                ]
+            },
             lessonsTitle: "Lessons",
             lessonTypes: {
                 byzantine: "Byzantine Music",
                 traditional: "Traditional Singing",
-               
             },
-            contactTitle: "Have Questions?                              We're Here to Help!",
+            contactTitle: "Have Questions? We're Here to Help!",
             contactText: "Not sure where to begin? We'll help you choose the right path for your voice and interests.",
             cta: "Contact Us!",
             legal: {
@@ -47,13 +63,29 @@ function loadFooter() {
                 about: "Σχετικά",
                 contact: "Επικοινωνία"
             },
+            // Add Greek subpages
+            subPages: {
+                lessons: [
+                    { name: "Βυζαντινή Μουσική", link: "lessons.html#byzantine" },
+                    { name: "Παραδοσιακό Τραγούδι", link: "lessons.html#traditional" }
+                ],
+                about: [
+                    { name: "Η Ιστορία μας", link: "about.html#story" },
+                    { name: "Φιλοσοφία Διδασκαλίας", link: "about.html#philosophy" },
+                    { name: "Οι Καθηγητές", link: "about.html#teachers" }
+                ],
+                pricing: [
+                    { name: "Ατομικά Μαθήματα", link: "pricing.html#individual" },
+                    { name: "Ομαδικά Τμήματα", link: "pricing.html#group" },
+                    { name: "Πακέτα", link: "pricing.html#packages" }
+                ]
+            },
             lessonsTitle: "Μαθήματα",
             lessonTypes: {
                 byzantine: "Βυζαντινή Μουσική",
                 traditional: "Παραδοσιακό Τραγούδι",
-                
             },
-            contactTitle: "Έχετε Ερωτήσεις;                              Είμαστε Εδώ για να Βοηθήσουμε!",
+            contactTitle: "Έχετε Ερωτήσεις? Είμαστε Εδώ για να Βοηθήσουμε!",
             contactText: "Δεν είστε σίγουροι από πού να ξεκινήσετε; Θα σας βοηθήσουμε να επιλέξετε την κατάλληλη πορεία για τη φωνή και τα ενδιαφέροντά σας.",
             contactHighlight: "Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα",
             cta: "Φόρμα Επικοινωνίας",
@@ -77,6 +109,32 @@ function loadFooter() {
         lessonTerms: isGreek ? '../gr/lesson_terms.html' : '../en/lesson_terms.html'
     };
     
+    // Function to generate navigation with subpages
+    function generateNavLinks() {
+        const navItems = ['home', 'lessons', 'about', 'pricing', 'contact'];
+        let navHTML = '';
+        
+        navItems.forEach(item => {
+            const mainLink = item === 'home' ? 'index.html' : `${item}.html`;
+            
+            navHTML += `<li class="nav-item-with-subs">
+                <a href="${relativePath}${mainLink}" class="main-nav-link">${content[lang].nav[item]}</a>`;
+            
+            // Add subpages if they exist
+            if (content[lang].subPages && content[lang].subPages[item]) {
+                navHTML += '<ul class="sub-nav-links">';
+                content[lang].subPages[item].forEach(subPage => {
+                    navHTML += `<li><a href="${relativePath}${subPage.link}">${subPage.name}</a></li>`;
+                });
+                navHTML += '</ul>';
+            }
+            
+            navHTML += '</li>';
+        });
+        
+        return navHTML;
+    }
+    
     const footerHTML = `
         <footer class="site-footer">
             <div class="container">
@@ -88,11 +146,7 @@ function loadFooter() {
                     <div class="footer-section">
                         <h4>${content[lang].quickLinks}</h4>
                         <ul class="footer-links">
-                            <li><a href="${relativePath}index.html">${content[lang].nav.home}</a></li>
-                            <li><a href="${relativePath}lessons.html">${content[lang].nav.lessons}</a></li>
-                            <li><a href="${relativePath}pricing.html">${content[lang].nav.pricing}</a></li>
-                            <li><a href="${relativePath}about.html">${content[lang].nav.about}</a></li>
-                            <li><a href="${relativePath}contact.html">${content[lang].nav.contact}</a></li>
+                            ${generateNavLinks()}
                         </ul>
                     </div>
                     <div class="footer-section">
