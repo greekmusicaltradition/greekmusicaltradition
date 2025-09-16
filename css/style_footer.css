@@ -557,13 +557,13 @@
     padding-left: 0.5rem;
 }
 
-.sub-nav-links a::before {
+/*.sub-nav-links a::before {
     content: "→";
     position: absolute;
     left: 0;
     opacity: 0.6;
     font-size: 0.8rem;
-}
+} */
 
 .sub-nav-links a:hover {
     color: var(--color-light-blue) !important;
