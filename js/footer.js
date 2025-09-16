@@ -109,30 +109,39 @@ function loadFooter() {
         lessonTerms: isGreek ? '../gr/lesson_terms.html' : '../en/lesson_terms.html'
     };
     
-    // Function to generate navigation with subpages
+    // Function to generate navigation with subpages split into two columns
     function generateNavLinks() {
         const navItems = ['home', 'lessons', 'about', 'pricing', 'contact'];
-        let navHTML = '';
         
-        navItems.forEach(item => {
-            const mainLink = item === 'home' ? 'index.html' : `${item}.html`;
-            
-            navHTML += `<li class="nav-item-with-subs">
-                <a href="${relativePath}${mainLink}" class="main-nav-link">${content[lang].nav[item]}</a>`;
-            
-            // Add subpages if they exist
-            if (content[lang].subPages && content[lang].subPages[item]) {
-                navHTML += '<ul class="sub-nav-links">';
-                content[lang].subPages[item].forEach(subPage => {
-                    navHTML += `<li><a href="${relativePath}${subPage.link}">${subPage.name}</a></li>`;
-                });
-                navHTML += '</ul>';
-            }
-            
-            navHTML += '</li>';
-        });
+        // Split nav items into two columns
+        const col1Items = navItems.slice(0, 3); // home, lessons, about
+        const col2Items = navItems.slice(3);    // pricing, contact
         
-        return navHTML;
+        function generateColumnHTML(items) {
+            let navHTML = '';
+            items.forEach(item => {
+                const mainLink = item === 'home' ? 'index.html' : `${item}.html`;
+                
+                navHTML += `<li class="nav-item-with-subs">
+                    <a href="${relativePath}${mainLink}" class="main-nav-link">${content[lang].nav[item]}</a>`;
+                
+                // Add subpages if they exist
+                if (content[lang].subPages && content[lang].subPages[item]) {
+                    navHTML += '<ul class="sub-nav-links">';
+                    content[lang].subPages[item].forEach(subPage => {
+                        navHTML += `<li><a href="${relativePath}${subPage.link}">${subPage.name}</a></li>`;
+                    });
+                    navHTML += '</ul>';
+                }
+                
+                navHTML += '</li>';
+            });
+            return navHTML;
+        }
+        
+        return `${generateColumnHTML(col1Items)}</ul>
+            <ul class="footer-links quick-links-col">
+                ${generateColumnHTML(col2Items)}`;
     }
     
     const footerHTML = `
