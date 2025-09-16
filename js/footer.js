@@ -30,10 +30,10 @@ function loadFooter() {
                     
                 ],
                 about: [
-                    { name: "Meet the Teachers", link: "about_teaching.html" },
-                    { name: "About Byzantine Music", link: "about_byzantine.html#" },
-                    { name: "About Greek Traditional Singing", link: "about_greek_singing.html" }
-                    { name: "About Greek Traditional Music", link: "about_greek_music.html"}
+                    { name: "Meet the Teachers", link: "about_teaching.html#teaching" },
+                    { name: "About Byzantine Music", link: "about_byzantine.html#aboutbyzantine" },
+                    { name: "About Greek Traditional Singing", link: "about_greek_singing.html#greeksinging" }
+                    { name: "About Greek Traditional Music", link: "about_greek_music.html#greekmusic"}
                 ],
             },
             lessonsTitle: "Lessons",
