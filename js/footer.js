@@ -24,7 +24,7 @@ function loadFooter() {
             subPages: {
                 lessons: [
                     { name: "Byzantine Music", link: "lessons.html#byzantine" },
-                    { name: "Traditional Singing", link: "lessons.html#traditional" }
+                    { name: "Traditional Singing", link: "lessons.html#traditional" },
                     { name: "Online Lessons", link: "lessons_online.html#online" },
                     { name: "Local Singing", link: "lessons_local.html#local" }
                     
@@ -32,7 +32,7 @@ function loadFooter() {
                 about: [
                     { name: "Meet the Teachers", link: "about_teaching.html#teaching" },
                     { name: "About Byzantine Music", link: "about_byzantine.html#aboutbyzantine" },
-                    { name: "About Greek Traditional Singing", link: "about_greek_singing.html#greeksinging" }
+                    { name: "About Greek Traditional Singing", link: "about_greek_singing.html#greeksinging" },
                     { name: "About Greek Traditional Music", link: "about_greek_music.html#greekmusic"}
                 ],
             },
