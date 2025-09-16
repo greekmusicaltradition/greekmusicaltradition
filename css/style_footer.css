@@ -489,6 +489,38 @@
    FOOTER SUBPAGE NAVIGATION STYLES
    ==== */
 
+/* Update footer grid layout for 3 columns instead of 4 */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.8fr 1.4fr 1.3fr;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+/* Quick Links section with centered title and two columns */
+.footer-quick-links-section {
+    text-align: center;
+}
+
+.quick-links-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.quick-links-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.quick-links-col {
+    margin: 0;
+    padding: 0;
+}
+
 .nav-item-with-subs {
     margin-bottom: 0.8rem;
 }
@@ -545,8 +577,21 @@
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        text-align: center;
+    }
+    
+    .quick-links-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+        text-align: center;
+    }
+    
     .sub-nav-links {
         padding-left: 0.5rem;
+        text-align: center;
     }
     
     .sub-nav-links a {
