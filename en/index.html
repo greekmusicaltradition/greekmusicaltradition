@@ -200,12 +200,13 @@ window.addEventListener('load', () => {
 window.addEventListener('scroll', () => {
     // Show booking banner if:
     // 1. User scrolled enough AND banner not manually closed
-    // Simple - no dependency on cookie choice
+    // 2. Not at the bottom of the page (to avoid covering footer)
     const scrolled = window.scrollY > 300;
+    const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
     
-    if (scrolled && !stickyBannerClosed) {
+    if (scrolled && !stickyBannerClosed && !nearBottom) {
         showBookingBanner();
-    } else if (!scrolled) {
+    } else {
         hideBookingBanner();
     }
 });
