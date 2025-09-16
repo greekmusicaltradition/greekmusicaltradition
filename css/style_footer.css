@@ -484,3 +484,73 @@
         gap: 1.5rem;      /* Same as pricing section desktop gap */
     }
 }
+
+/* ====
+   FOOTER SUBPAGE NAVIGATION STYLES
+   ==== */
+
+.nav-item-with-subs {
+    margin-bottom: 0.8rem;
+}
+
+.main-nav-link {
+    font-weight: 600;
+    color: var(--color-white) !important;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.sub-nav-links {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+}
+
+.sub-nav-links li {
+    margin-bottom: 0.3rem;
+}
+
+.sub-nav-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.sub-nav-links a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
+    font-size: 0.8rem;
+}
+
+.sub-nav-links a:hover {
+    color: var(--color-light-blue) !important;
+}
+
+.sub-nav-links a:hover::before {
+    opacity: 1;
+}
+
+/* Alternative style with bullets instead of arrows */
+.sub-nav-links.bullet-style a::before {
+    content: "•";
+    font-size: 1rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .sub-nav-links {
+        padding-left: 0.5rem;
+    }
+    
+    .sub-nav-links a {
+        font-size: 0.85rem;
+        padding-left: 0.3rem;
+    }
+}
