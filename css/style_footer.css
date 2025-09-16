@@ -171,9 +171,10 @@
 }
 
 .footer-section h4 {
-    color: var(--color-light-blue);
+    color: white;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .footer-section p {
