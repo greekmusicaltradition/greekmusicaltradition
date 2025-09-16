@@ -1748,6 +1748,7 @@ a:focus {
 .sticky-cta:hover {
     background: #c09f2d;
     transform: translateY(-2px);
+    color: white;
 }
 
 .sticky-cta.secondary {
@@ -1757,6 +1758,7 @@ a:focus {
 
 .sticky-cta.secondary:hover {
     background: rgba(255, 255, 255, 0.3);
+    color: white;
 }
 
 .close-sticky {
