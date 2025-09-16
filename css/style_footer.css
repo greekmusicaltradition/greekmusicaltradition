@@ -164,7 +164,7 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.3fr 1.8fr 1fr;
+    grid-template-columns: 1.3fr 1.8fr 0.8fr;
     gap: 3rem;
     margin-bottom: 2rem;
     align-items: flex-start;
