@@ -162,5 +162,142 @@
 
         
     </script>
+    <!-- Sticky Booking Banner -->
+<div class="sticky-banner" id="stickyBanner">
+    <div class="sticky-banner-content">
+        <div class="sticky-banner-text">Ready to start learning Greek music?</div>
+        <div class="sticky-banner-buttons">
+            <a href="lessons_online.html" class="sticky-cta">Book Now</a>
+            <a href="pricing.html" class="sticky-cta secondary">Pricing</a>
+        </div>
+        <button class="close-sticky" onclick="closeStickyBanner()">×</button>
+    </div>
+</div>
+    <script>// Sticky Banner & Cookie Consent JavaScript
+// Add this to your existing JavaScript file or in a <script> tag
+
+let cookiesHandled = false;
+let stickyBannerClosed = false;
+let cookieBannerVisible = false;
+
+// Check if cookies were previously handled
+function checkCookieConsent() {
+    return localStorage.getItem('cookieConsent') !== null;
+}
+
+// Show cookie banner on page load (if not handled)
+window.addEventListener('load', () => {
+    if (!checkCookieConsent()) {
+        setTimeout(() => {
+            showCookieBanner();
+        }, 1000); // Delay to not overwhelm user
+    } else {
+        cookiesHandled = true;
+    }
+});
+
+// Scroll handler for booking banner
+window.addEventListener('scroll', () => {
+    // Show booking banner if:
+    // 1. User scrolled enough AND banner not manually closed
+    // Simple - no dependency on cookie choice
+    const scrolled = window.scrollY > 300;
+    
+    if (scrolled && !stickyBannerClosed) {
+        showBookingBanner();
+    } else if (!scrolled) {
+        hideBookingBanner();
+    }
+});
+
+function showCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const stickyBanner = document.getElementById('stickyBanner');
+    
+    if (cookieBanner) {
+        cookieBanner.classList.add('show');
+        cookieBannerVisible = true;
+        
+        // Adjust booking banner position if it's visible
+        if (stickyBanner) {
+            stickyBanner.classList.add('cookies-visible');
+        }
+    }
+}
+
+function hideCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const stickyBanner = document.getElementById('stickyBanner');
+    
+    if (cookieBanner) {
+        cookieBanner.classList.remove('show');
+        cookieBannerVisible = false;
+        
+        // Reset booking banner position
+        if (stickyBanner) {
+            stickyBanner.classList.remove('cookies-visible');
+        }
+    }
+}
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    cookiesHandled = true;
+    hideCookieBanner();
+    
+    // Enable your tracking scripts here
+    // Example:
+    // if (typeof gtag !== 'undefined') {
+    //     gtag('consent', 'update', {
+    //         'analytics_storage': 'granted',
+    //         'ad_storage': 'granted'
+    //     });
+    // }
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    cookiesHandled = true;
+    hideCookieBanner();
+    
+    // Disable tracking scripts here
+    // Example:
+    // if (typeof gtag !== 'undefined') {
+    //     gtag('consent', 'update', {
+    //         'analytics_storage': 'denied',
+    //         'ad_storage': 'denied'
+    //     });
+    // }
+}
+
+function showBookingBanner() {
+    const stickyBanner = document.getElementById('stickyBanner');
+    if (stickyBanner) {
+        stickyBanner.classList.add('show');
+    }
+}
+
+function hideBookingBanner() {
+    const stickyBanner = document.getElementById('stickyBanner');
+    if (stickyBanner) {
+        stickyBanner.classList.remove('show');
+    }
+}
+
+function closeStickyBanner() {
+    hideBookingBanner();
+    stickyBannerClosed = true;
+    
+    // Optional: Remember this choice
+    sessionStorage.setItem('stickyBannerClosed', 'true');
+}
+
+// Optional: Check if banner was previously closed this session
+window.addEventListener('load', () => {
+    if (sessionStorage.getItem('stickyBannerClosed') === 'true') {
+        stickyBannerClosed = true;
+    }
+});
+    </script>
 </body>
 </html>
