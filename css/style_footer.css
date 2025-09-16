@@ -164,8 +164,8 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.6fr 0.9fr 0.9fr 1.3fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.5fr 1.8fr 0.8fr;
+    gap: 3rem;
     margin-bottom: 2rem;
     align-items: flex-start;
 }
@@ -181,6 +181,7 @@
     line-height: 1.6;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    text-align: justify;
 }
 
 .footer-links {
@@ -195,6 +196,7 @@
     color: var(--color-white);
     text-decoration: none;
     transition: color 0.3s ease;
+    text-align: center;
 }
 
 .footer-links a:hover {
@@ -535,10 +537,10 @@
 }
 
 .sub-nav-links {
-    list-style: outside;
     padding-left: 1rem;
     margin-top: 0.3rem;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .sub-nav-links li {
