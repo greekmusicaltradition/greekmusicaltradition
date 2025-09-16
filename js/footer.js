@@ -143,18 +143,13 @@ function loadFooter() {
                         <h4>${content[lang].title}</h4>
                         <p>${content[lang].description}</p>
                     </div>
-                    <div class="footer-section">
-                        <h4>${content[lang].quickLinks}</h4>
-                        <ul class="footer-links">
-                            ${generateNavLinks()}
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>${content[lang].lessonsTitle}</h4>
-                        <ul class="footer-links">
-                            <li><a href="${relativePath}lessons.html#byzantine">${content[lang].lessonTypes.byzantine}</a></li>
-                            <li><a href="${relativePath}lessons.html#traditional">${content[lang].lessonTypes.traditional}</a></li>
-                        </ul>
+                    <div class="footer-section footer-quick-links-section">
+                        <h4 class="quick-links-title">${content[lang].quickLinks}</h4>
+                        <div class="quick-links-columns">
+                            <ul class="footer-links quick-links-col">
+                                ${generateNavLinks()}
+                            </ul>
+                        </div>
                     </div>
                     <div class="footer-section footer-contact-compact">
                         <h4>${content[lang].contactTitle}</h4>
