@@ -1,0 +1,163 @@
+
+/* Photo Section Styles */
+.photo-section {
+  padding: 4rem 0;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.photo-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+/* Photo Grid Container */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+/* Individual Photo Container */
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #fff;
+  cursor: pointer;
+}
+
+.photo-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Photo Image Styling */
+.photo-item img {
+  width: 100%;
+  height: 250px; /* Fixed height for consistency */
+  object-fit: cover; /* Maintains aspect ratio while filling container */
+  object-position: center; /* Centers the image */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Optional: Add overlay effect on hover */
+.photo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 90, 43, 0.3), rgba(212, 165, 116, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo-item:hover::before {
+  opacity: 1;
+}
+
+/* Optional: Add caption support */
+.photo-item[data-caption]::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem 1.5rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.photo-item:hover[data-caption]::after {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .photo-section {
+    padding: 2rem 0;
+    margin: 2rem 0;
+  }
+  
+  .photo-section .container {
+    padding: 0 1rem;
+  }
+  
+  .photo-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .photo-item img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .photo-item img {
+    height: 180px;
+  }
+  
+  .photo-section .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Optional: Masonry-style layout for varied heights */
+.photo-grid.masonry {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.photo-grid.masonry .photo-item {
+  display: inline-block;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.photo-grid.masonry .photo-item img {
+  height: auto; /* Let images keep natural proportions */
+  min-height: 200px;
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .photo-grid.masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid.masonry {
+    column-count: 1;
+  }
+}
