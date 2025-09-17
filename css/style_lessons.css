@@ -1262,51 +1262,39 @@
     }
 }
 
-
 /* ========================================
-   DUPLICATE SELECTORS TO MERGE
+   10. ADD ON TO LESSON CARDS
    ======================================== */
 
-/*
-=== IMPORTANT: DUPLICATE SELECTORS FOUND ===
-The following selectors appear multiple times in your CSS.
-Please merge them manually:
+.skills-divider {
+    width: calc(100% + 3rem);
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--color-light-blue),
+        var(--color-light-blue),
+        transparent
+    );
+    margin: 1.5rem -1.5rem 0 -1.5rem;
+}
 
-1. .method-card .lesson-content
-   - Instance 1: margin-left: 1rem; padding-left: 0.5rem;
-   - Instance 2: border-left: none; margin-left: 0; padding-left: 0.5rem; (responsive)
+.key-skills {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-2. .group-content-section
-   - Multiple instances with different padding values (responsive breakpoints)
-   - Consider consolidating responsive rules
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .key-skills {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
 
-3. .group-content-section h3
-   - Multiple font-size variations for responsive design
+    }
 
-4. .special-offer-right
-   - Multiple font-size and padding variations for responsive design
 
-5. .group-lessons-info
-   - Multiple font-size variations for responsive design
-
-6. .location-info, .schedule-info
-   - Multiple font-size variations for responsive design
-
-7. .under-photo-content
-   - Multiple padding variations for responsive design
-
-8. .group-cta
-   - Multiple property variations for responsive design
-
-9. .lesson-terms-content p
-   - Font-size variations for responsive design
-
-10. @media queries for .lesson-details .cta-button
-    - Multiple responsive variations
-
-11. .group-content-section .music-type-badge
-    - Exact duplicate - can be merged immediately
-
-RECOMMENDATION: Review these duplicates and merge them by consolidating
-the responsive variations into proper media query blocks.
-*/
