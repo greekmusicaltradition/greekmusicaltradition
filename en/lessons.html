@@ -2,152 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Lessons - Greek Traditional & Byzantine Music</title>
-    <meta name="description" content="Learn authentic Greek traditional singing and Byzantine music with expert instruction. Online and local lessons available in Rafina and worldwide.">
-    
-    <!-- Favicons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Lessons - Greek Traditional & Byzantine Music</title> 
     <link rel="icon" href="../pictures/favicon.png" type="image/png">
-    
-    <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
-          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <!-- Custom Stylesheets -->
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style_main.css">
-    <link rel="stylesheet" href="../css/style_lessons.css">
+    <link rel="stylesheet" href="../css/style_lessons.css"> 
     <link rel="stylesheet" href="../css/style_footer.css">
-    
-    <!-- Scripts -->
-    <script src="../js/cookie-consent.js" defer></script>
-</head>
+    <script src="../js/cookie-consent.js"></script>
+</head> 
+<body> 
+    <div id="header"></div>
 
-<body>
-    <!-- Skip Navigation for Accessibility -->
-    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
-    
-    <!-- Header -->
-    <header id="header" role="banner"></header>
-    
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-container" aria-label="breadcrumb">
-        <div class="breadcrumb-nav">
-            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="index.html" itemprop="item">
-                        <span itemprop="name">Home</span>
-                    </a>
-                    <meta itemprop="position" content="1">
-                    <span class="breadcrumb-separator" aria-hidden="true">/</span>
-                </li>
-                <li class="breadcrumb-item" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span itemprop="name">Lessons</span>
-                    <meta itemprop="position" content="2">
-                </li>
-            </ol>
-        </div>
+    <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+                <span>Lessons</span>
+            </li>
+        </ol>
     </nav>
-    
-    <!-- Main Content -->
-    <main id="main-content" class="main-content" role="main">
+</div>
+
+   
+    <main class="main-content">
         <div class="container">
-            
-            <!-- Hero Section -->
-            <section class="hero-section" aria-labelledby="hero-title">
-                <div class="hero-content">
-                    <h1 id="hero-title" class="hero-title">Learn Authentic Greek Music</h1>
-                    <p class="hero-subtitle">Master the art of Byzantine chanting and traditional Greek singing with personalized instruction</p>
-                </div>
-            </section>
-            
-            <!-- Subject Areas Section -->
-            <section class="subjects-section" aria-labelledby="subjects-title">
-                <h2 id="subjects-title" class="section-title">What We Teach</h2>
+            <!-- Subject Cards Section -->
+            <section class="subjects-section">
+                <h2 class="section-title">What We Teach</h2>
                 <div class="lessons-grid subjects-grid">
-                    
-                    <!-- Byzantine Music Card -->
-                    <article class="lesson-card subject-card" itemscope itemtype="https://schema.org/Course">
-                        <header class="lesson-header subject-header">
-                            <h3 itemprop="name">Byzantine Music</h3>
-                        </header>
-                        
+                    <div class="lesson-card subject-card">
+                        <div class="lesson-header subject-header">
+                            <h3>Byzantine Music</h3>
+                        </div>
                         <div class="lesson-content">
-                            <div class="lesson-image" aria-hidden="true">
+                            <div class="lesson-image">
                                 <div class="byzantine-icon">📜</div>
                             </div>
-                            
                             <div class="lesson-details">
-                                <h4 class="visually-hidden">Course Content</h4>
-                                <ul itemprop="coursePrerequisites">
+                                <ul>
                                     <li>Byzantine notation system and theory</li>
                                     <li>Traditional chanting techniques</li>
                                     <li>Sacred repertoire and liturgical music</li>
                                     <li>Historical context and spiritual significance</li>
-                                    <li>Vocal technique and breath control</li>
+                                    <li>Vocal technique</li>
                                 </ul>
                             </div>
-                            
-                            <div class="skills-divider" role="separator"></div>
-                            
-                            <div class="key-skills" aria-label="Key skills taught">
-                                <span class="skill-tag">Notation</span>
-                                <span class="skill-tag">Vocal Technique</span>
-                                <span class="skill-tag">Sacred Music</span>
-                                <span class="skill-tag">Cultural Heritage</span>
-                            </div>
                         </div>
-                    </article>
-                    
-                    <!-- Greek Traditional Singing Card -->
-                    <article class="lesson-card subject-card" itemscope itemtype="https://schema.org/Course">
-                        <header class="lesson-header subject-header">
-                            <h3 itemprop="name">Greek Traditional Singing</h3>
-                        </header>
-                        
+                    </div>
+                    <div class="lesson-card subject-card">
+                        <div class="lesson-header subject-header">
+                            <h3>Greek Traditional Singing</h3>
+                        </div>
                         <div class="lesson-content">
-                            <div class="lesson-image" aria-hidden="true">
+                            <div class="lesson-image">
                                 <div class="traditional-icon">🎶</div>
                             </div>
-                            
                             <div class="lesson-details">
-                                <h4 class="visually-hidden">Course Content</h4>
-                                <ul itemprop="coursePrerequisites">
+                                <ul>
                                     <li>Traditional Greek folk songs and melodies</li>
                                     <li>Regional musical styles and variations</li>
                                     <li>Proper Greek pronunciation and diction</li>
                                     <li>Cultural context and storytelling through song</li>
-                                    <li>Greek musical modes and rhythm patterns</li>
+                                    <li>Modes and rhythm</li>
                                 </ul>
                             </div>
-                            
-                            <div class="skills-divider" role="separator"></div>
-                            
-                            <div class="key-skills" aria-label="Key skills taught">
-                                <span class="skill-tag">Folk Traditions</span>
-                                <span class="skill-tag">Vocal Performance</span>
-                                <span class="skill-tag">Greek Language</span>
-                                <span class="skill-tag">Cultural Stories</span>
-                            </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
-            
-            <!-- Teaching Methods Section -->
-            <section class="methods-section" aria-labelledby="methods-title">
-                <h2 id="methods-title" class="section-title">How We Teach</h2>
+
+            <!-- Methods Section -->
+            <section class="methods-section">
+                <h2 class="section-title">How We Teach</h2>
                 <div class="lessons-grid methods-grid">
-                    
-                    <!-- Online Lessons Card -->
-                    <article class="lesson-card method-card" itemscope itemtype="https://schema.org/EducationalOrganization">
-                        <header class="lesson-header method-header">
-                            <h3 itemprop="name">Online Lessons</h3>
-                        </header>
-                        
+                    <div class="lesson-card method-card">
+                        <div class="lesson-header method-header">
+                            <h3>Online Lessons</h3>
+                        </div>
                         <div class="lesson-content">
                             <div class="lesson-details">
-                                <h4>Perfect for:</h4>
                                 <ul>
                                     <li>Students anywhere in the world</li>
                                     <li>Flexible scheduling around your routine</li>
@@ -155,152 +94,85 @@
                                     <li>Those with busy schedules</li>
                                     <li>Building a consistent practice routine</li>
                                 </ul>
-                                
                                 <div class="lesson-format-box">
                                     <h4>Available Formats:</h4>
-                                    <div class="format-options">
-                                        <p>
-                                            <i class="fas fa-user" aria-hidden="true"></i>
-                                            <strong>One-to-One:</strong> Personalized instruction tailored to your voice and goals
-                                        </p>
-                                        <p>
-                                            <i class="fas fa-users" aria-hidden="true"></i>
-                                            <strong>Group Sessions:</strong> Learn alongside others in a supportive online community
-                                        </p>
-                                    </div>
+                                    <p><i class="fas fa-user"></i> <strong>One-to-One:</strong> Personalized instruction tailored to your voice and goals</p>
+                                    <p><i class="fas fa-users"></i> <strong>Group Sessions:</strong> Learn alongside others in a supportive online community</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <footer class="lesson-description-box">
-                            <p>Experience the full depth of Greek musical tradition through high-quality video lessons. All materials are provided digitally, and recordings are available for your practice sessions.</p>
-                            <div class="cta-button-container">
-                                <a href="lessons_online.html" class="cta-button primary" role="button">
-                                    Explore Online Lessons
-                                </a>
+                        <div class="lesson-description-box">
+                            <p>Experience the full depth of Greek musical tradition through high-quality video lessons. All materials are provided digitally, and recordings are available for your practice.</p>
+                            <div class="cta-button-container" style="margin-top: 1.5rem;">
+                                <a href="lessons_online.html" class="cta-button primary">Explore Online Lessons</a>
                             </div>
-                        </footer>
-                    </article>
-                    
-                    <!-- Local In-Person Lessons Card -->
-                    <article class="lesson-card method-card" itemscope itemtype="https://schema.org/EducationalOrganization">
-                        <header class="lesson-header method-header">
-                            <h3 itemprop="name">Local In-Person Lessons</h3>
-                        </header>
-                        
+                        </div>
+                    </div>
+                    <div class="lesson-card method-card">
+                        <div class="lesson-header method-header">
+                            <h3>Local In-Person Lessons</h3>
+                        </div>
                         <div class="lesson-content">
                             <div class="lesson-details">
-                                <h4>Perfect for:</h4>
                                 <ul>
                                     <li>Local students in Rafina and nearby areas</li>
-                                    <li>Face-to-face instruction and mentorship</li>
+                                    <li>Face-to-face instruction</li>
                                     <li>Hands-on learning experience</li>
-                                    <li>Direct vocal guidance and immediate feedback</li>
-                                    <li>Participation in live events and performances</li>
+                                    <li>Direct vocal guidance and feedback</li>
+                                    <li>Participation in live events</li>
                                 </ul>
-                                
                                 <div class="lesson-format-box">
                                     <h4>Available Formats:</h4>
-                                    <div class="format-options">
-                                        <p>
-                                            <i class="fas fa-user" aria-hidden="true"></i>
-                                            <strong>Private Lessons:</strong> Intensive one-on-one instruction
-                                        </p>
-                                        <p>
-                                            <i class="fas fa-users" aria-hidden="true"></i>
-                                            <strong>Small Groups:</strong> Group sessions fostering musical community
-                                        </p>
-                                    </div>
+                                    <p><i class="fas fa-user"></i> <strong>Private Lessons:</strong> Intensive one-on-one instruction</p>
+                                    <p><i class="fas fa-users"></i> <strong>Small Groups:</strong> Group sessions fostering musical community</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <footer class="lesson-description-box">
-                            <p>Experience the beauty of authentic Greek music through direct vocal coaching, cultural immersion, and the energy of live musical connection in our welcoming learning environment.</p>
-                            <div class="cta-button-container">
-                                <a href="lessons_local.html" class="cta-button secondary-dark" role="button">
-                                    Explore Local Lessons
-                                </a>
-                            </div>
-                        </footer>
-                    </article>
+                        <div class="lesson-description-box">
+                            <p>Experience the beauty of authentic Greek music through direct vocal coaching, cultural immersion, and the energy of live musical connection.</p>
+                            <div class="cta-button-container" style="margin-top: 1.5rem;">
+                                <a href="lessons_local.html" class="cta-button secondary-dark">Explore Local Lessons</a>
+                           </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             
-            <!-- Terms & Conditions Section -->
-            <aside class="lesson-terms-section" aria-labelledby="terms-title">
+            <!-- Lesson Terms Section -->
+            <div class="lesson-terms-section">
                 <div class="lesson-terms-content">
-                    <h2 id="terms-title">Terms & Conditions</h2>
+                    <h2>Terms & Conditions</h2>
                     <p>Before booking your lessons, please take a moment to review our lesson terms and policies. This includes information about scheduling, cancellations, payment terms, and other important details to ensure a smooth learning experience.</p>
-                    <p>Please read our <a href="lesson_terms.html" class="lesson-terms-link">complete lesson terms and conditions</a> for all the details.</p>
+                    <p>Please read our <a href="lesson_terms.html" class="lesson-terms-link">lesson terms and conditions</a> for complete details.</p>
                 </div>
-            </aside>
-            
+            </div>
         </div>
     </main>
-    
-    <!-- Footer -->
-    <footer id="footer" role="contentinfo"></footer>
-    
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top" type="button">
-        <i class="fas fa-chevron-up" aria-hidden="true"></i>
-        <span class="visually-hidden">Return to top of page</span>
-    </button>
-    
-    <!-- Scripts -->
-    <script src="../js/header.js" defer></script>
-    <script src="../js/footer.js" defer></script>
+
+   <div id="footer"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
     <script>
         // Back to top button functionality
-        (function() {
-            'use strict';
-            
-            const backToTopButton = document.getElementById('back-to-top');
-            const SCROLL_THRESHOLD = 300;
-            
-            // Show/hide button based on scroll position
-            function toggleBackToTopButton() {
-                if (window.pageYOffset > SCROLL_THRESHOLD) {
-                    backToTopButton.classList.add('show');
-                    backToTopButton.setAttribute('aria-hidden', 'false');
-                } else {
-                    backToTopButton.classList.remove('show');
-                    backToTopButton.setAttribute('aria-hidden', 'true');
-                }
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
             }
-            
-            // Smooth scroll to top
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                
-                // Focus management for accessibility
-                setTimeout(() => {
-                    const skipLink = document.querySelector('.skip-link');
-                    if (skipLink) {
-                        skipLink.focus();
-                    }
-                }, 100);
-            }
-            
-            // Event listeners
-            window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
-            backToTopButton.addEventListener('click', scrollToTop);
-            
-            // Handle keyboard navigation
-            backToTopButton.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    scrollToTop();
-                }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-            
-            // Initialize button state
-            toggleBackToTopButton();
-        })();
+        });
+
     </script>
 </body>
 </html>
