@@ -158,35 +158,18 @@ function loadFooter() {
                         <p>${content[lang].description}</p>
                         <div class="social-media-section">
                             <h5>${content[lang].socialMedia}</h5>
-                            <div class="social-media-widgets">
-                                <!-- Facebook Page Plugin Placeholder -->
-                                <div class="facebook-widget-placeholder">
-                                    <!-- REPLACE THIS COMMENT WITH FACEBOOK PAGE PLUGIN CODE -->
-                                    <!-- Get your code from: https://developers.facebook.com/docs/plugins/page-plugin -->
-                                    <div class="placeholder-content">
-                                        <p>📘 Facebook Page Plugin</p>
-                                        <small>Replace with official Facebook Page Plugin</small>
+                            <div class="social-media-links">
+                                <a href="${socialMediaLinks.facebook}" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+                                    <div class="icon-placeholder facebook-icon">
+                                        <!-- REPLACE WITH OFFICIAL FACEBOOK ICON -->
+                                        <span class="placeholder-text">FB</span>
                                     </div>
-                                </div>
-                                
-                                <!-- Instagram Feed Placeholder -->
-                                <div class="instagram-widget-placeholder">
-                                    <!-- REPLACE THIS COMMENT WITH INSTAGRAM EMBED CODE -->
-                                    <!-- Options: Instagram Basic Display API, third-party widgets, or simple follow button -->
-                                    <div class="placeholder-content">
-                                        <p>📷 Instagram Widget</p>
-                                        <small>Replace with official Instagram embed or follow button</small>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Alternative: Simple Social Links (if you prefer buttons over widgets) -->
-                            <div class="social-media-links-fallback" style="display: none;">
-                                <a href="${socialMediaLinks.facebook}" target="_blank" rel="noopener noreferrer" class="social-btn facebook-btn">
-                                    <span>Follow on Facebook</span>
                                 </a>
-                                <a href="${socialMediaLinks.instagram}" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn">
-                                    <span>Follow on Instagram</span>
+                                <a href="${socialMediaLinks.instagram}" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+                                    <div class="icon-placeholder instagram-icon">
+                                        <!-- REPLACE WITH OFFICIAL INSTAGRAM ICON -->
+                                        <span class="placeholder-text">IG</span>
+                                    </div>
                                 </a>
                             </div>
                         </div>
