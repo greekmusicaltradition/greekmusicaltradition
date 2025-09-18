@@ -597,7 +597,6 @@
     }
 }
 
-
 /* ====
    SOCIAL MEDIA SECTION
    ==== */
@@ -613,104 +612,103 @@
     font-weight: 600;
 }
 
-/* ====
-   SOCIAL MEDIA WIDGET PLACEHOLDERS
-   ==== */
-.social-media-widgets {
+.social-media-links {
     display: flex;
-    flex-direction: column;
     gap: 1rem;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
-.facebook-widget-placeholder,
-.instagram-widget-placeholder {
-    width: 100%;
-    max-width: 340px;
-    min-height: 150px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px dashed rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.social-link {
+    display: inline-block;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.facebook-widget-placeholder:hover,
-.instagram-widget-placeholder:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.5);
+.icon-placeholder {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.placeholder-content {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+/* Facebook placeholder styling */
+.facebook-icon {
+    background: linear-gradient(135deg, #1877f2, #165ed8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.placeholder-content p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+.social-link:hover .facebook-icon {
+    background: linear-gradient(135deg, #166fe5, #1455c7);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.placeholder-content small {
-    font-size: 0.85rem;
-    opacity: 0.7;
-    display: block;
+/* Instagram placeholder styling */
+.instagram-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover .instagram-icon {
+    background: linear-gradient(45deg, #e8872e 0%, #d85a32 25%, #c91f39 50%, #b91d5c 75%, #a8167a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.placeholder-text {
+    color: var(--color-white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus states for accessibility */
+.social-link:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+/* Active state */
+.social-link:active .icon-placeholder {
+    transform: translateY(-1px);
 }
 
 /* ====
-   FALLBACK SOCIAL BUTTONS (Alternative Option)
+   INSTRUCTIONS FOR REPLACING PLACEHOLDERS
    ==== */
-.social-media-links-fallback {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-}
+/*
+TO REPLACE WITH OFFICIAL ICONS:
 
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    text-align: center;
-}
+1. For Facebook:
+   - Download official Facebook icon from Facebook Brand Resource Center
+   - Replace the entire <div class="icon-placeholder facebook-icon">...</div> 
+     with: <img src="path/to/facebook-icon.png" alt="Facebook" width="24" height="24">
+   - Or use Font Awesome: <i class="fab fa-facebook-f"></i>
 
-.social-btn span {
-    color: white;
-}
+2. For Instagram:
+   - Download official Instagram icon from Instagram Brand Resources
+   - Replace the entire <div class="icon-placeholder instagram-icon">...</div>
+     with: <img src="path/to/instagram-icon.png" alt="Instagram" width="24" height="24">
+   - Or use Font Awesome: <i class="fab fa-instagram"></i>
 
-.facebook-btn {
-    background: linear-gradient(135deg, #1877f2, #165ed8);
-    border: 2px solid transparent;
-}
+3. If using images, add this CSS:
+   .social-link img {
+       filter: brightness(0) invert(1); // Makes icons white
+   }
 
-.facebook-btn:hover {
-    background: linear-gradient(135deg, #166fe5, #1455c7);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
-}
-
-.instagram-btn {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border: 2px solid transparent;
-}
-
-.instagram-btn:hover {
-    background: linear-gradient(45deg, #e8872e 0%, #d85a32 25%, #c91f39 50%, #b91d5c 75%, #a8167a 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
-}
+4. If using Font Awesome, add this to your HTML head:
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+*/
 
 /* ====
    RESPONSIVE DESIGN - SOCIAL MEDIA
@@ -725,44 +723,25 @@
         margin-bottom: 0.6rem;
     }
     
-    .social-media-widgets {
+    .social-media-links {
         gap: 0.8rem;
     }
     
-    .facebook-widget-placeholder,
-    .instagram-widget-placeholder {
-        max-width: 100%;
-        min-height: 120px;
-    }
-    
-    .placeholder-content p {
-        font-size: 1rem;
-    }
-    
-    .placeholder-content small {
-        font-size: 0.8rem;
-    }
-    
-    .social-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-        min-width: 160px;
+    .icon-placeholder {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    .facebook-widget-placeholder,
-    .instagram-widget-placeholder {
-        min-height: 100px;
+    .social-media-links {
+        gap: 0.6rem;
     }
     
-    .placeholder-content p {
-        font-size: 0.95rem;
-    }
-    
-    .social-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-        min-width: 140px;
+    .icon-placeholder {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
     }
 }
