@@ -1221,7 +1221,6 @@ a:focus {
 
     .lesson-card {
         margin-bottom: 1rem;
-        padding-bottom: 85px; /* DUPLICATE with 480px breakpoint */
     }
 
     .lesson-content {
@@ -1355,7 +1354,6 @@ a:focus {
 
     .lesson-card {
         margin-bottom: 1rem; /* DUPLICATE - consolidate */
-        padding-bottom: 90px; /* DUPLICATE - slightly different from 768px */
     }
 
     /* Button layout adjustments */
