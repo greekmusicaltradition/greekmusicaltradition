@@ -1349,6 +1349,10 @@ a:focus {
         font-size: 0.85rem;
     }
 
+   .lesson-details li::before {
+    left: -1rem;
+}
+
     .lesson-card {
         margin-bottom: 1rem; /* DUPLICATE - consolidate */
         padding-bottom: 90px; /* DUPLICATE - slightly different from 768px */
