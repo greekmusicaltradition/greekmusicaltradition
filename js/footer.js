@@ -26,7 +26,7 @@ function loadFooter() {
                     { name: "Byzantine Music", link: "lessons.html" },
                     { name: "Traditional Singing", link: "lessons.html" },
                     { name: "Online Lessons", link: "lessons_online.html" },
-                    { name: "Local Singing", link: "lessons_local.html" }
+                    { name: "Local Lesssons", link: "lessons_local.html" }
                     
                 ],
                 about: [
