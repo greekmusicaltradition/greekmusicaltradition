@@ -7,16 +7,6 @@ function loadFooter() {
     // Default to English if no language detected
     const lang = isGreek ? 'gr' : 'en';
     
-    // Determine the correct path prefix for links and icons
-    const pathPrefix = isGreek ? 'gr' : 'en';
-    const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
-    
-    // Dynamic icon path for GitHub Pages - includes repository name
-    // Adjust the base path depending on whether you're in a subfolder
-    const iconPath = currentPath.includes('/gr/') || currentPath.includes('/en/') 
-        ? '../pictures/icons/' 
-        : './pictures/icons/';
-    
     // Language-specific content
     const content = {
         en: {
@@ -115,6 +105,10 @@ function loadFooter() {
         instagram: "https://instagram.com/your-username" // Replace with your actual Instagram URL
     };
     
+    // Determine the correct path prefix for links
+    const pathPrefix = isGreek ? 'gr' : 'en';
+    const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
+    
     // Define legal page paths
     const legalPaths = {
         privacy: isGreek ? '../gr/privacy_policy.html' : '../en/privacy_policy.html',
@@ -166,10 +160,10 @@ function loadFooter() {
                             <h5>${content[lang].socialMedia}</h5>
                             <div class="social-media-links">
                                 <a href="${socialMediaLinks.facebook}" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
-                                    <img src="${iconPath}Facebook_logo.jpg" alt="Facebook" class="social-icon">
+                                    <img src="../pictures/Facebook_icon.jpg" alt="Facebook" class="social-icon">
                                 </a>
                                 <a href="${socialMediaLinks.instagram}" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
-                                    <img src="${iconPath}Instagram_logo.jpg" alt="Instagram" class="social-icon">
+                                    <img src="../pictures/Instagram_icon.jpg" alt="Instagram" class="social-icon">
                                 </a>
                             </div>
                         </div>
