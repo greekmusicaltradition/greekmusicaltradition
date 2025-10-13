@@ -101,7 +101,7 @@ function loadFooter() {
     
     // Social media configuration
     const socialMediaLinks = {
-        facebook: "https://facebook.com/your-page-name", // Replace with your actual Facebook page URL
+        facebook: "https://www.facebook.com/GreekMusicalTradition", // Replace with your actual Facebook page URL
         instagram: "https://instagram.com/your-username" // Replace with your actual Instagram URL
     };
     
