@@ -11,10 +11,11 @@ function loadFooter() {
     const pathPrefix = isGreek ? 'gr' : 'en';
     const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
     
-    // Dynamic icon path based on page location
+    // Dynamic icon path for GitHub Pages - includes repository name
+    // Adjust the base path depending on whether you're in a subfolder
     const iconPath = currentPath.includes('/gr/') || currentPath.includes('/en/') 
         ? '../pictures/icons/' 
-        : 'pictures/icons/';
+        : './pictures/icons/';
     
     // Language-specific content
     const content = {
