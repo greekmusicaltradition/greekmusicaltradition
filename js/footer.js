@@ -7,6 +7,15 @@ function loadFooter() {
     // Default to English if no language detected
     const lang = isGreek ? 'gr' : 'en';
     
+    // Determine the correct path prefix for links
+    const pathPrefix = isGreek ? 'gr' : 'en';
+    const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
+    
+    // Dynamic icon path for social media images
+    const iconPath = currentPath.includes('/gr/') || currentPath.includes('/en/') 
+        ? '../pictures/' 
+        : 'pictures/';
+    
     // Language-specific content
     const content = {
         en: {
@@ -86,7 +95,7 @@ function loadFooter() {
                 byzantine: "Βυζαντινή Μουσική",
                 traditional: "Παραδοσιακό Τραγούδι",
             },
-            contactTitle: "Έχετε Ερωτήσεις? Είμαστε Εδώ για να Βοηθήσουμε!",
+            contactTitle: "Έχετε Ερωτήσεις; Είμαστε Εδώ για να Βοηθήσουμε!",
             contactText: "Δεν είστε σίγουροι από πού να ξεκινήσετε; Θα σας βοηθήσουμε να επιλέξετε την κατάλληλη πορεία για τη φωνή και τα ενδιαφέροντά σας.",
             contactHighlight: "Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα",
             cta: "Φόρμα Επικοινωνίας",
@@ -105,10 +114,6 @@ function loadFooter() {
         instagram: "https://instagram.com/your-username" // Replace with your actual Instagram URL
     };
     
-    // Determine the correct path prefix for links
-    const pathPrefix = isGreek ? 'gr' : 'en';
-    const relativePath = currentPath.includes('/gr/') || currentPath.includes('/en/') ? '' : `${pathPrefix}/`;
-    
     // Define legal page paths
     const legalPaths = {
         privacy: isGreek ? '../gr/privacy_policy.html' : '../en/privacy_policy.html',
@@ -118,32 +123,32 @@ function loadFooter() {
     
     // Function to generate navigation with subpages split into two columns
     function generateNavLinks() {
-    // Manually split the navigation items for a more balanced layout
-    const col1Items = ['home', 'lessons', 'pricing'];
-    const col2Items = ['about', 'contact'];
+        // Manually split the navigation items for a more balanced layout
+        const col1Items = ['home', 'lessons', 'pricing'];
+        const col2Items = ['about', 'contact'];
 
-    function generateColumnHTML(items) {
-        let navHTML = '';
-        items.forEach(item => {
-            const mainLink = item === 'home' ? 'index.html' : `${item}.html`;
+        function generateColumnHTML(items) {
+            let navHTML = '';
+            items.forEach(item => {
+                const mainLink = item === 'home' ? 'index.html' : `${item}.html`;
+                
+                navHTML += `<li class="nav-item-with-subs">
+                    <a href="${relativePath}${mainLink}" class="main-nav-link">${content[lang].nav[item]}</a>`;
+                
+                // Add subpages if they exist
+                if (content[lang].subPages && content[lang].subPages[item]) {
+                    navHTML += '<ul class="sub-nav-links">';
+                    content[lang].subPages[item].forEach(subPage => {
+                        navHTML += `<li><a href="${relativePath}${subPage.link}">${subPage.name}</a></li>`;
+                    });
+                    navHTML += '</ul>';
+                }
+                
+                navHTML += '</li>';
+            });
+            return navHTML;
+        }
             
-            navHTML += `<li class="nav-item-with-subs">
-                <a href="${relativePath}${mainLink}" class="main-nav-link">${content[lang].nav[item]}</a>`;
-            
-            // Add subpages if they exist
-            if (content[lang].subPages && content[lang].subPages[item]) {
-                navHTML += '<ul class="sub-nav-links">';
-                content[lang].subPages[item].forEach(subPage => {
-                    navHTML += `<li><a href="${relativePath}${subPage.link}">${subPage.name}</a></li>`;
-                });
-                navHTML += '</ul>';
-            }
-            
-            navHTML += '</li>';
-        });
-        return navHTML;
-    }
-        
         return `${generateColumnHTML(col1Items)}</ul>
             <ul class="footer-links quick-links-col">
                 ${generateColumnHTML(col2Items)}`;
@@ -160,10 +165,10 @@ function loadFooter() {
                             <h5>${content[lang].socialMedia}</h5>
                             <div class="social-media-links">
                                 <a href="${socialMediaLinks.facebook}" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
-                                    <img src="/pictures/Facebook_icon.jpg" alt="Facebook" class="social-icon">
+                                    <img src="${iconPath}Facebook_logo.jpg" alt="Facebook" class="social-icon">
                                 </a>
                                 <a href="${socialMediaLinks.instagram}" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
-                                    <img src="/pictures/Instagram_icon.jpg" alt="Instagram" class="social-icon">
+                                    <img src="${iconPath}Instagram_logo.jpg" alt="Instagram" class="social-icon">
                                 </a>
                             </div>
                         </div>
