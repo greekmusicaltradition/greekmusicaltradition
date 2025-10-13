@@ -160,16 +160,10 @@ function loadFooter() {
                             <h5>${content[lang].socialMedia}</h5>
                             <div class="social-media-links">
                                 <a href="${socialMediaLinks.facebook}" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
-                                    <div class="icon-placeholder facebook-icon">
-                                        <!-- REPLACE WITH OFFICIAL FACEBOOK ICON -->
-                                        <span class="placeholder-text">FB</span>
-                                    </div>
+                                    <img src="../pictures/icons/Facebook_icon.jpg" alt="Facebook" class="social-icon">
                                 </a>
                                 <a href="${socialMediaLinks.instagram}" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
-                                    <div class="icon-placeholder instagram-icon">
-                                        <!-- REPLACE WITH OFFICIAL INSTAGRAM ICON -->
-                                        <span class="placeholder-text">IG</span>
-                                    </div>
+                                    <img src="../pictures/icons/Instagram_icon.jpg" alt="Instagram" class="social-icon">
                                 </a>
                             </div>
                         </div>
