@@ -3,7 +3,7 @@
    ======================================== */
 
 /* Main lesson card container - flexible layout with hover effects */
-.lesson-card {
+/*.lesson-card {
     background: var(--color-white);
     border-radius: var(--border-radius-medium);
     box-shadow: 0 8px 25px var(--shadow-light);
@@ -15,11 +15,11 @@
 }
 
 /* Lesson card hover state - subtle lift effect */
-.lesson-card:hover {
+/*.lesson-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 35px var(--shadow-medium);
     border-color: var(--color-light-blue);
-}
+} */
 
 /* Grid layout for lesson cards - responsive auto-fit */
 .lessons-grid {
@@ -52,15 +52,15 @@
 
 /* === LESSON CONTENT === */
 /* Main content area - horizontal flex layout */
-.lesson-content {
+/* .lesson-content {
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 1.5rem;
-    flex-grow: 1;
+    flex-grow: 1; 
 
-}
+} */
 
 /* === LESSON IMAGE === */
 /* Icon container on the left side of lessons */
