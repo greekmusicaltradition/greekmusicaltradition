@@ -813,7 +813,7 @@ a:focus {
     flex-direction: row;
     align-items: flex-start;
     gap: 1.5rem;
-    flex-grow: 1;
+    /*flex-grow: 1; */
 }
 
 /* 12.5 Lesson Description Box */
