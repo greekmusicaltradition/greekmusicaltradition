@@ -472,6 +472,15 @@
 }
 
 
+.teacher-link {
+    margin: 1rem 0;
+}
+
+.learn-more-link {
+    font-weight: bold;
+    color: inherit; 
+}
+
 /* ========================================
    4. SUBJECT & METHOD CARDS
    ======================================== */
