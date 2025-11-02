@@ -803,7 +803,7 @@
     margin: 0 0 1rem 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 3px 10px rgba(11, 70, 55, 0.4);
     animation: gentle-pulse 2s ease-in-out infinite;
 }
 
