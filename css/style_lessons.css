@@ -477,8 +477,8 @@
 }
 
 .learn-more-link {
+    color: var(--color-accent-gold);
     font-weight: bold;
-    color: inherit; 
 }
 
 /* ========================================
