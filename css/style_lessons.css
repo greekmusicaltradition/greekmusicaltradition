@@ -477,6 +477,11 @@
 }
 
 .learn-more-link {
+    color: var(--color-primary-blue);
+    font-weight: bold;
+}
+
+.learn-more-link:hover {
     color: var(--color-accent-gold);
     font-weight: bold;
 }
