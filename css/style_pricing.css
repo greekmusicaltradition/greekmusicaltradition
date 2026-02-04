@@ -27,6 +27,11 @@
    padding: 2rem;
 }
 
+.info-box {
+   padding: 2rem;
+}
+
+
 .pricing-card {
     background: var(--color-white);
     border-radius: var(--border-radius-medium);
