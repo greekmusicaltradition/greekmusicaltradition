@@ -117,7 +117,7 @@ function loadFooter() {
     // Define legal page paths
     const legalPaths = {
         privacy: isGreek ? '../gr/privacy_policy.html' : '../en/privacy_policy.html',
-        terms: '../terms_of_service.html',
+        terms: isGreek ? '../gr/terms_of_service.html' : '../en/terms_of_service.html',           
         lessonTerms: isGreek ? '../gr/lesson_terms.html' : '../en/lesson_terms.html'
     };
     
