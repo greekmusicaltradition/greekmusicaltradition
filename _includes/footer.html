@@ -1,2 +1,159 @@
-<div id="footer"></div>
-<script src="{{ '/js/footer.js' | relative_url }}"></script>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="footer-section">
+                <h4>
+                    {% if page.lang == 'gr' %}
+                        Ελληνική Μουσική Παράδοση
+                    {% else %}
+                        Greek Music Tradition
+                    {% endif %}
+                </h4>
+                <p>
+                    {% if page.lang == 'gr' %}
+                        Διατηρώντας και διδάσκοντας την όμορφη μουσική κληρονομιά της Ελλάδας μέσω αυθεντικών μαθημάτων βυζαντινής και παραδοσιακής ελληνικής μουσικής.
+                    {% else %}
+                        Preserving and teaching the beautiful musical heritage of Greece through authentic lessons in Byzantine and traditional Greek music.
+                    {% endif %}
+                </p>
+                <div class="social-media-section">
+                    <h5>
+                        {% if page.lang == 'gr' %}Ακολουθήστε μας{% else %}Follow Us{% endif %}
+                    </h5>
+                    <div class="social-media-links">
+                        <a href="https://www.facebook.com/GreekMusicalTradition" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+                            <img src="{{ '/pictures/Facebook_logo.jpg' | relative_url }}" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://instagram.com/greekmusicaltradition" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+                             <img src="{{ '/pictures/Instagram_logo.jpg' | relative_url }}" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section footer-quick-links-section">
+                <h4 class="quick-links-title">
+                    {% if page.lang == 'gr' %}Γρήγοροι Σύνδεσμοι{% else %}Quick Links{% endif %}
+                </h4>
+                <div class="quick-links-columns">
+                    
+                    <ul class="footer-links quick-links-col">
+                        <li class="nav-item-with-subs">
+                            <a href="{{ '/' | append: page.lang | append: '/index.html' | relative_url }}" class="main-nav-link">
+                                {% if page.lang == 'gr' %}Αρχική{% else %}Home{% endif %}
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item-with-subs">
+                            <a href="{{ '/' | append: page.lang | append: '/lessons.html' | relative_url }}" class="main-nav-link">
+                                {% if page.lang == 'gr' %}Μαθήματα{% else %}Lessons{% endif %}
+                            </a>
+                            <ul class="sub-nav-links">
+                                {% if page.lang == 'gr' %}
+                                    <li><a href="{{ '/gr/lessons.html#byzantine' | relative_url }}">Βυζαντινή Μουσική</a></li>
+                                    <li><a href="{{ '/gr/lessons.html#traditional' | relative_url }}">Παραδοσιακό Τραγούδι</a></li>
+                                {% else %}
+                                    <li><a href="{{ '/en/lessons.html' | relative_url }}">Byzantine Music</a></li>
+                                    <li><a href="{{ '/en/lessons.html' | relative_url }}">Traditional Singing</a></li>
+                                    <li><a href="{{ '/en/lessons_online.html' | relative_url }}">Online Lessons</a></li>
+                                    <li><a href="{{ '/en/lessons_local.html' | relative_url }}">Local Lessons</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+
+                        <li class="nav-item-with-subs">
+                            <a href="{{ '/' | append: page.lang | append: '/pricing.html' | relative_url }}" class="main-nav-link">
+                                {% if page.lang == 'gr' %}Τιμές{% else %}Pricing{% endif %}
+                            </a>
+                            {% if page.lang == 'gr' %}
+                            <ul class="sub-nav-links">
+                                <li><a href="{{ '/gr/pricing.html#individual' | relative_url }}">Ατομικά Μαθήματα</a></li>
+                                <li><a href="{{ '/gr/pricing.html#group' | relative_url }}">Ομαδικά Τμήματα</a></li>
+                                <li><a href="{{ '/gr/pricing.html#packages' | relative_url }}">Πακέτα</a></li>
+                            </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <ul class="footer-links quick-links-col">
+                        <li class="nav-item-with-subs">
+                            <a href="{{ '/' | append: page.lang | append: '/about.html' | relative_url }}" class="main-nav-link">
+                                {% if page.lang == 'gr' %}Σχετικά{% else %}About{% endif %}
+                            </a>
+                            <ul class="sub-nav-links">
+                                {% if page.lang == 'gr' %}
+                                    <li><a href="{{ '/gr/about.html#story' | relative_url }}">Η Ιστορία μας</a></li>
+                                    <li><a href="{{ '/gr/about.html#philosophy' | relative_url }}">Φιλοσοφία Διδασκαλίας</a></li>
+                                    <li><a href="{{ '/gr/about.html#teachers' | relative_url }}">Οι Καθηγητές</a></li>
+                                {% else %}
+                                    <li><a href="{{ '/en/about_teaching.html' | relative_url }}">Meet the Teachers</a></li>
+                                    <li><a href="{{ '/en/about_byzantine.html' | relative_url }}">About Byzantine Music</a></li>
+                                    <li><a href="{{ '/en/about_greek_singing.html' | relative_url }}">About Greek Traditional Singing</a></li>
+                                    <li><a href="{{ '/en/about_greek_music.html' | relative_url }}">About Greek Traditional Music</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+
+                        <li class="nav-item-with-subs">
+                            <a href="{{ '/' | append: page.lang | append: '/contact.html' | relative_url }}" class="main-nav-link">
+                                {% if page.lang == 'gr' %}Επικοινωνία{% else %}Contact{% endif %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-section footer-contact-compact">
+                <h4>
+                    {% if page.lang == 'gr' %}
+                        Έχετε Ερωτήσεις; Είμαστε Εδώ για να Βοηθήσουμε!
+                    {% else %}
+                        Have Questions? We're Here to Help!
+                    {% endif %}
+                </h4>
+                <p class="contact-text">
+                    {% if page.lang == 'gr' %}
+                        Δεν είστε σίγουροι από πού να ξεκινήσετε; Θα σας βοηθήσουμε να επιλέξετε την κατάλληλη πορεία για τη φωνή και τα ενδιαφέροντά σας.
+                    {% else %}
+                        Not sure where to begin? We'll help you choose the right path for your voice and interests.
+                    {% endif %}
+                </p>
+                {% if page.lang == 'gr' %}
+                    <p class="contact-highlight">Δωρεάν συμβουλευτική • Όλα τα επίπεδα ευπρόσδεκτα</p>
+                {% endif %}
+                
+                <a href="{{ '/' | append: page.lang | append: '/contact.html' | relative_url }}" class="footer-cta-compact">
+                    {% if page.lang == 'gr' %}Φόρμα Επικοινωνίας{% else %}Contact Us!{% endif %}
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <ul class="legal-links">
+                <li>
+                    <a href="{{ '/' | append: page.lang | append: '/privacy_policy.html' | relative_url }}">
+                        {% if page.lang == 'gr' %}Πολιτική Απορρήτου{% else %}Privacy Policy{% endif %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ '/' | append: page.lang | append: '/terms_of_service.html' | relative_url }}">
+                        {% if page.lang == 'gr' %}Όροι Υπηρεσίας{% else %}Terms of Service{% endif %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ '/' | append: page.lang | append: '/lesson_terms.html' | relative_url }}">
+                        {% if page.lang == 'gr' %}Όροι Μαθημάτων{% else %}Lesson Terms{% endif %}
+                    </a>
+                </li>
+            </ul>
+            <p>
+                {% if page.lang == 'gr' %}
+                    © 2025 Ελληνική Μουσική Παράδοση. Όλα τα δικαιώματα διατηρούνται.
+                {% else %}
+                    © 2025 Greek Music Tradition. All rights reserved.
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</footer>
