@@ -1,98 +1,4 @@
-// header.js - Updated to include hero section and pricing page
-function loadHeader() {
-    // Detect current language from URL
-    const currentPath = window.location.pathname;
-    const isGreek = currentPath.includes('/gr/');
-    const isEnglish = currentPath.includes('/en/');
-    
-    // Default to English if no language detected
-    const lang = isGreek ? 'gr' : 'en';
-    
-    // Get current page name for page-specific hero titles
-    const pageName = getCurrentPageName();
-     
-    // Language-specific content
-    const content = {
-        en: {
-            brand: "greekmusicaltradition.com",
-            nav: {
-                home: "Home",
-                lessons: "Lessons",
-                pricing: "Pricing",
-                about: "About",
-                contact: "Contact"
-            }
-        },
-        gr: {
-            brand: "Ελληνική Μουσική Παράδοση",
-            nav: {
-                home: "Αρχική",
-                lessons: "Μαθήματα",
-                pricing: "Τιμές",
-                about: "Σχετικά",
-                contact: "Επικοινωνία"
-            }
-        }
-    };
-    
-   const headerHTML = `
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <a href="index.html" class="brand-link">
-                        <img src="../pictures/logo_woman.jpg" alt="Logo">
-                        <span>${content[lang].brand}</span>
-                    </a>
-                </div>
-                
-                <div class="nav-right">
-                    <div class="language-switcher">
-                        <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
-                                onclick="switchLanguage('en')" 
-                                title="English">
-                            <span>English</span>
-                        </button>
-                        <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
-                                onclick="switchLanguage('gr')" 
-                                title="Ελληνικά">
-                            <span>Ελληνικά</span>
-                        </button>
-                    </div>
-                    
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                </div>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="${pageName === 'index' ? 'active' : ''}">${content[lang].nav.home}</a></li>
-                    <li><a href="lessons.html" class="${pageName === 'lessons' ? 'active' : ''}">${content[lang].nav.lessons}</a></li>
-                    <li><a href="pricing.html" class="${pageName === 'pricing' ? 'active' : ''}">${content[lang].nav.pricing}</a></li>
-                    <li><a href="about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
-                    <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
-                    
-                    <li class="mobile-lang-switcher">
-                        <div class="mobile-lang-buttons">
-                            <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
-                                    onclick="switchLanguage('en')">
-                                <span>English</span>
-                            </button>
-                            <button class="lang-btn ${lang === 'gr' ? 'active' : ''}" 
-                                    onclick="switchLanguage('gr')">
-                                <span>Ελληνικά</span>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    `;
-    
-    document.getElementById('header').innerHTML = headerHTML;
-    
-    // Simplified mobile menu functionality (no dropdowns needed)
+document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -109,60 +15,24 @@ function loadHeader() {
                 document.body.style.overflow = '';
             }
         });
-    }
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            document.body.style.overflow = '';
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav-container')) {
-            navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
 
-// Helper function to get current page name
-function getCurrentPageName() {
-    const path = window.location.pathname;
-    const filename = path.split('/').pop();
-    return filename.replace('.html', '') || 'index';
-}
-
-// Language switching function
-function switchLanguage(targetLang) {
-    const currentPage = getCurrentPageName();
-    const currentPath = window.location.pathname;
-    
-    // Extract repository name from path (for GitHub Pages)
-    const pathSegments = currentPath.split('/').filter(segment => segment);
-    
-    let newPath;
-    
-    if (window.location.hostname.includes('github.io')) {
-        // GitHub Pages - format: username.github.io/repository-name
-        const repoName = pathSegments[0]; // First segment is repository name
-        newPath = `/${repoName}/${targetLang}/${currentPage}.html`;
-    } else if (window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')) {
-        // Local development
-        newPath = `/${targetLang}/${currentPage}.html`;
-    } else {
-        // Other hosting (custom domain, etc.)
-        newPath = `/${targetLang}/${currentPage}.html`;
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     }
-    
-    console.log('Redirecting to:', newPath);
-    window.location.href = newPath;
-}
-
-// Load header when page loads
-document.addEventListener('DOMContentLoaded', loadHeader);
+});
