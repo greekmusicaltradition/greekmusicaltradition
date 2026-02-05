@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}">
-<head> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
+    <title>{{ page.title }}</title>
+    <link rel="icon" href="{{ '/pictures/favicon.png' | relative_url }}" type="image/png">
+
     <link rel="stylesheet" href="{{ '/css/style_main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/style_footer.css' | relative_url }}">
 
@@ -10,7 +16,12 @@
       {% endfor %}
     {% endif %}
     
-    </head>
+    {% if page.style %}
+    <link rel="stylesheet" href="{{ '/css/' | append: page.style | relative_url }}">
+    {% endif %}
+
+    <script src="{{ '/js/cookie-consent.js' | relative_url }}"></script>
+</head>
 <body>
     
     {% include header.html %}
@@ -22,12 +33,50 @@
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <div class="sticky-banner" id="stickyBanner">
-       </div>
+        <div class="sticky-banner-content">
+            <div class="sticky-banner-text">Ready to start learning Greek music?</div>
+            <div class="sticky-banner-buttons">
+                <a href="{{ '/en/lessons_online.html' | relative_url }}" class="sticky-cta">Book Now</a>
+                <a href="{{ '/en/pricing.html' | relative_url }}" class="sticky-cta secondary">Pricing</a>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ '/js/banners.js' | relative_url }}"></script>
     <script>
-        // Paste your Back-to-Top and Cookie logic here
-        // OR better yet, move that logic into js/banners.js so this file stays clean
+        // Back to top button logic
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Sticky Banner Logic
+        let stickyBannerClosed = false;
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY > 300;
+            // Check if user is near bottom to avoid covering footer
+            const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
+            const stickyBanner = document.getElementById('stickyBanner');
+            
+            if (stickyBanner && scrolled && !stickyBannerClosed && !nearBottom) {
+                stickyBanner.classList.add('show');
+            } else if (stickyBanner) {
+                stickyBanner.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
