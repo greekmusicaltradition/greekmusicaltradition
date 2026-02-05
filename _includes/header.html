@@ -1,7 +1,21 @@
+To fix the header in your Jekyll site, you need to port the logic from your old js/header.js into the Liquid template _includes/header.html.
+
+Here are the changes I have made for you:
+
+Added Missing Menu Items: Included links for Pricing, About, and Contact.
+
+Added Language Switcher: Created a toggle that switches between /en/ and /gr/ based on the current page.url.
+
+Added Mobile Toggle: Re-added the "hamburger" menu button and the mobile-specific language options.
+
+1. Update _includes/header.html
+Replace the entire content of your _includes/header.html with this code:
+
+HTML
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-brand">
-            <a href="{{ '/index.html' | relative_url }}" class="brand-link">
+            <a href="{{ '/' | append: page.lang | append: '/index.html' | relative_url }}" class="brand-link">
                 <img src="{{ '/pictures/logo_woman.jpg' | relative_url }}" alt="Logo">
                 {% if page.lang == 'gr' %}
                     <span>Ελληνική Μουσική Παράδοση</span>
@@ -9,6 +23,27 @@
                     <span>greekmusicaltradition.com</span>
                 {% endif %}
             </a>
+        </div>
+
+        <div class="nav-right">
+            <div class="language-switcher">
+                <a href="{{ page.url | replace: '/gr/', '/en/' | relative_url }}" 
+                   class="lang-btn {% if page.lang == 'en' %}active{% endif %}" 
+                   title="English">
+                    <span>English</span>
+                </a>
+                <a href="{{ page.url | replace: '/en/', '/gr/' | relative_url }}" 
+                   class="lang-btn {% if page.lang == 'gr' %}active{% endif %}" 
+                   title="Ελληνικά">
+                    <span>Ελληνικά</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
 
         <ul class="nav-menu">
@@ -24,6 +59,37 @@
                    {% if page.lang == 'gr' %}Μαθήματα{% else %}Lessons{% endif %}
                 </a>
             </li>
-            </ul>
+            <li>
+                <a href="{{ '/' | append: page.lang | append: '/pricing.html' | relative_url }}"
+                   class="{% if page.ref == 'pricing' %}active{% endif %}">
+                   {% if page.lang == 'gr' %}Τιμές{% else %}Pricing{% endif %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ '/' | append: page.lang | append: '/about.html' | relative_url }}"
+                   class="{% if page.ref == 'about' %}active{% endif %}">
+                   {% if page.lang == 'gr' %}Σχετικά{% else %}About{% endif %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ '/' | append: page.lang | append: '/contact.html' | relative_url }}"
+                   class="{% if page.ref == 'contact' %}active{% endif %}">
+                   {% if page.lang == 'gr' %}Επικοινωνία{% else %}Contact{% endif %}
+                </a>
+            </li>
+
+            <li class="mobile-lang-switcher">
+                <div class="mobile-lang-buttons">
+                    <a href="{{ page.url | replace: '/gr/', '/en/' | relative_url }}" 
+                       class="lang-btn {% if page.lang == 'en' %}active{% endif %}">
+                        <span>English</span>
+                    </a>
+                    <a href="{{ page.url | replace: '/en/', '/gr/' | relative_url }}" 
+                       class="lang-btn {% if page.lang == 'gr' %}active{% endif %}">
+                        <span>Ελληνικά</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
     </div>
 </nav>
