@@ -6,21 +6,17 @@ ref: lessons
 style: style_lessons.css
 ---
 
-<body> 
-    <div id="header"></div>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Lessons</h1>
+    </div>
+</header>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Lessons</h1>
-        </div>
-    </header>
-    
-
-    <div class="breadcrumb-container">
+<div class="breadcrumb-container">
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb" id="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="{{ '/en/index.html' | relative_url }}">Home</a>
                 <span class="breadcrumb-separator">/</span>
             </li>
             <li class="breadcrumb-item">
@@ -30,159 +26,121 @@ style: style_lessons.css
     </nav>
 </div>
 
-   
-    <main class="main-content">
-        <div class="container">
-            <!-- Subject Cards Section -->
-            <section class="subjects-section">
-                <h2 class="section-title">What We Teach</h2>
-                <div class="lessons-grid subjects-grid">
-                    <div class="lesson-card subject-card">
-                        <div class="lesson-header subject-header">
-                            <h3>Byzantine Music</h3>
-                        </div>
-                        <div class="lesson-content">
-                            <div class="lesson-image">
-                                <div class="byzantine-icon">📜</div>
-                            </div>
-                            <div class="lesson-details">
-                                <ul>
-                                    <li>Byzantine notation system and theory</li>
-                                    <li>Traditional chanting techniques</li>
-                                    <li>Sacred repertoire and liturgical music</li>
-                                    <li>Historical context and spiritual significance</li>
-                                    <li>Vocal technique</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class ="lesson-footer"> 
-                        </div>
-                        
+<main class="main-content">
+    <div class="container">
+        <section class="subjects-section">
+            <h2 class="section-title">What We Teach</h2>
+            <div class="lessons-grid subjects-grid">
+                <div class="lesson-card subject-card">
+                    <div class="lesson-header subject-header">
+                        <h3>Byzantine Music</h3>
                     </div>
-                    <div class="lesson-card subject-card">
-                        <div class="lesson-header subject-header">
-                            <h3>Greek Traditional Singing</h3>
+                    <div class="lesson-content">
+                        <div class="lesson-image">
+                            <div class="byzantine-icon">📜</div>
                         </div>
-                        <div class="lesson-content">
-                            <div class="lesson-image">
-                                <div class="traditional-icon">🎶</div>
-                            </div>
-                            <div class="lesson-details">
-                                <ul>
-                                    <li>Traditional Greek folk songs and melodies</li>
-                                    <li>Regional musical styles and variations</li>
-                                    <li>Proper Greek pronunciation and diction</li>
-                                    <li>Cultural context and storytelling through song</li>
-                                    <li>Modes and rhythm</li>
-                                </ul>
-                            </div>
+                        <div class="lesson-details">
+                            <ul>
+                                <li>Byzantine notation system and theory</li>
+                                <li>Traditional chanting techniques</li>
+                                <li>Sacred repertoire and liturgical music</li>
+                                <li>Historical context and spiritual significance</li>
+                                <li>Vocal technique</li>
+                            </ul>
                         </div>
-
-                         <div class ="lesson-footer"> 
-                        </div>
-
-                        
                     </div>
+                    <div class ="lesson-footer"></div>
                 </div>
-            </section>
-
-            <!-- Methods Section -->
-            <section class="methods-section">
-                <h2 class="section-title">How We Teach</h2>
-                <div class="lessons-grid methods-grid">
-                    <div class="lesson-card method-card">
-                        <div class="lesson-header method-header">
-                            <h3>Online Lessons</h3>
+                
+                <div class="lesson-card subject-card">
+                    <div class="lesson-header subject-header">
+                        <h3>Greek Traditional Singing</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-image">
+                            <div class="traditional-icon">🎶</div>
                         </div>
-                        <div class="lesson-content">
-                            <div class="lesson-details">
-                                <ul>
-                                    <li>Students anywhere in the world</li>
-                                    <li>Flexible scheduling around your routine</li>
-                                    <li>Learning from the comfort of your home</li>
-                                    <li>Those with busy schedules</li>
-                                    <li>Building a consistent practice routine</li>
-                                </ul>
-                                <div class="lesson-format-box">
-                                    <h4>Available Formats:</h4>
-                                    <p><i class="fas fa-user"></i> <strong>One-to-One:</strong> Personalized instruction tailored to your voice and goals</p>
-                                    <p><i class="fas fa-users"></i> <strong>Group Sessions:</strong> Learn alongside others in a supportive online community</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lesson-description-box">
-                            <p>Experience the full depth of Greek musical tradition through high-quality video lessons. All materials are provided digitally, and recordings are available for your practice.</p>
-                            <div class="cta-button-container" style="margin-top: 1.5rem;">
-                                <a href="lessons_online.html" class="cta-button primary">Explore Online Lessons</a>
-                            </div>
+                        <div class="lesson-details">
+                            <ul>
+                                <li>Traditional Greek folk songs and melodies</li>
+                                <li>Regional musical styles and variations</li>
+                                <li>Proper Greek pronunciation and diction</li>
+                                <li>Cultural context and storytelling through song</li>
+                                <li>Modes and rhythm</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="lesson-card method-card">
-                        <div class="lesson-header method-header">
-                            <h3>Local In-Person Lessons</h3>
-                        </div>
-                        <div class="lesson-content">
-                            <div class="lesson-details">
-                                <ul>
-                                    <li>Local students in Rafina and nearby areas</li>
-                                    <li>Face-to-face instruction</li>
-                                    <li>Hands-on learning experience</li>
-                                    <li>Direct vocal guidance and feedback</li>
-                                    <li>Participation in live events</li>
-                                </ul>
-                                <div class="lesson-format-box">
-                                    <h4>Available Formats:</h4>
-                                    <p><i class="fas fa-user"></i> <strong>Private Lessons:</strong> Intensive one-on-one instruction</p>
-                                    <p><i class="fas fa-users"></i> <strong>Small Groups:</strong> Group sessions fostering musical community</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lesson-description-box">
-                            <p>Experience the beauty of authentic Greek music through direct vocal coaching, cultural immersion, and the energy of live musical connection.</p>
-                            <div class="cta-button-container" style="margin-top: 1.5rem;">
-                                <a href="lessons_local.html" class="cta-button secondary-dark">Explore Local Lessons</a>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Lesson Terms Section -->
-            <div class="lesson-terms-section">
-                <div class="lesson-terms-content">
-                    <h2>Terms & Conditions</h2>
-                    <p>Before booking your lessons, please take a moment to review our lesson terms and policies. This includes information about scheduling, cancellations, payment terms, and other important details to ensure a smooth learning experience.</p>
-                    <p>Please read our <a href="lesson_terms.html" class="lesson-terms-link">lesson terms and conditions</a> for complete details.</p>
+                    <div class ="lesson-footer"></div>
                 </div>
             </div>
+        </section>
+
+        <section class="methods-section">
+            <h2 class="section-title">How We Teach</h2>
+            <div class="lessons-grid methods-grid">
+                <div class="lesson-card method-card">
+                    <div class="lesson-header method-header">
+                        <h3>Online Lessons</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <ul>
+                                <li>Students anywhere in the world</li>
+                                <li>Flexible scheduling around your routine</li>
+                                <li>Learning from the comfort of your home</li>
+                                <li>Those with busy schedules</li>
+                                <li>Building a consistent practice routine</li>
+                            </ul>
+                            <div class="lesson-format-box">
+                                <h4>Available Formats:</h4>
+                                <p><i class="fas fa-user"></i> <strong>One-to-One:</strong> Personalized instruction tailored to your voice and goals</p>
+                                <p><i class="fas fa-users"></i> <strong>Group Sessions:</strong> Learn alongside others in a supportive online community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-description-box">
+                        <p>Experience the full depth of Greek musical tradition through high-quality video lessons. All materials are provided digitally, and recordings are available for your practice.</p>
+                        <div class="cta-button-container" style="margin-top: 1.5rem;">
+                            <a href="{{ '/en/lessons_online.html' | relative_url }}" class="cta-button primary">Explore Online Lessons</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lesson-card method-card">
+                    <div class="lesson-header method-header">
+                        <h3>Local In-Person Lessons</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <ul>
+                                <li>Local students in Rafina and nearby areas</li>
+                                <li>Face-to-face instruction</li>
+                                <li>Hands-on learning experience</li>
+                                <li>Direct vocal guidance and feedback</li>
+                                <li>Participation in live events</li>
+                            </ul>
+                            <div class="lesson-format-box">
+                                <h4>Available Formats:</h4>
+                                <p><i class="fas fa-user"></i> <strong>Private Lessons:</strong> Intensive one-on-one instruction</p>
+                                <p><i class="fas fa-users"></i> <strong>Small Groups:</strong> Group sessions fostering musical community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-description-box">
+                        <p>Experience the beauty of authentic Greek music through direct vocal coaching, cultural immersion, and the energy of live musical connection.</p>
+                        <div class="cta-button-container" style="margin-top: 1.5rem;">
+                            <a href="{{ '/en/lessons_local.html' | relative_url }}" class="cta-button secondary-dark">Explore Local Lessons</a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="lesson-terms-section">
+            <div class="lesson-terms-content">
+                <h2>Terms & Conditions</h2>
+                <p>Before booking your lessons, please take a moment to review our lesson terms and policies. This includes information about scheduling, cancellations, payment terms, and other important details to ensure a smooth learning experience.</p>
+                <p>Please read our <a href="{{ '/en/lesson_terms.html' | relative_url }}" class="lesson-terms-link">lesson terms and conditions</a> for complete details.</p>
+            </div>
         </div>
-    </main>
-
-   <div id="footer"></div>
-    <button id="back-to-top" aria-label="Back to top">↑</button>
-
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
-    <script>
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-    </script>
-</body>
-</html>
+    </div>
+</main>
