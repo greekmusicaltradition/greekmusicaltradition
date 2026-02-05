@@ -1,17 +1,3 @@
-To fix the header in your Jekyll site, you need to port the logic from your old js/header.js into the Liquid template _includes/header.html.
-
-Here are the changes I have made for you:
-
-Added Missing Menu Items: Included links for Pricing, About, and Contact.
-
-Added Language Switcher: Created a toggle that switches between /en/ and /gr/ based on the current page.url.
-
-Added Mobile Toggle: Re-added the "hamburger" menu button and the mobile-specific language options.
-
-1. Update _includes/header.html
-Replace the entire content of your _includes/header.html with this code:
-
-HTML
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-brand">
