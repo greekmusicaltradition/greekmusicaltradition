@@ -1,5 +1,5 @@
 title: Greek Musical Tradition
 description: Greek Traditional & Byzantine Music Lessons
-baseurl: "" # Keep empty for custom domains or root project
-url: "https://greekmusicaltradition.com"
+baseurl: "/greekmusicaltradition"
+url: "https://greekmusicaltradition.github.io"
 encoding: "utf-8"
