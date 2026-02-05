@@ -1,318 +1,130 @@
 ---
 layout: default
 title: Greek Traditional & Byzantine Music
-description: "Learn authentic Greek Traditional singing..."
+description: "Learn authentic Greek Traditional singing and Byzantine music. Online and local lessons in Rafina for all levels."
 lang: en
 ref: home
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn authentic Greek Traditional singing and Byzantine music. Online and local lessons in Rafina for all levels. Join our musical community today.">
-    <title>Greek Traditional & Byzantine Music</title>
-    <link rel="icon" href="../pictures/favicon.png" type="image/png">
-    <link rel="stylesheet" href="../css/style_main.css"> 
-    <link rel="stylesheet" href="../css/style_footer.css"> 
-    <script src="../js/cookie-consent.js"></script>
-    <script src="../js/banners.js"></script>
-</head>
-<body>
-    <div id="header"></div> 
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Greek Traditional & Byzantine Music</h1>
-        </div>
-    </header>
-
-   <main class="main-content">
-        <div class="container">
-            <div class="content-grid">
-                <div class="combined-panel">
-                    <div class="decorative-panel">
-                        <img src="../pictures/ornament_main.jpg" alt="Greek Traditional & Byzantine Music" class="decorative-image">
-                    </div>
-
-                    <div class="info-panel">
-                        <h2>Discover the Music Tradition of Greece</h2>
-
-                        <div class="welcome-content">
-                            <h3>Welcome! I am Olga, Founder of the greekmusicaltradition.com website.</h3>
-
-                            <p  I'm delighted that you're here! Together we can explore a world of beautiful melodies and timeless traditions, where the music of Greece comes alive.</p>
-                            <p>Whether you are looking for <strong>one-on-one mentorship</strong> with me or joining our community, I invite you to explore the rich musical heritage of Greece through authentic lessons in <a href="about_greek_singing.html"><strong>Greek traditional singing</strong> </a>
-                            and <a href="about_byzantine.html"><strong>Byzantine music</strong></a>. 
-                           We'll journey through centuries of musical artistry, from ancient Byzantine chant to vibrant folk melodies, guided by a deep respect for this living tradition.</p>
-
-                          <p>
-                            Lessons are available in both <strong>English</strong> and <strong>Greek</strong> and conducted 
-                            <a href="lessons_online.html"><strong>online</strong></a>, 
-                            offering you the flexibility to learn from anywhere in the world, but also 
-                            <a href="lessons_local.html"><strong>locally</strong></a>, 
-                            if you live nearby or are visiting the area.
-                          </p>
-                      <p class="journey-text">Let's begin this melodic journey together.</p>
-                        </div>
-                    </div>
-                </div>
+<main class="main-content">
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Greek Traditional & Byzantine Music</h1>
             </div>
+        </header>
 
-            <div class="lessons-grid">
-                <div class="lesson-card">
-                    <div class="lesson-header">
-                        <h3>Byzantine Music Lessons</h3>
-                    </div>
-                    <div class="lesson-content">
-                        <div class="lesson-image">
-                            <div class="byzantine-icon">📜</div>
-                        </div>
-                        <div class="lesson-details">
-                            <ul>
-                                <li>One-to-one & group lessons</li>
-                                <li>Online & local lessons</li>
-                                <li>Repertoire</li>
-                                <li>Byzantine music theory & notation</li>
-                                <li>Vocal Technique</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lesson-description-box" style="min-height: 12rem; font-weight: normal;">
-                        <p>Byzantine music is a rich and ancient musical tradition that connects us to centuries of spiritual heritage.</p>
-                        <p>Learn more about <a href="about_byzantine.html" style="color: white; text-decoration: underline;"><strong>Byzantine music!</strong></a></p>
-                    </div>
+        <div class="content-grid">
+            <div class="combined-panel">
+                <div class="decorative-panel">
+                    <img src="{{ '/pictures/ornament_main.jpg' | relative_url }}" alt="Greek Traditional & Byzantine Music" class="decorative-image">
                 </div>
 
-                <div class="lesson-card">
-                    <div class="lesson-header">
-                        <h3>Greek Traditional Singing Lessons</h3>
-                    </div>
-                    <div class="lesson-content">
-                        <div class="lesson-image">
-                            <div class="traditional-icon">🎶</div>
-                        </div>
-                        <div class="lesson-details">
-                            <ul>
-                                <li>One-to-one & group lessons</li>
-                                <li>Online & local lessons</li>
-                                <li>Repertoire</li>
-                                <li>Greek music theory</li>
-                                <li>Vocal technique</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lesson-description-box" style="min-height: 12rem; font-weight: normal;">
-                        <p>Greek traditional music is a vibrant and deeply rooted art form that tells the story of our culture.</p>
-                        <p>Learn more about <a href="about_greek_singing.html" style="color: white; text-decoration: underline;"><strong>Greek traditional singing!</strong></a>
+                <div class="info-panel">
+                    <h2>Discover the Music Tradition of Greece</h2>
+
+                    <div class="welcome-content">
+                        <h3>Welcome! I am Olga, Founder of the greekmusicaltradition.com website.</h3>
+
+                        <p>I'm delighted that you're here! Together we can explore a world of beautiful melodies and timeless traditions, where the music of Greece comes alive.</p>
+                        
+                        <p>Whether you are looking for <strong>one-on-one mentorship</strong> with me or joining our community, I invite you to explore the rich musical heritage of Greece through authentic lessons in <a href="{{ '/en/about_greek_singing.html' | relative_url }}"><strong>Greek traditional singing</strong></a>
+                        and <a href="{{ '/en/about_byzantine.html' | relative_url }}"><strong>Byzantine music</strong></a>. 
+                        We'll journey through centuries of musical artistry, from ancient Byzantine chant to vibrant folk melodies, guided by a deep respect for this living tradition.</p>
+
+                        <p>
+                        Lessons are available in both <strong>English</strong> and <strong>Greek</strong> and conducted 
+                        <a href="{{ '/en/lessons_online.html' | relative_url }}"><strong>online</strong></a>, 
+                        offering you the flexibility to learn from anywhere in the world, but also 
+                        <a href="{{ '/en/lessons_local.html' | relative_url }}"><strong>locally</strong></a>, 
+                        if you live nearby or are visiting the area.
                         </p>
-                    </div>
-                </div>
-            </div>
-
-<div class="footer-info">
-    <div class="lessons-grid">
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Ready to Start Learning?</h3>
-            </div>
-            <div class="lesson-content">
-                <div class="lesson-details">
-                    <p>Immerse yourself in the timeless art of Byzantine chanting and traditional Greek vocal music. Discover the rich heritage that has been passed down through generations and learn to express these beautiful melodies with authentic technique and deep understanding.</p>
-                    <div class="cta-button-container">
-                        <a href="lessons.html" class="cta-button primary">Explore Lessons Here!</a>
+                        <p class="journey-text">Let's begin this melodic journey together.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="lesson-card cta-card">
-            <div class="lesson-header">
-                <h3>Have Questions?</h3>
+        <div class="lessons-grid">
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h3>Byzantine Music Lessons</h3>
+                </div>
+                <div class="lesson-content">
+                    <div class="lesson-image">
+                        <div class="byzantine-icon">📜</div>
+                    </div>
+                    <div class="lesson-details">
+                        <ul>
+                            <li>One-to-one & group lessons</li>
+                            <li>Online & local lessons</li>
+                            <li>Repertoire</li>
+                            <li>Byzantine music theory & notation</li>
+                            <li>Vocal Technique</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lesson-description-box" style="min-height: 12rem; font-weight: normal;">
+                    <p>Byzantine music is a rich and ancient musical tradition that connects us to centuries of spiritual heritage.</p>
+                    <p>Learn more about <a href="{{ '/en/about_byzantine.html' | relative_url }}" style="color: white; text-decoration: underline;"><strong>Byzantine music!</strong></a></p>
+                </div>
             </div>
-            <div class="lesson-content">
-                <div class="lesson-details">
-                    <p>We're here to help you begin your musical journey! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals. Let's start a conversation about how we can help you discover the beauty of Greek musical tradition.</p>
-                    <div class="cta-button-container">
-                        <a href="contact.html" class="cta-button secondary">Get in Touch!</a>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h3>Greek Traditional Singing Lessons</h3>
+                </div>
+                <div class="lesson-content">
+                    <div class="lesson-image">
+                        <div class="traditional-icon">🎶</div>
+                    </div>
+                    <div class="lesson-details">
+                        <ul>
+                            <li>One-to-one & group lessons</li>
+                            <li>Online & local lessons</li>
+                            <li>Repertoire</li>
+                            <li>Greek music theory</li>
+                            <li>Vocal technique</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lesson-description-box" style="min-height: 12rem; font-weight: normal;">
+                    <p>Greek traditional music is a vibrant and deeply rooted art form that tells the story of our culture.</p>
+                    <p>Learn more about <a href="{{ '/en/about_greek_singing.html' | relative_url }}" style="color: white; text-decoration: underline;"><strong>Greek traditional singing!</strong></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <div class="lessons-grid">
+                <div class="lesson-card cta-card">
+                    <div class="lesson-header">
+                        <h3>Ready to Start Learning?</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <p>Immerse yourself in the timeless art of Byzantine chanting and traditional Greek vocal music. Discover the rich heritage that has been passed down through generations and learn to express these beautiful melodies with authentic technique and deep understanding.</p>
+                            <div class="cta-button-container">
+                                <a href="{{ '/en/lessons.html' | relative_url }}" class="cta-button primary">Explore Lessons Here!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card cta-card">
+                    <div class="lesson-header">
+                        <h3>Have Questions?</h3>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-details">
+                            <p>We're here to help you begin your musical journey! Reach out with any questions about our lessons, teaching methods, or to discuss your specific learning goals. Let's start a conversation about how we can help you discover the beauty of Greek musical tradition.</p>
+                            <div class="cta-button-container">
+                                <a href="{{ '/en/contact.html' | relative_url }}" class="cta-button secondary">Get in Touch!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-        </div>
-    </main>
-
-    <div id="footer"></div>
-    <button id="back-to-top" aria-label="Back to top">↑</button>
-
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
-    <script>
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Note: Removed the fade-in animation observer code
-        // All content now loads visible from the start
-
-        
-    </script>
-    <!-- Sticky Booking Banner -->
-<div class="sticky-banner" id="stickyBanner">
-    <div class="sticky-banner-content">
-        <div class="sticky-banner-text">Ready to start learning Greek music?</div>
-        <div class="sticky-banner-buttons">
-            <a href="lessons_online.html" class="sticky-cta">Book Now</a>
-            <a href="pricing.html" class="sticky-cta secondary">Pricing</a>
-        </div>
-        <!-- <button class="close-sticky" onclick="closeStickyBanner()">×</button>-->
-    </div>
-</div>
-    <script>
-
-let cookiesHandled = false;
-let stickyBannerClosed = false;
-let cookieBannerVisible = false;
-
-// Check if cookies were previously handled
-function checkCookieConsent() {
-    return localStorage.getItem('cookieConsent') !== null;
-}
-
-// Show cookie banner on page load (if not handled)
-window.addEventListener('load', () => {
-    if (!checkCookieConsent()) {
-        setTimeout(() => {
-            showCookieBanner();
-        }, 1000); // Delay to not overwhelm user
-    } else {
-        cookiesHandled = true;
-    }
-});
-
-// Scroll handler for booking banner
-window.addEventListener('scroll', () => {
-    // Show booking banner if:
-    // 1. User scrolled enough AND banner not manually closed
-    // 2. Not at the bottom of the page (to avoid covering footer)
-    const scrolled = window.scrollY > 300;
-    const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
-    
-    if (scrolled && !stickyBannerClosed && !nearBottom) {
-        showBookingBanner();
-    } else {
-        hideBookingBanner();
-    }
-});
-
-function showCookieBanner() {
-    const cookieBanner = document.getElementById('cookieBanner');
-    const stickyBanner = document.getElementById('stickyBanner');
-    
-    if (cookieBanner) {
-        cookieBanner.classList.add('show');
-        cookieBannerVisible = true;
-        
-        // Adjust booking banner position if it's visible
-        if (stickyBanner) {
-            stickyBanner.classList.add('cookies-visible');
-        }
-    }
-}
-
-function hideCookieBanner() {
-    const cookieBanner = document.getElementById('cookieBanner');
-    const stickyBanner = document.getElementById('stickyBanner');
-    
-    if (cookieBanner) {
-        cookieBanner.classList.remove('show');
-        cookieBannerVisible = false;
-        
-        // Reset booking banner position
-        if (stickyBanner) {
-            stickyBanner.classList.remove('cookies-visible');
-        }
-    }
-}
-
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    cookiesHandled = true;
-    hideCookieBanner();
-    
-    // Enable your tracking scripts here
-    // Example:
-    // if (typeof gtag !== 'undefined') {
-    //     gtag('consent', 'update', {
-    //         'analytics_storage': 'granted',
-    //         'ad_storage': 'granted'
-    //     });
-    // }
-}
-
-function declineCookies() {
-    localStorage.setItem('cookieConsent', 'declined');
-    cookiesHandled = true;
-    hideCookieBanner();
-    
-    // Disable tracking scripts here
-    // Example:
-    // if (typeof gtag !== 'undefined') {
-    //     gtag('consent', 'update', {
-    //         'analytics_storage': 'denied',
-    //         'ad_storage': 'denied'
-    //     });
-    // }
-}
-
-function showBookingBanner() {
-    const stickyBanner = document.getElementById('stickyBanner');
-    if (stickyBanner) {
-        stickyBanner.classList.add('show');
-    }
-}
-
-function hideBookingBanner() {
-    const stickyBanner = document.getElementById('stickyBanner');
-    if (stickyBanner) {
-        stickyBanner.classList.remove('show');
-    }
-}
-
-function closeStickyBanner() {
-    hideBookingBanner();
-    stickyBannerClosed = true;
-    
-    // Optional: Remember this choice
-    sessionStorage.setItem('stickyBannerClosed', 'true');
-}
-
-// Optional: Check if banner was previously closed this session
-window.addEventListener('load', () => {
-    if (sessionStorage.getItem('stickyBannerClosed') === 'true') {
-        stickyBannerClosed = true;
-    }
-});
-    </script>
-</body>
-</html>
+</main>
