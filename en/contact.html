@@ -161,13 +161,10 @@ style: style_contact.css
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
                 // Reset form after a short delay
-                setTimeout(() => {
-                    form.reset();
-                    // Hide success message after it's been seen
                     setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 3000); 
-                }, 1000);
+                        form.reset();
+                        // The "Hide success message" code is deleted
+                    }, 1000);
             } else {
                 // Handle errors
                 console.error('Form submission failed:', response.status, response.statusText);
