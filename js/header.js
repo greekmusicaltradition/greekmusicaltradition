@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+     
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', (e) => {
             e.preventDefault();
