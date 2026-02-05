@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="{{ '/index.html' | relative_url }}" class="brand-link">
+                <img src="{{ '/pictures/logo_woman.jpg' | relative_url }}" alt="Logo">
+                {% if page.lang == 'gr' %}
+                    <span>Ελληνική Μουσική Παράδοση</span>
+                {% else %}
+                    <span>greekmusicaltradition.com</span>
+                {% endif %}
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li>
+                <a href="{{ '/' | append: page.lang | append: '/index.html' | relative_url }}" 
+                   class="{% if page.ref == 'home' %}active{% endif %}">
+                   {% if page.lang == 'gr' %}Αρχική{% else %}Home{% endif %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ '/' | append: page.lang | append: '/lessons.html' | relative_url }}"
+                   class="{% if page.ref == 'lessons' %}active{% endif %}">
+                   {% if page.lang == 'gr' %}Μαθήματα{% else %}Lessons{% endif %}
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav>
