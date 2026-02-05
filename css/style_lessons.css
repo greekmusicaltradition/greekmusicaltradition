@@ -2,25 +2,6 @@
    1. LESSON CARDS & GRID SYSTEM
    ======================================== */
 
-/* Main lesson card container - flexible layout with hover effects */
-/*.lesson-card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-medium);
-    box-shadow: 0 8px 25px var(--shadow-light);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Lesson card hover state - subtle lift effect */
-/*.lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px var(--shadow-medium);
-    border-color: var(--color-light-blue);
-} */
-
 /* Grid layout for lesson cards - responsive auto-fit */
 .lessons-grid {
     display: grid;
@@ -49,18 +30,6 @@
     font-weight: 600;
     margin: 0;
 }
-
-/* === LESSON CONTENT === */
-/* Main content area - horizontal flex layout */
-/* .lesson-content {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem;
-    flex-grow: 1; 
-
-} */
 
 /* === LESSON IMAGE === */
 /* Icon container on the left side of lessons */
