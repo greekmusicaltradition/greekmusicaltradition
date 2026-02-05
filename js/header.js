@@ -35,10 +35,7 @@ function loadHeader() {
         }
     };
     
-    // Language-specific hero title
-    const heroTitle = lang === 'gr' ? "Ελληνική Παραδοσιακή & Βυζαντινή Μουσική" : "Greek Traditional & Byzantine Music";
-    
-    const headerHTML = `
+   const headerHTML = `
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
@@ -76,7 +73,6 @@ function loadHeader() {
                     <li><a href="about.html" class="${pageName === 'about' ? 'active' : ''}">${content[lang].nav.about}</a></li>
                     <li><a href="contact.html" class="${pageName === 'contact' ? 'active' : ''}">${content[lang].nav.contact}</a></li>
                     
-                    <!-- Mobile language switcher -->
                     <li class="mobile-lang-switcher">
                         <div class="mobile-lang-buttons">
                             <button class="lang-btn ${lang === 'en' ? 'active' : ''}" 
@@ -92,12 +88,6 @@ function loadHeader() {
                 </ul>
             </div>
         </nav>
-        
-        <header class="hero">
-            <div class="hero-content">
-                <h1>${heroTitle}</h1>
-            </div>
-        </header>
     `;
     
     document.getElementById('header').innerHTML = headerHTML;
