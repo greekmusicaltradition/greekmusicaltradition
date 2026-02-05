@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+    </head>
+<body>
+    
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <div class="sticky-banner" id="stickyBanner">
+       </div>
+
+    <script src="{{ '/js/banners.js' | relative_url }}"></script>
+    <script>
+        // Paste your Back-to-Top and Cookie logic here
+        // OR better yet, move that logic into js/banners.js so this file stays clean
+    </script>
+</body>
+</html>
