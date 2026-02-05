@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Greek Musical Tradition. Ask about online lessons, pricing, or local choirs in Rafina. We are here to help you start your musical journey.">
-    <title>Contact - Greek Traditional & Byzantine Music</title>
-    <link rel="icon" href="../pictures/favicon.png" type="image/png">
-    <link rel="stylesheet" href="../css/style_main.css"> 
-    <link rel="stylesheet" href="../css/style_contact.css">
-    <link rel="stylesheet" href="../css/style_footer.css"> 
-    <script src="../js/cookie-consent.js"></script>
-    <script src="../js/banners.js"></script>
-</head>
-<body> 
-    <div id="header"></div>
+---
+layout: default
+title: Contact - Greek Traditional & Byzantine Music
+description: "Get in touch with Greek Musical Tradition. Ask about online lessons, pricing, or local choirs in Rafina. We are here to help you start your musical journey."
+lang: en
+ref: contact
+style: style_contact.css
+---
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Contact Us</h1>
-        </div>
-    </header>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Contact Us</h1>
+    </div>
+</header>
 
-    <div class="breadcrumb-container">
+<div class="breadcrumb-container">
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb" id="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="{{ '/en/index.html' | relative_url }}">Home</a>
                 <span class="breadcrumb-separator">/</span>
             </li>
             <li class="breadcrumb-item">
@@ -35,195 +27,186 @@
     </nav>
 </div>
 
+<main class="main-content">
+    <div class="contact-form-container">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzglaz" method="POST">
+            <h2>Send Us a Message</h2>
+            <p class="contact-intro">
+                Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
+            </p>
 
-      <main class="main-content">
-        <div class="contact-form-container">
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzglaz" method="POST">
-                <h2>Send Us a Message</h2>
-                <p class="contact-intro">
-                    Whether you're interested in lessons, have questions about Greek music, or want to learn more about our programs, we'd love to hear from you!
-                </p>
+            <div class="success-message" id="successMessage" style="display: none;">
+                Thank you for your message! We'll get back to you soon.
+            </div>
+            
+            <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
+                There was an error sending your message. Please try again later.
+            </div>
 
-                <div class="success-message" id="successMessage" style="display: none;">
-                    Thank you for your message! We'll get back to you soon.
-                </div>
-                
-                <div class="error-message" id="errorMessage" style="display: none; color: red; margin-bottom: 15px;">
-                    There was an error sending your message. Please try again later.
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-
+            <div class="form-row">
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="_replyto" required>
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="interest">I'm interested in:</label>
-                    <select id="interest" name="interest">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="_replyto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="interest">I'm interested in:</label>
+                <select id="interest" name="interest">
+                    <option value="">Please select...</option>
+                    <option value="byzantine">Byzantine Music Lessons</option>
+                    <option value="traditional">Greek Traditional Singing Lessons</option>
+                    <option value="both">Both Types of Lessons</option>
+                    <option value="information">General Information</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="experience">Your Experience Level:</label>
+                    <select id="experience" name="experience">
                         <option value="">Please select...</option>
-                        <option value="byzantine">Byzantine Music Lessons</option>
-                        <option value="traditional">Greek Traditional Singing Lessons</option>
-                        <option value="both">Both Types of Lessons</option>
-                        <option value="information">General Information</option>
-                        <option value="other">Other</option>
+                        <option value="beginner">Complete Beginner</option>
+                        <option value="some">Some Experience</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
                     </select>
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="experience">Your Experience Level:</label>
-                        <select id="experience" name="experience">
-                            <option value="">Please select...</option>
-                            <option value="beginner">Complete Beginner</option>
-                            <option value="some">Some Experience</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="preferredLanguage">Preferred Language:</label>
-                        <select id="preferredLanguage" name="preferredLanguage">
-                            <option value="">Please select...</option>
-                            <option value="english">English</option>
-                            <option value="greek">Greek</option>
-                            <option value="both">Both</option>
-                        </select>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+                    <label for="preferredLanguage">Preferred Language:</label>
+                    <select id="preferredLanguage" name="preferredLanguage">
+                        <option value="">Please select...</option>
+                        <option value="english">English</option>
+                        <option value="greek">Greek</option>
+                        <option value="both">Both</option>
+                    </select>
                 </div>
+            </div>
 
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" placeholder="Tell us about your musical interests, goals, or any questions you have..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What types of lessons do you offer?</div>
+            <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
         </div>
 
-        <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">What types of lessons do you offer?</div>
-                <div class="faq-answer">We offer both Byzantine music lessons and Greek traditional singing lessons. Our lessons cover repertoire, music theory, notation, and vocal technique.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Are lessons available online?</div>
-                <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Do I need prior musical experience?</div>
-                <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">In what languages are lessons taught?</div>
-                <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I get started?</div>
-                <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question">Are lessons available online?</div>
+            <div class="faq-answer">Yes! We offer both one-to-one and group online lessons, making our programs accessible to students worldwide.</div>
         </div>
-    </main>
 
-    <div id="footer"></div>
+        <div class="faq-item">
+            <div class="faq-question">Do I need prior musical experience?</div>
+            <div class="faq-answer">Not at all! We welcome students of all levels, from complete beginners to advanced musicians looking to specialize in Greek musical traditions.</div>
+        </div>
 
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
+        <div class="faq-item">
+            <div class="faq-question">In what languages are lessons taught?</div>
+            <div class="faq-answer">Lessons are available in both English and Greek, depending on your preference and comfort level.</div>
+        </div>
 
-    <script>
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+        <div class="faq-item">
+            <div class="faq-question">How do I get started?</div>
+            <div class="faq-answer">Simply fill out the contact form above with your interests and experience level, and we'll get back to you to discuss your musical goals and schedule a first lesson.</div>
+        </div>
+    </div>
+</main>
 
-            const form = e.target;
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
+<script>
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
 
-            // Hide any previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
+        const form = e.target;
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
 
-            // Create FormData object from the form
-            const formData = new FormData(form);
+        // Hide any previous messages
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json' // Important for Formspree to return JSON
-                }
-            })
-            .then(response => {
-                if (response.ok) { // Check if the submission was successful
-                    successMessage.style.display = 'block';
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Create FormData object from the form
+        const formData = new FormData(form);
 
-                    // Reset form after a short delay
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json' // Important for Formspree to return JSON
+            }
+        })
+        .then(response => {
+            if (response.ok) { // Check if the submission was successful
+                successMessage.style.display = 'block';
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Reset form after a short delay
+                setTimeout(() => {
+                    form.reset();
+                    // Hide success message after it's been seen
                     setTimeout(() => {
-                        form.reset();
-                        // Hide success message after it's been seen
-                        setTimeout(() => {
-                            successMessage.style.display = 'none';
-                        }, 3000); 
-                    }, 1000);
-                } else {
-                    // Handle errors
-                    console.error('Form submission failed:', response.status, response.statusText);
-                    errorMessage.style.display = 'block';
-                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // Attempt to get more specific error from Formspree's response
-                    response.json().then(data => {
-                        if (data.errors) {
-                            console.error('Formspree validation errors:', data.errors);
-                            errorMessage.textContent = 'Please correct the errors in the form and try again.';
-                        } else {
-                            errorMessage.textContent = 'There was an error sending your message. Please try again later.';
-                        }
-                    }).catch(() => {
-                        errorMessage.textContent = 'There was an error sending your message. Please try again later.';
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Network error or problem sending request:', error);
-                errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
+                        successMessage.style.display = 'none';
+                    }, 3000); 
+                }, 1000);
+            } else {
+                // Handle errors
+                console.error('Form submission failed:', response.status, response.statusText);
                 errorMessage.style.display = 'block';
                 errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
+                // Attempt to get more specific error from Formspree's response
+                response.json().then(data => {
+                    if (data.errors) {
+                        console.error('Formspree validation errors:', data.errors);
+                        errorMessage.textContent = 'Please correct the errors in the form and try again.';
+                    } else {
+                        errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                    }
+                }).catch(() => {
+                    errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Network error or problem sending request:', error);
+            errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
+    });
 
-        // Add some interactive feedback for form fields
-        const formInputs = document.querySelectorAll('input, select, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-                this.parentElement.style.transition = 'transform 0.2s ease';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
+    // Add some interactive feedback for form fields
+    const formInputs = document.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'scale(1.02)';
+            this.parentElement.style.transition = 'transform 0.2s ease';
         });
-    </script>
-    
-    <!-- FAQ Accordion: This is the critical addition -->
-    <script>
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'scale(1)';
+        });
+    });
+
     // Enable accordion for FAQ section
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.faq-question').forEach(function(question) {
@@ -234,7 +217,4 @@
             });
         });
     });
-    </script>
-    <script src="../js/breadcrumb.js"></script> 
-</body>
-</html>
+</script>
