@@ -46,41 +46,6 @@
     </div>
 
     <script src="{{ '/js/banners.js' | relative_url }}"></script>
-    <script>
-        // Back to top button logic
-        const backToTopButton = document.getElementById('back-to-top');
-        if (backToTopButton) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        // Sticky Banner Logic
-        let stickyBannerClosed = false;
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY > 300;
-            // Check if user is near bottom to avoid covering footer
-            const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200);
-            const stickyBanner = document.getElementById('stickyBanner');
-            
-            if (stickyBanner && scrolled && !stickyBannerClosed && !nearBottom) {
-                stickyBanner.classList.add('show');
-            } else if (stickyBanner) {
-                stickyBanner.classList.remove('show');
-            }
-        });
-    </script>
     <script src="{{ '/js/header.js' | relative_url }}"></script>
 </body>
 </html>
