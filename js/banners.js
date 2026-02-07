@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Sticky Banner Logic ---
+    // --- 2. Sticky Banner Logic (With Footer Fix) ---
     const stickyBanner = document.getElementById('stickyBanner');
     
     if (stickyBanner) {
@@ -29,11 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY > 300;
             
-            // Calculate footer height dynamically to prevent overlap
+            // FIX: Find the footer element
             const footer = document.querySelector('footer');
+            
+            // FIX: Get its actual height (or default to 200 if not found)
             const footerHeight = footer ? footer.offsetHeight : 200;
             
-            // Check if user is near the bottom
+            // FIX: Use the dynamic footerHeight in the calculation
             const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - footerHeight);
             
             if (scrolled && !stickyBannerClosed && !nearBottom) {
