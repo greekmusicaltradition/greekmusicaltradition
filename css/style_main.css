@@ -526,6 +526,38 @@ a:focus {
     border-radius: 2px;
 }
 
+/* Custom Feature List for Homepage */
+.benefit-list {
+    list-style: none; /* Removes default black bullets */
+    padding: 0;
+    margin: 1.5rem 0; /* Adds breathing room above and below */
+}
+
+.benefit-list li {
+    position: relative;
+    padding-left: 2rem; /* Space for the custom icon */
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem; /* Matches your body text size */
+    color: var(--color-text-dark);
+    line-height: 1.4;
+}
+
+.benefit-list li strong {
+    color: var(--color-primary-blue); /* Highlights the key benefit in your brand blue */
+}
+
+/* The Custom Gold "Byzantine" Icon */
+.benefit-list li::before {
+    content: '❖'; /* A decorative diamond shape that feels more "traditional/mosaic" */
+    /* Alternative option: content: '✓'; if you prefer a standard checkmark */
+    position: absolute;
+    left: 0;
+    top: 2px; /* Visual alignment fix */
+    color: var(--color-accent-gold); /* Your brand gold (#d4af37) */
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
 /* =========================================================================
    8. PANELS & INFO CONTENT
 ========================================================================= */
