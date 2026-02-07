@@ -1004,6 +1004,9 @@ a:focus {
         opacity: 1;
         visibility: visible;
         padding: 1rem 20px;
+        max-height: calc(100vh - 80px); /* Subtract header height */
+        overflow-y: auto; /* Allow scrolling within the menu */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .nav-menu li {
