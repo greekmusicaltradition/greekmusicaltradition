@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Added for better box model */
+    box-sizing: border-box;
 }
 
 /* 1.2 CSS Custom Properties */
@@ -63,8 +63,6 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* NOTE: Duplicate padding found - choose one */
-    /* padding: 2rem; */ /* Alternative padding - DUPLICATE */
 }
 
 /* =========================================================================
@@ -73,7 +71,7 @@ p {
 
 /* 3.1 Header Background */
 #header {
-    background-color: #4b7988; /* Matches primary blue */
+    background-color: #4b7988;
 }
 
 /* 3.2 Main Navbar */
@@ -197,7 +195,7 @@ p {
     cursor: pointer;
     padding: 5px;
     z-index: 1001;
-    min-height: 44px; /* Accessibility: touch target */
+    min-height: 44px;
     min-width: 44px;
     justify-content: center;
     align-items: center;
@@ -249,7 +247,7 @@ p {
     transition: all 0.3s ease;
     font-size: 0.9rem;
     font-weight: 500;
-    min-height: 44px; /* Accessibility */
+    min-height: 44px;
 }
 
 .lang-btn:hover {
@@ -292,7 +290,6 @@ a {
     text-decoration: underline;
     transition: all 0.3s ease;
     position: relative;
-   
 }
 
 a:hover {
@@ -528,32 +525,30 @@ a:focus {
 
 /* Custom Feature List for Homepage */
 .benefit-list {
-    list-style: none; /* Removes default black bullets */
+    list-style: none;
     padding: 0;
-    margin: 1.5rem 0; /* Adds breathing room above and below */
+    margin: 1.5rem 0;
 }
 
 .benefit-list li {
     position: relative;
-    padding-left: 2rem; /* Space for the custom icon */
+    padding-left: 2rem;
     margin-bottom: 0.8rem;
-    font-size: 1.15rem; /* Matches your body text size */
+    font-size: 1.15rem;
     color: var(--color-text-dark);
     line-height: 1.4;
 }
 
 .benefit-list li strong {
-    color: var(--color-primary-blue); /* Highlights the key benefit in your brand blue */
+    color: var(--color-primary-blue);
 }
 
-/* The Custom Gold "Byzantine" Icon */
 .benefit-list li::before {
-    content: '❖'; /* A decorative diamond shape that feels more "traditional/mosaic" */
-    /* Alternative option: content: '✓'; if you prefer a standard checkmark */
+    content: '❖';
     position: absolute;
     left: 0;
-    top: 2px; /* Visual alignment fix */
-    color: var(--color-accent-gold); /* Your brand gold (#d4af37) */
+    top: 2px;
+    color: var(--color-accent-gold);
     font-size: 1.2rem;
     line-height: 1;
 }
@@ -704,7 +699,6 @@ a:focus {
 }
 
 /* 9.6 Read More Button Special Cases */
-/* Force consistent rounded corners */
 .read-more-btn,
 .read-more-btn:active,
 .read-more-btn:focus,
@@ -714,7 +708,6 @@ a:focus {
     box-sizing: border-box;
 }
 
-/* Ensure white text/icons on interactive states */
 .read-more-btn:hover,
 .read-more-btn:hover span,
 .read-more-btn:hover svg,
@@ -845,7 +838,6 @@ a:focus {
     flex-direction: row;
     align-items: flex-start;
     gap: 1.5rem;
-    /*flex-grow: 1; */
 }
 
 /* 12.5 Lesson Description Box */
@@ -1028,7 +1020,7 @@ a:focus {
         padding: 1rem 0;
         font-size: 1.1rem;
         width: 100%;
-        display: flex; /* DUPLICATE - consolidate with block */
+        display: flex;
         transition: all 0.3s ease;
         min-height: 44px;
         align-items: center;
@@ -1169,7 +1161,7 @@ a:focus {
         border-left: 3px solid transparent;
         border-radius: 0;
         line-height: 1.4;
-        display: flex; /* DUPLICATE - consolidate */
+        display: flex;
         min-height: 44px;
         align-items: center;
     }
@@ -1224,7 +1216,7 @@ a:focus {
     }
 
     .container {
-        padding: 0 15px; /* DUPLICATE - consolidate with base */
+        padding: 0 15px;
     }
 
     .combined-panel {
@@ -1270,7 +1262,6 @@ a:focus {
 
     .lesson-details {
         width: 100%;
-        /* DUPLICATE RULES - consolidate */
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -1279,21 +1270,21 @@ a:focus {
     }
 
     .lesson-details ul {
-        text-align: left !important; /* DUPLICATE */
-        display: inline-block !important; /* DUPLICATE */
+        text-align: left !important;
+        display: inline-block !important;
         max-width: 280px;
         margin: 0 auto;
-        width: auto !important; /* DUPLICATE */
+        width: auto !important;
     }
 
     .lesson-details li {
         font-size: 0.9rem;
         padding: 0.2rem 0;
-        text-align: left !important; /* DUPLICATE */
+        text-align: left !important;
     }
 
     .lesson-details p {
-        text-align: center; /* Override previous left alignment */
+        text-align: center;
         margin-left: 0;
     }
 
@@ -1313,8 +1304,8 @@ a:focus {
     .dropdown-menu a,
     .mobile-menu-toggle,
     .lang-btn {
-        min-height: 44px; /* DUPLICATE - consolidate */
-        display: flex; /* DUPLICATE - consolidate */
+        min-height: 44px;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -1350,16 +1341,16 @@ a:focus {
 
     /* Container adjustments */
     .container {
-        padding: 0 10px; /* DUPLICATE - consolidate */
+        padding: 0 10px;
     }
 
     .nav-container {
-        padding: 0 10px; /* DUPLICATE - consolidate */
+        padding: 0 10px;
     }
 
     .combined-panel {
-        padding: 1rem; /* DUPLICATE - consolidate */
-        border-width: 2px; /* DUPLICATE - consolidate */
+        padding: 1rem;
+        border-width: 2px;
     }
 
     /* Typography scaling */
@@ -1385,7 +1376,7 @@ a:focus {
 }
 
     .lesson-card {
-        margin-bottom: 1rem; /* DUPLICATE - consolidate */
+        margin-bottom: 1rem;
     }
 
     /* Button layout adjustments */
@@ -1532,7 +1523,6 @@ a:focus {
 
 /* =========================================================================
    STICKY BOOKING BANNER & COOKIE CONSENT STYLES
-   Add this to your existing CSS file
 ========================================================================= */
 
 /* Cookie Banner Styles */
@@ -1731,4 +1721,3 @@ a:focus {
         bottom: 120px; /* More space on mobile */
     }
 }
-
