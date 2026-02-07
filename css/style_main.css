@@ -993,7 +993,7 @@ a:focus {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 999;
+        z-index: 1099;
         backdrop-filter: blur(15px);
         border-radius: 0 0 15px 15px;
         overflow: hidden;
