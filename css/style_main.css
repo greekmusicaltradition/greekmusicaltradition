@@ -248,7 +248,8 @@ p {
     font-size: 0.9rem;
     font-weight: 500;
     min-height: 44px;
-}
+   text-decoration: none;  
+   }
 
 .lang-btn:hover {
     background: rgba(255, 255, 255, 0.1);
