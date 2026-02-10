@@ -7,7 +7,9 @@
     <script>
         // Execute redirect IMMEDIATELY - before any rendering
         (function() {
-            const userLang = navigator.language || navigator.userLanguage;
+            // Added "|| 'en'" to default to English if language is undefined
+            const userLang = navigator.language || navigator.userLanguage || 'en';
+            
             const targetUrl = userLang.startsWith('el') ? 'gr/index.html' : 'en/index.html';
             window.location.replace(targetUrl);
         })();
